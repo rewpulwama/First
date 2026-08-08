@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama</title>
+
+<meta name="description" content="Official website of the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama, Department of Rural Development & Panchayati Raj, Government of Jammu & Kashmir.">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #07579a;
+    --dark-blue: #063b69;
+    --light-blue: #eaf4fb;
+    --gold: #d89b24;
+    --green: #23884b;
+    --red: #b52b2b;
+    --text: #333;
+    --light: #f5f7fa;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: #f4f6f8;
+    line-height: 1.6;
+}
+
+/* TOP GOVERNMENT BAR */
+
+.top-bar {
+    background: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    font-size: 13px;
+}
+
+.top-inner {
+    max-width: 1250px;
+    margin: auto;
+    padding: 7px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-links a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 18px;
+}
+
+.top-links a:hover {
+    color: var(--blue);
+}
+
+/* HEADER */
+
+.header {
+    background: white;
+    border-bottom: 4px solid var(--gold);
+}
+
+.header-inner {
+    max-width: 1250px;
+    margin: auto;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* LOGO PLACEHOLDER */
+
+.emblem {
+    width: 85px;
+    height: 95px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 11px;
+    color: #777;
+    flex-shrink: 0;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.header-text .govt {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 3px;
+}
+
+.header-text .department {
+    font-size: 17px;
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.header-text h1 {
+    font-size: 25px;
+    color: var(--dark-blue);
+    margin-top: 5px;
+}
+
+.header-text h2 {
+    font-size: 19px;
+    color: #333;
+    font-weight: 600;
+}
+
+.logo-right {
+    width: 95px;
+    height: 75px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10px;
+    color: #777;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    background: var(--dark-blue);
+    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+}
+
+.nav-inner {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.nav-inner a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    border-right: 1px solid rgba(255,255,255,.12);
+}
+
+.nav-inner a:hover,
+.nav-inner a.active {
+    background: var(--blue);
+}
+
+/* HERO */
+
+.hero {
+    max-width: 1250px;
+    margin: 18px auto;
+    padding: 0 20px;
+}
+
+.hero-box {
+    height: 360px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    background:
+        linear-gradient(rgba(0,55,100,.65),rgba(0,55,100,.65)),
+        linear-gradient(135deg,#176ca8,#75a9cc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    padding: 30px;
+    max-width: 850px;
+}
+
+.hero-content h2 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.hero-content p {
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+.hero-button {
+    display: inline-block;
+    background: var(--gold);
+    color: white;
+    padding: 11px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* NEWS TICKER */
+
+.ticker {
+    max-width: 1250px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+}
+
+.ticker-inner {
+    background: white;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.ticker-title {
+    background: var(--red);
+    color: white;
+    padding: 10px 18px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.ticker-text {
+    padding: 10px 18px;
+    color: #444;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 20px 30px;
+}
+
+/* SECTION */
+
+.section {
+    background: white;
+    border: 1px solid #ddd;
+    margin-bottom: 22px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.section-title {
+    background: var(--blue);
+    color: white;
+    padding: 12px 18px;
+    font-size: 18px;
+    font-weight: bold;
+    border-left: 5px solid var(--gold);
+}
+
+.section-body {
+    padding: 18px;
+}
+
+/* DASHBOARD */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.stat {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 22px;
+    text-align: center;
+    position: relative;
+}
+
+.stat::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--blue);
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--blue);
+}
+
+.stat-label {
+    margin-top: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* TWO COLUMN */
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+/* LIST */
+
+.notice-list {
+    list-style: none;
+}
+
+.notice-list li {
+    border-bottom: 1px solid #eee;
+    padding: 12px 5px;
+}
+
+.notice-list li:last-child {
+    border-bottom: none;
+}
+
+.notice-list a {
+    text-decoration: none;
+    color: #333;
+}
+
+.notice-list a:hover {
+    color: var(--blue);
+}
+
+.date {
+    display: inline-block;
+    background: #edf3f8;
+    color: var(--blue);
+    font-size: 12px;
+    padding: 3px 7px;
+    margin-right: 7px;
+    border-radius: 3px;
+}
+
+.new {
+    color: #d10000;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* QUICK LINKS */
+
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+}
+
+.quick-link {
+    display: block;
+    padding: 18px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    color: var(--dark-blue);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.quick-link:hover {
+    background: var(--light-blue);
+    border-color: var(--blue);
+}
+
+/* WORK TABLE */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.work-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.work-table th {
+    background: var(--dark-blue);
+    color: white;
+    padding: 11px;
+    text-align: left;
+}
+
+.work-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.work-table tr:hover {
+    background: #f3f8fc;
+}
+
+.status {
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status.ongoing {
+    background: #fff2cc;
+    color: #8a6500;
+}
+
+.status.completed {
+    background: #dff2e5;
+    color: #18733b;
+}
+
+/* GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+}
+
+.gallery-item {
+    height: 150px;
+    background: linear-gradient(135deg,#d8e6f1,#a9c6db);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #456;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-box {
+    padding: 18px;
+    background: #f7f9fb;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-box h3 {
+    color: var(--blue);
+    margin-bottom: 8px;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #062f52;
+    color: white;
+    margin-top: 20px;
+}
+
+.footer-inner {
+    max-width: 1250px;
+    margin: auto;
+    padding: 35px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 35px;
+}
+
+.footer h3 {
+    margin-bottom: 12px;
+    color: white;
+}
+
+.footer p,
+.footer li {
+    font-size: 13px;
+    color: #d9e5ee;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer li {
+    margin-bottom: 7px;
+}
+
+.footer-bottom {
+    background: #041f37;
+    padding: 12px;
+    text-align: center;
+    font-size: 12px;
+    color: #cbd9e4;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px) {
+
+    .header-inner {
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .header-text {
+        flex-basis: 100%;
+        order: 2;
+    }
+
+    .emblem {
+        order: 1;
+    }
+
+    .logo-right {
+        order: 3;
+    }
+
+    .nav-inner {
+        overflow-x: auto;
+    }
+
+    .nav-inner a {
+        white-space: nowrap;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .quick-links {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:600px) {
+
+    .top-inner {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .top-links a {
+        margin: 0 5px;
+    }
+
+    .header-text .govt {
+        font-size: 15px;
+    }
+
+    .header-text .department {
+        font-size: 14px;
+    }
+
+    .header-text h1 {
+        font-size: 20px;
+    }
+
+    .header-text h2 {
+        font-size: 16px;
+    }
+
+    .hero-box {
+        height: 300px;
+    }
+
+    .hero-content h2 {
+        font-size: 27px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .stat {
+        padding: 15px 8px;
+    }
+
+    .stat-number {
+        font-size: 25px;
+    }
+
+    .two-column,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-links {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="top-bar">
+    <div class="top-inner">
+        <div>
+            Official Website
+        </div>
+
+        <div class="top-links">
+            <a href="#">Skip to Main Content</a>
+            <a href="#">A+</a>
+            <a href="#">A</a>
+            <a href="#">A-</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <div class="emblem">
+            GOVERNMENT<br>
+            EMBLEM<br>
+            WILL BE<br>
+            ADDED
+        </div>
+
+        <div class="header-text">
+
+            <div class="govt">
+                Government of Jammu & Kashmir
+            </div>
+
+            <div class="department">
+                Department of Rural Development & Panchayati Raj
+            </div>
+
+            <h1>
+                Office of the Executive Engineer
+            </h1>
+
+            <h2>
+                Rural Engineering Wing (REW), Pulwama
+            </h2>
+
+        </div>
+
+        <div class="logo-right">
+            DEPARTMENT<br>
+            LOGO<br>
+            WILL BE<br>
+            ADDED
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="#" class="active">HOME</a>
+        <a href="#">ABOUT</a>
+        <a href="#">WORKS</a>
+        <a href="#">TENDERS</a>
+        <a href="#">NOTICES</a>
+        <a href="#">DOWNLOADS</a>
+        <a href="#">GALLERY</a>
+        <a href="#">CONTACT</a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-box">
+
+        <div class="hero-content">
+
+            <h2>
+                Rural Infrastructure for a Better Future
+            </h2>
+
+            <p>
+                Official Website of the Office of the Executive Engineer,
+                Rural Engineering Wing (REW), Pulwama
+            </p>
+
+            <a href="#" class="hero-button">
+                Explore Our Works
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NEWS TICKER -->
+
+<div class="ticker">
+
+    <div class="ticker-inner">
+
+        <div class="ticker-title">
+            WHAT'S NEW
+        </div>
+
+        <div class="ticker-text">
+            Latest notices, tenders and important updates will appear here.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+
+<!-- STATISTICS -->
+
+<div class="stats">
+
+    <div class="stat">
+        <div class="stat-number">--</div>
+        <div class="stat-label">Total Works</div>
+    </div>
+
+    <div class="stat">
+        <div class="stat-number">--</div>
+        <div class="stat-label">Ongoing Works</div>
+    </div>
+
+    <div class="stat">
+        <div class="stat-number">--</div>
+        <div class="stat-label">Completed Works</div>
+    </div>
+
+    <div class="stat">
+        <div class="stat-number">--</div>
+        <div class="stat-label">Works Under Tender</div>
+    </div>
+
+</div>
+
+
+<!-- NOTICES + TENDERS -->
+
+<div class="two-column">
+
+
+    <section class="section">
+
+        <div class="section-title">
+            Latest Notices
+        </div>
+
+        <div class="section-body">
+
+            <ul class="notice-list">
+
+                <li>
+                    <span class="date">07 Aug 2026</span>
+                    <a href="#">
+                        Latest Office Notice
+                    </a>
+                    <span class="new">NEW</span>
+                </li>
+
+                <li>
+                    <span class="date">05 Aug 2026</span>
+                    <a href="#">
+                        Notice regarding works
+                    </a>
+                </li>
+
+                <li>
+                    <span class="date">01 Aug 2026</span>
+                    <a href="#">
+                        Important Departmental Circular
+                    </a>
+                </li>
+
+                <li>
+                    <span class="date">28 Jul 2026</span>
+                    <a href="#">
+                        Office Order
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="section-title">
+            Latest Tenders
+        </div>
+
+        <div class="section-body">
+
+            <ul class="notice-list">
+
+                <li>
+                    <span class="date">07 Aug 2026</span>
+                    <a href="#">
+                        Tender Notice – Rural Development Works
+                    </a>
+                    <span class="new">NEW</span>
+                </li>
+
+                <li>
+                    <span class="date">04 Aug 2026</span>
+                    <a href="#">
+                        NIT for Development Works
+                    </a>
+                </li>
+
+                <li>
+                    <span class="date">30 Jul 2026</span>
+                    <a href="#">
+                        e-Tender Notice
+                    </a>
+                </li>
+
+                <li>
+                    <span class="date">25 Jul 2026</span>
+                    <a href="#">
+                        Corrigendum
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- WORK DASHBOARD -->
+
+<section class="section">
+
+    <div class="section-title">
+        Work Monitoring Dashboard
+    </div>
+
+    <div class="section-body">
+
+        <p style="margin-bottom:15px;">
+            Details of development works undertaken by Rural Engineering Wing,
+            Pulwama.
+        </p>
+
+        <div class="table-wrapper">
+
+            <table class="work-table">
+
+                <thead>
+
+                    <tr>
+                        <th>S. No.</th>
+                        <th>Name of Work</th>
+                        <th>Block</th>
+                        <th>Scheme</th>
+                        <th>Status</th>
+                        <th>Progress</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Construction of Bathroom near Masjid Shareef</td>
+                        <td>Machama</td>
+                        <td>Development Works</td>
+                        <td>
+                            <span class="status ongoing">
+                                Ongoing
+                            </span>
+                        </td>
+                        <td>--</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Construction of Bathroom near Langzund Masjid Shareef</td>
+                        <td>Tral</td>
+                        <td>Development Works</td>
+                        <td>
+                            <span class="status ongoing">
+                                Ongoing
+                            </span>
+                        </td>
+                        <td>--</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Construction of Bathroom near Darasgah</td>
+                        <td>Branpathri</td>
+                        <td>Development Works</td>
+                        <td>
+                            <span class="status completed">
+                                Completed
+                            </span>
+                        </td>
+                        <td>100%</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUICK LINKS -->
+
+<section class="section">
+
+    <div class="section-title">
+        Quick Links
+    </div>
+
+    <div class="section-body">
+
+        <div class="quick-links">
+
+            <a href="#" class="quick-link">
+                Tenders
+            </a>
+
+            <a href="#" class="quick-link">
+                Notices
+            </a>
+
+            <a href="#" class="quick-link">
+                Downloads
+            </a>
+
+            <a href="#" class="quick-link">
+                Work Details
+            </a>
+
+            <a href="#" class="quick-link">
+                Government Orders
+            </a>
+
+            <a href="#" class="quick-link">
+                Circulars
+            </a>
+
+            <a href="#" class="quick-link">
+                Forms
+            </a>
+
+            <a href="#" class="quick-link">
+                Contact Office
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="section">
+
+    <div class="section-title">
+        Photo Gallery
+    </div>
+
+    <div class="section-body">
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                Office Building
+            </div>
+
+            <div class="gallery-item">
+                Rural Development Work
+            </div>
+
+            <div class="gallery-item">
+                Ongoing Works
+            </div>
+
+            <div class="gallery-item">
+                Completed Works
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="section">
+
+    <div class="section-title">
+        Contact Us
+    </div>
+
+    <div class="section-body">
+
+        <div class="contact-grid">
+
+            <div class="contact-box">
+
+                <h3>
+                    Office of the Executive Engineer
+                </h3>
+
+                <p>
+                    Rural Engineering Wing (REW), Pulwama
+                </p>
+
+                <p>
+                    Department of Rural Development & Panchayati Raj
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Address:</strong>
+                    Pulwama, Jammu & Kashmir
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    Official email will be added
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    Official contact number will be added
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>
+                    Office Information
+                </h3>
+
+                <p>
+                    <strong>Office:</strong>
+                    Executive Engineer, REW Pulwama
+                </p>
+
+                <p>
+                    <strong>District:</strong>
+                    Pulwama
+                </p>
+
+                <p>
+                    <strong>Union Territory:</strong>
+                    Jammu & Kashmir
+                </p>
+
+                <p>
+                    <strong>Working Hours:</strong>
+                    As per Government working hours
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-inner">
+
+        <div>
+
+            <h3>
+                REW Pulwama
+            </h3>
+
+            <p>
+                Office of the Executive Engineer,
+                Rural Engineering Wing (REW), Pulwama.
+            </p>
+
+            <p style="margin-top:10px;">
+                Department of Rural Development & Panchayati Raj,
+                Government of Jammu & Kashmir.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Important Links
+            </h3>
+
+            <ul>
+
+                <li>Home</li>
+                <li>About Office</li>
+                <li>Tenders</li>
+                <li>Notices</li>
+                <li>Downloads</li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Website Information
+            </h3>
+
+            <ul>
+
+                <li>Privacy Policy</li>
+                <li>Disclaimer</li>
+                <li>Accessibility</li>
+                <li>Site Map</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Office of the Executive Engineer,
+        Rural Engineering Wing (REW), Pulwama.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
