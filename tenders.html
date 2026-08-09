@@ -735,7 +735,42 @@ const SHEET_URL =
 + SHEET_GID;
 
 
-fetch(SHEET_URL)
+function formatDate(dateValue) {
+
+    if (!dateValue) {
+        return "";
+    }
+
+    // Handle Google Sheets Date(2026,7,9) format
+    const match = String(dateValue).match(
+        /^Date\((\d+),(\d+),(\d+)\)$/
+    );
+
+    if (match) {
+
+        const year = parseInt(match[1]);
+        const month = parseInt(match[2]);
+        const day = parseInt(match[3]);
+
+        const date = new Date(
+            year,
+            month,
+            day
+        );
+
+        return date.toLocaleDateString(
+            "en-GB",
+            {
+                day: "2-digit",
+                month: "long",
+                year: "numeric"
+            }
+        );
+    }
+
+    return dateValue;
+}
+    fetch(SHEET_URL)
 
 .then(function(response) {
 
@@ -809,11 +844,10 @@ fetch(SHEET_URL)
             NIT DATE
             */
 
-            const nitDate =
-                cells[1]
-                ? cells[1].v
-                : "";
-
+        const nitDate =
+    cells[1]
+    ? formatDate(cells[1].v)
+    : "";
 
             /*
             COLUMN C
@@ -831,10 +865,10 @@ fetch(SHEET_URL)
             LAST DATE
             */
 
-            const lastDate =
-                cells[3]
-                ? cells[3].v
-                : "";
+           const lastDate =
+    cells[3]
+    ? formatDate(cells[3].v)
+    : "";
 
 
             /*
