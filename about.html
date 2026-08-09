@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About - REW Pulwama</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #07579a;
+    --dark-blue: #063b69;
+    --gold: #d89b24;
+    --text: #333;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: #f4f6f8;
+    line-height: 1.7;
+}
+
+/* TOP BAR */
+
+.top-bar {
+    background: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    font-size: 13px;
+}
+
+.top-inner {
+    max-width: 1250px;
+    margin: auto;
+    padding: 7px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-links a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 18px;
+}
+
+.top-links a:hover {
+    color: var(--blue);
+}
+
+
+/* HEADER */
+
+.header {
+    background: white;
+    border-bottom: 4px solid var(--gold);
+}
+
+.header-inner {
+    max-width: 1250px;
+    margin: auto;
+    padding: 14px 20px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.emblem {
+    width: 110px;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.emblem img {
+    width: 65px;
+    height: 85px;
+    object-fit: contain;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.header-text .govt {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+.header-text .department {
+    font-size: 17px;
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.header-text h1 {
+    font-size: 25px;
+    color: var(--dark-blue);
+    margin-top: 5px;
+}
+
+.header-text h2 {
+    font-size: 19px;
+    color: #333;
+    font-weight: 600;
+}
+
+.logo-right {
+    width: 95px;
+    height: 75px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10px;
+    color: #777;
+}
+
+
+/* NAVIGATION */
+
+.navbar {
+    background: var(--dark-blue);
+    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+}
+
+.nav-inner {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.nav-inner a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    border-right: 1px solid rgba(255,255,255,.12);
+}
+
+.nav-inner a:hover,
+.nav-inner a.active {
+    background: var(--blue);
+}
+
+
+/* MAIN */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px 45px;
+}
+
+
+/* ABOUT CARD */
+
+.about-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 7px rgba(0,0,0,.06);
+}
+
+.about-title {
+    background: var(--blue);
+    color: white;
+    padding: 14px 20px;
+    font-size: 22px;
+    font-weight: bold;
+    border-left: 5px solid var(--gold);
+}
+
+.about-content {
+    padding: 30px;
+    font-size: 16px;
+    color: #444;
+}
+
+.about-content p {
+    margin-bottom: 18px;
+}
+
+.about-content strong {
+    color: var(--dark-blue);
+}
+
+
+/* FOOTER */
+
+.footer {
+    background: #062f52;
+    color: white;
+}
+
+.footer-inner {
+    max-width: 1250px;
+    margin: auto;
+    padding: 35px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 35px;
+}
+
+.footer h3 {
+    margin-bottom: 12px;
+}
+
+.footer p,
+.footer li {
+    font-size: 13px;
+    color: #d9e5ee;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer li {
+    margin-bottom: 7px;
+}
+
+.footer a {
+    color: #d9e5ee;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    background: #041f37;
+    padding: 12px;
+    text-align: center;
+    font-size: 12px;
+    color: #cbd9e4;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px) {
+
+    .header-inner {
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .header-text {
+        flex-basis: 100%;
+        order: 2;
+    }
+
+    .emblem {
+        order: 1;
+    }
+
+    .logo-right {
+        order: 3;
+    }
+
+    .nav-inner {
+        overflow-x: auto;
+    }
+
+    .nav-inner a {
+        white-space: nowrap;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media(max-width:600px) {
+
+    .top-inner {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .top-links a {
+        margin: 0 5px;
+    }
+
+    .header-text .govt {
+        font-size: 15px;
+    }
+
+    .header-text .department {
+        font-size: 14px;
+    }
+
+    .header-text h1 {
+        font-size: 20px;
+    }
+
+    .header-text h2 {
+        font-size: 16px;
+    }
+
+    .about-content {
+        padding: 20px;
+        font-size: 15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="top-bar">
+
+```
+<div class="top-inner">
+
+    <div>
+        Official Website
+    </div>
+
+    <div class="top-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="#">Skip to Main Content</a>
+
+        <a href="#">A+</a>
+
+        <a href="#">A</a>
+
+        <a href="#">A-</a>
+
+    </div>
+
+</div>
+```
+
+</div>
+
+<!-- HEADER -->
+
+<header class="header">
+
+```
+<div class="header-inner">
+
+
+    <div class="emblem">
+
+        <img src="images/Emblem_of_India.svg"
+             alt="State Emblem of India">
+
+    </div>
+
+
+    <div class="header-text">
+
+        <div class="govt">
+            Government of Jammu & Kashmir
+        </div>
+
+        <div class="department">
+            Department of Rural Development & Panchayati Raj
+        </div>
+
+        <h1>
+            Office of the Executive Engineer
+        </h1>
+
+        <h2>
+            Rural Engineering Wing (REW), Pulwama
+        </h2>
+
+    </div>
+
+
+    <div class="logo-right">
+
+        DEPARTMENT<br>
+        LOGO<br>
+        WILL BE<br>
+        ADDED
+
+    </div>
+
+</div>
+```
+
+</header>
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+```
+<div class="nav-inner">
+
+    <a href="index.html">
+        HOME
+    </a>
+
+    <a href="about.html" class="active">
+        ABOUT
+    </a>
+
+    <a href="#">
+        WORKS
+    </a>
+
+    <a href="tenders.html">
+        TENDERS
+    </a>
+
+    <a href="#">
+        NOTICES
+    </a>
+
+    <a href="#">
+        DOWNLOADS
+    </a>
+
+    <a href="#">
+        GALLERY
+    </a>
+
+    <a href="#">
+        CONTACT
+    </a>
+
+</div>
+```
+
+</nav>
+
+<!-- MAIN CONTENT -->
+
+<main class="container">
+
+```
+<section class="about-card">
+
+
+    <div class="about-title">
+
+        About Us
+
+    </div>
+
+
+    <div class="about-content">
+
+        <p>
+            Welcome to the official web portal of the
+            <strong>Office of the Executive Engineer,
+            Rural Engineering Wing (REW) Division Pulwama</strong>.
+        </p>
+
+
+        <p>
+            Operating under the umbrella of the
+            <strong>Rural Development and Panchayati Raj Department,
+            Government of Jammu and Kashmir</strong>,
+            our division is dedicated to transforming the rural
+            landscape of the Pulwama district through robust
+            infrastructure development, grassroots empowerment,
+            and sustainable engineering practices.
+        </p>
+
+
+    </div>
+
+</section>
+```
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+```
+<div class="footer-inner">
+
+
+    <div>
+
+        <h3>
+            REW Pulwama
+        </h3>
+
+        <p>
+            Office of the Executive Engineer,
+            Rural Engineering Wing (REW), Pulwama.
+        </p>
+
+        <p style="margin-top:10px;">
+            Department of Rural Development & Panchayati Raj,
+            Government of Jammu & Kashmir.
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Important Links
+        </h3>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About Office
+                </a>
+            </li>
+
+            <li>
+                <a href="tenders.html">
+                    Tenders
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Notices
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Downloads
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Website Information
+        </h3>
+
+        <ul>
+
+            <li>
+                Privacy Policy
+            </li>
+
+            <li>
+                Disclaimer
+            </li>
+
+            <li>
+                Accessibility
+            </li>
+
+            <li>
+                Site Map
+            </li>
+
+        </ul>
+
+    </div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+    © 2026 Office of the Executive Engineer,
+    Rural Engineering Wing (REW), Pulwama.
+    All Rights Reserved.
+
+</div>
+```
+
+</footer>
+
+</body>
+</html>
