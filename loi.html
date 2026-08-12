@@ -1,1 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Letter of Intent - REW Pulwama</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+header {
+    background: #0b4f8a;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #0b4f8a;
+    color: white;
+}
+
+.download-btn {
+    background: #0b4f8a;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.download-btn:hover {
+    background: #083b67;
+}
+
+footer {
+    background: #0b4f8a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+@media (max-width: 700px) {
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 9px 5px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Letter of Intent</h1>
+    <p>Office of the Executive Engineer, REW Pulwama</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<table>
+
+<thead>
+<tr>
+    <th>LOI No.</th>
+    <th>LOI Date</th>
+    <th>FOR NIT No.</th>
+    <th>LOI PDF</th>
+</tr>
+</thead>
+
+<tbody id="loiTable">
+<tr>
+    <td colspan="4">Loading LOI records...</td>
+</tr>
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Office of the Executive Engineer, REW Pulwama
+</footer>
+
+<script>
+
+const sheetURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1483979790&single=true&output=csv";
+
+
+function parseCSV(text) {
+
+    const rows = [];
+    let row = [];
+    let value = "";
+    let insideQuotes = false;
+
+    for (let i = 0; i < text.length; i++) {
+
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (char === '"' && insideQuotes && next === '"') {
+            value += '"';
+            i++;
+        }
+
+        else if (char === '"') {
+            insideQuotes = !insideQuotes;
+        }
+
+        else if (char === ',' && !insideQuotes) {
+            row.push(value.trim());
+            value = "";
+        }
+
+        else if ((char === '\n' || char === '\r') && !insideQuotes) {
+
+            if (char === '\r' && next === '\n') {
+                i++;
+            }
+
+            row.push(value.trim());
+
+            if (row.some(cell => cell !== "")) {
+                rows.push(row);
+            }
+
+            row = [];
+            value = "";
+        }
+
+        else {
+            value += char;
+        }
+    }
+
+    if (value !== "" || row.length > 0) {
+        row.push(value.trim());
+
+        if (row.some(cell => cell !== "")) {
+            rows.push(row);
+        }
+    }
+
+    return rows;
+}
+
+
+fetch(sheetURL)
+
+.then(response => response.text())
+
+.then(csv => {
+
+    const rows = parseCSV(csv);
+
+    const table = document.getElementById("loiTable");
+
+    table.innerHTML = "";
+
+    rows.slice(1).forEach(row => {
+
+        if (row.length < 4) return;
+
+        const loiNo = row[0];
+        const loiDate = row[1];
+        const nitNo = row[2];
+        const pdfLink = row[3];
+
+        const tr = document.createElement("tr");
+
+        tr.innerHTML = `
+            <td>${loiNo}</td>
+            <td>${loiDate}</td>
+            <td>${nitNo}</td>
+            <td>
+                ${
+                    pdfLink
+                    ? `<a class="download-btn"
+                         href="${pdfLink}"
+                         target="_blank">
+                         Download LOI
+                       </a>`
+                    : "Not Available"
+                }
+            </td>
+        `;
+
+        table.appendChild(tr);
+
+    });
+
+    if (table.innerHTML === "") {
+
+        table.innerHTML = `
+            <tr>
+                <td colspan="4">No LOI records available.</td>
+            </tr>
+        `;
+
+    }
+
+})
+
+.catch(error => {
+
+    document.getElementById("loiTable").innerHTML = `
+        <tr>
+            <td colspan="4">
+                Unable to load LOI records.
+            </td>
+        </tr>
+    `;
+
+    console.error(error);
+
+});
+
+</script>
+
+</body>
+</html>
