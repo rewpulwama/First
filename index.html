@@ -708,11 +708,11 @@ body {
 
         <a href="#" class="active">HOME</a>
         <a href="about.html">ABOUT</a>
-        <a href="#">WORKS</a>
+         <a href="approvals.html">APPROVALS</a>
        <a href="tenders.html">TENDERS</a>
+          <a href="loi.html">LOIs</a>
        <a href="notices.html">NOTICES</a>
-        <a href="#">DOWNLOADS</a>
-        <a href="#">GALLERY</a>
+        <a href="downloads.html">DOWNLOADS</a>
        <a href="contact.html">CONTACT</a>
 
     </div>
@@ -750,22 +750,47 @@ body {
 
 <!-- NEWS TICKER -->
 
-<div class="ticker">
-
-    <div class="ticker-inner">
-
-        <div class="ticker-title">
-            WHAT'S NEW
-        </div>
-
-        <div class="ticker-text">
-            Latest notices, tenders and important updates will appear here.
-        </div>
-
+<div class="card">
+    <h2>WHAT'S NEW</h2>
+    <div id="whatsNew">
+        Loading latest updates...
     </div>
-
 </div>
 
+<script>
+const sheetURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=0&single=true&output=csv";
+
+fetch(sheetURL)
+    .then(response => response.text())
+    .then(csv => {
+        const rows = csv.trim().split("\n").slice(1);
+
+        const updates = rows.map(row => {
+            const columns = row.split(",");
+
+            return `
+                <div style="padding:12px 0;border-bottom:1px solid #ddd;">
+                    <strong>${columns[2] || "New Update"}</strong><br>
+                    <small>${columns[0] || ""} | ${columns[1] || ""}</small>
+                    ${
+                        columns[3]
+                        ? `<br><a href="${columns[3]}" target="_blank">View Notice</a>`
+                        : ""
+                    }
+                </div>
+            `;
+        }).join("");
+
+        document.getElementById("whatsNew").innerHTML =
+            updates || "No new updates available.";
+    })
+    .catch(error => {
+        document.getElementById("whatsNew").innerHTML =
+            "Unable to load latest updates.";
+        console.error(error);
+    });
+</script>
 
 <!-- MAIN -->
 
