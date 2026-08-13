@@ -7,13 +7,10 @@
 <title>Officials | REW Pulwama</title>
 
 <style>
-
 :root {
     --blue: #07579a;
     --dark-blue: #063b69;
     --gold: #d89b24;
-    --green: #23884b;
-    --red: #b52b2b;
     --light: #f5f7fa;
     --border: #dfe5eb;
     --text: #333;
@@ -31,9 +28,7 @@ body {
 }
 
 
-/* =========================================================
-   TOP GOVERNMENT BAR
-   ========================================================= */
+/* TOP BAR */
 
 .top-bar {
     background: var(--dark-blue);
@@ -47,13 +42,10 @@ body {
     margin: auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+/* HEADER */
 
 .site-header {
     background: white;
@@ -80,7 +72,6 @@ body {
     justify-content: center;
 
     flex-shrink: 0;
-    overflow: hidden;
 }
 
 .emblem img {
@@ -124,13 +115,10 @@ body {
     text-align: center;
     color: var(--blue);
     font-weight: bold;
-    font-size: 14px;
 }
 
 
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
+/* NAVIGATION */
 
 .navbar {
     background: var(--dark-blue);
@@ -163,9 +151,7 @@ body {
 }
 
 
-/* =========================================================
-   PAGE CONTENT
-   ========================================================= */
+/* MAIN */
 
 .page-container {
     max-width: 1250px;
@@ -178,7 +164,6 @@ body {
     border-left: 5px solid var(--gold);
 
     padding: 22px 25px;
-
     margin-bottom: 25px;
 
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
@@ -197,9 +182,7 @@ body {
 }
 
 
-/* =========================================================
-   OFFICIALS TABLE
-   ========================================================= */
+/* TABLE */
 
 .officials-card {
     background: white;
@@ -227,13 +210,6 @@ thead th {
     text-align: center;
 
     font-size: 14px;
-    font-weight: 600;
-
-    border-right: 1px solid rgba(255,255,255,0.15);
-}
-
-thead th:last-child {
-    border-right: none;
 }
 
 tbody td {
@@ -254,11 +230,8 @@ tbody tr:hover {
     background: #f5f9fc;
 }
 
-
-/* COLUMN ALIGNMENT */
-
 .serial {
-    width: 75px;
+    width: 70px;
     text-align: center;
 }
 
@@ -281,9 +254,6 @@ tbody tr:hover {
     width: 25%;
 }
 
-
-/* CONTACT LINKS */
-
 .mobile a,
 .email a {
     color: var(--blue);
@@ -295,9 +265,6 @@ tbody tr:hover {
     text-decoration: underline;
 }
 
-
-/* LOADING / ERROR */
-
 .loading,
 .error,
 .no-officials {
@@ -307,13 +274,11 @@ tbody tr:hover {
 }
 
 .error {
-    color: var(--red);
+    color: #b52b2b;
 }
 
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* FOOTER */
 
 footer {
     background: var(--dark-blue);
@@ -335,11 +300,11 @@ footer {
 
 .footer-column h3 {
     margin-top: 0;
-    color: white;
     font-size: 17px;
 }
 
-.footer-column p {
+.footer-column p,
+.footer-column li {
     color: #d9e4ee;
     font-size: 14px;
     line-height: 1.7;
@@ -352,9 +317,7 @@ footer {
 }
 
 .footer-column li {
-    margin-bottom: 9px;
-    color: #d9e4ee;
-    font-size: 14px;
+    margin-bottom: 7px;
 }
 
 .footer-bottom {
@@ -369,9 +332,7 @@ footer {
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
@@ -425,17 +386,11 @@ footer {
         font-size: 25px;
     }
 
-    .officials-card {
-        overflow-x: auto;
-    }
-
     .footer-main {
         grid-template-columns: 1fr;
         gap: 20px;
-        padding: 30px 20px;
     }
 }
-
 </style>
 </head>
 
@@ -443,9 +398,7 @@ footer {
 <body>
 
 
-<!-- ======================================================
-     TOP GOVERNMENT BAR
-     ====================================================== -->
+<!-- TOP BAR -->
 
 <div class="top-bar">
 
@@ -464,14 +417,11 @@ footer {
 </div>
 
 
-<!-- ======================================================
-     HEADER
-     ====================================================== -->
+<!-- HEADER -->
 
 <header class="site-header">
 
     <div class="header-inner">
-
 
         <div class="emblem">
 
@@ -513,67 +463,43 @@ footer {
 </header>
 
 
-<!-- ======================================================
-     NAVIGATION
-     ====================================================== -->
+<!-- NAVIGATION -->
 
 <nav class="navbar">
 
     <div class="nav-inner">
 
-        <a href="index.html">
-            HOME
-        </a>
+        <a href="index.html">HOME</a>
 
-        <a href="about.html">
-            ABOUT
-        </a>
+        <a href="about.html">ABOUT</a>
 
-        <a href="officials.html" class="active">
-            OFFICIALS
-        </a>
+        <a href="officials.html" class="active">OFFICIALS</a>
 
-        <a href="approvals.html">
-            APPROVALS
-        </a>
+        <a href="approvals.html">APPROVALS</a>
 
-        <a href="tenders.html">
-            TENDERS
-        </a>
+        <a href="tenders.html">TENDERS</a>
 
-        <a href="loi.html">
-            LOIs
-        </a>
+        <a href="loi.html">LOIs</a>
 
-        <a href="notices.html">
-            NOTICES
-        </a>
+        <a href="notices.html">NOTICES</a>
 
-        <a href="downloads.html">
-            DOWNLOADS
-        </a>
+        <a href="downloads.html">DOWNLOADS</a>
 
-        <a href="contact.html">
-            CONTACT
-        </a>
+        <a href="contact.html">CONTACT</a>
 
     </div>
 
 </nav>
 
 
-<!-- ======================================================
-     MAIN CONTENT
-     ====================================================== -->
+<!-- MAIN -->
 
 <main class="page-container">
 
 
     <div class="page-title">
 
-        <h2>
-            Officials
-        </h2>
+        <h2>Officials</h2>
 
         <p>
             Officers and employees of the Rural Engineering Wing (REW), Pulwama
@@ -589,17 +515,11 @@ footer {
             <thead>
 
                 <tr>
-
                     <th>S. No.</th>
-
                     <th>Name of Employee</th>
-
                     <th>Designation</th>
-
                     <th>Mobile No.</th>
-
                     <th>Email ID</th>
-
                 </tr>
 
             </thead>
@@ -608,11 +528,9 @@ footer {
             <tbody id="officialsTable">
 
                 <tr>
-
                     <td colspan="5" class="loading">
                         Loading officials...
                     </td>
-
                 </tr>
 
             </tbody>
@@ -625,14 +543,11 @@ footer {
 </main>
 
 
-<!-- ======================================================
-     FOOTER
-     ====================================================== -->
+<!-- FOOTER -->
 
 <footer>
 
     <div class="footer-main">
-
 
         <div class="footer-column">
 
@@ -651,9 +566,7 @@ footer {
 
         <div class="footer-column">
 
-            <h3>
-                Quick Links
-            </h3>
+            <h3>Quick Links</h3>
 
             <ul>
 
@@ -672,9 +585,7 @@ footer {
 
         <div class="footer-column">
 
-            <h3>
-                Information
-            </h3>
+            <h3>Information</h3>
 
             <ul>
 
@@ -686,7 +597,6 @@ footer {
             </ul>
 
         </div>
-
 
     </div>
 
@@ -705,15 +615,85 @@ footer {
 <script>
 
 /* =========================================================
-   GOOGLE SHEET - OFFICIALS
+   GOOGLE SHEET
    ========================================================= */
 
 const sheetURL =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDIBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=2071906823&single=true&output=csv";
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=2071906823&single=true&output=csv";
 
 
 /* =========================================================
-   LOAD OFFICIALS
+   CSV PARSER
+   ========================================================= */
+
+function parseCSV(text) {
+
+    const rows = [];
+
+    let row = [];
+    let cell = "";
+    let insideQuotes = false;
+
+    for (let i = 0; i < text.length; i++) {
+
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (char === '"' && insideQuotes && next === '"') {
+
+            cell += '"';
+            i++;
+
+        } else if (char === '"') {
+
+            insideQuotes = !insideQuotes;
+
+        } else if (char === ',' && !insideQuotes) {
+
+            row.push(cell);
+            cell = "";
+
+        } else if (
+            (char === '\n' || char === '\r') &&
+            !insideQuotes
+        ) {
+
+            if (char === '\r' && next === '\n') {
+                i++;
+            }
+
+            row.push(cell);
+
+            if (row.length > 0) {
+                rows.push(row);
+            }
+
+            row = [];
+            cell = "";
+
+        } else {
+
+            cell += char;
+
+        }
+    }
+
+
+    if (cell !== "" || row.length > 0) {
+
+        row.push(cell);
+
+        if (row.length > 0) {
+            rows.push(row);
+        }
+    }
+
+    return rows;
+}
+
+
+/* =========================================================
+   LOAD DATA
    ========================================================= */
 
 async function loadOfficials() {
@@ -723,60 +703,89 @@ async function loadOfficials() {
 
     try {
 
+        /*
+         * Add a timestamp so the browser doesn't use
+         * an old cached version of the CSV.
+         */
+
+        const url =
+            sheetURL +
+            "&cache=" +
+            Date.now();
+
+
         const response =
-            await fetch(sheetURL);
+            await fetch(url, {
+                method: "GET",
+                cache: "no-store"
+            });
+
 
         if (!response.ok) {
+            throw new Error(
+                "Google Sheet could not be loaded"
+            );
+        }
+
+
+        const csv =
+            await response.text();
+
+
+        if (
+            !csv ||
+            csv.trim().length === 0
+        ) {
 
             throw new Error(
-                "Unable to load Google Sheet"
+                "Google Sheet returned empty data"
             );
 
         }
 
-        const csvText =
-            await response.text();
 
         const rows =
-            parseCSV(csvText);
+            parseCSV(csv);
+
 
         table.innerHTML = "";
 
 
         /*
-        GOOGLE SHEET STRUCTURE
+         * First row = headings.
+         *
+         * Data:
+         * A = S. No.
+         * B = Name
+         * C = Designation
+         * D = Mobile
+         * E = Email
+         */
 
-        Column A = S. No.
-        Column B = Name of Employee
-        Column C = Designation
-        Column D = Mobile No.
-        Column E = Email ID
-        */
+        for (let i = 1; i < rows.length; i++) {
 
+            const row = rows[i];
 
-        for (
-            let i = 1;
-            i < rows.length;
-            i++
-        ) {
 
             const serial =
-                rows[i][0]?.trim();
+                (row[0] || "").trim();
 
             const name =
-                rows[i][1]?.trim();
+                (row[1] || "").trim();
 
             const designation =
-                rows[i][2]?.trim();
+                (row[2] || "").trim();
 
             const mobile =
-                rows[i][3]?.trim();
+                (row[3] || "").trim();
 
             const email =
-                rows[i][4]?.trim();
+                (row[4] || "").trim();
 
 
-            /* Skip completely empty rows */
+            /*
+             * Ignore completely empty rows
+             */
 
             if (
                 !serial &&
@@ -785,9 +794,7 @@ async function loadOfficials() {
                 !mobile &&
                 !email
             ) {
-
                 continue;
-
             }
 
 
@@ -797,70 +804,69 @@ async function loadOfficials() {
 
             /* S. NO. */
 
-            const serialCell =
+            const tdSerial =
                 document.createElement("td");
 
-            serialCell.className =
+            tdSerial.className =
                 "serial";
 
-            serialCell.textContent =
+            tdSerial.textContent =
                 serial || "-";
 
 
             /* NAME */
 
-            const nameCell =
+            const tdName =
                 document.createElement("td");
 
-            nameCell.className =
+            tdName.className =
                 "employee-name";
 
-            nameCell.textContent =
+            tdName.textContent =
                 name || "-";
 
 
             /* DESIGNATION */
 
-            const designationCell =
+            const tdDesignation =
                 document.createElement("td");
 
-            designationCell.className =
+            tdDesignation.className =
                 "designation";
 
-            designationCell.textContent =
+            tdDesignation.textContent =
                 designation || "-";
 
 
             /* MOBILE */
 
-            const mobileCell =
+            const tdMobile =
                 document.createElement("td");
 
-            mobileCell.className =
+            tdMobile.className =
                 "mobile";
 
 
             if (mobile) {
 
-                const mobileLink =
+                const a =
                     document.createElement("a");
 
-                mobileLink.href =
-                    "tel:" + mobile.replace(
+                a.href =
+                    "tel:" +
+                    mobile.replace(
                         /[^0-9+]/g,
                         ""
                     );
 
-                mobileLink.textContent =
+                a.textContent =
                     mobile;
 
-                mobileCell.appendChild(
-                    mobileLink
-                );
+                tdMobile.appendChild(a);
 
             } else {
 
-                mobileCell.textContent =
+                tdMobile.textContent =
                     "-";
 
             }
@@ -868,63 +874,45 @@ async function loadOfficials() {
 
             /* EMAIL */
 
-            const emailCell =
+            const tdEmail =
                 document.createElement("td");
 
-            emailCell.className =
+            tdEmail.className =
                 "email";
 
 
             if (email) {
 
-                const emailLink =
+                const a =
                     document.createElement("a");
 
-                emailLink.href =
+                a.href =
                     "mailto:" + email;
 
-                emailLink.textContent =
+                a.textContent =
                     email;
 
-                emailCell.appendChild(
-                    emailLink
-                );
+                tdEmail.appendChild(a);
 
             } else {
 
-                emailCell.textContent =
+                tdEmail.textContent =
                     "-";
 
             }
 
 
-            tr.appendChild(
-                serialCell
-            );
-
-            tr.appendChild(
-                nameCell
-            );
-
-            tr.appendChild(
-                designationCell
-            );
-
-            tr.appendChild(
-                mobileCell
-            );
-
-            tr.appendChild(
-                emailCell
-            );
+            tr.appendChild(tdSerial);
+            tr.appendChild(tdName);
+            tr.appendChild(tdDesignation);
+            tr.appendChild(tdMobile);
+            tr.appendChild(tdEmail);
 
 
             table.appendChild(tr);
 
         }
 
-
-        /* NO RECORDS */
 
         if (
             table.children.length === 0
@@ -944,7 +932,11 @@ async function loadOfficials() {
 
     } catch (error) {
 
-        console.error(error);
+        console.error(
+            "Officials loading error:",
+            error
+        );
+
 
         table.innerHTML = `
             <tr>
@@ -961,145 +953,11 @@ async function loadOfficials() {
 }
 
 
-/* =========================================================
-   CSV PARSER
-   Handles commas inside quoted cells
-   ========================================================= */
-
-function parseCSV(text) {
-
-    const rows = [];
-
-    let row = [];
-
-    let cell = "";
-
-    let insideQuotes = false;
-
-
-    for (
-        let i = 0;
-        i < text.length;
-        i++
-    ) {
-
-        const char =
-            text[i];
-
-        const next =
-            text[i + 1];
-
-
-        if (
-            char === '"' &&
-            insideQuotes &&
-            next === '"'
-        ) {
-
-            cell += '"';
-
-            i++;
-
-        }
-
-        else if (
-            char === '"'
-        ) {
-
-            insideQuotes =
-                !insideQuotes;
-
-        }
-
-        else if (
-            char === "," &&
-            !insideQuotes
-        ) {
-
-            row.push(cell);
-
-            cell = "";
-
-        }
-
-        else if (
-            (char === "\n" ||
-             char === "\r") &&
-            !insideQuotes
-        ) {
-
-            if (
-                char === "\r" &&
-                next === "\n"
-            ) {
-
-                i++;
-
-            }
-
-            row.push(cell);
-
-
-            if (
-                row.some(
-                    value =>
-                    value.trim() !== ""
-                )
-            ) {
-
-                rows.push(row);
-
-            }
-
-
-            row = [];
-
-            cell = "";
-
-        }
-
-        else {
-
-            cell += char;
-
-        }
-
-    }
-
-
-    if (
-        cell !== "" ||
-        row.length > 0
-    ) {
-
-        row.push(cell);
-
-
-        if (
-            row.some(
-                value =>
-                value.trim() !== ""
-            )
-        ) {
-
-            rows.push(row);
-
-        }
-
-    }
-
-
-    return rows;
-
-}
-
-
-/* START */
+/* LOAD */
 
 loadOfficials();
 
 </script>
-
 
 </body>
 </html>
