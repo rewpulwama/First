@@ -1,63 +1,66 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tenders - REW Pulwama</title>
+<title>Tenders | REW Pulwama</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 :root {
     --blue: #07579a;
     --dark-blue: #063b69;
-    --light-blue: #eaf4fb;
     --gold: #d89b24;
+    --green: #23884b;
     --red: #b52b2b;
+    --light: #f5f7fa;
+    --border: #dfe5eb;
     --text: #333;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text);
-    background: #f4f6f8;
+    background: var(--light);
     line-height: 1.6;
 }
 
-/* TOP BAR */
+
+/* =========================================================
+   TOP GOVERNMENT BAR
+   ========================================================= */
+
 .top-bar {
-    background: #f1f1f1;
-    border-bottom: 1px solid #ddd;
+    background: var(--dark-blue);
+    color: white;
     font-size: 13px;
+    padding: 7px 20px;
 }
 
-.top-inner {
+.top-bar-inner {
     max-width: 1250px;
     margin: auto;
-    padding: 7px 20px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.top-links a {
-    color: #333;
-    text-decoration: none;
-    margin-left: 18px;
-}
 
-.top-links a:hover {
-    color: var(--blue);
-}
+/* =========================================================
+   HEADER
+   ========================================================= */
 
-/* HEADER */
-.header {
+.site-header {
     background: white;
     border-bottom: 4px solid var(--gold);
 }
@@ -65,73 +68,90 @@ body {
 .header-inner {
     max-width: 1250px;
     margin: auto;
-    padding: 14px 20px;
-    min-height: 150px;
+
+    min-height: 145px;
+    padding: 15px 20px;
+
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
+
+/* GOVERNMENT EMBLEM */
+
 .emblem {
-    width: 110px;
-    height: 125px;
+    width: 90px;
+    height: 110px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     flex-shrink: 0;
     overflow: hidden;
 }
 
 .emblem img {
     width: 65px;
-    height: 85px;
+    height: 90px;
     object-fit: contain;
-    display: block;
 }
+
+
+/* HEADER TEXT */
 
 .header-text {
     flex: 1;
 }
 
 .header-text .govt {
-    font-size: 18px;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 3px;
-}
-
-.header-text .department {
-    font-size: 17px;
-    color: var(--blue);
-    font-weight: bold;
+    color: var(--dark-blue);
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
 .header-text h1 {
+    margin: 0;
+
+    color: var(--blue);
+
     font-size: 25px;
-    color: var(--dark-blue);
-    margin-top: 5px;
+    line-height: 1.25;
 }
 
-.header-text h2 {
-    font-size: 19px;
-    color: #333;
-    font-weight: 600;
+.header-text .department {
+    margin-top: 7px;
+
+    color: #555;
+
+    font-size: 15px;
 }
+
+
+/* RIGHT LOGO */
 
 .logo-right {
-    width: 95px;
-    height: 75px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
+    width: 115px;
+    min-height: 90px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
-    font-size: 10px;
-    color: #777;
+
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 14px;
 }
 
-/* NAVIGATION */
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
 .navbar {
     background: var(--dark-blue);
     box-shadow: 0 2px 5px rgba(0,0,0,.15);
@@ -140,117 +160,189 @@ body {
 .nav-inner {
     max-width: 1250px;
     margin: auto;
+
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-.nav-inner a {
+.navbar a {
     color: white;
     text-decoration: none;
-    padding: 15px 18px;
+
+    padding: 14px 18px;
+
     font-size: 14px;
-    font-weight: bold;
-    border-right: 1px solid rgba(255,255,255,.12);
+    font-weight: 600;
+
+    border-right: 1px solid rgba(255,255,255,0.12);
 }
 
-.nav-inner a:hover,
-.nav-inner a.active {
+.navbar a:hover,
+.navbar a.active {
     background: var(--blue);
 }
 
-/* MAIN */
-.container {
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.page-container {
     max-width: 1250px;
-    margin: auto;
-    padding: 25px 20px 40px;
+    margin: 40px auto;
+
+    padding: 0 20px;
 }
+
 
 /* PAGE TITLE */
-.page-heading {
+
+.page-title {
     background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 22px;
-    overflow: hidden;
-}
 
-.page-heading-title {
-    background: var(--blue);
-    color: white;
-    padding: 13px 18px;
-    font-size: 20px;
-    font-weight: bold;
     border-left: 5px solid var(--gold);
+
+    padding: 22px 25px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-.page-heading-body {
-    padding: 18px;
-    color: #555;
+.page-title h2 {
+    margin: 0;
+
+    color: var(--dark-blue);
+
+    font-size: 30px;
 }
 
-/* TENDER TABLE */
+.page-title p {
+    margin: 7px 0 0;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TENDER SECTION
+   ========================================================= */
+
 .tender-section {
     background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+
+    border: 1px solid var(--border);
+    border-radius: 5px;
+
     overflow: hidden;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
 }
 
+
+/* SECTION TITLE */
+
 .section-title {
-    background: var(--blue);
+    background: var(--dark-blue);
+
     color: white;
-    padding: 12px 18px;
+
+    padding: 14px 20px;
+
     font-size: 18px;
     font-weight: bold;
+
     border-left: 5px solid var(--gold);
 }
+
+
+/* TABLE WRAPPER */
 
 .table-wrapper {
     overflow-x: auto;
 }
 
+
+/* TABLE */
+
 .tender-table {
     width: 100%;
+
     border-collapse: collapse;
+
     font-size: 14px;
+
+    min-width: 850px;
 }
 
+
+/* TABLE HEADER */
+
 .tender-table th {
-    background: var(--dark-blue);
+    background: var(--blue);
+
     color: white;
-    padding: 12px;
+
+    padding: 13px 12px;
+
     text-align: left;
+
+    font-size: 14px;
+
     white-space: nowrap;
 }
 
+
+/* TABLE DATA */
+
 .tender-table td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
+    padding: 13px 12px;
+
+    border-bottom: 1px solid var(--border);
+
     vertical-align: middle;
 }
 
-.tender-table tr:hover {
-    background: #f3f8fc;
+.tender-table tbody tr:hover {
+    background: #f5f9fc;
 }
 
 .tender-table td:first-child {
     text-align: center;
 }
 
+
+/* NIT NUMBER */
+
 .nit-number {
     font-weight: bold;
+
     color: var(--dark-blue);
 }
 
+
+/* DOWNLOAD BUTTON */
+
 .download-btn {
     display: inline-block;
+
     background: var(--blue);
+
     color: white;
+
     text-decoration: none;
+
     padding: 8px 13px;
+
     border-radius: 4px;
+
     font-size: 13px;
+
     font-weight: bold;
+
     white-space: nowrap;
 }
 
@@ -258,455 +350,589 @@ body {
     background: var(--dark-blue);
 }
 
+
+/* LOADING */
+
 .loading {
     padding: 35px;
+
     text-align: center;
+
     color: #555;
 }
 
+
+/* ERROR */
+
 .error {
     display: none;
+
     padding: 25px;
+
     text-align: center;
+
     color: var(--red);
+
     background: #fff5f5;
 }
 
+
+/* NO DATA */
+
 .no-data {
     padding: 30px;
+
     text-align: center;
+
     color: #666;
 }
 
-/* FOOTER */
-.footer {
-    background: #062f52;
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    background: var(--dark-blue);
+
     color: white;
-    margin-top: 20px;
+
+    margin-top: 60px;
 }
 
-.footer-inner {
+.footer-main {
     max-width: 1250px;
     margin: auto;
+
     padding: 35px 20px;
+
     display: grid;
+
     grid-template-columns: 2fr 1fr 1fr;
+
     gap: 35px;
 }
 
-.footer h3 {
-    margin-bottom: 12px;
+.footer-column h3 {
+    margin-top: 0;
+
+    color: white;
+
+    font-size: 17px;
 }
 
-.footer p,
-.footer li {
-    font-size: 13px;
-    color: #d9e5ee;
+.footer-column p {
+    color: #d9e4ee;
+
+    font-size: 14px;
+
+    line-height: 1.7;
 }
 
-.footer ul {
+.footer-column ul {
     list-style: none;
+
+    padding: 0;
+    margin: 0;
 }
 
-.footer li {
-    margin-bottom: 7px;
+.footer-column li {
+    margin-bottom: 9px;
+
+    color: #d9e4ee;
+
+    font-size: 14px;
 }
 
-.footer a {
-    color: #d9e5ee;
+.footer-column a {
+    color: #d9e4ee;
+
     text-decoration: none;
 }
 
-.footer a:hover {
+.footer-column a:hover {
     color: white;
 }
 
+
+/* FOOTER BOTTOM */
+
 .footer-bottom {
-    background: #041f37;
-    padding: 12px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+
     text-align: center;
-    font-size: 12px;
-    color: #cbd9e4;
+
+    padding: 18px 20px;
+
+    font-size: 13px;
+
+    color: #d9e4ee;
 }
 
-/* MOBILE */
-@media(max-width:900px) {
 
-    .header-inner {
-        flex-wrap: wrap;
-        text-align: center;
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .top-bar-inner {
         justify-content: center;
+
+        text-align: center;
     }
 
-    .header-text {
-        flex-basis: 100%;
-        order: 2;
+    .header-inner {
+        min-height: auto;
+
+        padding: 15px;
     }
 
     .emblem {
-        order: 1;
+        width: 65px;
+        height: 85px;
     }
 
-    .logo-right {
-        order: 3;
-    }
-
-    .nav-inner {
-        overflow-x: auto;
-    }
-
-    .nav-inner a {
-        white-space: nowrap;
-    }
-
-    .footer-inner {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media(max-width:600px) {
-
-    .top-inner {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .top-links a {
-        margin: 0 5px;
-    }
-
-    .header-text .govt {
-        font-size: 15px;
-    }
-
-    .header-text .department {
-        font-size: 14px;
+    .emblem img {
+        width: 50px;
+        height: 70px;
     }
 
     .header-text h1 {
-        font-size: 20px;
+        font-size: 19px;
     }
 
-    .header-text h2 {
-        font-size: 16px;
+    .header-text .govt {
+        font-size: 13px;
     }
 
-    .tender-table {
+    .header-text .department {
+        font-size: 13px;
+    }
+
+    .logo-right {
+        display: none;
+    }
+
+    .navbar a {
+        padding: 11px 12px;
+
         font-size: 12px;
     }
 
-    .tender-table th,
-    .tender-table td {
-        padding: 9px 7px;
+    .page-container {
+        margin: 25px auto;
+
+        padding: 0 12px;
     }
 
-    .download-btn {
-        padding: 7px 9px;
-        font-size: 11px;
+    .page-title h2 {
+        font-size: 25px;
+    }
+
+    .tender-table {
+        min-width: 850px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding: 30px 20px;
     }
 }
 </style>
-
 </head>
+
 
 <body>
 
-<!-- TOP BAR -->
+
+<!-- ======================================================
+     TOP GOVERNMENT BAR
+     ====================================================== -->
 
 <div class="top-bar">
 
-```
-<div class="top-inner">
+    <div class="top-bar-inner">
 
-    <div>
-        Official Website
-    </div>
-
-    <div class="top-links">
-        <a href="index.html">Home</a>
-        <a href="#">Skip to Main Content</a>
-        <a href="#">A+</a>
-        <a href="#">A</a>
-        <a href="#">A-</a>
-    </div>
-
-</div>
-```
-
-</div>
-
-<!-- HEADER -->
-
-<header class="header">
-
-```
-<div class="header-inner">
-
-    <div class="emblem">
-
-        <img src="images/Emblem_of_India.svg"
-             alt="State Emblem of India">
-
-    </div>
-
-
-    <div class="header-text">
-
-        <div class="govt">
+        <div>
             Government of Jammu & Kashmir
         </div>
 
-        <div class="department">
+        <div>
             Department of Rural Development & Panchayati Raj
         </div>
 
-        <h1>
-            Office of the Executive Engineer
-        </h1>
-
-        <h2>
-            Rural Engineering Wing (REW), Pulwama
-        </h2>
-
-    </div>
-
-
-    <div class="logo-right">
-        DEPARTMENT<br>
-        LOGO<br>
-        WILL BE<br>
-        ADDED
     </div>
 
 </div>
-```
+
+
+<!-- ======================================================
+     HEADER
+     ====================================================== -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+
+        <!-- GOVERNMENT EMBLEM -->
+
+        <div class="emblem">
+
+            <img
+                src="images/Emblem_of_India.svg"
+                alt="Government Emblem"
+            >
+
+        </div>
+
+
+        <!-- HEADER TEXT -->
+
+        <div class="header-text">
+
+            <div class="govt">
+                Government of Jammu & Kashmir
+            </div>
+
+            <h1>
+                Office of the Executive Engineer,
+                Rural Engineering Wing (REW), Pulwama
+            </h1>
+
+            <div class="department">
+                Department of Rural Development & Panchayati Raj
+            </div>
+
+        </div>
+
+
+        <!-- DEPARTMENT LOGO -->
+
+        <div class="logo-right">
+
+            REW<br>
+            PULWAMA
+
+        </div>
+
+    </div>
 
 </header>
 
-<!-- NAVIGATION -->
+
+<!-- ======================================================
+     NAVIGATION
+     ====================================================== -->
 
 <nav class="navbar">
 
-```
-<div class="nav-inner">
+    <div class="nav-inner">
 
-    <a href="index.html">HOME</a>
+        <a href="index.html">
+            HOME
+        </a>
 
-    <a href="#">ABOUT</a>
+        <a href="about.html">
+            ABOUT
+        </a>
 
-    <a href="#">WORKS</a>
+        <a href="officials.html">
+            OFFICIALS
+        </a>
 
-    <a href="tenders.html" class="active">
-        TENDERS
-    </a>
+        <a href="approvals.html">
+            APPROVALS
+        </a>
 
-    <a href="#">NOTICES</a>
+        <a href="tenders.html" class="active">
+            TENDERS
+        </a>
 
-    <a href="#">DOWNLOADS</a>
+        <a href="loi.html">
+            LOIs
+        </a>
 
-    <a href="#">GALLERY</a>
+        <a href="notices.html">
+            NOTICES
+        </a>
 
-    <a href="#">CONTACT</a>
+        <a href="downloads.html">
+            DOWNLOADS
+        </a>
 
-</div>
-```
+        <a href="contact.html">
+            CONTACT
+        </a>
+
+    </div>
 
 </nav>
 
-<!-- MAIN -->
 
-<main class="container">
+<!-- ======================================================
+     MAIN CONTENT
+     ====================================================== -->
 
-```
-<!-- PAGE HEADING -->
-
-<section class="page-heading">
-
-    <div class="page-heading-title">
-        Notice Inviting Tenders
-    </div>
-
-    <div class="page-heading-body">
-
-        Latest Notice Inviting Tenders issued by the
-        Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.
-
-    </div>
-
-</section>
+<main class="page-container">
 
 
-<!-- TENDER LIST -->
+    <!-- PAGE TITLE -->
 
-<section class="tender-section">
+    <div class="page-title">
 
-    <div class="section-title">
-        Latest NITs
-    </div>
+        <h2>
+            Notice Inviting Tenders
+        </h2>
 
-
-    <div id="loading" class="loading">
-
-        Loading latest tenders...
+        <p>
+            Latest Notice Inviting Tenders issued by the
+            Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.
+        </p>
 
     </div>
 
 
-    <div id="error" class="error">
+    <!-- TENDER TABLE -->
 
-        Unable to load tender information.
-        Please try again later.
-
-    </div>
+    <section class="tender-section">
 
 
-    <div class="table-wrapper">
+        <div class="section-title">
 
-        <table id="tendersTable"
-               class="tender-table"
-               style="display:none;">
+            Latest NITs
 
-            <thead>
-
-                <tr>
-
-                    <th>S. No.</th>
-
-                    <th>NIT No.</th>
-
-                    <th>NIT Date</th>
-
-                    <th>Description</th>
-
-                    <th>Last Date</th>
-
-                    <th>Document</th>
-
-                </tr>
-
-            </thead>
+        </div>
 
 
-            <tbody id="tendersBody">
+        <!-- LOADING -->
 
-            </tbody>
+        <div id="loading" class="loading">
 
-        </table>
+            Loading latest tenders...
 
-    </div>
+        </div>
 
 
-    <div id="noData"
-         class="no-data"
-         style="display:none;">
+        <!-- ERROR -->
 
-        No tenders are currently available.
+        <div id="error" class="error">
 
-    </div>
+            Unable to load tender information.
+            Please try again later.
 
-</section>
-```
+        </div>
+
+
+        <!-- TABLE -->
+
+        <div class="table-wrapper">
+
+            <table
+                id="tendersTable"
+                class="tender-table"
+                style="display:none;"
+            >
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            S. No.
+                        </th>
+
+                        <th>
+                            NIT No.
+                        </th>
+
+                        <th>
+                            NIT Date
+                        </th>
+
+                        <th>
+                            Description
+                        </th>
+
+                        <th>
+                            Last Date
+                        </th>
+
+                        <th>
+                            Document
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="tendersBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- NO DATA -->
+
+        <div
+            id="noData"
+            class="no-data"
+            style="display:none;"
+        >
+
+            No tenders are currently available.
+
+        </div>
+
+
+    </section>
+
 
 </main>
 
-<!-- FOOTER -->
 
-<footer class="footer">
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
 
-```
-<div class="footer-inner">
+<footer>
 
 
-    <div>
+    <div class="footer-main">
 
-        <h3>
-            REW Pulwama
-        </h3>
 
-        <p>
-            Office of the Executive Engineer,
-            Rural Engineering Wing (REW), Pulwama.
-        </p>
+        <!-- OFFICE -->
 
-        <p style="margin-top:10px;">
+        <div class="footer-column">
 
-            Department of Rural Development & Panchayati Raj,
-            Government of Jammu & Kashmir.
+            <h3>
+                Office of the Executive Engineer
+            </h3>
 
-        </p>
+            <p>
+                Rural Engineering Wing (REW), Pulwama<br>
+                Department of Rural Development & Panchayati Raj<br>
+                Government of Jammu & Kashmir
+            </p>
+
+        </div>
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="officials.html">
+                        Officials
+                    </a>
+                </li>
+
+                <li>
+                    <a href="approvals.html">
+                        Approvals
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tenders.html">
+                        Tenders
+                    </a>
+                </li>
+
+                <li>
+                    <a href="notices.html">
+                        Notices
+                    </a>
+                </li>
+
+                <li>
+                    <a href="downloads.html">
+                        Downloads
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- INFORMATION -->
+
+        <div class="footer-column">
+
+            <h3>
+                Information
+            </h3>
+
+            <ul>
+
+                <li>
+                    Privacy Policy
+                </li>
+
+                <li>
+                    Disclaimer
+                </li>
+
+                <li>
+                    Accessibility
+                </li>
+
+                <li>
+                    Site Map
+                </li>
+
+            </ul>
+
+        </div>
+
 
     </div>
 
 
-    <div>
+    <div class="footer-bottom">
 
-        <h3>
-            Important Links
-        </h3>
-
-        <ul>
-
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-
-            <li>
-                <a href="#">About Office</a>
-            </li>
-
-            <li>
-                <a href="tenders.html">Tenders</a>
-            </li>
-
-            <li>
-                <a href="#">Notices</a>
-            </li>
-
-            <li>
-                <a href="#">Downloads</a>
-            </li>
-
-        </ul>
+        © 2026 Office of the Executive Engineer,
+        Rural Engineering Wing (REW), Pulwama.
+        All Rights Reserved.
 
     </div>
 
-
-    <div>
-
-        <h3>
-            Website Information
-        </h3>
-
-        <ul>
-
-            <li>Privacy Policy</li>
-
-            <li>Disclaimer</li>
-
-            <li>Accessibility</li>
-
-            <li>Site Map</li>
-
-        </ul>
-
-    </div>
-
-
-</div>
-
-
-<div class="footer-bottom">
-
-    © 2026 Office of the Executive Engineer,
-    Rural Engineering Wing (REW), Pulwama.
-    All Rights Reserved.
-
-</div>
-```
 
 </footer>
 
-<!-- GOOGLE SHEET SCRIPT -->
+
+<!-- ======================================================
+     GOOGLE SHEET SCRIPT
+     EXISTING TENDER DATA LOGIC RETAINED
+     ====================================================== -->
 
 <script>
 
@@ -735,28 +961,48 @@ const SHEET_URL =
 + SHEET_GID;
 
 
+/*
+==================================================
+FORMAT DATE
+==================================================
+*/
+
 function formatDate(dateValue) {
 
     if (!dateValue) {
         return "";
     }
 
-    // Handle Google Sheets Date(2026,7,9) format
-    const match = String(dateValue).match(
-        /^Date\((\d+),(\d+),(\d+)\)$/
-    );
+
+    /*
+    Handle Google Sheets Date()
+    */
+
+    const match =
+        String(dateValue).match(
+            /^Date\((\d+),(\d+),(\d+)\)$/
+        );
+
 
     if (match) {
 
-        const year = parseInt(match[1]);
-        const month = parseInt(match[2]);
-        const day = parseInt(match[3]);
+        const year =
+            parseInt(match[1]);
 
-        const date = new Date(
-            year,
-            month,
-            day
-        );
+        const month =
+            parseInt(match[2]);
+
+        const day =
+            parseInt(match[3]);
+
+
+        const date =
+            new Date(
+                year,
+                month,
+                day
+            );
+
 
         return date.toLocaleDateString(
             "en-GB",
@@ -766,11 +1012,22 @@ function formatDate(dateValue) {
                 year: "numeric"
             }
         );
+
     }
 
+
     return dateValue;
+
 }
-    fetch(SHEET_URL)
+
+
+/*
+==================================================
+FETCH GOOGLE SHEET
+==================================================
+*/
+
+fetch(SHEET_URL)
 
 .then(function(response) {
 
@@ -778,9 +1035,15 @@ function formatDate(dateValue) {
 
 })
 
+
 .then(function(data) {
 
     try {
+
+
+        /*
+        Extract JSON from Google response
+        */
 
         const start =
             data.indexOf("{");
@@ -789,7 +1052,10 @@ function formatDate(dateValue) {
             data.lastIndexOf("}");
 
 
-        if (start === -1 || end === -1) {
+        if (
+            start === -1 ||
+            end === -1
+        ) {
 
             throw new Error(
                 "Invalid Google Sheet response"
@@ -822,7 +1088,12 @@ function formatDate(dateValue) {
         let serialNumber = 1;
 
 
+        /*
+        LOOP THROUGH SHEET ROWS
+        */
+
         rows.forEach(function(row) {
+
 
             const cells =
                 row.c || [];
@@ -844,10 +1115,13 @@ function formatDate(dateValue) {
             NIT DATE
             */
 
-        const nitDate =
-    cells[1]
-    ? formatDate(cells[1].v)
-    : "";
+            const nitDate =
+                cells[1]
+                ? formatDate(
+                    cells[1].v
+                )
+                : "";
+
 
             /*
             COLUMN C
@@ -865,10 +1139,12 @@ function formatDate(dateValue) {
             LAST DATE
             */
 
-           const lastDate =
-    cells[3]
-    ? formatDate(cells[3].v)
-    : "";
+            const lastDate =
+                cells[3]
+                ? formatDate(
+                    cells[3].v
+                )
+                : "";
 
 
             /*
@@ -887,14 +1163,12 @@ function formatDate(dateValue) {
             */
 
             if (!nitNo) {
-
                 return;
-
             }
 
 
             /*
-            CREATE TABLE ROW
+            CREATE ROW
             */
 
             const tr =
@@ -919,6 +1193,7 @@ function formatDate(dateValue) {
             const td2 =
                 document.createElement("td");
 
+
             const strong =
                 document.createElement("strong");
 
@@ -928,11 +1203,14 @@ function formatDate(dateValue) {
             strong.textContent =
                 nitNo;
 
-            td2.appendChild(strong);
+
+            td2.appendChild(
+                strong
+            );
 
 
             /*
-            DATE
+            NIT DATE
             */
 
             const td3 =
@@ -965,7 +1243,7 @@ function formatDate(dateValue) {
 
 
             /*
-            PDF BUTTON
+            PDF
             */
 
             const td6 =
@@ -973,6 +1251,7 @@ function formatDate(dateValue) {
 
 
             if (pdfLink) {
+
 
                 const link =
                     document.createElement("a");
@@ -998,7 +1277,9 @@ function formatDate(dateValue) {
                     "View / Download NIT";
 
 
-                td6.appendChild(link);
+                td6.appendChild(
+                    link
+                );
 
             }
 
@@ -1039,8 +1320,9 @@ function formatDate(dateValue) {
         HIDE LOADING
         */
 
-        document.getElementById("loading")
-            .style.display = "none";
+        document.getElementById(
+            "loading"
+        ).style.display = "none";
 
 
         /*
@@ -1049,17 +1331,20 @@ function formatDate(dateValue) {
 
         if (serialNumber > 1) {
 
-            document.getElementById("tendersTable")
-                .style.display = "table";
+            document.getElementById(
+                "tendersTable"
+            ).style.display = "table";
 
         }
 
         else {
 
-            document.getElementById("noData")
-                .style.display = "block";
+            document.getElementById(
+                "noData"
+            ).style.display = "block";
 
         }
+
 
     }
 
@@ -1069,12 +1354,14 @@ function formatDate(dateValue) {
         console.error(error);
 
 
-        document.getElementById("loading")
-            .style.display = "none";
+        document.getElementById(
+            "loading"
+        ).style.display = "none";
 
 
-        document.getElementById("error")
-            .style.display = "block";
+        document.getElementById(
+            "error"
+        ).style.display = "block";
 
     }
 
@@ -1086,16 +1373,19 @@ function formatDate(dateValue) {
     console.error(error);
 
 
-    document.getElementById("loading")
-        .style.display = "none";
+    document.getElementById(
+        "loading"
+    ).style.display = "none";
 
 
-    document.getElementById("error")
-        .style.display = "block";
+    document.getElementById(
+        "error"
+    ).style.display = "block";
 
 });
 
 </script>
+
 
 </body>
 </html>
