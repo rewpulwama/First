@@ -1,1 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Approvals | REW Pulwama</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+}
+
+/* HEADER */
+header {
+    background: #003b6f;
+    color: white;
+    padding: 18px 20px;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.emblem {
+    width: 65px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.emblem img {
+    width: 55px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.header-text p {
+    margin: 4px 0;
+    font-size: 15px;
+}
+
+/* NAVIGATION */
+nav {
+    background: white;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav a {
+    padding: 15px 18px;
+    text-decoration: none;
+    color: #003b6f;
+    font-weight: 600;
+}
+
+nav a:hover {
+    background: #eef4f9;
+}
+
+/* MAIN */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-title h2 {
+    margin: 0;
+    color: #003b6f;
+    font-size: 30px;
+}
+
+.page-title p {
+    color: #666;
+    margin-top: 8px;
+}
+
+/* APPROVALS TABLE */
+.approvals-box {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #003b6f;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: middle;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background: #f7fafc;
+}
+
+.approval-no {
+    width: 35%;
+    font-weight: 600;
+}
+
+.scheme {
+    width: 35%;
+}
+
+.download {
+    width: 30%;
+    text-align: center;
+}
+
+/* DOWNLOAD BUTTON */
+.download-btn {
+    display: inline-block;
+    background: #0066a1;
+    color: white;
+    padding: 9px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.download-btn:hover {
+    background: #004d7a;
+}
+
+.loading,
+.error,
+.no-approvals {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+}
+
+.error {
+    color: #b00020;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 60px;
+    background: #003b6f;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+
+    .header-container {
+        align-items: flex-start;
+    }
+
+    .header-text h1 {
+        font-size: 19px;
+    }
+
+    .header-text p {
+        font-size: 13px;
+    }
+
+    nav a {
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+
+    .page-title h2 {
+        font-size: 25px;
+    }
+
+    main {
+        padding: 0 10px;
+    }
+
+    .approvals-box {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 650px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="header-container">
+
+        <div class="emblem">
+            <img src="images/Emblem_of_India.svg"
+                 alt="Government Emblem">
+        </div>
+
+        <div class="header-text">
+
+            <h1>Government of Jammu & Kashmir</h1>
+
+            <p>Department of Rural Development & Panchayati Raj</p>
+
+            <p>Office of the Executive Engineer</p>
+
+            <p>Rural Engineering Wing (REW), Pulwama</p>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="nav-container">
+
+        <a href="index.html">Home</a>
+
+        <a href="notices.html">Notices</a>
+
+        <a href="downloads.html">Downloads</a>
+
+        <a href="approvals.html">Approvals</a>
+
+    </div>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<main>
+
+    <div class="page-title">
+
+        <h2>Approvals</h2>
+
+        <p>
+            Administrative Approvals issued under various schemes
+        </p>
+
+    </div>
+
+
+    <div class="approvals-box">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Approval No.</th>
+
+                    <th>Scheme</th>
+
+                    <th>Download</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="approvalsTable">
+
+                <tr>
+
+                    <td colspan="3" class="loading">
+                        Loading approvals...
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div>
+        Office of the Executive Engineer,
+        Rural Engineering Wing (REW), Pulwama
+    </div>
+
+    <div style="margin-top:8px;">
+        Government of Jammu & Kashmir
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   GOOGLE SHEET - APPROVALS TAB
+   ========================================================= */
+
+const sheetURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=285284483&single=true&output=csv";
+
+
+/* =========================================================
+   LOAD APPROVALS
+   ========================================================= */
+
+async function loadApprovals() {
+
+    const table =
+        document.getElementById("approvalsTable");
+
+    try {
+
+        const response =
+            await fetch(sheetURL);
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to load Google Sheet"
+            );
+
+        }
+
+        const csvText =
+            await response.text();
+
+        const rows =
+            parseCSV(csvText);
+
+        table.innerHTML = "";
+
+
+        /*
+        GOOGLE SHEET STRUCTURE
+
+        Column A = Approval No.
+        Column B = Scheme
+        Column C = Download
+        */
+
+
+        for (
+            let i = 1;
+            i < rows.length;
+            i++
+        ) {
+
+            const approvalNo =
+                rows[i][0]?.trim();
+
+            const scheme =
+                rows[i][1]?.trim();
+
+            const downloadLink =
+                rows[i][2]?.trim();
+
+
+            /* Skip empty rows */
+
+            if (
+                !approvalNo &&
+                !scheme &&
+                !downloadLink
+            ) {
+                continue;
+            }
+
+
+            const tr =
+                document.createElement("tr");
+
+
+            /* APPROVAL NUMBER */
+
+            const approvalCell =
+                document.createElement("td");
+
+            approvalCell.className =
+                "approval-no";
+
+            approvalCell.textContent =
+                approvalNo || "-";
+
+
+            /* SCHEME */
+
+            const schemeCell =
+                document.createElement("td");
+
+            schemeCell.className =
+                "scheme";
+
+            schemeCell.textContent =
+                scheme || "-";
+
+
+            /* DOWNLOAD */
+
+            const downloadCell =
+                document.createElement("td");
+
+            downloadCell.className =
+                "download";
+
+
+            if (downloadLink) {
+
+                const link =
+                    document.createElement("a");
+
+                link.href =
+                    downloadLink;
+
+                link.target =
+                    "_blank";
+
+                link.rel =
+                    "noopener noreferrer";
+
+                link.className =
+                    "download-btn";
+
+                link.textContent =
+                    "Download PDF";
+
+
+                downloadCell.appendChild(link);
+
+            } else {
+
+                downloadCell.textContent =
+                    "Not Available";
+
+            }
+
+
+            tr.appendChild(
+                approvalCell
+            );
+
+            tr.appendChild(
+                schemeCell
+            );
+
+            tr.appendChild(
+                downloadCell
+            );
+
+
+            table.appendChild(tr);
+
+        }
+
+
+        /* NO RECORDS */
+
+        if (
+            table.children.length === 0
+        ) {
+
+            table.innerHTML = `
+                <tr>
+                    <td colspan="3"
+                        class="no-approvals">
+                        No approvals available.
+                    </td>
+                </tr>
+            `;
+
+        }
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        table.innerHTML = `
+            <tr>
+                <td colspan="3"
+                    class="error">
+                    Unable to load approvals.
+                    Please try again later.
+                </td>
+            </tr>
+        `;
+
+    }
+
+}
+
+
+/* =========================================================
+   CSV PARSER
+   Handles commas inside quoted cells
+   ========================================================= */
+
+function parseCSV(text) {
+
+    const rows = [];
+
+    let row = [];
+
+    let cell = "";
+
+    let insideQuotes = false;
+
+
+    for (
+        let i = 0;
+        i < text.length;
+        i++
+    ) {
+
+        const char =
+            text[i];
+
+        const next =
+            text[i + 1];
+
+
+        if (
+            char === '"' &&
+            insideQuotes &&
+            next === '"'
+        ) {
+
+            cell += '"';
+
+            i++;
+
+        }
+
+        else if (
+            char === '"'
+        ) {
+
+            insideQuotes =
+                !insideQuotes;
+
+        }
+
+        else if (
+            char === "," &&
+            !insideQuotes
+        ) {
+
+            row.push(cell);
+
+            cell = "";
+
+        }
+
+        else if (
+            (char === "\n" ||
+             char === "\r") &&
+            !insideQuotes
+        ) {
+
+            if (
+                char === "\r" &&
+                next === "\n"
+            ) {
+
+                i++;
+
+            }
+
+            row.push(cell);
+
+
+            if (
+                row.some(
+                    value =>
+                    value.trim() !== ""
+                )
+            ) {
+
+                rows.push(row);
+
+            }
+
+
+            row = [];
+
+            cell = "";
+
+        }
+
+        else {
+
+            cell += char;
+
+        }
+
+    }
+
+
+    if (
+        cell !== "" ||
+        row.length > 0
+    ) {
+
+        row.push(cell);
+
+
+        if (
+            row.some(
+                value =>
+                value.trim() !== ""
+            )
+        ) {
+
+            rows.push(row);
+
+        }
+
+    }
+
+
+    return rows;
+
+}
+
+
+/* START */
+
+loadApprovals();
+
+</script>
+
+</body>
+</html>
