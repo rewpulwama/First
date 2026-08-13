@@ -1,1 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Downloads | REW Pulwama</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f5f7fa;
+        color: #222;
+    }
+
+    /* Header */
+    header {
+        background: #003b6f;
+        color: white;
+        padding: 22px 20px;
+    }
+
+    .header-container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .emblem {
+        width: 65px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .emblem img {
+        max-width: 55px;
+        max-height: 70px;
+        object-fit: contain;
+    }
+
+    .header-text h1 {
+        margin: 0;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .header-text p {
+        margin: 5px 0 0;
+        font-size: 15px;
+    }
+
+    /* Navigation */
+    nav {
+        background: #ffffff;
+        border-bottom: 1px solid #ddd;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav a {
+        display: block;
+        padding: 15px 18px;
+        text-decoration: none;
+        color: #003b6f;
+        font-weight: 600;
+    }
+
+    nav a:hover {
+        background: #eef4f9;
+    }
+
+    /* Main */
+    main {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .page-title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .page-title h2 {
+        margin: 0;
+        color: #003b6f;
+        font-size: 30px;
+    }
+
+    .page-title p {
+        color: #666;
+        margin-top: 8px;
+    }
+
+    /* Downloads table */
+    .downloads-box {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        overflow: hidden;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        background: #003b6f;
+        color: white;
+        padding: 15px;
+        text-align: left;
+        font-size: 16px;
+    }
+
+    td {
+        padding: 15px;
+        border-bottom: 1px solid #e5e5e5;
+        vertical-align: middle;
+    }
+
+    tr:last-child td {
+        border-bottom: none;
+    }
+
+    tr:hover {
+        background: #f7fafc;
+    }
+
+    .download-btn {
+        display: inline-block;
+        background: #0066a1;
+        color: white;
+        padding: 9px 16px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .download-btn:hover {
+        background: #004d7a;
+    }
+
+    .loading {
+        text-align: center;
+        padding: 30px;
+        color: #666;
+    }
+
+    .error {
+        text-align: center;
+        padding: 30px;
+        color: #b00020;
+    }
+
+    .no-files {
+        text-align: center;
+        padding: 30px;
+        color: #666;
+    }
+
+    /* Footer */
+    footer {
+        margin-top: 60px;
+        background: #003b6f;
+        color: white;
+        text-align: center;
+        padding: 25px 15px;
+        font-size: 14px;
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+
+        .header-container {
+            align-items: flex-start;
+        }
+
+        .header-text h1 {
+            font-size: 19px;
+        }
+
+        .header-text p {
+            font-size: 13px;
+        }
+
+        nav a {
+            padding: 12px 10px;
+            font-size: 13px;
+        }
+
+        .page-title h2 {
+            font-size: 25px;
+        }
+
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+            display: block;
+        }
+
+        thead {
+            display: none;
+        }
+
+        tr {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        td {
+            border: none;
+            padding: 8px 5px;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            color: #003b6f;
+        }
+
+        .download-btn {
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+
+        <div class="emblem">
+            <img src="images/Emblem_of_India.svg"
+                 alt="Government Emblem">
+        </div>
+
+        <div class="header-text">
+            <h1>Government of Jammu & Kashmir</h1>
+            <p>Department of Rural Development & Panchayati Raj</p>
+            <p>Office of the Executive Engineer</p>
+            <p>Rural Engineering Wing (REW), Pulwama</p>
+        </div>
+
+    </div>
+</header>
+
+<nav>
+    <div class="nav-container">
+
+        <a href="index.html">Home</a>
+
+        <a href="downloads.html">Downloads</a>
+
+    </div>
+</nav>
+
+<main>
+
+    <div class="page-title">
+        <h2>Downloads</h2>
+        <p>Official documents and notices</p>
+    </div>
+
+    <div class="downloads-box">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>File Name</th>
+                    <th style="width:180px;">Download</th>
+                </tr>
+            </thead>
+
+            <tbody id="downloadsTable">
+
+                <tr>
+                    <td colspan="2" class="loading">
+                        Loading files...
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</main>
+
+<footer>
+
+    <div>
+        Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama
+    </div>
+
+    <div style="margin-top:8px;">
+        Government of Jammu & Kashmir
+    </div>
+
+</footer>
+
+
+<script>
+
+const sheetURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDIBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdCOFGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1742338928&single=true&output=csv";
+
+
+async function loadDownloads() {
+
+    const table = document.getElementById("downloadsTable");
+
+    try {
+
+        const response = await fetch(sheetURL);
+
+        if (!response.ok) {
+            throw new Error("Unable to load Google Sheet");
+        }
+
+        const csvText = await response.text();
+
+        const rows = parseCSV(csvText);
+
+        table.innerHTML = "";
+
+        /*
+         Column A = File Name
+         Column B = Download Link
+        */
+
+        for (let i = 1; i < rows.length; i++) {
+
+            const fileName = rows[i][0]?.trim();
+            const downloadLink = rows[i][1]?.trim();
+
+            if (!fileName || !downloadLink) {
+                continue;
+            }
+
+            const tr = document.createElement("tr");
+
+            const nameCell = document.createElement("td");
+            nameCell.textContent = fileName;
+
+            const linkCell = document.createElement("td");
+
+            const link = document.createElement("a");
+
+            link.href = downloadLink;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.className = "download-btn";
+            link.textContent = "Download";
+
+            linkCell.appendChild(link);
+
+            tr.appendChild(nameCell);
+            tr.appendChild(linkCell);
+
+            table.appendChild(tr);
+        }
+
+        if (table.children.length === 0) {
+
+            table.innerHTML = `
+                <tr>
+                    <td colspan="2" class="no-files">
+                        No files available.
+                    </td>
+                </tr>
+            `;
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        table.innerHTML = `
+            <tr>
+                <td colspan="2" class="error">
+                    Unable to load downloads. Please try again later.
+                </td>
+            </tr>
+        `;
+    }
+}
+
+
+/*
+ Simple CSV parser that also handles commas
+ inside quoted cells.
+*/
+
+function parseCSV(text) {
+
+    const rows = [];
+    let row = [];
+    let cell = "";
+    let insideQuotes = false;
+
+    for (let i = 0; i < text.length; i++) {
+
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (char === '"' && insideQuotes && next === '"') {
+
+            cell += '"';
+            i++;
+
+        } else if (char === '"') {
+
+            insideQuotes = !insideQuotes;
+
+        } else if (char === "," && !insideQuotes) {
+
+            row.push(cell);
+            cell = "";
+
+        } else if ((char === "\n" || char === "\r") && !insideQuotes) {
+
+            if (char === "\r" && next === "\n") {
+                i++;
+            }
+
+            row.push(cell);
+
+            if (row.some(value => value.trim() !== "")) {
+                rows.push(row);
+            }
+
+            row = [];
+            cell = "";
+
+        } else {
+
+            cell += char;
+        }
+    }
+
+    if (cell !== "" || row.length > 0) {
+
+        row.push(cell);
+
+        if (row.some(value => value.trim() !== "")) {
+            rows.push(row);
+        }
+    }
+
+    return rows;
+}
+
+
+loadDownloads();
+
+</script>
+
+</body>
+</html>
