@@ -7,6 +7,7 @@
 <title>Officials | REW Pulwama</title>
 
 <style>
+
 :root {
     --blue: #07579a;
     --dark-blue: #063b69;
@@ -28,7 +29,9 @@ body {
 }
 
 
-/* TOP BAR */
+/* =========================================================
+   TOP BAR
+   ========================================================= */
 
 .top-bar {
     background: var(--dark-blue);
@@ -40,12 +43,16 @@ body {
 .top-bar-inner {
     max-width: 1250px;
     margin: auto;
+
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 
-/* HEADER */
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 .site-header {
     background: white;
@@ -55,6 +62,7 @@ body {
 .header-inner {
     max-width: 1250px;
     margin: auto;
+
     min-height: 145px;
     padding: 15px 20px;
 
@@ -62,6 +70,9 @@ body {
     align-items: center;
     gap: 20px;
 }
+
+
+/* GOVERNMENT EMBLEM */
 
 .emblem {
     width: 90px;
@@ -72,6 +83,7 @@ body {
     justify-content: center;
 
     flex-shrink: 0;
+    overflow: hidden;
 }
 
 .emblem img {
@@ -79,6 +91,9 @@ body {
     height: 90px;
     object-fit: contain;
 }
+
+
+/* HEADER TEXT */
 
 .header-text {
     flex: 1;
@@ -93,16 +108,23 @@ body {
 
 .header-text h1 {
     margin: 0;
+
     color: var(--blue);
+
     font-size: 25px;
     line-height: 1.25;
 }
 
 .header-text .department {
     margin-top: 7px;
+
     color: #555;
+
     font-size: 15px;
 }
+
+
+/* RIGHT SIDE */
 
 .logo-right {
     width: 115px;
@@ -113,15 +135,21 @@ body {
     justify-content: center;
 
     text-align: center;
+
     color: var(--blue);
     font-weight: bold;
+    font-size: 14px;
 }
 
 
-/* NAVIGATION */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 .navbar {
     background: var(--dark-blue);
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
 .nav-inner {
@@ -151,19 +179,27 @@ body {
 }
 
 
-/* MAIN */
+/* =========================================================
+   MAIN
+   ========================================================= */
 
 .page-container {
     max-width: 1250px;
     margin: 40px auto;
+
     padding: 0 20px;
 }
 
+
+/* PAGE TITLE */
+
 .page-title {
     background: white;
+
     border-left: 5px solid var(--gold);
 
     padding: 22px 25px;
+
     margin-bottom: 25px;
 
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
@@ -171,55 +207,109 @@ body {
 
 .page-title h2 {
     margin: 0;
+
     color: var(--dark-blue);
+
     font-size: 30px;
 }
 
 .page-title p {
     margin: 7px 0 0;
+
     color: #666;
+
     font-size: 14px;
 }
 
 
-/* TABLE */
+/* =========================================================
+   OFFICIALS TABLE
+   ========================================================= */
 
 .officials-card {
     background: white;
 
     border: 1px solid var(--border);
-    border-radius: 5px;
+
+    border-radius: 6px;
 
     box-shadow: 0 3px 12px rgba(0,0,0,0.06);
 
     overflow-x: auto;
 }
 
+
+/*
+   IMPORTANT:
+   Fixed table layout keeps header and data columns
+   perfectly aligned.
+*/
+
 table {
     width: 100%;
+
     border-collapse: collapse;
-    min-width: 850px;
+
+    table-layout: fixed;
+
+    min-width: 900px;
 }
+
+
+/* EXACT COLUMN WIDTHS */
+
+.col-serial {
+    width: 8%;
+}
+
+.col-name {
+    width: 25%;
+}
+
+.col-designation {
+    width: 25%;
+}
+
+.col-mobile {
+    width: 20%;
+}
+
+.col-email {
+    width: 22%;
+}
+
+
+/* TABLE HEADER */
 
 thead th {
     background: var(--dark-blue);
+
     color: white;
 
     padding: 15px 12px;
 
     text-align: center;
 
-    font-size: 14px;
+    font-size: 15px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
 }
 
+
+/* TABLE BODY */
+
 tbody td {
-    padding: 14px 12px;
+    padding: 16px 12px;
 
     border-bottom: 1px solid var(--border);
 
     font-size: 14px;
 
     vertical-align: middle;
+
+    overflow-wrap: break-word;
 }
 
 tbody tr:last-child td {
@@ -230,33 +320,40 @@ tbody tr:hover {
     background: #f5f9fc;
 }
 
+
+/* COLUMN ALIGNMENT */
+
 .serial {
-    width: 70px;
     text-align: center;
 }
 
 .employee-name {
-    width: 25%;
-    font-weight: 600;
+    text-align: left;
+
+    font-weight: 700;
+
     color: var(--dark-blue);
 }
 
 .designation {
-    width: 25%;
+    text-align: left;
 }
 
 .mobile {
-    width: 18%;
     text-align: center;
 }
 
 .email {
-    width: 25%;
+    text-align: left;
 }
+
+
+/* LINKS */
 
 .mobile a,
 .email a {
     color: var(--blue);
+
     text-decoration: none;
 }
 
@@ -265,24 +362,49 @@ tbody tr:hover {
     text-decoration: underline;
 }
 
-.loading,
-.error,
-.no-officials {
+
+/* LOADING */
+
+.loading {
     text-align: center;
+
     padding: 30px;
+
     color: #666;
 }
 
+
+/* ERROR */
+
 .error {
+    text-align: center;
+
+    padding: 30px;
+
     color: #b52b2b;
 }
 
 
-/* FOOTER */
+/* NO DATA */
+
+.no-officials {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 footer {
     background: var(--dark-blue);
+
     color: white;
+
     margin-top: 60px;
 }
 
@@ -293,6 +415,7 @@ footer {
     padding: 35px 20px;
 
     display: grid;
+
     grid-template-columns: 2fr 1fr 1fr;
 
     gap: 35px;
@@ -300,25 +423,43 @@ footer {
 
 .footer-column h3 {
     margin-top: 0;
+
     font-size: 17px;
 }
 
 .footer-column p,
 .footer-column li {
     color: #d9e4ee;
+
     font-size: 14px;
+
     line-height: 1.7;
 }
 
 .footer-column ul {
     list-style: none;
+
     padding: 0;
+
     margin: 0;
 }
 
 .footer-column li {
     margin-bottom: 7px;
 }
+
+.footer-column a {
+    color: #d9e4ee;
+
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+
+/* FOOTER BOTTOM */
 
 .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.15);
@@ -328,21 +469,26 @@ footer {
     padding: 18px 20px;
 
     font-size: 13px;
+
     color: #d9e4ee;
 }
 
 
-/* MOBILE */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 768px) {
 
     .top-bar-inner {
         justify-content: center;
+
         text-align: center;
     }
 
     .header-inner {
         min-height: auto;
+
         padding: 15px;
     }
 
@@ -374,11 +520,13 @@ footer {
 
     .navbar a {
         padding: 11px 12px;
+
         font-size: 12px;
     }
 
     .page-container {
         margin: 25px auto;
+
         padding: 0 12px;
     }
 
@@ -386,11 +534,26 @@ footer {
         font-size: 25px;
     }
 
+    .officials-card {
+        overflow-x: auto;
+    }
+
+    /*
+       On small screens the table remains readable
+       and can be horizontally scrolled.
+    */
+
+    table {
+        min-width: 900px;
+    }
+
     .footer-main {
         grid-template-columns: 1fr;
+
         gap: 20px;
     }
 }
+
 </style>
 </head>
 
@@ -398,7 +561,9 @@ footer {
 <body>
 
 
-<!-- TOP BAR -->
+<!-- =========================================================
+     TOP BAR
+     ========================================================= -->
 
 <div class="top-bar">
 
@@ -417,11 +582,16 @@ footer {
 </div>
 
 
-<!-- HEADER -->
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
 
 <header class="site-header">
 
     <div class="header-inner">
+
+
+        <!-- GOVERNMENT EMBLEM -->
 
         <div class="emblem">
 
@@ -432,6 +602,8 @@ footer {
 
         </div>
 
+
+        <!-- HEADER TEXT -->
 
         <div class="header-text">
 
@@ -451,6 +623,8 @@ footer {
         </div>
 
 
+        <!-- RIGHT SIDE -->
+
         <div class="logo-right">
 
             REW<br>
@@ -463,43 +637,69 @@ footer {
 </header>
 
 
-<!-- NAVIGATION -->
+<!-- =========================================================
+     NAVIGATION
+     ========================================================= -->
 
 <nav class="navbar">
 
     <div class="nav-inner">
 
-        <a href="index.html">HOME</a>
+        <a href="index.html">
+            HOME
+        </a>
 
-        <a href="about.html">ABOUT</a>
+        <a href="about.html">
+            ABOUT
+        </a>
 
-        <a href="officials.html" class="active">OFFICIALS</a>
+        <a href="officials.html" class="active">
+            OFFICIALS
+        </a>
 
-        <a href="approvals.html">APPROVALS</a>
+        <a href="approvals.html">
+            APPROVALS
+        </a>
 
-        <a href="tenders.html">TENDERS</a>
+        <a href="tenders.html">
+            TENDERS
+        </a>
 
-        <a href="loi.html">LOIs</a>
+        <a href="loi.html">
+            LOIs
+        </a>
 
-        <a href="notices.html">NOTICES</a>
+        <a href="notices.html">
+            NOTICES
+        </a>
 
-        <a href="downloads.html">DOWNLOADS</a>
+        <a href="downloads.html">
+            DOWNLOADS
+        </a>
 
-        <a href="contact.html">CONTACT</a>
+        <a href="contact.html">
+            CONTACT
+        </a>
 
     </div>
 
 </nav>
 
 
-<!-- MAIN -->
+<!-- =========================================================
+     MAIN CONTENT
+     ========================================================= -->
 
 <main class="page-container">
 
 
+    <!-- PAGE TITLE -->
+
     <div class="page-title">
 
-        <h2>Officials</h2>
+        <h2>
+            Officials
+        </h2>
 
         <p>
             Officers and employees of the Rural Engineering Wing (REW), Pulwama
@@ -508,18 +708,54 @@ footer {
     </div>
 
 
+    <!-- OFFICIALS TABLE -->
+
     <div class="officials-card">
 
         <table>
 
+
+            <!-- FIXED COLUMN WIDTHS -->
+
+            <colgroup>
+
+                <col class="col-serial">
+
+                <col class="col-name">
+
+                <col class="col-designation">
+
+                <col class="col-mobile">
+
+                <col class="col-email">
+
+            </colgroup>
+
+
             <thead>
 
                 <tr>
-                    <th>S. No.</th>
-                    <th>Name of Employee</th>
-                    <th>Designation</th>
-                    <th>Mobile No.</th>
-                    <th>Email ID</th>
+
+                    <th>
+                        S. No.
+                    </th>
+
+                    <th>
+                        Name of Employee
+                    </th>
+
+                    <th>
+                        Designation
+                    </th>
+
+                    <th>
+                        Mobile No.
+                    </th>
+
+                    <th>
+                        Email ID
+                    </th>
+
                 </tr>
 
             </thead>
@@ -528,12 +764,18 @@ footer {
             <tbody id="officialsTable">
 
                 <tr>
-                    <td colspan="5" class="loading">
+
+                    <td
+                        colspan="5"
+                        class="loading"
+                    >
                         Loading officials...
                     </td>
+
                 </tr>
 
             </tbody>
+
 
         </table>
 
@@ -543,11 +785,17 @@ footer {
 </main>
 
 
-<!-- FOOTER -->
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
 
 <footer>
 
+
     <div class="footer-main">
+
+
+        <!-- OFFICE -->
 
         <div class="footer-column">
 
@@ -564,39 +812,93 @@ footer {
         </div>
 
 
+        <!-- QUICK LINKS -->
+
         <div class="footer-column">
 
-            <h3>Quick Links</h3>
+            <h3>
+                Quick Links
+            </h3>
 
             <ul>
 
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Officials</li>
-                <li>Approvals</li>
-                <li>Tenders</li>
-                <li>Notices</li>
-                <li>Downloads</li>
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="officials.html">
+                        Officials
+                    </a>
+                </li>
+
+                <li>
+                    <a href="approvals.html">
+                        Approvals
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tenders.html">
+                        Tenders
+                    </a>
+                </li>
+
+                <li>
+                    <a href="notices.html">
+                        Notices
+                    </a>
+                </li>
+
+                <li>
+                    <a href="downloads.html">
+                        Downloads
+                    </a>
+                </li>
 
             </ul>
 
         </div>
 
 
+        <!-- INFORMATION -->
+
         <div class="footer-column">
 
-            <h3>Information</h3>
+            <h3>
+                Information
+            </h3>
 
             <ul>
 
-                <li>Privacy Policy</li>
-                <li>Disclaimer</li>
-                <li>Accessibility</li>
-                <li>Site Map</li>
+                <li>
+                    Privacy Policy
+                </li>
+
+                <li>
+                    Disclaimer
+                </li>
+
+                <li>
+                    Accessibility
+                </li>
+
+                <li>
+                    Site Map
+                </li>
 
             </ul>
 
         </div>
+
 
     </div>
 
@@ -609,14 +911,15 @@ footer {
 
     </div>
 
+
 </footer>
 
 
-<script>
+<!-- =========================================================
+     GOOGLE SHEET
+     ========================================================= -->
 
-/* =========================================================
-   GOOGLE SHEET
-   ========================================================= */
+<script>
 
 const sheetURL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=2071906823&single=true&output=csv";
@@ -632,81 +935,123 @@ function parseCSV(text) {
 
     let row = [];
     let cell = "";
+
     let insideQuotes = false;
+
 
     for (let i = 0; i < text.length; i++) {
 
         const char = text[i];
+
         const next = text[i + 1];
 
-        if (char === '"' && insideQuotes && next === '"') {
+
+        if (
+            char === '"' &&
+            insideQuotes &&
+            next === '"'
+        ) {
 
             cell += '"';
+
             i++;
 
-        } else if (char === '"') {
+        }
 
-            insideQuotes = !insideQuotes;
+        else if (char === '"') {
 
-        } else if (char === ',' && !insideQuotes) {
+            insideQuotes =
+                !insideQuotes;
+
+        }
+
+        else if (
+            char === ',' &&
+            !insideQuotes
+        ) {
 
             row.push(cell);
+
             cell = "";
 
-        } else if (
+        }
+
+        else if (
             (char === '\n' || char === '\r') &&
             !insideQuotes
         ) {
 
-            if (char === '\r' && next === '\n') {
+            if (
+                char === '\r' &&
+                next === '\n'
+            ) {
+
                 i++;
+
             }
+
 
             row.push(cell);
 
+
             if (row.length > 0) {
+
                 rows.push(row);
+
             }
 
+
             row = [];
+
             cell = "";
 
-        } else {
+        }
+
+        else {
 
             cell += char;
 
         }
+
     }
 
 
-    if (cell !== "" || row.length > 0) {
+    if (
+        cell !== "" ||
+        row.length > 0
+    ) {
 
         row.push(cell);
 
-        if (row.length > 0) {
-            rows.push(row);
-        }
+        rows.push(row);
+
     }
 
+
     return rows;
+
 }
 
 
 /* =========================================================
-   LOAD DATA
+   LOAD OFFICIALS
    ========================================================= */
 
 async function loadOfficials() {
 
     const table =
-        document.getElementById("officialsTable");
+        document.getElementById(
+            "officialsTable"
+        );
+
 
     try {
 
+
         /*
-         * Add a timestamp so the browser doesn't use
-         * an old cached version of the CSV.
-         */
+         Prevent browser from showing
+         an old cached CSV.
+        */
 
         const url =
             sheetURL +
@@ -715,16 +1060,21 @@ async function loadOfficials() {
 
 
         const response =
-            await fetch(url, {
-                method: "GET",
-                cache: "no-store"
-            });
+            await fetch(
+                url,
+                {
+                    method: "GET",
+                    cache: "no-store"
+                }
+            );
 
 
         if (!response.ok) {
+
             throw new Error(
-                "Google Sheet could not be loaded"
+                "Unable to load Google Sheet"
             );
+
         }
 
 
@@ -734,11 +1084,11 @@ async function loadOfficials() {
 
         if (
             !csv ||
-            csv.trim().length === 0
+            csv.trim() === ""
         ) {
 
             throw new Error(
-                "Google Sheet returned empty data"
+                "Google Sheet is empty"
             );
 
         }
@@ -748,44 +1098,58 @@ async function loadOfficials() {
             parseCSV(csv);
 
 
+        /*
+         Remove loading message.
+        */
+
         table.innerHTML = "";
 
 
         /*
-         * First row = headings.
-         *
-         * Data:
-         * A = S. No.
-         * B = Name
-         * C = Designation
-         * D = Mobile
-         * E = Email
-         */
+         First row = headings.
+         
+         A = S. No.
+         B = Name of Employee
+         C = Designation
+         D = Mobile No.
+         E = Email ID
+        */
 
-        for (let i = 1; i < rows.length; i++) {
 
-            const row = rows[i];
+        for (
+            let i = 1;
+            i < rows.length;
+            i++
+        ) {
+
+
+            const row =
+                rows[i];
 
 
             const serial =
                 (row[0] || "").trim();
 
+
             const name =
                 (row[1] || "").trim();
+
 
             const designation =
                 (row[2] || "").trim();
 
+
             const mobile =
                 (row[3] || "").trim();
+
 
             const email =
                 (row[4] || "").trim();
 
 
             /*
-             * Ignore completely empty rows
-             */
+             Ignore completely empty rows.
+            */
 
             if (
                 !serial &&
@@ -794,7 +1158,9 @@ async function loadOfficials() {
                 !mobile &&
                 !email
             ) {
+
                 continue;
+
             }
 
 
@@ -852,6 +1218,7 @@ async function loadOfficials() {
                 const a =
                     document.createElement("a");
 
+
                 a.href =
                     "tel:" +
                     mobile.replace(
@@ -859,12 +1226,16 @@ async function loadOfficials() {
                         ""
                     );
 
+
                 a.textContent =
                     mobile;
 
+
                 tdMobile.appendChild(a);
 
-            } else {
+            }
+
+            else {
 
                 tdMobile.textContent =
                     "-";
@@ -886,15 +1257,20 @@ async function loadOfficials() {
                 const a =
                     document.createElement("a");
 
+
                 a.href =
                     "mailto:" + email;
+
 
                 a.textContent =
                     email;
 
+
                 tdEmail.appendChild(a);
 
-            } else {
+            }
+
+            else {
 
                 tdEmail.textContent =
                     "-";
@@ -902,10 +1278,18 @@ async function loadOfficials() {
             }
 
 
+            /*
+             ADD ALL CELLS
+            */
+
             tr.appendChild(tdSerial);
+
             tr.appendChild(tdName);
+
             tr.appendChild(tdDesignation);
+
             tr.appendChild(tdMobile);
+
             tr.appendChild(tdEmail);
 
 
@@ -914,23 +1298,35 @@ async function loadOfficials() {
         }
 
 
+        /*
+         If there are no rows.
+        */
+
         if (
             table.children.length === 0
         ) {
 
             table.innerHTML = `
+
                 <tr>
-                    <td colspan="5"
-                        class="no-officials">
+
+                    <td
+                        colspan="5"
+                        class="no-officials"
+                    >
                         No officials available.
                     </td>
+
                 </tr>
+
             `;
 
         }
 
 
-    } catch (error) {
+    }
+
+    catch (error) {
 
         console.error(
             "Officials loading error:",
@@ -939,13 +1335,19 @@ async function loadOfficials() {
 
 
         table.innerHTML = `
+
             <tr>
-                <td colspan="5"
-                    class="error">
+
+                <td
+                    colspan="5"
+                    class="error"
+                >
                     Unable to load officials.
                     Please try again later.
                 </td>
+
             </tr>
+
         `;
 
     }
@@ -953,11 +1355,14 @@ async function loadOfficials() {
 }
 
 
-/* LOAD */
+/* =========================================================
+   START
+   ========================================================= */
 
 loadOfficials();
 
 </script>
+
 
 </body>
 </html>
