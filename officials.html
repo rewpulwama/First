@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Officials | REW Pulwama</title>
+
+<style>
+
+:root {
+    --blue: #07579a;
+    --dark-blue: #063b69;
+    --gold: #d89b24;
+    --green: #23884b;
+    --red: #b52b2b;
+    --light: #f5f7fa;
+    --border: #dfe5eb;
+    --text: #333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--light);
+}
+
+
+/* =========================================================
+   TOP GOVERNMENT BAR
+   ========================================================= */
+
+.top-bar {
+    background: var(--dark-blue);
+    color: white;
+    font-size: 13px;
+    padding: 7px 20px;
+}
+
+.top-bar-inner {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    background: white;
+    border-bottom: 4px solid var(--gold);
+}
+
+.header-inner {
+    max-width: 1250px;
+    margin: auto;
+    min-height: 145px;
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.emblem {
+    width: 90px;
+    height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.emblem img {
+    width: 65px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.header-text .govt {
+    color: var(--dark-blue);
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.header-text h1 {
+    margin: 0;
+    color: var(--blue);
+    font-size: 25px;
+    line-height: 1.25;
+}
+
+.header-text .department {
+    margin-top: 7px;
+    color: #555;
+    font-size: 15px;
+}
+
+.logo-right {
+    width: 115px;
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navbar {
+    background: var(--dark-blue);
+}
+
+.nav-inner {
+    max-width: 1250px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+
+    padding: 14px 18px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-right: 1px solid rgba(255,255,255,0.12);
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background: var(--blue);
+}
+
+
+/* =========================================================
+   PAGE CONTENT
+   ========================================================= */
+
+.page-container {
+    max-width: 1250px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    background: white;
+    border-left: 5px solid var(--gold);
+
+    padding: 22px 25px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.page-title h2 {
+    margin: 0;
+    color: var(--dark-blue);
+    font-size: 30px;
+}
+
+.page-title p {
+    margin: 7px 0 0;
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   OFFICIALS TABLE
+   ========================================================= */
+
+.officials-card {
+    background: white;
+
+    border: 1px solid var(--border);
+    border-radius: 5px;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 850px;
+}
+
+thead th {
+    background: var(--dark-blue);
+    color: white;
+
+    padding: 15px 12px;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-right: 1px solid rgba(255,255,255,0.15);
+}
+
+thead th:last-child {
+    border-right: none;
+}
+
+tbody td {
+    padding: 14px 12px;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 14px;
+
+    vertical-align: middle;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #f5f9fc;
+}
+
+
+/* COLUMN ALIGNMENT */
+
+.serial {
+    width: 75px;
+    text-align: center;
+}
+
+.employee-name {
+    width: 25%;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.designation {
+    width: 25%;
+}
+
+.mobile {
+    width: 18%;
+    text-align: center;
+}
+
+.email {
+    width: 25%;
+}
+
+
+/* CONTACT LINKS */
+
+.mobile a,
+.email a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.mobile a:hover,
+.email a:hover {
+    text-decoration: underline;
+}
+
+
+/* LOADING / ERROR */
+
+.loading,
+.error,
+.no-officials {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+}
+
+.error {
+    color: var(--red);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    background: var(--dark-blue);
+    color: white;
+    margin-top: 60px;
+}
+
+.footer-main {
+    max-width: 1250px;
+    margin: auto;
+
+    padding: 35px 20px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 35px;
+}
+
+.footer-column h3 {
+    margin-top: 0;
+    color: white;
+    font-size: 17px;
+}
+
+.footer-column p {
+    color: #d9e4ee;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 9px;
+    color: #d9e4ee;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    text-align: center;
+
+    padding: 18px 20px;
+
+    font-size: 13px;
+    color: #d9e4ee;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .top-bar-inner {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header-inner {
+        min-height: auto;
+        padding: 15px;
+    }
+
+    .emblem {
+        width: 65px;
+        height: 85px;
+    }
+
+    .emblem img {
+        width: 50px;
+        height: 70px;
+    }
+
+    .header-text h1 {
+        font-size: 19px;
+    }
+
+    .header-text .govt {
+        font-size: 13px;
+    }
+
+    .header-text .department {
+        font-size: 13px;
+    }
+
+    .logo-right {
+        display: none;
+    }
+
+    .navbar a {
+        padding: 11px 12px;
+        font-size: 12px;
+    }
+
+    .page-container {
+        margin: 25px auto;
+        padding: 0 12px;
+    }
+
+    .page-title h2 {
+        font-size: 25px;
+    }
+
+    .officials-card {
+        overflow-x: auto;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 30px 20px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     TOP GOVERNMENT BAR
+     ====================================================== -->
+
+<div class="top-bar">
+
+    <div class="top-bar-inner">
+
+        <div>
+            Government of Jammu & Kashmir
+        </div>
+
+        <div>
+            Department of Rural Development & Panchayati Raj
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     HEADER
+     ====================================================== -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+
+        <div class="emblem">
+
+            <img
+                src="images/Emblem_of_India.svg"
+                alt="Government Emblem"
+            >
+
+        </div>
+
+
+        <div class="header-text">
+
+            <div class="govt">
+                Government of Jammu & Kashmir
+            </div>
+
+            <h1>
+                Office of the Executive Engineer,
+                Rural Engineering Wing (REW), Pulwama
+            </h1>
+
+            <div class="department">
+                Department of Rural Development & Panchayati Raj
+            </div>
+
+        </div>
+
+
+        <div class="logo-right">
+
+            REW<br>
+            PULWAMA
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ======================================================
+     NAVIGATION
+     ====================================================== -->
+
+<nav class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="about.html">
+            ABOUT
+        </a>
+
+        <a href="officials.html" class="active">
+            OFFICIALS
+        </a>
+
+        <a href="approvals.html">
+            APPROVALS
+        </a>
+
+        <a href="tenders.html">
+            TENDERS
+        </a>
+
+        <a href="loi.html">
+            LOIs
+        </a>
+
+        <a href="notices.html">
+            NOTICES
+        </a>
+
+        <a href="downloads.html">
+            DOWNLOADS
+        </a>
+
+        <a href="contact.html">
+            CONTACT
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ======================================================
+     MAIN CONTENT
+     ====================================================== -->
+
+<main class="page-container">
+
+
+    <div class="page-title">
+
+        <h2>
+            Officials
+        </h2>
+
+        <p>
+            Officers and employees of the Rural Engineering Wing (REW), Pulwama
+        </p>
+
+    </div>
+
+
+    <div class="officials-card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>S. No.</th>
+
+                    <th>Name of Employee</th>
+
+                    <th>Designation</th>
+
+                    <th>Mobile No.</th>
+
+                    <th>Email ID</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="officialsTable">
+
+                <tr>
+
+                    <td colspan="5" class="loading">
+                        Loading officials...
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+</main>
+
+
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
+
+<footer>
+
+    <div class="footer-main">
+
+
+        <div class="footer-column">
+
+            <h3>
+                Office of the Executive Engineer
+            </h3>
+
+            <p>
+                Rural Engineering Wing (REW), Pulwama<br>
+                Department of Rural Development & Panchayati Raj<br>
+                Government of Jammu & Kashmir
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <ul>
+
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Officials</li>
+                <li>Approvals</li>
+                <li>Tenders</li>
+                <li>Notices</li>
+                <li>Downloads</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Information
+            </h3>
+
+            <ul>
+
+                <li>Privacy Policy</li>
+                <li>Disclaimer</li>
+                <li>Accessibility</li>
+                <li>Site Map</li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Office of the Executive Engineer,
+        Rural Engineering Wing (REW), Pulwama.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   GOOGLE SHEET - OFFICIALS
+   ========================================================= */
+
+const sheetURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDIBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=2071906823&single=true&output=csv";
+
+
+/* =========================================================
+   LOAD OFFICIALS
+   ========================================================= */
+
+async function loadOfficials() {
+
+    const table =
+        document.getElementById("officialsTable");
+
+    try {
+
+        const response =
+            await fetch(sheetURL);
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to load Google Sheet"
+            );
+
+        }
+
+        const csvText =
+            await response.text();
+
+        const rows =
+            parseCSV(csvText);
+
+        table.innerHTML = "";
+
+
+        /*
+        GOOGLE SHEET STRUCTURE
+
+        Column A = S. No.
+        Column B = Name of Employee
+        Column C = Designation
+        Column D = Mobile No.
+        Column E = Email ID
+        */
+
+
+        for (
+            let i = 1;
+            i < rows.length;
+            i++
+        ) {
+
+            const serial =
+                rows[i][0]?.trim();
+
+            const name =
+                rows[i][1]?.trim();
+
+            const designation =
+                rows[i][2]?.trim();
+
+            const mobile =
+                rows[i][3]?.trim();
+
+            const email =
+                rows[i][4]?.trim();
+
+
+            /* Skip completely empty rows */
+
+            if (
+                !serial &&
+                !name &&
+                !designation &&
+                !mobile &&
+                !email
+            ) {
+
+                continue;
+
+            }
+
+
+            const tr =
+                document.createElement("tr");
+
+
+            /* S. NO. */
+
+            const serialCell =
+                document.createElement("td");
+
+            serialCell.className =
+                "serial";
+
+            serialCell.textContent =
+                serial || "-";
+
+
+            /* NAME */
+
+            const nameCell =
+                document.createElement("td");
+
+            nameCell.className =
+                "employee-name";
+
+            nameCell.textContent =
+                name || "-";
+
+
+            /* DESIGNATION */
+
+            const designationCell =
+                document.createElement("td");
+
+            designationCell.className =
+                "designation";
+
+            designationCell.textContent =
+                designation || "-";
+
+
+            /* MOBILE */
+
+            const mobileCell =
+                document.createElement("td");
+
+            mobileCell.className =
+                "mobile";
+
+
+            if (mobile) {
+
+                const mobileLink =
+                    document.createElement("a");
+
+                mobileLink.href =
+                    "tel:" + mobile.replace(
+                        /[^0-9+]/g,
+                        ""
+                    );
+
+                mobileLink.textContent =
+                    mobile;
+
+                mobileCell.appendChild(
+                    mobileLink
+                );
+
+            } else {
+
+                mobileCell.textContent =
+                    "-";
+
+            }
+
+
+            /* EMAIL */
+
+            const emailCell =
+                document.createElement("td");
+
+            emailCell.className =
+                "email";
+
+
+            if (email) {
+
+                const emailLink =
+                    document.createElement("a");
+
+                emailLink.href =
+                    "mailto:" + email;
+
+                emailLink.textContent =
+                    email;
+
+                emailCell.appendChild(
+                    emailLink
+                );
+
+            } else {
+
+                emailCell.textContent =
+                    "-";
+
+            }
+
+
+            tr.appendChild(
+                serialCell
+            );
+
+            tr.appendChild(
+                nameCell
+            );
+
+            tr.appendChild(
+                designationCell
+            );
+
+            tr.appendChild(
+                mobileCell
+            );
+
+            tr.appendChild(
+                emailCell
+            );
+
+
+            table.appendChild(tr);
+
+        }
+
+
+        /* NO RECORDS */
+
+        if (
+            table.children.length === 0
+        ) {
+
+            table.innerHTML = `
+                <tr>
+                    <td colspan="5"
+                        class="no-officials">
+                        No officials available.
+                    </td>
+                </tr>
+            `;
+
+        }
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        table.innerHTML = `
+            <tr>
+                <td colspan="5"
+                    class="error">
+                    Unable to load officials.
+                    Please try again later.
+                </td>
+            </tr>
+        `;
+
+    }
+
+}
+
+
+/* =========================================================
+   CSV PARSER
+   Handles commas inside quoted cells
+   ========================================================= */
+
+function parseCSV(text) {
+
+    const rows = [];
+
+    let row = [];
+
+    let cell = "";
+
+    let insideQuotes = false;
+
+
+    for (
+        let i = 0;
+        i < text.length;
+        i++
+    ) {
+
+        const char =
+            text[i];
+
+        const next =
+            text[i + 1];
+
+
+        if (
+            char === '"' &&
+            insideQuotes &&
+            next === '"'
+        ) {
+
+            cell += '"';
+
+            i++;
+
+        }
+
+        else if (
+            char === '"'
+        ) {
+
+            insideQuotes =
+                !insideQuotes;
+
+        }
+
+        else if (
+            char === "," &&
+            !insideQuotes
+        ) {
+
+            row.push(cell);
+
+            cell = "";
+
+        }
+
+        else if (
+            (char === "\n" ||
+             char === "\r") &&
+            !insideQuotes
+        ) {
+
+            if (
+                char === "\r" &&
+                next === "\n"
+            ) {
+
+                i++;
+
+            }
+
+            row.push(cell);
+
+
+            if (
+                row.some(
+                    value =>
+                    value.trim() !== ""
+                )
+            ) {
+
+                rows.push(row);
+
+            }
+
+
+            row = [];
+
+            cell = "";
+
+        }
+
+        else {
+
+            cell += char;
+
+        }
+
+    }
+
+
+    if (
+        cell !== "" ||
+        row.length > 0
+    ) {
+
+        row.push(cell);
+
+
+        if (
+            row.some(
+                value =>
+                value.trim() !== ""
+            )
+        ) {
+
+            rows.push(row);
+
+        }
+
+    }
+
+
+    return rows;
+
+}
+
+
+/* START */
+
+loadOfficials();
+
+</script>
+
+
+</body>
+</html>
