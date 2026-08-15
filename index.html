@@ -1,672 +1,1097 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Official website of the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama, Department of Rural Development & Panchayati Raj, Government of Jammu & Kashmir.">
+<title>
+Office of the Executive Engineer, REW Pulwama
+</title>
+
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+
+/* =========================================================
+   ROOT
+   ========================================================= */
 
 :root {
-    --blue: #07579a;
-    --dark-blue: #063b69;
-    --light-blue: #eaf4fb;
-    --gold: #d89b24;
-    --green: #23884b;
-    --red: #b52b2b;
-    --text: #333;
-    --light: #f5f7fa;
+
+    --blue:#07579a;
+
+    --dark-blue:#063b69;
+
+    --gold:#d89b24;
+
+    --light:#f5f7fa;
+
+    --border:#dfe5eb;
+
+    --text:#333;
+
 }
+
+
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+* {
+
+    box-sizing:border-box;
+
+}
+
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--text);
-    background: #f4f6f8;
-    line-height: 1.6;
+
+    margin:0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color:var(--text);
+
+    background:var(--light);
+
 }
 
-/* TOP GOVERNMENT BAR */
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
 
 .top-bar {
-    background: #f1f1f1;
-    border-bottom: 1px solid #ddd;
-    font-size: 13px;
+
+    background:var(--dark-blue);
+
+    color:white;
+
+    font-size:13px;
+
+    padding:7px 20px;
+
 }
 
-.top-inner {
-    max-width: 1250px;
-    margin: auto;
-    padding: 7px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+.top-bar-inner {
+
+    max-width:1250px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
 }
 
-.top-links a {
-    color: #333;
-    text-decoration: none;
-    margin-left: 18px;
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+
+    background:white;
+
+    border-bottom:
+        4px solid var(--gold);
+
 }
 
-.top-links a:hover {
-    color: var(--blue);
-}
-
-/* HEADER */
-
-.header {
-    background: white;
-    border-bottom: 4px solid var(--gold);
-}
 
 .header-inner {
-    max-width: 1250px;
-    margin: auto;
-    padding: 14px 20px;
-    min-height: 150px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
+
+    max-width:1250px;
+
+    margin:auto;
+
+    min-height:145px;
+
+    padding:15px 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
 }
 
-/* LOGO PLACEHOLDER */
+
+/* EMBLEM */
 
 .emblem {
-    width: 110px;
-    height: 125px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    overflow: hidden;
+
+    width:90px;
+
+    height:110px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    overflow:hidden;
+
 }
+
 
 .emblem img {
-    width: 65px;
-    height: 85px;
-    object-fit: contain;
-    display: block;
+
+    width:65px;
+
+    height:90px;
+
+    object-fit:contain;
+
 }
+
+
+/* HEADER TEXT */
+
 .header-text {
-    flex: 1;
+
+    flex:1;
+
 }
+
 
 .header-text .govt {
-    font-size: 18px;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 3px;
+
+    color:var(--dark-blue);
+
+    font-size:15px;
+
+    font-weight:600;
+
+    margin-bottom:5px;
+
 }
 
-.header-text .department {
-    font-size: 17px;
-    color: var(--blue);
-    font-weight: bold;
-}
 
 .header-text h1 {
-    font-size: 25px;
-    color: var(--dark-blue);
-    margin-top: 5px;
+
+    margin:0;
+
+    color:var(--blue);
+
+    font-size:25px;
+
+    line-height:1.25;
+
 }
 
-.header-text h2 {
-    font-size: 19px;
-    color: #333;
-    font-weight: 600;
+
+.header-text .department {
+
+    margin-top:7px;
+
+    color:#555;
+
+    font-size:15px;
+
 }
+
+
+/* RIGHT SIDE */
 
 .logo-right {
-    width: 95px;
-    height: 75px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 10px;
-    color: #777;
+
+    width:115px;
+
+    min-height:90px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:var(--blue);
+
+    font-weight:bold;
+
+    font-size:14px;
+
 }
 
-/* NAVIGATION */
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 .navbar {
-    background: var(--dark-blue);
-    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+
+    background:var(--dark-blue);
+
+    box-shadow:
+        0 2px 5px rgba(0,0,0,0.15);
+
 }
+
 
 .nav-inner {
-    max-width: 1250px;
-    margin: auto;
-    display: flex;
-    align-items: center;
+
+    max-width:1250px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
 }
 
-.nav-inner a {
-    color: white;
-    text-decoration: none;
-    padding: 15px 18px;
-    font-size: 14px;
-    font-weight: bold;
-    border-right: 1px solid rgba(255,255,255,.12);
+
+.navbar a {
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:14px 18px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    border-right:
+        1px solid rgba(255,255,255,0.12);
+
 }
 
-.nav-inner a:hover,
-.nav-inner a.active {
-    background: var(--blue);
+
+.navbar a:hover,
+
+.navbar a.active {
+
+    background:var(--blue);
+
 }
 
-/* HERO */
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.page-container {
+
+    max-width:1350px;
+
+    margin:35px auto;
+
+    padding:0 20px;
+
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero {
-    max-width: 1250px;
-    margin: 18px auto;
-    padding: 0 20px;
-}
 
-.hero-box {
-    height: 390px;
-    border-radius: 5px;
-    overflow: hidden;
-    position: relative;
+    position:relative;
+
+    min-height:360px;
 
     background-image:
-        linear-gradient(
-            rgba(0, 45, 80, 0.55),
-            rgba(0, 45, 80, 0.55)
-        ),
-        url("images/20251223_164252.jpg");
+        url("images/office.jpg");
 
-    background-size: cover;
-    background-position: center;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    margin-bottom:30px;
+
 }
+
+
+.hero::before {
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        rgba(0,0,0,0.48);
+
+}
+
 
 .hero-content {
-    padding: 30px;
-    max-width: 850px;
+
+    position:relative;
+
+    z-index:1;
+
+    color:white;
+
+    max-width:850px;
+
+    padding:30px;
+
 }
+
 
 .hero-content h2 {
-    font-size: 38px;
-    margin-bottom: 12px;
+
+    font-size:36px;
+
+    margin:0 0 12px;
+
 }
+
 
 .hero-content p {
-    font-size: 19px;
-    margin-bottom: 25px;
+
+    font-size:17px;
+
+    line-height:1.6;
+
+    margin:0;
+
 }
 
-.hero-button {
-    display: inline-block;
-    background: var(--gold);
-    color: white;
-    padding: 11px 24px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
+
+/* =========================================================
+   PROGRESS REPORT
+   ========================================================= */
+
+.progress-report {
+
+    margin-bottom:28px;
+
 }
 
-/* NEWS TICKER */
 
-.ticker {
-    max-width: 1250px;
-    margin: 0 auto 20px;
-    padding: 0 20px;
+.progress-heading {
+
+    text-align:center;
+
+    margin:
+        0 0 18px 0;
+
 }
 
-.ticker-inner {
-    background: white;
-    border: 1px solid #ddd;
-    display: flex;
-    align-items: center;
+
+.progress-heading h2 {
+
+    color:var(--dark-blue);
+
+    font-size:28px;
+
+    margin:0;
+
+    font-weight:800;
+
 }
 
-.ticker-title {
-    background: var(--red);
-    color: white;
-    padding: 10px 18px;
-    font-weight: bold;
-    white-space: nowrap;
+
+.progress-heading p {
+
+    color:#444;
+
+    font-size:16px;
+
+    margin:4px 0 0;
+
+    font-weight:600;
+
 }
 
-.ticker-text {
-    padding: 10px 18px;
-    color: #444;
-}
 
-/* MAIN CONTAINER */
-
-.container {
-    max-width: 1250px;
-    margin: auto;
-    padding: 0 20px 30px;
-}
-
-/* SECTION */
-
-.section {
-    background: white;
-    border: 1px solid #ddd;
-    margin-bottom: 22px;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.section-title {
-    background: var(--blue);
-    color: white;
-    padding: 12px 18px;
-    font-size: 18px;
-    font-weight: bold;
-    border-left: 5px solid var(--gold);
-}
-
-.section-body {
-    padding: 18px;
-}
-
-/* DASHBOARD */
+/* SEVEN BOXES */
 
 .stats {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 15px;
-    margin-bottom: 22px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(7,minmax(0,1fr));
+
+    gap:12px;
+
+    margin-bottom:22px;
+
 }
+
+
+/* BOX */
 
 .stat {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 22px;
-    text-align: center;
-    position: relative;
+
+    background:white;
+
+    border:1px solid #ddd;
+
+    border-radius:5px;
+
+    padding:
+        20px 8px 18px;
+
+    text-align:center;
+
+    position:relative;
+
+    min-width:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    min-height:125px;
+
 }
+
 
 .stat::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--blue);
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:var(--blue);
+
 }
+
+
+/* LARGE NUMBER */
 
 .stat-number {
-    font-size: 32px;
-    font-weight: bold;
-    color: var(--blue);
+
+    font-size:32px;
+
+    line-height:1.15;
+
+    font-weight:800;
+
+    color:var(--dark-blue);
+
+    margin-bottom:8px;
+
 }
+
+
+/* LARGE BOLD TEXT */
 
 .stat-label {
-    margin-top: 5px;
-    color: #555;
-    font-size: 14px;
+
+    margin-top:2px;
+
+    color:#222;
+
+    font-size:15px;
+
+    line-height:1.25;
+
+    font-weight:800;
+
 }
 
-/* TWO COLUMN */
 
-.two-column {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px;
+/* =========================================================
+   NOTICES + TENDERS
+   ========================================================= */
+
+.latest-grid {
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:20px;
+
 }
 
-/* LIST */
 
-.notice-list {
-    list-style: none;
+.latest-card {
+
+    background:white;
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.06);
+
 }
 
-.notice-list li {
-    border-bottom: 1px solid #eee;
-    padding: 12px 5px;
+
+.latest-card-header {
+
+    background:var(--dark-blue);
+
+    color:white;
+
+    padding:14px 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
 }
 
-.notice-list li:last-child {
-    border-bottom: none;
+
+.latest-card-header h3 {
+
+    margin:0;
+
+    font-size:18px;
+
 }
 
-.notice-list a {
-    text-decoration: none;
-    color: #333;
+
+.latest-card-header a {
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:13px;
+
 }
 
-.notice-list a:hover {
-    color: var(--blue);
+
+.latest-card-body {
+
+    padding:0;
+
 }
 
-.date {
-    display: inline-block;
-    background: #edf3f8;
-    color: var(--blue);
-    font-size: 12px;
-    padding: 3px 7px;
-    margin-right: 7px;
-    border-radius: 3px;
+
+.latest-item {
+
+    padding:14px 18px;
+
+    border-bottom:
+        1px solid var(--border);
+
 }
 
-.new {
-    color: #d10000;
-    font-size: 11px;
-    font-weight: bold;
-    margin-left: 5px;
+
+.latest-item:last-child {
+
+    border-bottom:none;
+
 }
 
-/* QUICK LINKS */
+
+.latest-item a {
+
+    color:var(--dark-blue);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+
+.latest-item a:hover {
+
+    color:var(--blue);
+
+}
+
+
+/* =========================================================
+   QUICK LINKS
+   ========================================================= */
 
 .quick-links {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 15px;
+
+    margin-top:25px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+
 }
+
 
 .quick-link {
-    display: block;
-    padding: 18px;
-    text-align: center;
-    border: 1px solid #ddd;
-    background: #fafafa;
-    color: var(--dark-blue);
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
+
+    background:white;
+
+    border:
+        1px solid var(--border);
+
+    padding:20px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:var(--dark-blue);
+
+    font-weight:bold;
+
+    box-shadow:
+        0 2px 7px rgba(0,0,0,0.05);
+
 }
+
 
 .quick-link:hover {
-    background: var(--light-blue);
-    border-color: var(--blue);
+
+    background:#f1f7fc;
+
 }
 
-/* WORK TABLE */
 
-.table-wrapper {
-    overflow-x: auto;
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+
+    background:var(--dark-blue);
+
+    color:white;
+
+    margin-top:55px;
+
 }
 
-.work-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
+
+.footer-main {
+
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:35px 20px;
+
+    display:grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap:35px;
+
 }
 
-.work-table th {
-    background: var(--dark-blue);
-    color: white;
-    padding: 11px;
-    text-align: left;
+
+.footer-column h3 {
+
+    margin-top:0;
+
+    font-size:17px;
+
 }
 
-.work-table td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+
+.footer-column p,
+
+.footer-column li {
+
+    color:#d9e4ee;
+
+    font-size:14px;
+
+    line-height:1.7;
+
 }
 
-.work-table tr:hover {
-    background: #f3f8fc;
+
+.footer-column ul {
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
 }
 
-.status {
-    padding: 4px 8px;
-    border-radius: 3px;
-    font-size: 12px;
-    font-weight: bold;
+
+.footer-column li {
+
+    margin-bottom:7px;
+
 }
 
-.status.ongoing {
-    background: #fff2cc;
-    color: #8a6500;
+
+.footer-column a {
+
+    color:#d9e4ee;
+
+    text-decoration:none;
+
 }
 
-.status.completed {
-    background: #dff2e5;
-    color: #18733b;
+
+.footer-column a:hover {
+
+    color:white;
+
 }
 
-/* GALLERY */
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 15px;
-}
-
-.gallery-item {
-    height: 150px;
-    background: linear-gradient(135deg,#d8e6f1,#a9c6db);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #456;
-    border-radius: 4px;
-    text-align: center;
-}
-
-/* CONTACT */
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.contact-box {
-    padding: 18px;
-    background: #f7f9fb;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.contact-box h3 {
-    color: var(--blue);
-    margin-bottom: 8px;
-}
-
-/* FOOTER */
-
-.footer {
-    background: #062f52;
-    color: white;
-    margin-top: 20px;
-}
-
-.footer-inner {
-    max-width: 1250px;
-    margin: auto;
-    padding: 35px 20px;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 35px;
-}
-
-.footer h3 {
-    margin-bottom: 12px;
-    color: white;
-}
-
-.footer p,
-.footer li {
-    font-size: 13px;
-    color: #d9e5ee;
-}
-
-.footer ul {
-    list-style: none;
-}
-
-.footer li {
-    margin-bottom: 7px;
-}
 
 .footer-bottom {
-    background: #041f37;
-    padding: 12px;
-    text-align: center;
-    font-size: 12px;
-    color: #cbd9e4;
+
+    border-top:
+        1px solid rgba(255,255,255,0.15);
+
+    text-align:center;
+
+    padding:18px 20px;
+
+    font-size:13px;
+
+    color:#d9e4ee;
+
 }
 
-/* RESPONSIVE */
 
-@media(max-width:900px) {
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width:900px) {
+
+
+    .latest-grid {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    /*
+       Keep all seven statistics in ONE horizontal row.
+       On smaller screens they can be horizontally scrolled.
+    */
+
+    .stats {
+
+        display:flex;
+
+        flex-wrap:nowrap;
+
+        overflow-x:auto;
+
+        gap:10px;
+
+        padding-bottom:8px;
+
+    }
+
+
+    .stats .stat {
+
+        flex:
+            0 0 180px;
+
+    }
+
+
+    .quick-links {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .progress-heading h2 {
+
+        font-size:22px;
+
+    }
+
+
+    .progress-heading p {
+
+        font-size:14px;
+
+    }
+
+}
+
+
+@media (max-width:600px) {
+
+
+    .top-bar-inner {
+
+        justify-content:center;
+
+        text-align:center;
+
+    }
+
 
     .header-inner {
-        flex-wrap: wrap;
-        text-align: center;
-        justify-content: center;
+
+        min-height:auto;
+
+        padding:15px;
+
     }
 
-    .header-text {
-        flex-basis: 100%;
-        order: 2;
-    }
 
     .emblem {
-        order: 1;
+
+        width:65px;
+
+        height:85px;
+
     }
 
-    .logo-right {
-        order: 3;
+
+    .emblem img {
+
+        width:50px;
+
+        height:70px;
+
     }
 
-    .nav-inner {
-        overflow-x: auto;
-    }
-
-    .nav-inner a {
-        white-space: nowrap;
-    }
-
-    .stats {
-        grid-template-columns: repeat(2,1fr);
-    }
-
-    .quick-links {
-        grid-template-columns: repeat(2,1fr);
-    }
-
-    .gallery {
-        grid-template-columns: repeat(2,1fr);
-    }
-
-    .footer-inner {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media(max-width:600px) {
-
-    .top-inner {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .top-links a {
-        margin: 0 5px;
-    }
-
-    .header-text .govt {
-        font-size: 15px;
-    }
-
-    .header-text .department {
-        font-size: 14px;
-    }
 
     .header-text h1 {
-        font-size: 20px;
+
+        font-size:19px;
+
     }
 
-    .header-text h2 {
-        font-size: 16px;
+
+    .header-text .govt {
+
+        font-size:13px;
+
     }
 
-    .hero-box {
-        height: 300px;
+
+    .header-text .department {
+
+        font-size:13px;
+
     }
+
+
+    .logo-right {
+
+        display:none;
+
+    }
+
+
+    .navbar a {
+
+        padding:
+            11px 12px;
+
+        font-size:12px;
+
+    }
+
+
+    .page-container {
+
+        padding:
+            0 12px;
+
+    }
+
+
+    .hero {
+
+        min-height:300px;
+
+    }
+
 
     .hero-content h2 {
-        font-size: 27px;
+
+        font-size:28px;
+
     }
+
 
     .hero-content p {
-        font-size: 16px;
+
+        font-size:15px;
+
     }
 
-    .stats {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-    }
-
-    .stat {
-        padding: 15px 8px;
-    }
-
-    .stat-number {
-        font-size: 25px;
-    }
-
-    .two-column,
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
 
     .quick-links {
-        grid-template-columns: 1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:10px;
+
     }
 
-    .gallery {
-        grid-template-columns: 1fr 1fr;
+
+    .stats {
+
+        display:flex;
+
+        flex-wrap:nowrap;
+
+        overflow-x:auto;
+
+        gap:10px;
+
+        padding-bottom:8px;
+
     }
+
+
+    .stats .stat {
+
+        flex:
+            0 0 175px;
+
+        padding:
+            15px 8px;
+
+    }
+
 }
+
+
+/* =========================================================
+   FINAL PROGRESS REPORT LAYOUT
+   ========================================================= */
+
+.progress-report .stats {
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(7,minmax(0,1fr));
+
+    gap:12px;
+
+}
+
+
+.progress-report .stat-number,
+
+.progress-report .stat-label {
+
+    font-weight:800;
+
+}
+
+
+@media (max-width:900px) {
+
+    .progress-report .stats {
+
+        display:flex;
+
+        flex-wrap:nowrap;
+
+        overflow-x:auto;
+
+    }
+
+
+    .progress-report .stat {
+
+        flex:
+            0 0 180px;
+
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- TOP BAR -->
+
+<!-- =========================================================
+     TOP BAR
+     ========================================================= -->
 
 <div class="top-bar">
-    <div class="top-inner">
+
+    <div class="top-bar-inner">
+
         <div>
-            Official Website
+            Government of Jammu & Kashmir
         </div>
 
-        <div class="top-links">
-            <a href="#">Skip to Main Content</a>
-            <a href="#">A+</a>
-            <a href="#">A</a>
-            <a href="#">A-</a>
+        <div>
+            Department of Rural Development & Panchayati Raj
         </div>
+
     </div>
+
 </div>
 
 
-<!-- HEADER -->
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
 
-<header class="header">
+<header class="site-header">
 
     <div class="header-inner">
 
+
         <div class="emblem">
-    <img src="images/Emblem_of_India.svg" alt="State Emblem of India">
-</div>
+
+            <img
+                src="images/Emblem_of_India.svg"
+                alt="Government Emblem"
+            >
+
+        </div>
+
 
         <div class="header-text">
 
@@ -674,25 +1099,30 @@ body {
                 Government of Jammu & Kashmir
             </div>
 
-            <div class="department">
-                Department of Rural Development & Panchayati Raj
-            </div>
 
             <h1>
-                Office of the Executive Engineer
+
+                Office of the Executive Engineer,
+                Rural Engineering Wing (REW), Pulwama
+
             </h1>
 
-            <h2>
-                Rural Engineering Wing (REW), Pulwama
-            </h2>
+
+            <div class="department">
+
+                Department of Rural Development & Panchayati Raj
+
+            </div>
 
         </div>
 
+
         <div class="logo-right">
-            DEPARTMENT<br>
-            LOGO<br>
-            WILL BE<br>
-            ADDED
+
+            REW<br>
+
+            PULWAMA
+
         </div>
 
     </div>
@@ -700,246 +1130,413 @@ body {
 </header>
 
 
-<!-- NAVIGATION -->
+<!-- =========================================================
+     NAVIGATION
+     ========================================================= -->
 
 <nav class="navbar">
 
     <div class="nav-inner">
 
-        <a href="#" class="active">HOME</a>
-        <a href="about.html">ABOUT</a>
-         <a href="officials.html">OFFICIALS</a>
-         <a href="approvals.html">APPROVALS</a>
-       <a href="tenders.html">TENDERS</a>
-          <a href="loi.html">LOIs</a>
-       <a href="notices.html">NOTICES</a>
-        <a href="downloads.html">DOWNLOADS</a>
-       <a href="contact.html">CONTACT</a>
+
+        <a
+            href="index.html"
+            class="active"
+        >
+            HOME
+        </a>
+
+
+        <a href="about.html">
+            ABOUT
+        </a>
+
+
+        <a href="officials.html">
+            OFFICIALS
+        </a>
+
+
+        <a href="approvals.html">
+            APPROVALS
+        </a>
+
+
+        <a href="tenders.html">
+            TENDERS
+        </a>
+
+
+        <a href="loi.html">
+            LOIs
+        </a>
+
+
+        <a href="notices.html">
+            NOTICES
+        </a>
+
+
+        <a href="downloads.html">
+            DOWNLOADS
+        </a>
+
+
+        <a href="contact.html">
+            CONTACT
+        </a>
+
 
     </div>
 
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================================================
+     MAIN CONTENT
+     ========================================================= -->
+
+<main class="page-container">
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
 
 <section class="hero">
 
-    <div class="hero-box">
 
-        <div class="hero-content">
+    <div class="hero-content">
 
-            <h2>
-                Rural Infrastructure for a Better Future
-            </h2>
 
-            <p>
-                Official Website of the Office of the Executive Engineer,
-                Rural Engineering Wing (REW), Pulwama
-            </p>
+        <h2>
 
-            <a href="#" class="hero-button">
-                Explore Our Works
-            </a>
+            Rural Development
+            Through Better Infrastructure
 
-        </div>
+        </h2>
+
+
+        <p>
+
+            Official Web Portal of the
+            Office of the Executive Engineer,
+            Rural Engineering Wing (REW), Pulwama.
+
+        </p>
+
 
     </div>
 
 </section>
 
 
-<!-- MAIN -->
+<!-- =========================================================
+     PROGRESS REPORT
+     ========================================================= -->
 
-<main class="container">
+<section class="progress-report">
 
 
-<!-- STATISTICS -->
+    <div class="progress-heading">
 
-<div class="stats">
+        <h2>
+            Progress Report of Works
+        </h2>
 
-    <div class="stat">
-        <div class="stat-number">--</div>
-        <div class="stat-label">Total Works</div>
+
+        <p>
+            Under District Capex
+            (PRI/BDC/DDC/APDP/ABDP)
+            FY 2026-27
+        </p>
+
     </div>
 
-    <div class="stat">
-        <div class="stat-number">--</div>
-        <div class="stat-label">Works Tendered</div>
-    </div>
 
-    <div class="stat">
-        <div class="stat-number">--</div>
-        <div class="stat-label">Works Allotted</div>
-    </div>
-
-    <div class="stat">
-        <div class="stat-number">--</div>
-        <div class="stat-label">Works Taken Up</div>
-    </div>
-<div class="stat">
-        <div class="stat-number">--</div>
-        <div class="stat-label">Works Completed</div>
-    </div>
-</div>
+    <div class="stats">
 
 
-<!-- NOTICES + TENDERS -->
+        <!-- TOTAL WORKS -->
 
-<div class="two-column">
+        <div class="stat">
 
-
-    <section class="section">
-
-        <div class="section-title">
-            Latest Notices
-        </div>
-
-        <div class="section-body">
-
-            <ul class="notice-list">
-
-                <li>
-                    <span class="date">07 Aug 2026</span>
-                    <a href="notices.html">
-                        Notice to Contractors
-                    </a>
-                    <span class="new">NEW</span>
-                </li>
-
-
-                <li>
-                    <span class="date">01 Aug 2026</span>
-                    <a href="circulars.html">
-                        Important Departmental Circular
-                    </a>
-                </li>
-
-                <li>
-                    <span class="date">28 Jul 2026</span>
-                    <a href="orders.html">
-                        Office Orders
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </section>
-
-
-    <section class="section">
-
-        <div class="section-title">
-            Latest Tenders
-        </div>
-
-        <div class="section-body">
-
-            <ul class="notice-list">
-
-                <li>
-                    <span class="date">07 Aug 2026</span>
-                    <a href="tenders.html">
-                        Tender Notice – Rural Development Works
-                    </a>
-                    <span class="new">NEW</span>
-                </li>
-
-                <li>
-                    <span class="date">25 Jul 2026</span>
-                    <a href="corri.html">
-                        Corrigendum
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </section>
-
-</div>
-
-
-<!-- CONTACT -->
-
-<section class="section">
-
-    <div class="section-title">
-        Contact Us
-    </div>
-
-    <div class="section-body">
-
-        <div class="contact-grid">
-
-            <div class="contact-box">
-
-                <h3>
-                    Office of the Executive Engineer
-                </h3>
-
-                <p>
-                    Rural Engineering Wing (REW), Pulwama
-                </p>
-
-                <p>
-                    Department of Rural Development & Panchayati Raj
-                </p>
-
-                <br>
-
-                <p>
-                    <strong>Address:</strong>
-                    Ground Gloor RDD Complex Dangerpora Pulwama, Jammu & Kashmir
-                </p>
-
-                <p>
-                    <strong>Email:</strong>
-                    xenrew-pulwama@jk.gov.in
-                </p>
-
-                <p>
-                    <strong>Phone:</strong>
-                    01933-313247
-                </p>
-
+            <div
+                class="stat-number"
+                id="totalWorks"
+            >
+                --
             </div>
 
 
-            <div class="contact-box">
+            <div class="stat-label">
 
-                <h3>
-                    Office Information
-                </h3>
-
-                <p>
-                    <strong>Office:</strong>
-                    Executive Engineer, REW Pulwama
-                </p>
-
-                <p>
-                    <strong>District:</strong>
-                    Pulwama
-                </p>
-
-                <p>
-                    <strong>Union Territory:</strong>
-                    Jammu & Kashmir
-                </p>
-
-                <p>
-                    <strong>Working Hours:</strong>
-                    10:00 Hrs to 16:30 Hrs
-                </p>
+                Total Works
 
             </div>
 
         </div>
 
+
+        <!-- GEM -->
+
+        <div class="stat">
+
+            <div
+                class="stat-number"
+                id="gemWorks"
+            >
+                --
+            </div>
+
+
+            <div class="stat-label">
+
+                GeM Procurement Works
+
+            </div>
+
+        </div>
+
+
+        <!-- TO BE TENDERED -->
+
+        <div class="stat">
+
+            <div
+                class="stat-number"
+                id="worksToBeTendered"
+            >
+                --
+            </div>
+
+
+            <div class="stat-label">
+
+                Works to be Tendered
+
+            </div>
+
+        </div>
+
+
+        <!-- TENDERED -->
+
+        <div class="stat">
+
+            <div
+                class="stat-number"
+                id="worksTendered"
+            >
+                --
+            </div>
+
+
+            <div class="stat-label">
+
+                Works Tendered
+
+            </div>
+
+        </div>
+
+
+        <!-- ALLOTTED -->
+
+        <div class="stat">
+
+            <div
+                class="stat-number"
+                id="worksAllotted"
+            >
+                --
+            </div>
+
+
+            <div class="stat-label">
+
+                Works Allotted
+
+            </div>
+
+        </div>
+
+
+        <!-- TAKEN UP -->
+
+        <div class="stat">
+
+            <div
+                class="stat-number"
+                id="worksTakenUp"
+            >
+                --
+            </div>
+
+
+            <div class="stat-label">
+
+                Works Taken Up
+
+            </div>
+
+        </div>
+
+
+        <!-- COMPLETED -->
+
+        <div class="stat">
+
+            <div
+                class="stat-number"
+                id="worksCompleted"
+            >
+                --
+            </div>
+
+
+            <div class="stat-label">
+
+                Works Completed
+
+            </div>
+
+        </div>
+
+
     </div>
+
+</section>
+
+
+<!-- =========================================================
+     NOTICES + TENDERS
+     ========================================================= -->
+
+<section class="latest-grid">
+
+
+    <!-- NOTICES -->
+
+    <div class="latest-card">
+
+
+        <div class="latest-card-header">
+
+            <h3>
+                Latest Notices
+            </h3>
+
+
+            <a href="notices.html">
+                View All
+            </a>
+
+        </div>
+
+
+        <div
+            class="latest-card-body"
+            id="latestNotices"
+        >
+
+            <div class="latest-item">
+
+                Loading notices...
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- TENDERS -->
+
+    <div class="latest-card">
+
+
+        <div class="latest-card-header">
+
+            <h3>
+                Latest Tenders
+            </h3>
+
+
+            <a href="tenders.html">
+                View All
+            </a>
+
+        </div>
+
+
+        <div
+            class="latest-card-body"
+            id="latestTenders"
+        >
+
+            <div class="latest-item">
+
+                Loading tenders...
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     QUICK LINKS
+     ========================================================= -->
+
+<section class="quick-links">
+
+
+    <a
+        class="quick-link"
+        href="approvals.html"
+    >
+
+        Administrative Approvals
+
+    </a>
+
+
+    <a
+        class="quick-link"
+        href="tenders.html"
+    >
+
+        Tenders
+
+    </a>
+
+
+    <a
+        class="quick-link"
+        href="notices.html"
+    >
+
+        Notices
+
+    </a>
+
+
+    <a
+        class="quick-link"
+        href="downloads.html"
+    >
+
+        Downloads
+
+    </a>
+
 
 </section>
 
@@ -947,66 +1544,145 @@ body {
 </main>
 
 
-<!-- FOOTER -->
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
 
-<footer class="footer">
+<footer>
 
-    <div class="footer-inner">
 
-        <div>
+    <div class="footer-main">
+
+
+        <div class="footer-column">
+
 
             <h3>
-                REW Pulwama
+
+                Office of the Executive Engineer
+
             </h3>
+
 
             <p>
-                Office of the Executive Engineer,
-                Rural Engineering Wing (REW), Pulwama.
+
+                Rural Engineering Wing (REW), Pulwama<br>
+
+                Department of Rural Development &
+                Panchayati Raj<br>
+
+                Government of Jammu & Kashmir
+
             </p>
 
-            <p style="margin-top:10px;">
-                Department of Rural Development & Panchayati Raj,
-                Government of Jammu & Kashmir.
-            </p>
 
         </div>
 
 
-        <div>
+        <div class="footer-column">
+
 
             <h3>
-                Important Links
+                Quick Links
             </h3>
+
 
             <ul>
 
-                <li>Home</li>
-                <li>About Office</li>
-                <li>Tenders</li>
-                <li>Notices</li>
-                <li>Downloads</li>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="officials.html">
+                        Officials
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="approvals.html">
+                        Approvals
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="tenders.html">
+                        Tenders
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="notices.html">
+                        Notices
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="downloads.html">
+                        Downloads
+                    </a>
+                </li>
+
 
             </ul>
+
 
         </div>
 
 
-        <div>
+        <div class="footer-column">
+
 
             <h3>
-                Website Information
+                Information
             </h3>
+
 
             <ul>
 
-                <li>Privacy Policy</li>
-                <li>Disclaimer</li>
-                <li>Accessibility</li>
-                <li>Site Map</li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+
+                <li>
+                    Privacy Policy
+                </li>
+
+
+                <li>
+                    Disclaimer
+                </li>
+
+
+                <li>
+                    Accessibility
+                </li>
+
 
             </ul>
 
+
         </div>
+
 
     </div>
 
@@ -1019,8 +1695,538 @@ body {
 
     </div>
 
+
 </footer>
 
 
+<!-- =========================================================
+     GOOGLE SHEET — LIVE PROGRESS REPORT
+     ========================================================= -->
+
+<script>
+
+
+/*
+=========================================================
+GOOGLE SHEET CSV
+=========================================================
+
+Report Sheet:
+
+D59 = Total Works
+F59 = GeM Procurement Works
+H59 = Works to be Tendered
+J59 = Works Tendered
+L59 = Works Allotted
+N59 = Works Taken Up
+P59 = Works Completed
+
+=========================================================
+*/
+
+
+const PROGRESS_CSV_URL =
+
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSlKb4rzKqzr7n-Rx2khlwfOwJrwp-Hq5Csy_yuvzVYEXNWtdcAOXZ_cbvlXBkq8qCqZTLiqjY7IMv/pub?gid=1166869417&single=true&output=csv";
+
+
+
+/* =========================================================
+   CSV PARSER
+   ========================================================= */
+
+function parseCSV(text) {
+
+
+    const rows = [];
+
+
+    let row = [];
+
+    let cell = "";
+
+    let quoted = false;
+
+
+
+    for (
+        let i = 0;
+        i < text.length;
+        i++
+    ) {
+
+
+        const ch =
+            text[i];
+
+
+        const next =
+            text[i + 1];
+
+
+
+        /*
+           Handle escaped quotes.
+        */
+
+        if (
+            ch === '"' &&
+            quoted &&
+            next === '"'
+        ) {
+
+            cell += '"';
+
+            i++;
+
+            continue;
+
+        }
+
+
+
+        /*
+           Start/end quoted cell.
+        */
+
+        if (ch === '"') {
+
+            quoted =
+                !quoted;
+
+            continue;
+
+        }
+
+
+
+        /*
+           End of CSV cell.
+        */
+
+        if (
+            ch === ',' &&
+            !quoted
+        ) {
+
+            row.push(cell);
+
+            cell = "";
+
+            continue;
+
+        }
+
+
+
+        /*
+           End of CSV row.
+        */
+
+        if (
+            (ch === '\n' ||
+             ch === '\r') &&
+            !quoted
+        ) {
+
+
+            if (
+                ch === '\r' &&
+                next === '\n'
+            ) {
+
+                i++;
+
+            }
+
+
+            row.push(cell);
+
+            cell = "";
+
+
+            if (
+                row.some(
+                    value =>
+                        String(value)
+                        .trim() !== ""
+                )
+            ) {
+
+                rows.push(row);
+
+            }
+
+
+            row = [];
+
+            continue;
+
+        }
+
+
+
+        cell += ch;
+
+    }
+
+
+
+    /*
+       Add final cell.
+    */
+
+    if (
+        cell !== "" ||
+        row.length
+    ) {
+
+        row.push(cell);
+
+    }
+
+
+    if (
+        row.some(
+            value =>
+                String(value)
+                .trim() !== ""
+        )
+    ) {
+
+        rows.push(row);
+
+    }
+
+
+    return rows;
+
+}
+
+
+
+/* =========================================================
+   NUMBER FORMATTER
+   ========================================================= */
+
+function cleanNumber(value) {
+
+
+    const text =
+
+        String(value ?? "")
+
+        .replace(
+            /\u00a0/g,
+            " "
+        )
+
+        .replace(
+            /,/g,
+            ""
+        )
+
+        .replace(
+            /[^\d.-]/g,
+            ""
+        )
+
+        .trim();
+
+
+
+    if (!text) {
+
+        return "--";
+
+    }
+
+
+
+    const number =
+        Number(text);
+
+
+
+    if (
+        !Number.isFinite(number)
+    ) {
+
+        return "--";
+
+    }
+
+
+
+    return number.toLocaleString(
+        "en-IN"
+    );
+
+}
+
+
+
+/* =========================================================
+   PUT VALUE INTO STAT BOX
+   ========================================================= */
+
+function setStat(
+    id,
+    value
+) {
+
+
+    const element =
+        document.getElementById(id);
+
+
+
+    if (!element) {
+
+        return;
+
+    }
+
+
+
+    element.textContent =
+        cleanNumber(value);
+
+}
+
+
+
+/* =========================================================
+   LOAD PROGRESS REPORT
+   ========================================================= */
+
+async function loadProgressReport() {
+
+
+    try {
+
+
+        /*
+           Add timestamp to prevent
+           browser/cache from showing
+           old Google Sheet values.
+        */
+
+        const response =
+
+            await fetch(
+
+                PROGRESS_CSV_URL +
+                "&t=" +
+                Date.now(),
+
+                {
+                    cache:"no-store"
+                }
+
+            );
+
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to load published Google Sheet CSV."
+            );
+
+        }
+
+
+
+        const csvText =
+            await response.text();
+
+
+
+        const rows =
+            parseCSV(csvText);
+
+
+
+        /*
+           Spreadsheet row 59
+           corresponds to JavaScript
+           array index 58.
+        */
+
+        const row59 =
+            rows[58];
+
+
+
+        if (!row59) {
+
+            throw new Error(
+                "Row 59 was not found."
+            );
+
+        }
+
+
+
+        /*
+        ---------------------------------------------------
+        COLUMN MAPPING
+        ---------------------------------------------------
+
+        Excel / Google Sheet:
+
+        D = index 3
+        F = index 5
+        H = index 7
+        J = index 9
+        L = index 11
+        N = index 13
+        P = index 15
+        ---------------------------------------------------
+        */
+
+
+        /* D59 */
+
+        setStat(
+            "totalWorks",
+            row59[3]
+        );
+
+
+
+        /* F59 */
+
+        setStat(
+            "gemWorks",
+            row59[5]
+        );
+
+
+
+        /* H59 */
+
+        setStat(
+            "worksToBeTendered",
+            row59[7]
+        );
+
+
+
+        /* J59 */
+
+        setStat(
+            "worksTendered",
+            row59[9]
+        );
+
+
+
+        /* L59 */
+
+        setStat(
+            "worksAllotted",
+            row59[11]
+        );
+
+
+
+        /* N59 */
+
+        setStat(
+            "worksTakenUp",
+            row59[13]
+        );
+
+
+
+        /* P59 */
+
+        setStat(
+            "worksCompleted",
+            row59[15]
+        );
+
+
+    }
+
+
+    catch(error) {
+
+
+        console.error(
+            "Progress report error:",
+            error
+        );
+
+
+        /*
+           Keep the website working if
+           Google Sheets is temporarily
+           unavailable.
+        */
+
+        setStat(
+            "totalWorks",
+            null
+        );
+
+
+        setStat(
+            "gemWorks",
+            null
+        );
+
+
+        setStat(
+            "worksToBeTendered",
+            null
+        );
+
+
+        setStat(
+            "worksTendered",
+            null
+        );
+
+
+        setStat(
+            "worksAllotted",
+            null
+        );
+
+
+        setStat(
+            "worksTakenUp",
+            null
+        );
+
+
+        setStat(
+            "worksCompleted",
+            null
+        );
+
+    }
+
+}
+
+
+
+/* =========================================================
+   START
+   ========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadProgressReport
+);
+
+
+</script>
+
+
 </body>
+
 </html>
