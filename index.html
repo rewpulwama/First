@@ -802,71 +802,14 @@ body {
 <script>
 
 const PROGRESS_CSV_URL =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSlKb4rzKqzr7n-Rx2khlwfOwJrwp-Hq5Csy_yuvzVYEXNWtdcAOXZ_cbvlXBkq8qCqZTLiqjY7IMv/pub?gid=1166869417&single=true&output=csv";
-
-
-function parseCSV(text) {
-
-    const rows = [];
-    let row = [];
-    let cell = "";
-    let quoted = false;
-
-    for (let i = 0; i < text.length; i++) {
-
-        const ch = text[i];
-        const next = text[i + 1];
-
-        if (ch === '"' && quoted && next === '"') {
-            cell += '"';
-            i++;
-            continue;
-        }
-
-        if (ch === '"') {
-            quoted = !quoted;
-            continue;
-        }
-
-        if (ch === ',' && !quoted) {
-            row.push(cell);
-            cell = "";
-            continue;
-        }
-
-        if ((ch === '\n' || ch === '\r') && !quoted) {
-
-            if (ch === '\r' && next === '\n') {
-                i++;
-            }
-
-            row.push(cell);
-            rows.push(row);
-
-            row = [];
-            cell = "";
-
-            continue;
-        }
-
-        cell += ch;
-    }
-
-    if (cell !== "" || row.length) {
-        row.push(cell);
-        rows.push(row);
-    }
-
-    return rows;
-}
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSlKb4rzKqzr7n-Rx2khlwfOwJrwp-Hq5Csy_yuvzVYEXNWtdcAOXZ_cbvlXBkq8qCqZTLiqjY7IMv/pub?gid=1166869417&single=true&output=csv&range=D59:P59";
 
 
 function cleanNumber(value) {
 
-    const text = String(value ?? "")
-        .replace(/\u00a0/g, " ")
+    let text = String(value ?? "")
+        .replace(/^"|"$/g, "")
         .replace(/,/g, "")
-        .replace(/[^\d.-]/g, "")
         .trim();
 
     if (!text) {
@@ -887,6 +830,8 @@ async function loadProgressStats() {
 
     try {
 
+        console.log("Loading Progress Report...");
+
         const response = await fetch(
             PROGRESS_CSV_URL + "&t=" + Date.now(),
             {
@@ -896,79 +841,89 @@ async function loadProgressStats() {
 
         if (!response.ok) {
             throw new Error(
-                "Unable to load Google Sheet CSV."
+                "Google Sheet could not be loaded. HTTP " +
+                response.status
             );
         }
 
         const csvText = await response.text();
 
-        const rows = parseCSV(csvText);
+        console.log("Google Sheet response:", csvText);
 
         /*
-            Google Sheet Row 59
-            JavaScript index = 58
-        */
+         * D59:P59 gives us exactly 13 columns:
+         *
+         * D = 0
+         * E = 1
+         * F = 2
+         * G = 3
+         * H = 4
+         * I = 5
+         * J = 6
+         * K = 7
+         * L = 8
+         * M = 9
+         * N = 10
+         * O = 11
+         * P = 12
+         */
 
-        const row59 = rows[58];
-
-        if (!row59) {
-            throw new Error(
-                "Google Sheet row 59 was not found."
-            );
-        }
-
-
-        /*
-            COLUMN MAPPING
-
-            D59 = index 3
-            F59 = index 5
-            H59 = index 7
-            J59 = index 9
-            L59 = index 11
-            N59 = index 13
-            P59 = index 15
-        */
+        const row = csvText
+            .trim()
+            .split(/\r?\n/)[0]
+            .split(",");
 
 
         document.getElementById("totalWorks").textContent =
-            cleanNumber(row59[3]);
+            cleanNumber(row[0]);
 
 
         document.getElementById("gemWorks").textContent =
-            cleanNumber(row59[5]);
+            cleanNumber(row[2]);
 
 
         document.getElementById("worksToBeTendered").textContent =
-            cleanNumber(row59[7]);
+            cleanNumber(row[4]);
 
 
         document.getElementById("worksTendered").textContent =
-            cleanNumber(row59[9]);
+            cleanNumber(row[6]);
 
 
         document.getElementById("worksAllotted").textContent =
-            cleanNumber(row59[11]);
+            cleanNumber(row[8]);
 
 
         document.getElementById("worksTakenUp").textContent =
-            cleanNumber(row59[13]);
+            cleanNumber(row[10]);
 
 
         document.getElementById("worksCompleted").textContent =
-            cleanNumber(row59[15]);
+            cleanNumber(row[12]);
 
 
-    } catch (error) {
+        console.log("Progress Report loaded successfully.");
+
+    }
+
+    catch (error) {
 
         console.error(
-            "Progress statistics error:",
+            "Progress Report ERROR:",
             error
         );
 
     }
 
 }
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadProgressStats
+);
+
+</script>
 
 
 document.addEventListener(
