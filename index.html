@@ -800,137 +800,169 @@ body {
 </div>
 
 <script>
+(function () {
 
-const PROGRESS_CSV_URL =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSlKb4rzKqzr7n-Rx2khlwfOwJrwp-Hq5Csy_yuvzVYEXNWtdcAOXZ_cbvlXBkq8qCqZTLiqjY7IMv/pub?gid=1166869417&single=true&output=csv&range=D59:P59";
+    const SHEET_ID =
+        "1LJbRLqTbyHyJlBF3rGrl21iLr0w5y0I8wumPVPY8L6U";
 
+    const SHEET_GID =
+        "1166869417";
 
-function cleanNumber(value) {
-
-    let text = String(value ?? "")
-        .replace(/^"|"$/g, "")
-        .replace(/,/g, "")
-        .trim();
-
-    if (!text) {
-        return "--";
-    }
-
-    const number = Number(text);
-
-    if (!Number.isFinite(number)) {
-        return "--";
-    }
-
-    return number.toLocaleString("en-IN");
-}
+    const url =
+        "https://docs.google.com/spreadsheets/d/" +
+        SHEET_ID +
+        "/gviz/tq" +
+        "?gid=" + SHEET_GID +
+        "&range=D59:P59" +
+        "&headers=0" +
+        "&tqx=responseHandler:rewProgressStats";
 
 
-async function loadProgressStats() {
+    window.rewProgressStats = function (response) {
 
-    try {
+        console.log("Google Sheet response:", response);
 
-        console.log("Loading Progress Report...");
 
-        const response = await fetch(
-            PROGRESS_CSV_URL + "&t=" + Date.now(),
-            {
-                cache: "no-store"
-            }
-        );
+        if (!response || response.status !== "ok") {
 
-        if (!response.ok) {
-            throw new Error(
-                "Google Sheet could not be loaded. HTTP " +
-                response.status
+            console.error(
+                "Google Sheet error:",
+                response
             );
+
+            return;
         }
 
-        const csvText = await response.text();
 
-        console.log("Google Sheet response:", csvText);
+        if (
+            !response.table ||
+            !response.table.rows ||
+            !response.table.rows.length
+        ) {
+
+            console.error(
+                "No data returned from Google Sheet."
+            );
+
+            return;
+        }
+
+
+        const cells =
+            response.table.rows[0].c || [];
+
+
+        function getValue(index) {
+
+            if (!cells[index]) {
+                return "--";
+            }
+
+            const cell = cells[index];
+
+            /*
+             * Use the formatted value when available.
+             * Otherwise use the raw value.
+             */
+
+            const value =
+                cell.f !== undefined
+                    ? cell.f
+                    : cell.v;
+
+            if (
+                value === undefined ||
+                value === null ||
+                value === ""
+            ) {
+                return "--";
+            }
+
+            return Number(value)
+                .toLocaleString("en-IN");
+        }
+
 
         /*
-         * D59:P59 gives us exactly 13 columns:
+         * D59:P59
          *
-         * D = 0
+         * D = 0  Total Works
          * E = 1
-         * F = 2
+         * F = 2  GeM Procurement Works
          * G = 3
-         * H = 4
+         * H = 4  Works to be Tendered
          * I = 5
-         * J = 6
+         * J = 6  Works Tendered
          * K = 7
-         * L = 8
+         * L = 8  Works Allotted
          * M = 9
-         * N = 10
+         * N = 10 Works Taken Up
          * O = 11
-         * P = 12
+         * P = 12 Works Completed
          */
-
-        const row = csvText
-            .trim()
-            .split(/\r?\n/)[0]
-            .split(",");
 
 
         document.getElementById("totalWorks").textContent =
-            cleanNumber(row[0]);
+            getValue(0);
 
 
         document.getElementById("gemWorks").textContent =
-            cleanNumber(row[2]);
+            getValue(2);
 
 
         document.getElementById("worksToBeTendered").textContent =
-            cleanNumber(row[4]);
+            getValue(4);
 
 
         document.getElementById("worksTendered").textContent =
-            cleanNumber(row[6]);
+            getValue(6);
 
 
         document.getElementById("worksAllotted").textContent =
-            cleanNumber(row[8]);
+            getValue(8);
 
 
         document.getElementById("worksTakenUp").textContent =
-            cleanNumber(row[10]);
+            getValue(10);
 
 
         document.getElementById("worksCompleted").textContent =
-            cleanNumber(row[12]);
+            getValue(12);
 
 
-        console.log("Progress Report loaded successfully.");
-
-    }
-
-    catch (error) {
-
-        console.error(
-            "Progress Report ERROR:",
-            error
+        console.log(
+            "REW Progress Statistics loaded successfully."
         );
 
-    }
-
-}
+    };
 
 
-document.addEventListener(
-    "DOMContentLoaded",
-    loadProgressStats
-);
+    /*
+     * JSONP request.
+     *
+     * This avoids the cross-origin fetch problem that
+     * can occur when GitHub Pages tries to read Google Sheets.
+     */
 
-</script>
+    const script =
+        document.createElement("script");
+
+    script.src = url;
+
+    script.async = true;
+
+    script.onerror = function () {
+
+        console.error(
+            "Unable to connect to Google Sheets."
+        );
+
+    };
+
+    document.head.appendChild(script);
 
 
-document.addEventListener(
-    "DOMContentLoaded",
-    loadProgressStats
-);
-
+})();
 </script>
 
 <!-- NOTICES + TENDERS -->
