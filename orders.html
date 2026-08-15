@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Orders | REW Pulwama</title>
+
+<meta name="description"
+content="Official orders issued by the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #07579a;
+    --dark-blue: #063b69;
+    --light-blue: #eaf4fb;
+    --gold: #d89b24;
+    --red: #b52b2b;
+    --text: #333;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+
+/* HEADER */
+
+.header {
+    background: white;
+    border-bottom: 4px solid var(--gold);
+}
+
+.header-inner {
+    max-width: 1250px;
+    margin: auto;
+    padding: 14px 20px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.emblem {
+    width: 110px;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.emblem img {
+    width: 65px;
+    height: 85px;
+    object-fit: contain;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.header-text .govt {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+.header-text .department {
+    font-size: 17px;
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.header-text h1 {
+    font-size: 25px;
+    color: var(--dark-blue);
+    margin-top: 5px;
+}
+
+.header-text h2 {
+    font-size: 19px;
+    color: #333;
+    font-weight: 600;
+}
+
+
+/* NAVIGATION */
+
+.navbar {
+    background: var(--dark-blue);
+    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+}
+
+.nav-inner {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    overflow-x: auto;
+}
+
+.nav-inner a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    border-right: 1px solid rgba(255,255,255,.12);
+}
+
+.nav-inner a:hover,
+.nav-inner a.active {
+    background: var(--blue);
+}
+
+
+/* MAIN */
+
+.container {
+    max-width: 1250px;
+    margin: 25px auto;
+    padding: 0 20px 40px;
+}
+
+
+/* TITLE */
+
+.page-title {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.page-title-top {
+    background: var(--blue);
+    color: white;
+    padding: 13px 18px;
+    font-size: 21px;
+    font-weight: bold;
+    border-left: 5px solid var(--gold);
+}
+
+.page-title-body {
+    padding: 18px;
+    color: #555;
+}
+
+
+/* SEARCH */
+
+.search-box {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: var(--blue);
+}
+
+
+/* TABLE */
+
+.table-box {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 850px;
+}
+
+.orders-table th {
+    background: var(--dark-blue);
+    color: white;
+    padding: 13px 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.orders-table td {
+    padding: 13px 12px;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.orders-table tr:hover {
+    background: #f5f9fc;
+}
+
+.orders-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* DATE */
+
+.date {
+    display: inline-block;
+    background: #edf3f8;
+    color: var(--blue);
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+
+/* ORDER NUMBER */
+
+.order-number {
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+
+/* DOWNLOAD */
+
+.download-btn {
+    display: inline-block;
+    background: var(--blue);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.download-btn:hover {
+    background: var(--dark-blue);
+}
+
+.download-btn::before {
+    content: "↓ ";
+}
+
+
+/* MESSAGES */
+
+.loading,
+.error,
+.no-results {
+    padding: 35px;
+    text-align: center;
+    color: #666;
+}
+
+.error {
+    color: #a00;
+}
+
+
+/* FOOTER */
+
+.footer {
+    background: #062f52;
+    color: white;
+    margin-top: 30px;
+}
+
+.footer-inner {
+    max-width: 1250px;
+    margin: auto;
+    padding: 35px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 35px;
+}
+
+.footer h3 {
+    margin-bottom: 12px;
+}
+
+.footer p,
+.footer li {
+    font-size: 13px;
+    color: #d9e5ee;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer li {
+    margin-bottom: 7px;
+}
+
+.footer-bottom {
+    background: #041f37;
+    padding: 12px;
+    text-align: center;
+    font-size: 12px;
+    color: #cbd9e4;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+    .header-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header-text {
+        flex-basis: 100%;
+    }
+
+    .header-text h1 {
+        font-size: 21px;
+    }
+
+    .header-text h2 {
+        font-size: 16px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+<div class="header-inner">
+
+    <div class="emblem">
+
+        <img
+            src="images/Emblem_of_India.svg"
+            alt="State Emblem of India">
+
+    </div>
+
+
+    <div class="header-text">
+
+        <div class="govt">
+            Government of Jammu & Kashmir
+        </div>
+
+        <div class="department">
+            Department of Rural Development & Panchayati Raj
+        </div>
+
+        <h1>
+            Office of the Executive Engineer
+        </h1>
+
+        <h2>
+            Rural Engineering Wing (REW), Pulwama
+        </h2>
+
+    </div>
+
+</div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+<div class="nav-inner">
+
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="officials.html">OFFICIALS</a>
+    <a href="approvals.html">APPROVALS</a>
+    <a href="tenders.html">TENDERS</a>
+    <a href="loi.html">LOIs</a>
+    <a href="notices.html">NOTICES</a>
+    <a href="circulars.html">CIRCULARS</a>
+    <a href="orders.html" class="active">ORDERS</a>
+    <a href="downloads.html">DOWNLOADS</a>
+    <a href="contact.html">CONTACT</a>
+
+</div>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+
+<section class="page-title">
+
+    <div class="page-title-top">
+        Office Orders
+    </div>
+
+    <div class="page-title-body">
+
+        Official office orders issued by the
+        Office of the Executive Engineer,
+        Rural Engineering Wing (REW), Pulwama.
+
+    </div>
+
+</section>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+    <input
+        type="search"
+        id="searchInput"
+        placeholder="Search orders by order number, date or subject..."
+        autocomplete="off">
+
+</div>
+
+
+<!-- ORDERS TABLE -->
+
+<section class="table-box">
+
+<div class="table-wrapper">
+
+<table class="orders-table">
+
+<thead>
+
+<tr>
+
+    <th style="width:80px;">
+        S.No.
+    </th>
+
+    <th style="width:180px;">
+        Order No.
+    </th>
+
+    <th style="width:150px;">
+        Date
+    </th>
+
+    <th>
+        Subject / Description
+    </th>
+
+    <th style="width:150px;">
+        Download
+    </th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="ordersBody">
+
+<tr>
+
+    <td colspan="5"
+        class="loading">
+
+        Loading orders...
+
+    </td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-inner">
+
+
+<div>
+
+    <h3>
+        REW Pulwama
+    </h3>
+
+    <p>
+        Office of the Executive Engineer,
+        Rural Engineering Wing (REW), Pulwama.
+    </p>
+
+    <p style="margin-top:10px;">
+
+        Department of Rural Development & Panchayati Raj,
+        Government of Jammu & Kashmir.
+
+    </p>
+
+</div>
+
+
+<div>
+
+    <h3>
+        Important Links
+    </h3>
+
+    <ul>
+
+        <li>Home</li>
+        <li>About Office</li>
+        <li>Tenders</li>
+        <li>Notices</li>
+        <li>Circulars</li>
+        <li>Downloads</li>
+
+    </ul>
+
+</div>
+
+
+<div>
+
+    <h3>
+        Website Information
+    </h3>
+
+    <ul>
+
+        <li>Privacy Policy</li>
+        <li>Disclaimer</li>
+        <li>Accessibility</li>
+        <li>Site Map</li>
+
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+    © 2026 Office of the Executive Engineer,
+    Rural Engineering Wing (REW), Pulwama.
+    All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+/*
+========================================================
+GOOGLE SHEET
+========================================================
+*/
+
+const SHEET_URL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1751045669&single=true&output=csv";
+
+
+let orders = [];
+
+
+/*
+========================================================
+CSV PARSER
+========================================================
+*/
+
+function parseCSV(text) {
+
+    const rows = [];
+
+    let row = [];
+    let cell = "";
+    let quoted = false;
+
+
+    for (let i = 0; i < text.length; i++) {
+
+        const char = text[i];
+        const next = text[i + 1];
+
+
+        if (
+            char === '"' &&
+            quoted &&
+            next === '"'
+        ) {
+
+            cell += '"';
+
+            i++;
+
+            continue;
+
+        }
+
+
+        if (char === '"') {
+
+            quoted = !quoted;
+
+            continue;
+
+        }
+
+
+        if (
+            char === "," &&
+            !quoted
+        ) {
+
+            row.push(
+                cell.trim()
+            );
+
+            cell = "";
+
+            continue;
+
+        }
+
+
+        if (
+            (char === "\n" ||
+             char === "\r") &&
+            !quoted
+        ) {
+
+            if (
+                char === "\r" &&
+                next === "\n"
+            ) {
+
+                i++;
+
+            }
+
+
+            row.push(
+                cell.trim()
+            );
+
+
+            if (
+                row.some(
+                    value =>
+                    value !== ""
+                )
+            ) {
+
+                rows.push(row);
+
+            }
+
+
+            row = [];
+
+            cell = "";
+
+            continue;
+
+        }
+
+
+        cell += char;
+
+    }
+
+
+    if (
+        cell !== "" ||
+        row.length
+    ) {
+
+        row.push(
+            cell.trim()
+        );
+
+
+        if (
+            row.some(
+                value =>
+                value !== ""
+            )
+        ) {
+
+            rows.push(row);
+
+        }
+
+    }
+
+
+    return rows;
+
+}
+
+
+/*
+========================================================
+NORMALIZE HEADER
+========================================================
+*/
+
+function normalize(value) {
+
+    return String(value || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, "");
+
+}
+
+
+/*
+========================================================
+FIND COLUMN
+========================================================
+*/
+
+function findColumn(
+    headers,
+    names
+) {
+
+    const normalizedHeaders =
+        headers.map(normalize);
+
+
+    for (
+        const name of names
+    ) {
+
+        const index =
+            normalizedHeaders.indexOf(
+                normalize(name)
+            );
+
+
+        if (index !== -1) {
+
+            return index;
+
+        }
+
+    }
+
+
+    return -1;
+
+}
+
+
+/*
+========================================================
+LOAD ORDERS
+========================================================
+*/
+
+async function loadOrders() {
+
+    const body =
+        document.getElementById(
+            "ordersBody"
+        );
+
+
+    try {
+
+        const response =
+            await fetch(
+                SHEET_URL +
+                "&t=" +
+                Date.now(),
+                {
+                    cache: "no-store"
+                }
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to load Google Sheet."
+            );
+
+        }
+
+
+        const text =
+            await response.text();
+
+
+        const rows =
+            parseCSV(text);
+
+
+        if (rows.length < 2) {
+
+            throw new Error(
+                "No orders found in Google Sheet."
+            );
+
+        }
+
+
+        const headers =
+            rows[0];
+
+
+        console.log(
+            "Orders Sheet Headers:",
+            headers
+        );
+
+
+        /*
+        --------------------------------------------
+        ORDER NUMBER
+        --------------------------------------------
+        */
+
+        const orderColumn =
+            findColumn(
+                headers,
+                [
+                    "Order No",
+                    "Order Number",
+                    "Order No.",
+                    "Order",
+                    "Office Order No",
+                    "Office Order Number",
+                    "Order ID"
+                ]
+            );
+
+
+        /*
+        --------------------------------------------
+        DATE
+        --------------------------------------------
+        */
+
+        const dateColumn =
+            findColumn(
+                headers,
+                [
+                    "Date",
+                    "Order Date",
+                    "Date of Order",
+                    "Issue Date"
+                ]
+            );
+
+
+        /*
+        --------------------------------------------
+        SUBJECT
+        --------------------------------------------
+        */
+
+        const subjectColumn =
+            findColumn(
+                headers,
+                [
+                    "Subject",
+                    "Order Subject",
+                    "Description",
+                    "Title",
+                    "Particulars",
+                    "Order Description",
+                    "Details"
+                ]
+            );
+
+
+        /*
+        --------------------------------------------
+        DOWNLOAD LINK
+        --------------------------------------------
+        */
+
+        const linkColumn =
+            findColumn(
+                headers,
+                [
+                    "Download",
+                    "Download Link",
+                    "Link",
+                    "URL",
+                    "PDF",
+                    "PDF Link",
+                    "File",
+                    "File Link",
+                    "Document",
+                    "Document Link"
+                ]
+            );
+
+
+        console.log(
+            "Order column:",
+            orderColumn
+        );
+
+        console.log(
+            "Date column:",
+            dateColumn
+        );
+
+        console.log(
+            "Subject column:",
+            subjectColumn
+        );
+
+        console.log(
+            "Download column:",
+            linkColumn
+        );
+
+
+        /*
+        --------------------------------------------
+        BUILD DATA
+        --------------------------------------------
+        */
+
+        orders = [];
+
+
+        for (
+            let i = 1;
+            i < rows.length;
+            i++
+        ) {
+
+            const row =
+                rows[i];
+
+
+            const orderNo =
+                orderColumn !== -1
+                ? row[orderColumn] || ""
+                : "";
+
+
+            const date =
+                dateColumn !== -1
+                ? row[dateColumn] || ""
+                : "";
+
+
+            const subject =
+                subjectColumn !== -1
+                ? row[subjectColumn] || ""
+                : "";
+
+
+            const link =
+                linkColumn !== -1
+                ? row[linkColumn] || ""
+                : "";
+
+
+            /*
+             * Ignore completely empty rows.
+             */
+
+            if (
+                !orderNo &&
+                !date &&
+                !subject &&
+                !link
+            ) {
+
+                continue;
+
+            }
+
+
+            orders.push({
+
+                orderNo:
+                    orderNo.trim(),
+
+                date:
+                    date.trim(),
+
+                subject:
+                    subject.trim(),
+
+                link:
+                    link.trim()
+
+            });
+
+        }
+
+
+        renderOrders(
+            orders
+        );
+
+    }
+
+
+    catch (error) {
+
+        console.error(
+            "Orders error:",
+            error
+        );
+
+
+        body.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="5"
+                    class="error">
+
+                    Unable to load orders.
+                    Please try again later.
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+}
+
+
+/*
+========================================================
+RENDER ORDERS
+========================================================
+*/
+
+function renderOrders(data) {
+
+    const body =
+        document.getElementById(
+            "ordersBody"
+        );
+
+
+    if (!data.length) {
+
+        body.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="5"
+                    class="no-results">
+
+                    No orders available.
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    body.innerHTML = "";
+
+
+    data.forEach(
+        (item, index) => {
+
+
+            const tr =
+                document.createElement(
+                    "tr"
+                );
+
+
+            /*
+            S.NO.
+            */
+
+            const serial =
+                document.createElement(
+                    "td"
+                );
+
+            serial.textContent =
+                index + 1;
+
+
+            /*
+            ORDER NUMBER
+            */
+
+            const order =
+                document.createElement(
+                    "td"
+                );
+
+            order.className =
+                "order-number";
+
+            order.textContent =
+                item.orderNo ||
+                "—";
+
+
+            /*
+            DATE
+            */
+
+            const date =
+                document.createElement(
+                    "td"
+                );
+
+
+            if (item.date) {
+
+                const span =
+                    document.createElement(
+                        "span"
+                    );
+
+                span.className =
+                    "date";
+
+                span.textContent =
+                    item.date;
+
+                date.appendChild(
+                    span
+                );
+
+            }
+
+            else {
+
+                date.textContent =
+                    "—";
+
+            }
+
+
+            /*
+            SUBJECT
+            */
+
+            const subject =
+                document.createElement(
+                    "td"
+                );
+
+            subject.textContent =
+                item.subject ||
+                "—";
+
+
+            /*
+            DOWNLOAD
+            */
+
+            const download =
+                document.createElement(
+                    "td"
+                );
+
+
+            if (item.link) {
+
+                const a =
+                    document.createElement(
+                        "a"
+                    );
+
+                a.className =
+                    "download-btn";
+
+                a.href =
+                    item.link;
+
+                a.target =
+                    "_blank";
+
+                a.rel =
+                    "noopener noreferrer";
+
+                a.textContent =
+                    "Download";
+
+
+                download.appendChild(
+                    a
+                );
+
+            }
+
+            else {
+
+                download.textContent =
+                    "—";
+
+            }
+
+
+            tr.appendChild(
+                serial
+            );
+
+            tr.appendChild(
+                order
+            );
+
+            tr.appendChild(
+                date
+            );
+
+            tr.appendChild(
+                subject
+            );
+
+            tr.appendChild(
+                download
+            );
+
+
+            body.appendChild(
+                tr
+            );
+
+        }
+    );
+
+}
+
+
+/*
+========================================================
+SEARCH
+========================================================
+*/
+
+document
+.getElementById("searchInput")
+.addEventListener(
+    "input",
+    function () {
+
+
+        const query =
+            this.value
+                .toLowerCase()
+                .trim();
+
+
+        if (!query) {
+
+            renderOrders(
+                orders
+            );
+
+            return;
+
+        }
+
+
+        const filtered =
+            orders.filter(
+                item =>
+
+                item.orderNo
+                    .toLowerCase()
+                    .includes(query)
+
+                ||
+
+                item.date
+                    .toLowerCase()
+                    .includes(query)
+
+                ||
+
+                item.subject
+                    .toLowerCase()
+                    .includes(query)
+
+            );
+
+
+        renderOrders(
+            filtered
+        );
+
+    }
+);
+
+
+/*
+========================================================
+START
+========================================================
+*/
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadOrders
+);
+
+</script>
+
+</body>
+</html>
