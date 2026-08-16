@@ -9,9 +9,13 @@
 <title>Circulars | REW Pulwama</title>
 
 <meta name="description"
-content="Official Circulars of the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
+content="Official Circulars issued by the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 * {
     box-sizing: border-box;
@@ -19,24 +23,36 @@ content="Official Circulars of the Office of the Executive Engineer, Rural Engin
     padding: 0;
 }
 
+
+/* =========================
+   VARIABLES
+========================= */
+
 :root {
     --blue: #07579a;
     --dark-blue: #063b69;
     --light-blue: #eaf4fb;
     --gold: #d89b24;
-    --red: #b52b2b;
     --text: #333;
+    --light: #f4f6f8;
 }
+
+
+/* =========================
+   BODY
+========================= */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text);
-    background: #f4f6f8;
+    background: var(--light);
     line-height: 1.6;
 }
 
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER
+========================= */
 
 .header {
     background: white;
@@ -47,12 +63,16 @@ body {
     max-width: 1250px;
     margin: auto;
     padding: 14px 20px;
+
     min-height: 150px;
 
     display: flex;
     align-items: center;
     gap: 20px;
 }
+
+
+/* EMBLEM */
 
 .emblem {
     width: 110px;
@@ -68,8 +88,12 @@ body {
 .emblem img {
     width: 65px;
     height: 85px;
+
     object-fit: contain;
 }
+
+
+/* HEADER TEXT */
 
 .header-text {
     flex: 1;
@@ -101,7 +125,9 @@ body {
 }
 
 
-/* ================= NAVIGATION ================= */
+/* =========================
+   NAVIGATION
+========================= */
 
 .navbar {
     background: var(--dark-blue);
@@ -111,17 +137,24 @@ body {
 .nav-inner {
     max-width: 1250px;
     margin: auto;
+
     display: flex;
+    align-items: center;
+
     overflow-x: auto;
 }
 
 .nav-inner a {
     color: white;
     text-decoration: none;
+
     padding: 15px 18px;
+
     font-size: 14px;
     font-weight: bold;
+
     white-space: nowrap;
+
     border-right: 1px solid rgba(255,255,255,.12);
 }
 
@@ -131,56 +164,78 @@ body {
 }
 
 
-/* ================= MAIN ================= */
+/* =========================
+   MAIN CONTAINER
+========================= */
 
 .container {
     max-width: 1250px;
-    margin: 25px auto;
-    padding: 0 20px 40px;
+    margin: auto;
+
+    padding: 25px 20px 40px;
 }
 
 
-/* ================= PAGE TITLE ================= */
+/* =========================
+   PAGE TITLE
+========================= */
 
 .page-title {
     background: white;
+
     border: 1px solid #ddd;
     border-radius: 4px;
+
     overflow: hidden;
+
     margin-bottom: 20px;
 }
 
-.page-title-top {
+.page-title-title {
     background: var(--blue);
+
     color: white;
+
     padding: 13px 18px;
+
     font-size: 21px;
     font-weight: bold;
+
     border-left: 5px solid var(--gold);
 }
 
 .page-title-body {
     padding: 18px;
+
     color: #555;
 }
 
 
-/* ================= SEARCH ================= */
+/* =========================
+   SEARCH
+========================= */
 
 .search-box {
     background: white;
+
     border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 20px;
     border-radius: 4px;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
 }
 
 .search-box input {
     width: 100%;
+
     padding: 12px 14px;
+
     border: 1px solid #ccc;
     border-radius: 4px;
+
     font-size: 15px;
+
     outline: none;
 }
 
@@ -189,12 +244,17 @@ body {
 }
 
 
-/* ================= TABLE ================= */
+/* =========================
+   TABLE CONTAINER
+========================= */
 
 .table-box {
     background: white;
+
     border: 1px solid #ddd;
+
     border-radius: 4px;
+
     overflow: hidden;
 }
 
@@ -202,61 +262,145 @@ body {
     overflow-x: auto;
 }
 
-.circular-table {
+
+/* =========================
+   CIRCULARS TABLE
+========================= */
+
+.circulars-table {
     width: 100%;
-    border-collapse: collapse;
+
     min-width: 800px;
+
+    border-collapse: collapse;
+
+    font-size: 14px;
 }
 
-.circular-table th {
+
+/* TABLE HEADER */
+
+.circulars-table th {
     background: var(--dark-blue);
+
     color: white;
+
     padding: 13px 12px;
+
     text-align: left;
-    font-size: 14px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    border-right: 1px solid rgba(255,255,255,.15);
 }
 
-.circular-table td {
+
+/* TABLE CELLS */
+
+.circulars-table td {
     padding: 13px 12px;
-    border-bottom: 1px solid #e5e5e5;
+
+    border-bottom: 1px solid #e1e1e1;
+
     vertical-align: middle;
-    font-size: 14px;
+
+    background: white;
 }
 
-.circular-table tr:hover {
-    background: #f5f9fc;
-}
-
-.circular-table tr:last-child td {
-    border-bottom: none;
+.circulars-table tbody tr:hover td {
+    background: #f4f9fc;
 }
 
 
-/* ================= DATE ================= */
+/* =========================
+   COLUMN WIDTHS
+========================= */
 
-.date {
+/* S.No. */
+
+.circulars-table th:nth-child(1),
+.circulars-table td:nth-child(1) {
+    width: 80px;
+
+    text-align: center;
+}
+
+
+/* Date */
+
+.circulars-table th:nth-child(2),
+.circulars-table td:nth-child(2) {
+    width: 160px;
+}
+
+
+/* Circular / Subject */
+
+.circulars-table th:nth-child(3),
+.circulars-table td:nth-child(3) {
+    min-width: 450px;
+}
+
+
+/* Download */
+
+.circulars-table th:nth-child(4),
+.circulars-table td:nth-child(4) {
+    width: 150px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   DATE BADGE
+========================= */
+
+.date-badge {
     display: inline-block;
+
     background: #edf3f8;
+
     color: var(--blue);
-    padding: 4px 8px;
-    border-radius: 3px;
-    font-size: 12px;
+
+    padding: 5px 9px;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+
     white-space: nowrap;
 }
 
 
-/* ================= BUTTON ================= */
+/* =========================
+   DOWNLOAD BUTTON
+========================= */
 
 .download-btn {
     display: inline-block;
+
     background: var(--blue);
+
     color: white;
-    padding: 8px 15px;
-    border-radius: 4px;
+
     text-decoration: none;
+
+    padding: 9px 16px;
+
+    border-radius: 4px;
+
     font-size: 13px;
+
     font-weight: bold;
+
     white-space: nowrap;
+
+    transition: background .2s ease;
 }
 
 .download-btn:hover {
@@ -268,13 +412,17 @@ body {
 }
 
 
-/* ================= STATUS ================= */
+/* =========================
+   LOADING / ERROR
+========================= */
 
 .loading,
 .error,
 .no-results {
-    padding: 35px;
+    padding: 35px !important;
+
     text-align: center;
+
     color: #666;
 }
 
@@ -283,31 +431,42 @@ body {
 }
 
 
-/* ================= FOOTER ================= */
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
     background: #062f52;
+
     color: white;
+
     margin-top: 30px;
 }
 
 .footer-inner {
     max-width: 1250px;
+
     margin: auto;
+
     padding: 35px 20px;
 
     display: grid;
+
     grid-template-columns: 2fr 1fr 1fr;
+
     gap: 35px;
 }
 
 .footer h3 {
     margin-bottom: 12px;
+
+    color: white;
 }
 
 .footer p,
 .footer li {
     font-size: 13px;
+
     color: #d9e5ee;
 }
 
@@ -321,25 +480,41 @@ body {
 
 .footer-bottom {
     background: #041f37;
+
     padding: 12px;
+
     text-align: center;
+
     font-size: 12px;
+
     color: #cbd9e4;
 }
 
 
-/* ================= MOBILE ================= */
+/* =========================
+   MOBILE
+========================= */
 
-@media(max-width:700px) {
+@media(max-width: 700px) {
 
     .header-inner {
         flex-wrap: wrap;
+
         justify-content: center;
+
         text-align: center;
     }
 
     .header-text {
         flex-basis: 100%;
+    }
+
+    .header-text .govt {
+        font-size: 15px;
+    }
+
+    .header-text .department {
+        font-size: 14px;
     }
 
     .header-text h1 {
@@ -364,269 +539,288 @@ body {
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header class="header">
 
-<div class="header-inner">
-
-    <div class="emblem">
-
-        <img
-            src="images/Emblem_of_India.svg"
-            alt="State Emblem of India">
-
-    </div>
+    <div class="header-inner">
 
 
-    <div class="header-text">
+        <div class="emblem">
 
-        <div class="govt">
-            Government of Jammu & Kashmir
+            <img
+                src="images/Emblem_of_India.svg"
+                alt="State Emblem of India">
+
         </div>
 
-        <div class="department">
-            Department of Rural Development & Panchayati Raj
+
+        <div class="header-text">
+
+            <div class="govt">
+                Government of Jammu & Kashmir
+            </div>
+
+            <div class="department">
+                Department of Rural Development & Panchayati Raj
+            </div>
+
+            <h1>
+                Office of the Executive Engineer
+            </h1>
+
+            <h2>
+                Rural Engineering Wing (REW), Pulwama
+            </h2>
+
         </div>
 
-        <h1>
-            Office of the Executive Engineer
-        </h1>
-
-        <h2>
-            Rural Engineering Wing (REW), Pulwama
-        </h2>
 
     </div>
-
-</div>
 
 </header>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
 <nav class="navbar">
 
-<div class="nav-inner">
+    <div class="nav-inner">
 
-    <a href="index.html">
-        HOME
-    </a>
+        <a href="index.html">
+            HOME
+        </a>
 
-    <a href="about.html">
-        ABOUT
-    </a>
+        <a href="about.html">
+            ABOUT
+        </a>
 
-    <a href="officials.html">
-        OFFICIALS
-    </a>
+        <a href="officials.html">
+            OFFICIALS
+        </a>
 
-    <a href="approvals.html">
-        APPROVALS
-    </a>
+        <a href="approvals.html">
+            APPROVALS
+        </a>
 
-    <a href="tenders.html">
-        TENDERS
-    </a>
+        <a href="tenders.html">
+            TENDERS
+        </a>
 
-    <a href="loi.html">
-        LOIs
-    </a>
+        <a href="loi.html">
+            LOIs
+        </a>
 
-    <a href="notices.html">
-        NOTICES
-    </a>
+        <a href="notices.html">
+            NOTICES
+        </a>
 
-    <a href="circulars.html" class="active">
-        CIRCULARS
-    </a>
+        <a href="circulars.html" class="active">
+            CIRCULARS
+        </a>
 
-    <a href="orders.html">
-        ORDERS
-    </a>
+        <a href="orders.html">
+            ORDERS
+        </a>
 
-    <a href="corrigendum.html">
-        CORRIGENDUM
-    </a>
+        <a href="corri.html">
+            CORRIGENDUM
+        </a>
 
-    <a href="downloads.html">
-        DOWNLOADS
-    </a>
+        <a href="downloads.html">
+            DOWNLOADS
+        </a>
 
-    <a href="contact.html">
-        CONTACT
-    </a>
+        <a href="contact.html">
+            CONTACT
+        </a>
 
-</div>
+    </div>
 
 </nav>
 
 
-<!-- ================= MAIN ================= -->
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <main class="container">
 
 
-<section class="page-title">
+    <!-- PAGE TITLE -->
 
-    <div class="page-title-top">
-        Official Circulars
+    <section class="page-title">
+
+        <div class="page-title-title">
+            Departmental Circulars
+        </div>
+
+        <div class="page-title-body">
+
+            Official Circulars issued by the Office of
+            the Executive Engineer, Rural Engineering Wing
+            (REW), Pulwama.
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Search by Date or Circular / Subject..."
+            autocomplete="off">
+
     </div>
 
-    <div class="page-title-body">
 
-        Circulars issued by the Office of the Executive Engineer,
-        Rural Engineering Wing (REW), Pulwama.
+    <!-- CIRCULARS TABLE -->
 
-    </div>
+    <section class="table-box">
 
-</section>
+        <div class="table-wrapper">
 
+            <table class="circulars-table">
 
-<!-- ================= SEARCH ================= -->
+                <thead>
 
-<div class="search-box">
+                    <tr>
 
-    <input
-        type="search"
-        id="searchInput"
-        placeholder="Search circulars..."
-        autocomplete="off">
+                        <th>
+                            S.No.
+                        </th>
 
-</div>
+                        <th>
+                            Date
+                        </th>
 
+                        <th>
+                            Circular / Subject
+                        </th>
 
-<!-- ================= CIRCULAR TABLE ================= -->
+                        <th>
+                            Download
+                        </th>
 
-<section class="table-box">
+                    </tr>
 
-<div class="table-wrapper">
-
-<table class="circular-table">
-
-<thead>
-
-<tr>
-
-    <th style="width:80px;">
-        S.No.
-    </th>
-
-    <th style="width:160px;">
-        Date
-    </th>
-
-    <th>
-        Circular / Subject
-    </th>
-
-    <th style="width:150px;">
-        Download
-    </th>
-
-</tr>
-
-</thead>
+                </thead>
 
 
-<tbody id="circularBody">
+                <tbody id="circularsBody">
 
-<tr>
+                    <tr>
 
-    <td colspan="4" class="loading">
-        Loading circulars...
-    </td>
+                        <td
+                            colspan="4"
+                            class="loading">
 
-</tr>
+                            Loading circulars...
 
-</tbody>
+                        </td>
 
-</table>
+                    </tr>
 
-</div>
+                </tbody>
 
-</section>
+            </table>
+
+        </div>
+
+    </section>
 
 
 </main>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer class="footer">
 
-<div class="footer-inner">
+    <div class="footer-inner">
 
 
-<div>
+        <div>
 
-    <h3>
-        REW Pulwama
-    </h3>
+            <h3>
+                REW Pulwama
+            </h3>
 
-    <p>
-        Office of the Executive Engineer,
+            <p>
+                Office of the Executive Engineer,
+                Rural Engineering Wing (REW), Pulwama.
+            </p>
+
+            <p style="margin-top:10px;">
+
+                Department of Rural Development &
+                Panchayati Raj, Government of Jammu & Kashmir.
+
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Important Links
+            </h3>
+
+            <ul>
+
+                <li>Home</li>
+                <li>About Office</li>
+                <li>Tenders</li>
+                <li>Notices</li>
+                <li>Circulars</li>
+                <li>Orders</li>
+                <li>Downloads</li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Website Information
+            </h3>
+
+            <ul>
+
+                <li>Privacy Policy</li>
+                <li>Disclaimer</li>
+                <li>Accessibility</li>
+                <li>Site Map</li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Office of the Executive Engineer,
         Rural Engineering Wing (REW), Pulwama.
-    </p>
+        All Rights Reserved.
 
-    <p style="margin-top:10px;">
-
-        Department of Rural Development & Panchayati Raj,
-        Government of Jammu & Kashmir.
-
-    </p>
-
-</div>
-
-
-<div>
-
-    <h3>
-        Important Links
-    </h3>
-
-    <ul>
-
-        <li>Home</li>
-        <li>About Office</li>
-        <li>Tenders</li>
-        <li>Notices</li>
-        <li>Downloads</li>
-
-    </ul>
-
-</div>
-
-
-<div>
-
-    <h3>
-        Website Information
-    </h3>
-
-    <ul>
-
-        <li>Privacy Policy</li>
-        <li>Disclaimer</li>
-        <li>Accessibility</li>
-        <li>Site Map</li>
-
-    </ul>
-
-</div>
-
-
-</div>
-
-
-<div class="footer-bottom">
-
-    © 2026 Office of the Executive Engineer,
-    Rural Engineering Wing (REW), Pulwama.
-    All Rights Reserved.
-
-</div>
+    </div>
 
 </footer>
 
@@ -634,28 +828,32 @@ body {
 
 <script>
 
-/* =========================================================
-   GOOGLE SHEET
-   ========================================================= */
+/* =====================================================
+   GOOGLE SHEET CSV URL
+===================================================== */
 
 const SHEET_URL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1051031097&single=true&output=csv";
 
 
+/* Store circulars */
+
 let circulars = [];
 
 
-/* =========================================================
+/* =====================================================
    CSV PARSER
-   ========================================================= */
+===================================================== */
 
 function parseCSV(text) {
 
     const rows = [];
 
     let row = [];
+
     let cell = "";
-    let quoted = false;
+
+    let insideQuotes = false;
 
 
     for (
@@ -665,47 +863,62 @@ function parseCSV(text) {
     ) {
 
         const char = text[i];
+
         const next = text[i + 1];
 
 
+        /* Escaped quotation mark */
+
         if (
             char === '"' &&
-            quoted &&
+            insideQuotes &&
             next === '"'
         ) {
 
             cell += '"';
+
             i++;
-            continue;
 
+            continue;
         }
 
 
-        if (char === '"') {
+        /* Start / end quotation */
 
-            quoted = !quoted;
+        if (
+            char === '"'
+        ) {
+
+            insideQuotes =
+                !insideQuotes;
+
             continue;
-
         }
 
+
+        /* Comma */
 
         if (
             char === "," &&
-            !quoted
+            !insideQuotes
         ) {
 
-            row.push(cell.trim());
+            row.push(
+                cell.trim()
+            );
+
             cell = "";
 
             continue;
-
         }
 
+
+        /* New line */
 
         if (
             (char === "\n" ||
              char === "\r") &&
-            !quoted
+            !insideQuotes
         ) {
 
             if (
@@ -714,29 +927,30 @@ function parseCSV(text) {
             ) {
 
                 i++;
-
             }
 
 
-            row.push(cell.trim());
+            row.push(
+                cell.trim()
+            );
 
 
             if (
                 row.some(
-                    value => value !== ""
+                    value =>
+                    value !== ""
                 )
             ) {
 
                 rows.push(row);
-
             }
 
 
             row = [];
+
             cell = "";
 
             continue;
-
         }
 
 
@@ -745,87 +959,44 @@ function parseCSV(text) {
     }
 
 
+    /* Final row */
+
     if (
         cell !== "" ||
-        row.length
+        row.length > 0
     ) {
 
-        row.push(cell.trim());
+        row.push(
+            cell.trim()
+        );
+
 
         if (
             row.some(
-                value => value !== ""
+                value =>
+                value !== ""
             )
         ) {
 
             rows.push(row);
-
         }
 
     }
 
 
     return rows;
-
 }
 
 
-/* =========================================================
-   NORMALIZE HEADER
-   ========================================================= */
-
-function normalize(value) {
-
-    return String(value || "")
-        .toLowerCase()
-        .replace(/[^a-z0-9]/g, "");
-
-}
-
-
-/* =========================================================
-   FIND COLUMN
-   ========================================================= */
-
-function findColumn(headers, names) {
-
-    const normalizedHeaders =
-        headers.map(normalize);
-
-
-    for (
-        const name of names
-    ) {
-
-        const index =
-            normalizedHeaders.indexOf(
-                normalize(name)
-            );
-
-
-        if (index !== -1) {
-
-            return index;
-
-        }
-
-    }
-
-
-    return -1;
-
-}
-
-
-/* =========================================================
+/* =====================================================
    LOAD CIRCULARS
-   ========================================================= */
+===================================================== */
 
 async function loadCirculars() {
 
     const body =
         document.getElementById(
-            "circularBody"
+            "circularsBody"
         );
 
 
@@ -834,7 +1005,7 @@ async function loadCirculars() {
         const response =
             await fetch(
                 SHEET_URL +
-                "&t=" +
+                "&cache=" +
                 Date.now(),
                 {
                     cache: "no-store"
@@ -842,7 +1013,9 @@ async function loadCirculars() {
             );
 
 
-        if (!response.ok) {
+        if (
+            !response.ok
+        ) {
 
             throw new Error(
                 "Unable to access Google Sheet."
@@ -851,134 +1024,68 @@ async function loadCirculars() {
         }
 
 
-        const text =
+        const csv =
             await response.text();
 
 
-        /*
-        Make sure Google returned CSV,
-        not an HTML error/login page.
-        */
+        console.log(
+            "Google Sheet CSV:",
+            csv
+        );
+
+
+        /* Check Google response */
 
         if (
-            text.trim().startsWith("<!DOCTYPE") ||
-            text.trim().startsWith("<html")
+            csv.includes("<html") ||
+            csv.includes("<!DOCTYPE")
         ) {
 
             throw new Error(
-                "Google Sheet did not return CSV data."
+                "Google returned HTML instead of CSV."
             );
 
         }
 
 
         const rows =
-            parseCSV(text);
+            parseCSV(csv);
 
 
         if (
             rows.length < 2
         ) {
 
-            throw new Error(
-                "No circular records found."
-            );
+            body.innerHTML = `
+                <tr>
 
+                    <td
+                        colspan="4"
+                        class="no-results">
+
+                        No circulars available.
+
+                    </td>
+
+                </tr>
+            `;
+
+            return;
         }
-
-
-        const headers =
-            rows[0];
-
-
-        console.log(
-            "Circular Sheet Headers:",
-            headers
-        );
-
-
-        /*
-        DATE COLUMN
-        */
-
-        const dateColumn =
-            findColumn(
-                headers,
-                [
-                    "Date",
-                    "Circular Date",
-                    "Issue Date",
-                    "Date of Circular",
-                    "Upload Date"
-                ]
-            );
-
-
-        /*
-        SUBJECT / TITLE COLUMN
-        */
-
-        const titleColumn =
-            findColumn(
-                headers,
-                [
-                    "Title",
-                    "Subject",
-                    "Circular",
-                    "Circular Title",
-                    "Description",
-                    "Particulars",
-                    "Document",
-                    "Document Name",
-                    "File Name"
-                ]
-            );
-
-
-        /*
-        LINK COLUMN
-        */
-
-        const linkColumn =
-            findColumn(
-                headers,
-                [
-                    "Download",
-                    "Download Link",
-                    "Link",
-                    "URL",
-                    "PDF",
-                    "PDF Link",
-                    "File",
-                    "File Link",
-                    "Document Link",
-                    "Document URL"
-                ]
-            );
-
-
-        console.log(
-            "Date column:",
-            dateColumn
-        );
-
-        console.log(
-            "Title column:",
-            titleColumn
-        );
-
-        console.log(
-            "Link column:",
-            linkColumn
-        );
 
 
         circulars = [];
 
 
-        /*
-        BUILD RECORDS
-        */
+        /* =================================================
+           GOOGLE SHEET COLUMN ORDER
+
+           A = S.No.
+           B = Date
+           C = Circular / Subject
+           D = Download
+        ================================================= */
+
 
         for (
             let i = 1;
@@ -990,45 +1097,33 @@ async function loadCirculars() {
                 rows[i];
 
 
-            const date =
-                dateColumn !== -1
-                ? row[dateColumn] || ""
-                : "";
-
-
-            const title =
-                titleColumn !== -1
-                ? row[titleColumn] || ""
-                : "";
-
-
-            const link =
-                linkColumn !== -1
-                ? row[linkColumn] || ""
-                : "";
-
+            /* Ignore empty rows */
 
             if (
-                !date &&
-                !title &&
-                !link
+                !row ||
+                row.every(
+                    value =>
+                    !value.trim()
+                )
             ) {
 
                 continue;
-
             }
 
 
             circulars.push({
 
+                sno:
+                    row[0] || "",
+
                 date:
-                    date.trim(),
+                    row[1] || "",
 
-                title:
-                    title.trim(),
+                subject:
+                    row[2] || "",
 
-                link:
-                    link.trim()
+                download:
+                    row[3] || ""
 
             });
 
@@ -1051,7 +1146,6 @@ async function loadCirculars() {
 
 
         body.innerHTML = `
-
             <tr>
 
                 <td
@@ -1065,7 +1159,6 @@ async function loadCirculars() {
                 </td>
 
             </tr>
-
         `;
 
     }
@@ -1073,40 +1166,39 @@ async function loadCirculars() {
 }
 
 
-/* =========================================================
+/* =====================================================
    RENDER CIRCULARS
-   ========================================================= */
+===================================================== */
 
-function renderCirculars(data) {
+function renderCirculars(
+    data
+) {
 
     const body =
         document.getElementById(
-            "circularBody"
+            "circularsBody"
         );
 
 
     if (
-        !data.length
+        data.length === 0
     ) {
 
         body.innerHTML = `
-
             <tr>
 
                 <td
                     colspan="4"
                     class="no-results">
 
-                    No circulars available.
+                    No matching circulars found.
 
                 </td>
 
             </tr>
-
         `;
 
         return;
-
     }
 
 
@@ -1123,22 +1215,23 @@ function renderCirculars(data) {
                 );
 
 
-            /*
-            S.NO.
-            */
+            /* =========================
+               S.NO.
+            ========================= */
 
-            const serial =
+            const sno =
                 document.createElement(
                     "td"
                 );
 
-            serial.textContent =
+            sno.textContent =
+                item.sno ||
                 index + 1;
 
 
-            /*
-            DATE
-            */
+            /* =========================
+               DATE
+            ========================= */
 
             const date =
                 document.createElement(
@@ -1150,22 +1243,23 @@ function renderCirculars(data) {
                 item.date
             ) {
 
-                const span =
+                const dateBadge =
                     document.createElement(
                         "span"
                     );
 
-                span.className =
-                    "date";
+                dateBadge.className =
+                    "date-badge";
 
-                span.textContent =
+                dateBadge.textContent =
                     item.date;
 
                 date.appendChild(
-                    span
+                    dateBadge
                 );
 
-            } else {
+            }
+            else {
 
                 date.textContent =
                     "—";
@@ -1173,23 +1267,23 @@ function renderCirculars(data) {
             }
 
 
-            /*
-            TITLE
-            */
+            /* =========================
+               CIRCULAR / SUBJECT
+            ========================= */
 
-            const title =
+            const subject =
                 document.createElement(
                     "td"
                 );
 
-            title.textContent =
-                item.title ||
-                "Circular";
+            subject.textContent =
+                item.subject ||
+                "—";
 
 
-            /*
-            DOWNLOAD
-            */
+            /* =========================
+               DOWNLOAD
+            ========================= */
 
             const download =
                 document.createElement(
@@ -1198,35 +1292,42 @@ function renderCirculars(data) {
 
 
             if (
-                item.link
+                item.download &&
+                item.download.trim() !== ""
             ) {
 
-                const a =
+                const link =
                     document.createElement(
                         "a"
                     );
 
-                a.className =
-                    "download-btn";
 
-                a.href =
-                    item.link;
+                link.href =
+                    item.download.trim();
 
-                a.target =
+
+                link.target =
                     "_blank";
 
-                a.rel =
+
+                link.rel =
                     "noopener noreferrer";
 
-                a.textContent =
+
+                link.className =
+                    "download-btn";
+
+
+                link.textContent =
                     "Download";
 
 
                 download.appendChild(
-                    a
+                    link
                 );
 
-            } else {
+            }
+            else {
 
                 download.textContent =
                     "—";
@@ -1234,8 +1335,17 @@ function renderCirculars(data) {
             }
 
 
+            /* =================================================
+               ADD COLUMNS IN EXACT ORDER
+
+               S.No.
+               Date
+               Circular / Subject
+               Download
+            ================================================= */
+
             tr.appendChild(
-                serial
+                sno
             );
 
             tr.appendChild(
@@ -1243,7 +1353,7 @@ function renderCirculars(data) {
             );
 
             tr.appendChild(
-                title
+                subject
             );
 
             tr.appendChild(
@@ -1261,12 +1371,14 @@ function renderCirculars(data) {
 }
 
 
-/* =========================================================
-   SEARCH
-   ========================================================= */
+/* =====================================================
+   SEARCH CIRCULARS
+===================================================== */
 
 document
-.getElementById("searchInput")
+.getElementById(
+    "searchInput"
+)
 .addEventListener(
     "input",
     function () {
@@ -1278,6 +1390,8 @@ document
                 .trim();
 
 
+        /* Show all */
+
         if (
             !query
         ) {
@@ -1287,23 +1401,34 @@ document
             );
 
             return;
-
         }
 
+
+        /* Search Date + Subject */
 
         const filtered =
             circulars.filter(
                 item =>
 
-                item.title
+                    (
+                        item.date ||
+                        ""
+                    )
                     .toLowerCase()
-                    .includes(query)
+                    .includes(
+                        query
+                    )
 
-                ||
+                    ||
 
-                item.date
+                    (
+                        item.subject ||
+                        ""
+                    )
                     .toLowerCase()
-                    .includes(query)
+                    .includes(
+                        query
+                    )
 
             );
 
@@ -1316,17 +1441,22 @@ document
 );
 
 
-/* =========================================================
+/* =====================================================
    START
-   ========================================================= */
+===================================================== */
 
 document.addEventListener(
     "DOMContentLoaded",
-    loadCirculars
+    function () {
+
+        loadCirculars();
+
+    }
 );
 
 </script>
 
 
 </body>
+
 </html>
