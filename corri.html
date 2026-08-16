@@ -9,7 +9,7 @@
 <title>Corrigendum | REW Pulwama</title>
 
 <meta name="description"
-content="Official Corrigenda of the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
+content="Official Corrigenda issued by the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
 
 <style>
 
@@ -25,17 +25,20 @@ content="Official Corrigenda of the Office of the Executive Engineer, Rural Engi
     --light-blue: #eaf4fb;
     --gold: #d89b24;
     --text: #333;
+    --light: #f4f6f8;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text);
-    background: #f4f6f8;
+    background: var(--light);
     line-height: 1.6;
 }
 
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER
+========================= */
 
 .header {
     background: white;
@@ -100,7 +103,9 @@ body {
 }
 
 
-/* ================= NAVIGATION ================= */
+/* =========================
+   NAVIGATION
+========================= */
 
 .navbar {
     background: var(--dark-blue);
@@ -112,6 +117,8 @@ body {
     margin: auto;
 
     display: flex;
+    align-items: center;
+
     overflow-x: auto;
 }
 
@@ -135,17 +142,21 @@ body {
 }
 
 
-/* ================= MAIN ================= */
+/* =========================
+   MAIN
+========================= */
 
 .container {
     max-width: 1250px;
-    margin: 25px auto;
+    margin: auto;
 
-    padding: 0 20px 40px;
+    padding: 25px 20px 40px;
 }
 
 
-/* ================= PAGE TITLE ================= */
+/* =========================
+   PAGE TITLE
+========================= */
 
 .page-title {
     background: white;
@@ -158,7 +169,7 @@ body {
     margin-bottom: 20px;
 }
 
-.page-title-top {
+.page-title-title {
     background: var(--blue);
 
     color: white;
@@ -173,12 +184,13 @@ body {
 
 .page-title-body {
     padding: 18px;
-
     color: #555;
 }
 
 
-/* ================= SEARCH ================= */
+/* =========================
+   SEARCH
+========================= */
 
 .search-box {
     background: white;
@@ -209,12 +221,15 @@ body {
 }
 
 
-/* ================= TABLE ================= */
+/* =========================
+   TABLE
+========================= */
 
 .table-box {
     background: white;
 
     border: 1px solid #ddd;
+
     border-radius: 4px;
 
     overflow: hidden;
@@ -227,10 +242,15 @@ body {
 .corri-table {
     width: 100%;
 
+    min-width: 850px;
+
     border-collapse: collapse;
 
-    min-width: 850px;
+    font-size: 14px;
 }
+
+
+/* TABLE HEADER */
 
 .corri-table th {
     background: var(--dark-blue);
@@ -241,48 +261,87 @@ body {
 
     text-align: left;
 
-    font-size: 14px;
+    font-size: 15px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    border-right: 1px solid rgba(255,255,255,.15);
 }
+
+
+/* TABLE CELLS */
 
 .corri-table td {
     padding: 13px 12px;
 
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e1e1e1;
 
     vertical-align: middle;
 
-    font-size: 14px;
+    background: white;
 }
 
-.corri-table tr:hover {
-    background: #f5f9fc;
-}
-
-.corri-table tr:last-child td {
-    border-bottom: none;
+.corri-table tbody tr:hover td {
+    background: #f4f9fc;
 }
 
 
-/* ================= DATE ================= */
+/* =========================
+   COLUMN WIDTHS
+========================= */
 
-.date {
+.corri-table th:nth-child(1),
+.corri-table td:nth-child(1) {
+    width: 160px;
+}
+
+
+.corri-table th:nth-child(2),
+.corri-table td:nth-child(2) {
+    width: 190px;
+}
+
+
+.corri-table th:nth-child(3),
+.corri-table td:nth-child(3) {
+    min-width: 450px;
+}
+
+
+.corri-table th:nth-child(4),
+.corri-table td:nth-child(4) {
+    width: 150px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   DATE BADGE
+========================= */
+
+.date-badge {
     display: inline-block;
 
     background: #edf3f8;
 
     color: var(--blue);
 
-    padding: 4px 8px;
+    padding: 5px 9px;
 
-    border-radius: 3px;
+    border-radius: 4px;
 
-    font-size: 12px;
+    font-size: 13px;
 
     white-space: nowrap;
 }
 
 
-/* ================= DOWNLOAD BUTTON ================= */
+/* =========================
+   DOWNLOAD BUTTON
+========================= */
 
 .download-btn {
     display: inline-block;
@@ -291,17 +350,19 @@ body {
 
     color: white;
 
-    padding: 8px 15px;
+    text-decoration: none;
+
+    padding: 9px 16px;
 
     border-radius: 4px;
-
-    text-decoration: none;
 
     font-size: 13px;
 
     font-weight: bold;
 
     white-space: nowrap;
+
+    transition: background .2s ease;
 }
 
 .download-btn:hover {
@@ -313,12 +374,14 @@ body {
 }
 
 
-/* ================= MESSAGES ================= */
+/* =========================
+   MESSAGES
+========================= */
 
 .loading,
 .error,
 .no-results {
-    padding: 35px;
+    padding: 35px !important;
 
     text-align: center;
 
@@ -330,7 +393,9 @@ body {
 }
 
 
-/* ================= FOOTER ================= */
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
     background: #062f52;
@@ -356,12 +421,12 @@ body {
 
 .footer h3 {
     margin-bottom: 12px;
+    color: white;
 }
 
 .footer p,
 .footer li {
     font-size: 13px;
-
     color: #d9e5ee;
 }
 
@@ -386,7 +451,9 @@ body {
 }
 
 
-/* ================= MOBILE ================= */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:700px) {
 
@@ -400,6 +467,14 @@ body {
 
     .header-text {
         flex-basis: 100%;
+    }
+
+    .header-text .govt {
+        font-size: 15px;
+    }
+
+    .header-text .department {
+        font-size: 14px;
     }
 
     .header-text h1 {
@@ -424,276 +499,286 @@ body {
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header class="header">
 
-<div class="header-inner">
+    <div class="header-inner">
 
-    <div class="emblem">
+        <div class="emblem">
 
-        <img
-            src="images/Emblem_of_India.svg"
-            alt="State Emblem of India">
+            <img
+                src="images/Emblem_of_India.svg"
+                alt="State Emblem of India">
 
-    </div>
-
-
-    <div class="header-text">
-
-        <div class="govt">
-            Government of Jammu & Kashmir
         </div>
 
-        <div class="department">
-            Department of Rural Development & Panchayati Raj
+
+        <div class="header-text">
+
+            <div class="govt">
+                Government of Jammu & Kashmir
+            </div>
+
+            <div class="department">
+                Department of Rural Development & Panchayati Raj
+            </div>
+
+            <h1>
+                Office of the Executive Engineer
+            </h1>
+
+            <h2>
+                Rural Engineering Wing (REW), Pulwama
+            </h2>
+
         </div>
 
-        <h1>
-            Office of the Executive Engineer
-        </h1>
-
-        <h2>
-            Rural Engineering Wing (REW), Pulwama
-        </h2>
-
     </div>
-
-</div>
 
 </header>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
 <nav class="navbar">
 
-<div class="nav-inner">
+    <div class="nav-inner">
 
-    <a href="index.html">
-        HOME
-    </a>
+        <a href="index.html">
+            HOME
+        </a>
 
-    <a href="about.html">
-        ABOUT
-    </a>
+        <a href="about.html">
+            ABOUT
+        </a>
 
-    <a href="officials.html">
-        OFFICIALS
-    </a>
+        <a href="officials.html">
+            OFFICIALS
+        </a>
 
-    <a href="approvals.html">
-        APPROVALS
-    </a>
+        <a href="approvals.html">
+            APPROVALS
+        </a>
 
-    <a href="tenders.html">
-        TENDERS
-    </a>
+        <a href="tenders.html">
+            TENDERS
+        </a>
 
-    <a href="loi.html">
-        LOIs
-    </a>
+        <a href="loi.html">
+            LOIs
+        </a>
 
-    <a href="notices.html">
-        NOTICES
-    </a>
+        <a href="notices.html">
+            NOTICES
+        </a>
 
-    <a href="circulars.html">
-        CIRCULARS
-    </a>
+        <a href="circulars.html">
+            CIRCULARS
+        </a>
 
-    <a href="orders.html">
-        ORDERS
-    </a>
+        <a href="orders.html">
+            ORDERS
+        </a>
 
-    <a href="corri.html" class="active">
-        CORRIGENDUM
-    </a>
+        <a href="corri.html" class="active">
+            CORRIGENDUM
+        </a>
 
-    <a href="downloads.html">
-        DOWNLOADS
-    </a>
+        <a href="downloads.html">
+            DOWNLOADS
+        </a>
 
-    <a href="contact.html">
-        CONTACT
-    </a>
+        <a href="contact.html">
+            CONTACT
+        </a>
 
-</div>
+    </div>
 
 </nav>
 
 
-<!-- ================= MAIN ================= -->
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <main class="container">
 
 
-<section class="page-title">
+    <!-- PAGE TITLE -->
 
-    <div class="page-title-top">
-        Corrigendum
+    <section class="page-title">
+
+        <div class="page-title-title">
+            Corrigenda
+        </div>
+
+        <div class="page-title-body">
+
+            Official Corrigenda issued by the Office of
+            the Executive Engineer, Rural Engineering Wing
+            (REW), Pulwama.
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Search by Date, Corrigendum No. or Description..."
+            autocomplete="off">
+
     </div>
 
-    <div class="page-title-body">
 
-        Official corrigenda issued by the Office of the
-        Executive Engineer, Rural Engineering Wing (REW),
-        Pulwama.
+    <!-- TABLE -->
 
-    </div>
+    <section class="table-box">
 
-</section>
+        <div class="table-wrapper">
 
+            <table class="corri-table">
 
-<!-- ================= SEARCH ================= -->
+                <thead>
 
-<div class="search-box">
+                    <tr>
 
-    <input
-        type="search"
-        id="searchInput"
-        placeholder="Search corrigendum..."
-        autocomplete="off">
+                        <th>
+                            Date
+                        </th>
 
-</div>
+                        <th>
+                            Corrigendum No.
+                        </th>
 
+                        <th>
+                            Description
+                        </th>
 
-<!-- ================= TABLE ================= -->
+                        <th>
+                            Download
+                        </th>
 
-<section class="table-box">
+                    </tr>
 
-<div class="table-wrapper">
-
-<table class="corri-table">
-
-<thead>
-
-<tr>
-
-    <th style="width:80px;">
-        S.No.
-    </th>
-
-    <th style="width:160px;">
-        Date
-    </th>
-
-    <th>
-        Corrigendum / Subject
-    </th>
-
-    <th style="width:150px;">
-        Download
-    </th>
-
-</tr>
-
-</thead>
+                </thead>
 
 
-<tbody id="corriBody">
+                <tbody id="corriBody">
 
-<tr>
+                    <tr>
 
-    <td
-        colspan="4"
-        class="loading">
+                        <td
+                            colspan="4"
+                            class="loading">
 
-        Loading corrigenda...
+                            Loading corrigenda...
 
-    </td>
+                        </td>
 
-</tr>
+                    </tr>
 
-</tbody>
+                </tbody>
 
-</table>
+            </table>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
 
 </main>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer class="footer">
 
-<div class="footer-inner">
+    <div class="footer-inner">
 
 
-<div>
+        <div>
 
-    <h3>
-        REW Pulwama
-    </h3>
+            <h3>
+                REW Pulwama
+            </h3>
 
-    <p>
-        Office of the Executive Engineer,
+            <p>
+                Office of the Executive Engineer,
+                Rural Engineering Wing (REW), Pulwama.
+            </p>
+
+            <p style="margin-top:10px;">
+
+                Department of Rural Development &
+                Panchayati Raj, Government of Jammu & Kashmir.
+
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Important Links
+            </h3>
+
+            <ul>
+
+                <li>Home</li>
+                <li>About Office</li>
+                <li>Tenders</li>
+                <li>Notices</li>
+                <li>Circulars</li>
+                <li>Orders</li>
+                <li>Downloads</li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Website Information
+            </h3>
+
+            <ul>
+
+                <li>Privacy Policy</li>
+                <li>Disclaimer</li>
+                <li>Accessibility</li>
+                <li>Site Map</li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Office of the Executive Engineer,
         Rural Engineering Wing (REW), Pulwama.
-    </p>
+        All Rights Reserved.
 
-    <p style="margin-top:10px;">
-
-        Department of Rural Development & Panchayati Raj,
-        Government of Jammu & Kashmir.
-
-    </p>
-
-</div>
-
-
-<div>
-
-    <h3>
-        Important Links
-    </h3>
-
-    <ul>
-
-        <li>Home</li>
-        <li>About Office</li>
-        <li>Tenders</li>
-        <li>Notices</li>
-        <li>Circulars</li>
-        <li>Orders</li>
-        <li>Downloads</li>
-
-    </ul>
-
-</div>
-
-
-<div>
-
-    <h3>
-        Website Information
-    </h3>
-
-    <ul>
-
-        <li>Privacy Policy</li>
-        <li>Disclaimer</li>
-        <li>Accessibility</li>
-        <li>Site Map</li>
-
-    </ul>
-
-</div>
-
-
-</div>
-
-
-<div class="footer-bottom">
-
-    © 2026 Office of the Executive Engineer,
-    Rural Engineering Wing (REW), Pulwama.
-    All Rights Reserved.
-
-</div>
+    </div>
 
 </footer>
 
@@ -701,38 +786,176 @@ body {
 
 <script>
 
-const SHEET_ID =
-"2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY";
-
-const GID =
-"211947423";
+/* =====================================================
+   GOOGLE SHEET CSV URL
+===================================================== */
 
 const SHEET_URL =
-"https://docs.google.com/spreadsheets/d/e/" +
-SHEET_ID +
-"/gviz/tq?tqx=out:json&gid=" +
-GID;
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=211947423&single=true&output=csv";
 
 
 let corrigenda = [];
 
 
-/* =========================
-   LOAD GOOGLE SHEET
-========================= */
+/* =====================================================
+   CSV PARSER
+===================================================== */
+
+function parseCSV(text) {
+
+    const rows = [];
+
+    let row = [];
+
+    let cell = "";
+
+    let insideQuotes = false;
+
+
+    for (
+        let i = 0;
+        i < text.length;
+        i++
+    ) {
+
+        const char = text[i];
+
+        const next = text[i + 1];
+
+
+        /* Escaped quote */
+
+        if (
+            char === '"' &&
+            insideQuotes &&
+            next === '"'
+        ) {
+
+            cell += '"';
+
+            i++;
+
+            continue;
+        }
+
+
+        /* Quote */
+
+        if (
+            char === '"'
+        ) {
+
+            insideQuotes =
+                !insideQuotes;
+
+            continue;
+        }
+
+
+        /* Comma */
+
+        if (
+            char === "," &&
+            !insideQuotes
+        ) {
+
+            row.push(
+                cell.trim()
+            );
+
+            cell = "";
+
+            continue;
+        }
+
+
+        /* New line */
+
+        if (
+            (char === "\n" ||
+             char === "\r") &&
+            !insideQuotes
+        ) {
+
+            if (
+                char === "\r" &&
+                next === "\n"
+            ) {
+
+                i++;
+            }
+
+
+            row.push(
+                cell.trim()
+            );
+
+
+            if (
+                row.some(
+                    value =>
+                    value !== ""
+                )
+            ) {
+
+                rows.push(row);
+            }
+
+
+            row = [];
+
+            cell = "";
+
+            continue;
+        }
+
+
+        cell += char;
+
+    }
+
+
+    /* Final row */
+
+    if (
+        cell !== "" ||
+        row.length > 0
+    ) {
+
+        row.push(
+            cell.trim()
+        );
+
+
+        if (
+            row.some(
+                value =>
+                value !== ""
+            )
+        ) {
+
+            rows.push(row);
+        }
+
+    }
+
+
+    return rows;
+
+}
+
+
+/* =====================================================
+   LOAD CORRIGENDA
+===================================================== */
 
 async function loadCorrigenda() {
 
     const body =
-        document.getElementById("corriBody");
+        document.getElementById(
+            "corriBody"
+        );
 
-    body.innerHTML = `
-        <tr>
-            <td colspan="4" class="loading">
-                Loading corrigenda...
-            </td>
-        </tr>
-    `;
 
     try {
 
@@ -740,600 +963,6 @@ async function loadCorrigenda() {
             await fetch(
                 SHEET_URL +
                 "&cache=" +
-                Date.now()
-            );
-
-        if (!response.ok) {
-
-            throw new Error(
-                "Google Sheet could not be accessed."
-            );
-
-        }
-
-        const text =
-            await response.text();
-
-
-        /*
-         Google GViz returns:
-         google.visualization.Query.setResponse(...)
-        */
-
-        const jsonText =
-            text.substring(
-                text.indexOf("{"),
-                text.lastIndexOf("}") + 1
-            );
-
-
-        const data =
-            JSON.parse(jsonText);
-
-
-        if (
-            !data.table ||
-            !data.table.rows
-        ) {
-
-            throw new Error(
-                "No data returned from Google Sheet."
-            );
-
-        }
-
-
-        const rows =
-            data.table.rows;
-
-
-        /*
-         Read column headings
-        */
-
-        const columns =
-            data.table.cols.map(
-                col =>
-                    (col.label || "")
-                        .trim()
-                        .toLowerCase()
-            );
-
-
-        console.log(
-            "Google Sheet columns:",
-            columns
-        );
-
-
-        /*
-         Find columns automatically
-        */
-
-        const dateColumn =
-            findColumn(
-                columns,
-                [
-                    "date",
-                    "corrigendum date",
-                    "issue date",
-                    "date of corrigendum"
-                ]
-            );
-
-
-        const titleColumn =
-            findColumn(
-                columns,
-                [
-                    "subject",
-                    "title",
-                    "corrigendum",
-                    "corrigendum title",
-                    "corrigendum subject",
-                    "description",
-                    "particulars",
-                    "document",
-                    "document name",
-                    "file name"
-                ]
-            );
-
-
-        const linkColumn =
-            findColumn(
-                columns,
-                [
-                    "download link",
-                    "download",
-                    "link",
-                    "url",
-                    "pdf",
-                    "pdf link",
-                    "file",
-                    "file link",
-                    "document link",
-                    "document url",
-                    "corrigendum link",
-                    "corrigendum pdf"
-                ]
-            );
-
-
-        console.log(
-            "Date column:",
-            dateColumn
-        );
-
-        console.log(
-            "Title column:",
-            titleColumn
-        );
-
-        console.log(
-            "Link column:",
-            linkColumn
-        );
-
-
-        corrigenda = [];
-
-
-        /*
-         Process rows
-        */
-
-        rows.forEach(
-            row => {
-
-                const cells =
-                    row.c || [];
-
-
-                const getValue =
-                    index => {
-
-                        if (
-                            index === -1 ||
-                            !cells[index]
-                        ) {
-                            return "";
-                        }
-
-                        return (
-                            cells[index].f ??
-                            cells[index].v ??
-                            ""
-                        ).toString().trim();
-
-                    };
-
-
-                const date =
-                    getValue(
-                        dateColumn
-                    );
-
-
-                const title =
-                    getValue(
-                        titleColumn
-                    );
-
-
-                const link =
-                    getValue(
-                        linkColumn
-                    );
-
-
-                if (
-                    !date &&
-                    !title &&
-                    !link
-                ) {
-                    return;
-                }
-
-
-                corrigenda.push({
-
-                    date: date,
-
-                    title:
-                        title ||
-                        "Corrigendum",
-
-                    link: link
-
-                });
-
-            }
-        );
-
-
-        renderCorrigenda(
-            corrigenda
-        );
-
-    }
-
-
-    catch (error) {
-
-        console.error(
-            "CORRIGENDUM ERROR:",
-            error
-        );
-
-
-        body.innerHTML = `
-            <tr>
-                <td
-                    colspan="4"
-                    class="error">
-
-                    Unable to load corrigenda.
-
-                    <br><br>
-
-                    Please make sure the Google Sheet
-                    is published to the web.
-
-                </td>
-            </tr>
-        `;
-
-    }
-
-}
-
-
-/* =========================
-   FIND COLUMN
-========================= */
-
-function findColumn(
-    columns,
-    names
-) {
-
-    for (
-        const name of names
-    ) {
-
-        const index =
-            columns.indexOf(
-                name.toLowerCase()
-            );
-
-
-        if (
-            index !== -1
-        ) {
-
-            return index;
-
-        }
-
-    }
-
-
-    return -1;
-
-}
-
-
-/* =========================
-   RENDER
-========================= */
-
-function renderCorrigenda(
-    data
-) {
-
-    const body =
-        document.getElementById(
-            "corriBody"
-        );
-
-
-    if (
-        !data.length
-    ) {
-
-        body.innerHTML = `
-            <tr>
-                <td
-                    colspan="4"
-                    class="no-results">
-
-                    No corrigenda available.
-
-                </td>
-            </tr>
-        `;
-
-        return;
-
-    }
-
-
-    body.innerHTML = "";
-
-
-    data.forEach(
-        (item, index) => {
-
-            const tr =
-                document.createElement(
-                    "tr"
-                );
-
-
-            /* S.NO */
-
-            const serial =
-                document.createElement(
-                    "td"
-                );
-
-            serial.textContent =
-                index + 1;
-
-
-            /* DATE */
-
-            const date =
-                document.createElement(
-                    "td"
-                );
-
-
-            if (
-                item.date
-            ) {
-
-                const span =
-                    document.createElement(
-                        "span"
-                    );
-
-                span.className =
-                    "date";
-
-                span.textContent =
-                    item.date;
-
-                date.appendChild(
-                    span
-                );
-
-            }
-            else {
-
-                date.textContent =
-                    "—";
-
-            }
-
-
-            /* TITLE */
-
-            const title =
-                document.createElement(
-                    "td"
-                );
-
-            title.textContent =
-                item.title ||
-                "Corrigendum";
-
-
-            /* DOWNLOAD */
-
-            const download =
-                document.createElement(
-                    "td"
-                );
-
-
-            if (
-                item.link
-            ) {
-
-                const a =
-                    document.createElement(
-                        "a"
-                    );
-
-                a.href =
-                    item.link;
-
-                a.target =
-                    "_blank";
-
-                a.rel =
-                    "noopener noreferrer";
-
-                a.className =
-                    "download-btn";
-
-                a.textContent =
-                    "Download";
-
-
-                download.appendChild(
-                    a
-                );
-
-            }
-            else {
-
-                download.textContent =
-                    "—";
-
-            }
-
-
-            tr.appendChild(
-                serial
-            );
-
-            tr.appendChild(
-                date
-            );
-
-            tr.appendChild(
-                title
-            );
-
-            tr.appendChild(
-                download
-            );
-
-
-            body.appendChild(
-                tr
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================
-   SEARCH
-========================= */
-
-document
-.getElementById("searchInput")
-.addEventListener(
-    "input",
-    function () {
-
-        const query =
-            this.value
-                .toLowerCase()
-                .trim();
-
-
-        if (
-            !query
-        ) {
-
-            renderCorrigenda(
-                corrigenda
-            );
-
-            return;
-
-        }
-
-
-        const filtered =
-            corrigenda.filter(
-                item =>
-
-                    item.title
-                        .toLowerCase()
-                        .includes(query)
-
-                    ||
-
-                    item.date
-                        .toLowerCase()
-                        .includes(query)
-
-            );
-
-
-        renderCorrigenda(
-            filtered
-        );
-
-    }
-);
-
-
-/* =========================
-   START
-========================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    loadCorrigenda
-);
-
-</script>
-/* =========================================================
-   NORMALIZE HEADER
-   ========================================================= */
-
-function normalize(value) {
-
-    return String(value || "")
-        .toLowerCase()
-        .replace(/[^a-z0-9]/g, "");
-
-}
-
-
-/* =========================================================
-   FIND COLUMN
-   ========================================================= */
-
-function findColumn(headers, names) {
-
-    const normalizedHeaders =
-        headers.map(normalize);
-
-
-    for (
-        const name of names
-    ) {
-
-        const index =
-            normalizedHeaders.indexOf(
-                normalize(name)
-            );
-
-
-        if (
-            index !== -1
-        ) {
-
-            return index;
-
-        }
-
-    }
-
-
-    return -1;
-
-}
-
-
-/* =========================================================
-   LOAD CORRIGENDA
-   ========================================================= */
-
-async function loadCorrigenda() {
-
-    const body =
-        document.getElementById(
-            "corriBody"
-        );
-
-
-    try {
-
-        const response =
-            await fetch(
-                SHEET_URL +
-                "&t=" +
                 Date.now(),
                 {
                     cache: "no-store"
@@ -1352,126 +981,69 @@ async function loadCorrigenda() {
         }
 
 
-        const text =
+        const csv =
             await response.text();
 
 
-        /* Check for HTML error page */
+        console.log(
+            "Corrigendum CSV:",
+            csv
+        );
+
+
+        /* Check for HTML response */
 
         if (
-            text.trim().startsWith("<!DOCTYPE") ||
-            text.trim().startsWith("<html")
+            csv.includes("<html") ||
+            csv.includes("<!DOCTYPE")
         ) {
 
             throw new Error(
-                "Google Sheet did not return CSV data."
+                "Google returned HTML instead of CSV."
             );
 
         }
 
 
         const rows =
-            parseCSV(text);
+            parseCSV(csv);
 
 
         if (
             rows.length < 2
         ) {
 
-            throw new Error(
-                "No corrigendum records found."
-            );
+            body.innerHTML = `
+                <tr>
+
+                    <td
+                        colspan="4"
+                        class="no-results">
+
+                        No corrigenda available.
+
+                    </td>
+
+                </tr>
+            `;
+
+            return;
 
         }
-
-
-        const headers =
-            rows[0];
-
-
-        console.log(
-            "Corrigendum Headers:",
-            headers
-        );
-
-
-        /* ================= DATE ================= */
-
-        const dateColumn =
-            findColumn(
-                headers,
-                [
-                    "Date",
-                    "Corrigendum Date",
-                    "Issue Date",
-                    "Date of Corrigendum",
-                    "Upload Date"
-                ]
-            );
-
-
-        /* ================= SUBJECT ================= */
-
-        const titleColumn =
-            findColumn(
-                headers,
-                [
-                    "Title",
-                    "Subject",
-                    "Corrigendum",
-                    "Corrigendum Title",
-                    "Corrigendum Subject",
-                    "Description",
-                    "Particulars",
-                    "Document",
-                    "Document Name",
-                    "File Name"
-                ]
-            );
-
-
-        /* ================= LINK ================= */
-
-        const linkColumn =
-            findColumn(
-                headers,
-                [
-                    "Download",
-                    "Download Link",
-                    "Link",
-                    "URL",
-                    "PDF",
-                    "PDF Link",
-                    "File",
-                    "File Link",
-                    "Document Link",
-                    "Document URL",
-                    "Corrigendum Link",
-                    "Corrigendum PDF"
-                ]
-            );
-
-
-        console.log(
-            "Date column:",
-            dateColumn
-        );
-
-        console.log(
-            "Title column:",
-            titleColumn
-        );
-
-        console.log(
-            "Link column:",
-            linkColumn
-        );
 
 
         corrigenda = [];
 
 
-        /* ================= BUILD DATA ================= */
+        /* =================================================
+           GOOGLE SHEET COLUMN ORDER
+
+           A = Date
+           B = Corrigendum No.
+           C = Description
+           D = Download
+        ================================================= */
+
 
         for (
             let i = 1;
@@ -1483,30 +1055,14 @@ async function loadCorrigenda() {
                 rows[i];
 
 
-            const date =
-                dateColumn !== -1
-                ? row[dateColumn] || ""
-                : "";
-
-
-            const title =
-                titleColumn !== -1
-                ? row[titleColumn] || ""
-                : "";
-
-
-            const link =
-                linkColumn !== -1
-                ? row[linkColumn] || ""
-                : "";
-
-
-            /* Skip completely empty rows */
+            /* Ignore empty rows */
 
             if (
-                !date &&
-                !title &&
-                !link
+                !row ||
+                row.every(
+                    value =>
+                    !value.trim()
+                )
             ) {
 
                 continue;
@@ -1517,13 +1073,16 @@ async function loadCorrigenda() {
             corrigenda.push({
 
                 date:
-                    date.trim(),
+                    row[0] || "",
 
-                title:
-                    title.trim(),
+                number:
+                    row[1] || "",
 
-                link:
-                    link.trim()
+                description:
+                    row[2] || "",
+
+                download:
+                    row[3] || ""
 
             });
 
@@ -1546,7 +1105,6 @@ async function loadCorrigenda() {
 
 
         body.innerHTML = `
-
             <tr>
 
                 <td
@@ -1560,7 +1118,6 @@ async function loadCorrigenda() {
                 </td>
 
             </tr>
-
         `;
 
     }
@@ -1568,11 +1125,13 @@ async function loadCorrigenda() {
 }
 
 
-/* =========================================================
+/* =====================================================
    RENDER CORRIGENDA
-   ========================================================= */
+===================================================== */
 
-function renderCorrigenda(data) {
+function renderCorrigenda(
+    data
+) {
 
     const body =
         document.getElementById(
@@ -1581,23 +1140,21 @@ function renderCorrigenda(data) {
 
 
     if (
-        !data.length
+        data.length === 0
     ) {
 
         body.innerHTML = `
-
             <tr>
 
                 <td
                     colspan="4"
                     class="no-results">
 
-                    No corrigenda available.
+                    No matching corrigenda found.
 
                 </td>
 
             </tr>
-
         `;
 
         return;
@@ -1609,7 +1166,7 @@ function renderCorrigenda(data) {
 
 
     data.forEach(
-        (item, index) => {
+        (item) => {
 
 
             const tr =
@@ -1618,18 +1175,9 @@ function renderCorrigenda(data) {
                 );
 
 
-            /* S.NO. */
-
-            const serial =
-                document.createElement(
-                    "td"
-                );
-
-            serial.textContent =
-                index + 1;
-
-
-            /* DATE */
+            /* =========================
+               DATE
+            ========================= */
 
             const date =
                 document.createElement(
@@ -1641,22 +1189,23 @@ function renderCorrigenda(data) {
                 item.date
             ) {
 
-                const span =
+                const badge =
                     document.createElement(
                         "span"
                     );
 
-                span.className =
-                    "date";
+                badge.className =
+                    "date-badge";
 
-                span.textContent =
+                badge.textContent =
                     item.date;
 
                 date.appendChild(
-                    span
+                    badge
                 );
 
-            } else {
+            }
+            else {
 
                 date.textContent =
                     "—";
@@ -1664,19 +1213,37 @@ function renderCorrigenda(data) {
             }
 
 
-            /* SUBJECT */
+            /* =========================
+               CORRIGENDUM NUMBER
+            ========================= */
 
-            const title =
+            const number =
                 document.createElement(
                     "td"
                 );
 
-            title.textContent =
-                item.title ||
-                "Corrigendum";
+            number.textContent =
+                item.number ||
+                "—";
 
 
-            /* DOWNLOAD */
+            /* =========================
+               DESCRIPTION
+            ========================= */
+
+            const description =
+                document.createElement(
+                    "td"
+                );
+
+            description.textContent =
+                item.description ||
+                "—";
+
+
+            /* =========================
+               DOWNLOAD
+            ========================= */
 
             const download =
                 document.createElement(
@@ -1685,35 +1252,42 @@ function renderCorrigenda(data) {
 
 
             if (
-                item.link
+                item.download &&
+                item.download.trim() !== ""
             ) {
 
-                const a =
+                const link =
                     document.createElement(
                         "a"
                     );
 
-                a.className =
-                    "download-btn";
 
-                a.href =
-                    item.link;
+                link.href =
+                    item.download.trim();
 
-                a.target =
+
+                link.target =
                     "_blank";
 
-                a.rel =
+
+                link.rel =
                     "noopener noreferrer";
 
-                a.textContent =
+
+                link.className =
+                    "download-btn";
+
+
+                link.textContent =
                     "Download";
 
 
                 download.appendChild(
-                    a
+                    link
                 );
 
-            } else {
+            }
+            else {
 
                 download.textContent =
                     "—";
@@ -1721,16 +1295,25 @@ function renderCorrigenda(data) {
             }
 
 
-            tr.appendChild(
-                serial
-            );
+            /* =================================================
+               EXACT COLUMN ORDER
+
+               Date
+               Corrigendum No.
+               Description
+               Download
+            ================================================= */
 
             tr.appendChild(
                 date
             );
 
             tr.appendChild(
-                title
+                number
+            );
+
+            tr.appendChild(
+                description
             );
 
             tr.appendChild(
@@ -1748,12 +1331,14 @@ function renderCorrigenda(data) {
 }
 
 
-/* =========================================================
+/* =====================================================
    SEARCH
-   ========================================================= */
+===================================================== */
 
 document
-.getElementById("searchInput")
+.getElementById(
+    "searchInput"
+)
 .addEventListener(
     "input",
     function () {
@@ -1782,15 +1367,36 @@ document
             corrigenda.filter(
                 item =>
 
-                item.title
+                    (
+                        item.date ||
+                        ""
+                    )
                     .toLowerCase()
-                    .includes(query)
+                    .includes(
+                        query
+                    )
 
-                ||
+                    ||
 
-                item.date
+                    (
+                        item.number ||
+                        ""
+                    )
                     .toLowerCase()
-                    .includes(query)
+                    .includes(
+                        query
+                    )
+
+                    ||
+
+                    (
+                        item.description ||
+                        ""
+                    )
+                    .toLowerCase()
+                    .includes(
+                        query
+                    )
 
             );
 
@@ -1803,13 +1409,17 @@ document
 );
 
 
-/* =========================================================
+/* =====================================================
    START
-   ========================================================= */
+===================================================== */
 
 document.addEventListener(
     "DOMContentLoaded",
-    loadCorrigenda
+    function () {
+
+        loadCorrigenda();
+
+    }
 );
 
 </script>
