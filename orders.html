@@ -9,7 +9,7 @@
 <title>Orders | REW Pulwama</title>
 
 <meta name="description"
-content="Official Orders issued by the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
+content="Official Office Orders issued by the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
 
 <style>
 
@@ -24,7 +24,6 @@ content="Official Orders issued by the Office of the Executive Engineer, Rural E
     --dark-blue: #063b69;
     --light-blue: #eaf4fb;
     --gold: #d89b24;
-    --red: #b52b2b;
     --text: #333;
 }
 
@@ -36,7 +35,9 @@ body {
 }
 
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER
+========================= */
 
 .header {
     background: white;
@@ -101,7 +102,9 @@ body {
 }
 
 
-/* ================= NAVIGATION ================= */
+/* =========================
+   NAVIGATION
+========================= */
 
 .navbar {
     background: var(--dark-blue);
@@ -113,6 +116,8 @@ body {
     margin: auto;
 
     display: flex;
+    align-items: center;
+
     overflow-x: auto;
 }
 
@@ -136,17 +141,21 @@ body {
 }
 
 
-/* ================= MAIN ================= */
+/* =========================
+   MAIN CONTAINER
+========================= */
 
 .container {
     max-width: 1250px;
-    margin: 25px auto;
+    margin: auto;
 
-    padding: 0 20px 40px;
+    padding: 25px 20px 40px;
 }
 
 
-/* ================= PAGE TITLE ================= */
+/* =========================
+   PAGE TITLE
+========================= */
 
 .page-title {
     background: white;
@@ -159,7 +168,7 @@ body {
     margin-bottom: 20px;
 }
 
-.page-title-top {
+.page-title-title {
     background: var(--blue);
 
     color: white;
@@ -179,7 +188,9 @@ body {
 }
 
 
-/* ================= SEARCH ================= */
+/* =========================
+   SEARCH
+========================= */
 
 .search-box {
     background: white;
@@ -210,7 +221,9 @@ body {
 }
 
 
-/* ================= TABLE ================= */
+/* =========================
+   TABLE
+========================= */
 
 .table-box {
     background: white;
@@ -228,43 +241,79 @@ body {
 .orders-table {
     width: 100%;
 
+    min-width: 850px;
+
     border-collapse: collapse;
 
-    min-width: 850px;
+    font-size: 14px;
 }
+
+
+/* TABLE HEADER */
 
 .orders-table th {
     background: var(--dark-blue);
 
     color: white;
 
-    padding: 13px 12px;
+    padding: 12px 10px;
 
     text-align: left;
 
-    font-size: 14px;
+    font-weight: bold;
+
+    border-right: 1px solid rgba(255,255,255,.15);
 }
 
-.orders-table td {
-    padding: 13px 12px;
 
-    border-bottom: 1px solid #e5e5e5;
+/* TABLE CELLS */
+
+.orders-table td {
+    padding: 12px 10px;
+
+    border-bottom: 1px solid #e1e1e1;
 
     vertical-align: middle;
-
-    font-size: 14px;
 }
 
 .orders-table tr:hover {
-    background: #f5f9fc;
-}
-
-.orders-table tr:last-child td {
-    border-bottom: none;
+    background: #f4f9fc;
 }
 
 
-/* ================= DATE ================= */
+/* COLUMN WIDTHS */
+
+.orders-table th:nth-child(1),
+.orders-table td:nth-child(1) {
+    width: 70px;
+    text-align: center;
+}
+
+.orders-table th:nth-child(2),
+.orders-table td:nth-child(2) {
+    width: 160px;
+}
+
+.orders-table th:nth-child(3),
+.orders-table td:nth-child(3) {
+    width: 140px;
+}
+
+.orders-table th:nth-child(4),
+.orders-table td:nth-child(4) {
+    min-width: 350px;
+}
+
+.orders-table th:nth-child(5),
+.orders-table td:nth-child(5) {
+    width: 140px;
+    text-align: center;
+}
+
+
+/* =========================
+   DATE
+========================= */
 
 .date {
     display: inline-block;
@@ -283,7 +332,9 @@ body {
 }
 
 
-/* ================= DOWNLOAD ================= */
+/* =========================
+   DOWNLOAD BUTTON
+========================= */
 
 .download-btn {
     display: inline-block;
@@ -292,11 +343,11 @@ body {
 
     color: white;
 
+    text-decoration: none;
+
     padding: 8px 15px;
 
     border-radius: 4px;
-
-    text-decoration: none;
 
     font-size: 13px;
 
@@ -314,12 +365,14 @@ body {
 }
 
 
-/* ================= STATUS ================= */
+/* =========================
+   MESSAGES
+========================= */
 
 .loading,
 .error,
 .no-results {
-    padding: 35px;
+    padding: 35px !important;
 
     text-align: center;
 
@@ -331,7 +384,9 @@ body {
 }
 
 
-/* ================= FOOTER ================= */
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
     background: #062f52;
@@ -387,9 +442,11 @@ body {
 }
 
 
-/* ================= MOBILE ================= */
+/* =========================
+   MOBILE
+========================= */
 
-@media(max-width:700px) {
+@media(max-width: 700px) {
 
     .header-inner {
         flex-wrap: wrap;
@@ -401,6 +458,14 @@ body {
 
     .header-text {
         flex-basis: 100%;
+    }
+
+    .header-text .govt {
+        font-size: 15px;
+    }
+
+    .header-text .department {
+        font-size: 14px;
     }
 
     .header-text h1 {
@@ -425,11 +490,14 @@ body {
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header class="header">
 
 <div class="header-inner">
+
 
     <div class="emblem">
 
@@ -460,12 +528,15 @@ body {
 
     </div>
 
+
 </div>
 
 </header>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav class="navbar">
 
@@ -524,14 +595,18 @@ body {
 </nav>
 
 
-<!-- ================= MAIN ================= -->
+<!-- =========================
+     MAIN
+========================= -->
 
 <main class="container">
 
 
+<!-- PAGE TITLE -->
+
 <section class="page-title">
 
-    <div class="page-title-top">
+    <div class="page-title-title">
         Office Orders
     </div>
 
@@ -546,20 +621,20 @@ body {
 </section>
 
 
-<!-- ================= SEARCH ================= -->
+<!-- SEARCH -->
 
 <div class="search-box">
 
     <input
         type="search"
         id="searchInput"
-        placeholder="Search orders..."
+        placeholder="Search by Order No., Date or Subject / Description..."
         autocomplete="off">
 
 </div>
 
 
-<!-- ================= TABLE ================= -->
+<!-- ORDERS TABLE -->
 
 <section class="table-box">
 
@@ -567,23 +642,28 @@ body {
 
 <table class="orders-table">
 
+
 <thead>
 
 <tr>
 
-    <th style="width:80px;">
+    <th>
         S.No.
     </th>
 
-    <th style="width:160px;">
+    <th>
+        Order No.
+    </th>
+
+    <th>
         Date
     </th>
 
     <th>
-        Order / Subject
+        Subject / Description
     </th>
 
-    <th style="width:150px;">
+    <th>
         Download
     </th>
 
@@ -597,7 +677,7 @@ body {
 <tr>
 
     <td
-        colspan="4"
+        colspan="5"
         class="loading">
 
         Loading orders...
@@ -607,6 +687,7 @@ body {
 </tr>
 
 </tbody>
+
 
 </table>
 
@@ -618,7 +699,9 @@ body {
 </main>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer class="footer">
 
@@ -702,627 +785,165 @@ body {
 
 <script>
 
+/* =====================================================
+   GOOGLE SHEET URL
+   ===================================================== */
+
 const SHEET_URL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1751045669&single=true&output=csv";
+
 
 let orders = [];
 
 
-/* ===============================
+/* =====================================================
    CSV PARSER
-================================ */
+   ===================================================== */
 
 function parseCSV(text) {
 
     const rows = [];
-    let row = [];
-    let cell = "";
-    let quoted = false;
 
-    for (let i = 0; i < text.length; i++) {
+    let row = [];
+
+    let cell = "";
+
+    let insideQuotes = false;
+
+
+    for (
+        let i = 0;
+        i < text.length;
+        i++
+    ) {
 
         const char = text[i];
+
         const next = text[i + 1];
+
+
+        /* Escaped quotation mark */
 
         if (
             char === '"' &&
-            quoted &&
+            insideQuotes &&
             next === '"'
         ) {
+
             cell += '"';
+
             i++;
+
             continue;
         }
 
-        if (char === '"') {
-            quoted = !quoted;
+
+        /* Start / end quotation */
+
+        if (
+            char === '"'
+        ) {
+
+            insideQuotes =
+                !insideQuotes;
+
             continue;
         }
+
+
+        /* Comma */
 
         if (
             char === "," &&
-            !quoted
+            !insideQuotes
         ) {
-            row.push(cell.trim());
+
+            row.push(
+                cell.trim()
+            );
+
             cell = "";
+
             continue;
         }
 
+
+        /* New line */
+
         if (
-            (char === "\n" || char === "\r") &&
-            !quoted
+            (char === "\n" ||
+             char === "\r") &&
+            !insideQuotes
         ) {
 
             if (
                 char === "\r" &&
                 next === "\n"
             ) {
+
                 i++;
             }
 
-            row.push(cell.trim());
+
+            row.push(
+                cell.trim()
+            );
+
 
             if (
                 row.some(
-                    value => value !== ""
+                    value =>
+                    value !== ""
                 )
             ) {
+
                 rows.push(row);
             }
 
+
             row = [];
+
             cell = "";
 
             continue;
         }
 
+
         cell += char;
     }
 
+
+    /* Last row */
+
     if (
         cell !== "" ||
-        row.length
+        row.length > 0
     ) {
 
-        row.push(cell.trim());
+        row.push(
+            cell.trim()
+        );
+
 
         if (
             row.some(
-                value => value !== ""
+                value =>
+                value !== ""
             )
         ) {
+
             rows.push(row);
         }
     }
+
 
     return rows;
 }
 
 
-/* ===============================
-   NORMALIZE HEADER
-================================ */
-
-function normalize(value) {
-
-    return String(value || "")
-        .toLowerCase()
-        .replace(/[^a-z0-9]/g, "");
-}
-
-
-/* ===============================
-   LOAD ORDERS
-================================ */
-
-async function loadOrders() {
-
-    const body =
-        document.getElementById("ordersBody");
-
-    try {
-
-        const response =
-            await fetch(
-                SHEET_URL +
-                "&t=" +
-                Date.now(),
-                {
-                    cache: "no-store"
-                }
-            );
-
-        if (!response.ok) {
-            throw new Error(
-                "Unable to access Google Sheet."
-            );
-        }
-
-        const csv =
-            await response.text();
-
-        console.log(
-            "Orders CSV:",
-            csv
-        );
-
-        if (
-            csv.trim().startsWith("<") ||
-            csv.includes("<html")
-        ) {
-            throw new Error(
-                "Google did not return CSV data."
-            );
-        }
-
-        const rows =
-            parseCSV(csv);
-
-        if (
-            rows.length < 2
-        ) {
-
-            body.innerHTML = `
-                <tr>
-                    <td colspan="5"
-                        class="no-results">
-                        No orders available.
-                    </td>
-                </tr>
-            `;
-
-            return;
-        }
-
-
-        /* ===============================
-           HEADERS
-        =============================== */
-
-        const headers =
-            rows[0].map(normalize);
-
-        console.log(
-            "Orders headers:",
-            headers
-        );
-
-
-        /* ===============================
-           FIND COLUMNS
-        =============================== */
-
-        const snoColumn =
-            headers.indexOf("sno");
-
-        const orderNoColumn =
-            headers.indexOf("orderno");
-
-        const dateColumn =
-            headers.indexOf("date");
-
-        const subjectColumn =
-            headers.indexOf("subjectdescription");
-
-        const downloadColumn =
-            headers.indexOf("download");
-
-
-        console.log(
-            "S.No column:",
-            snoColumn
-        );
-
-        console.log(
-            "Order No column:",
-            orderNoColumn
-        );
-
-        console.log(
-            "Date column:",
-            dateColumn
-        );
-
-        console.log(
-            "Subject column:",
-            subjectColumn
-        );
-
-        console.log(
-            "Download column:",
-            downloadColumn
-        );
-
-
-        /* ===============================
-           READ DATA
-        =============================== */
-
-        orders = [];
-
-
-        for (
-            let i = 1;
-            i < rows.length;
-            i++
-        ) {
-
-            const row =
-                rows[i];
-
-
-            if (
-                !row ||
-                row.every(
-                    value => !value
-                )
-            ) {
-                continue;
-            }
-
-
-            const sno =
-                snoColumn >= 0
-                ? row[snoColumn] || ""
-                : i;
-
-
-            const orderNo =
-                orderNoColumn >= 0
-                ? row[orderNoColumn] || ""
-                : "";
-
-
-            const date =
-                dateColumn >= 0
-                ? row[dateColumn] || ""
-                : "";
-
-
-            const subject =
-                subjectColumn >= 0
-                ? row[subjectColumn] || ""
-                : "";
-
-
-            const download =
-                downloadColumn >= 0
-                ? row[downloadColumn] || ""
-                : "";
-
-
-            orders.push({
-
-                sno:
-                    sno.trim(),
-
-                orderNo:
-                    orderNo.trim(),
-
-                date:
-                    date.trim(),
-
-                subject:
-                    subject.trim(),
-
-                download:
-                    download.trim()
-
-            });
-
-        }
-
-
-        renderOrders(orders);
-
-    }
-
-
-    catch (error) {
-
-        console.error(
-            "Orders error:",
-            error
-        );
-
-        body.innerHTML = `
-            <tr>
-                <td colspan="5"
-                    class="error">
-
-                    Unable to load orders.
-                    Please try again later.
-
-                </td>
-            </tr>
-        `;
-    }
-}
-
-
-/* ===============================
-   RENDER ORDERS
-================================ */
-
-function renderOrders(data) {
-
-    const body =
-        document.getElementById(
-            "ordersBody"
-        );
-
-
-    if (
-        !data.length
-    ) {
-
-        body.innerHTML = `
-            <tr>
-                <td colspan="5"
-                    class="no-results">
-
-                    No orders available.
-
-                </td>
-            </tr>
-        `;
-
-        return;
-    }
-
-
-    body.innerHTML = "";
-
-
-    data.forEach(
-        (item, index) => {
-
-            const tr =
-                document.createElement("tr");
-
-
-            /* S.NO */
-
-            const sno =
-                document.createElement("td");
-
-            sno.textContent =
-                item.sno || index + 1;
-
-
-            /* ORDER NO */
-
-            const orderNo =
-                document.createElement("td");
-
-            orderNo.textContent =
-                item.orderNo || "—";
-
-
-            /* DATE */
-
-            const date =
-                document.createElement("td");
-
-
-            if (
-                item.date
-            ) {
-
-                const span =
-                    document.createElement(
-                        "span"
-                    );
-
-                span.className =
-                    "date";
-
-                span.textContent =
-                    item.date;
-
-                date.appendChild(span);
-
-            }
-            else {
-
-                date.textContent =
-                    "—";
-            }
-
-
-            /* SUBJECT */
-
-            const subject =
-                document.createElement("td");
-
-            subject.textContent =
-                item.subject ||
-                "Office Order";
-
-
-            /* DOWNLOAD */
-
-            const download =
-                document.createElement("td");
-
-
-            if (
-                item.download
-            ) {
-
-                const link =
-                    document.createElement("a");
-
-                link.href =
-                    item.download;
-
-                link.target =
-                    "_blank";
-
-                link.rel =
-                    "noopener noreferrer";
-
-                link.className =
-                    "download-btn";
-
-                link.textContent =
-                    "Download";
-
-                download.appendChild(
-                    link
-                );
-
-            }
-            else {
-
-                download.textContent =
-                    "—";
-            }
-
-
-            tr.appendChild(sno);
-            tr.appendChild(orderNo);
-            tr.appendChild(date);
-            tr.appendChild(subject);
-            tr.appendChild(download);
-
-            body.appendChild(tr);
-
-        }
-    );
-}
-
-
-/* ===============================
-   SEARCH
-================================ */
-
-document
-.getElementById("searchInput")
-.addEventListener(
-    "input",
-    function () {
-
-        const query =
-            this.value
-                .toLowerCase()
-                .trim();
-
-
-        if (!query) {
-
-            renderOrders(
-                orders
-            );
-
-            return;
-        }
-
-
-        const filtered =
-            orders.filter(
-                item =>
-
-                    item.orderNo
-                        .toLowerCase()
-                        .includes(query)
-
-                    ||
-
-                    item.date
-                        .toLowerCase()
-                        .includes(query)
-
-                    ||
-
-                    item.subject
-                        .toLowerCase()
-                        .includes(query)
-
-            );
-
-
-        renderOrders(
-            filtered
-        );
-
-    }
-);
-
-
-/* ===============================
-   START
-================================ */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    loadOrders
-);
-
-</script>
-   NORMALIZE HEADER
-   ========================================================= */
-
-function normalizeHeader(
-    value
-) {
-
-    return String(
-        value || ""
-    )
-    .toLowerCase()
-    .replace(
-        /[^a-z0-9]/g,
-        ""
-    );
-
-}
-
-
-/* =========================================================
-   FIND COLUMN
-   ========================================================= */
-
-function findColumn(
-    headers,
-    possibleNames
-) {
-
-    const normalized =
-        headers.map(
-            normalizeHeader
-        );
-
-
-    for (
-        const name of possibleNames
-    ) {
-
-        const index =
-            normalized.indexOf(
-                normalizeHeader(name)
-            );
-
-
-        if (
-            index !== -1
-        ) {
-
-            return index;
-
-        }
-
-    }
-
-
-    return -1;
-
-}
-
-
-/* =========================================================
-   LOAD ORDERS
-   ========================================================= */
+/* =====================================================
+   LOAD ORDERS FROM GOOGLE SHEET
+   ===================================================== */
 
 async function loadOrders() {
 
@@ -1337,7 +958,7 @@ async function loadOrders() {
         const response =
             await fetch(
                 SHEET_URL +
-                "&t=" +
+                "&cache=" +
                 Date.now(),
                 {
                     cache: "no-store"
@@ -1350,9 +971,8 @@ async function loadOrders() {
         ) {
 
             throw new Error(
-                "Google Sheet request failed."
+                "Unable to access Google Sheet."
             );
-
         }
 
 
@@ -1366,21 +986,16 @@ async function loadOrders() {
         );
 
 
-        /* Make sure Google returned CSV */
+        /* Check that Google returned CSV */
 
         if (
-            csv.includes(
-                "<html"
-            ) ||
-            csv.includes(
-                "<!DOCTYPE"
-            )
+            csv.includes("<html") ||
+            csv.includes("<!DOCTYPE")
         ) {
 
             throw new Error(
-                "Google did not return CSV data."
+                "Google returned HTML instead of CSV."
             );
-
         }
 
 
@@ -1394,102 +1009,34 @@ async function loadOrders() {
 
             body.innerHTML = `
                 <tr>
+
                     <td
-                        colspan="4"
+                        colspan="5"
                         class="no-results">
 
                         No orders available.
 
                     </td>
+
                 </tr>
             `;
 
             return;
-
         }
 
 
-        const headers =
-            rows[0];
+        /* =============================================
+           IMPORTANT:
 
+           The Google Sheet columns MUST be:
 
-        console.log(
-            "Orders headers:",
-            headers
-        );
+           A = S.No.
+           B = Order No.
+           C = Date
+           D = Subject / Description
+           E = Download
+        ============================================= */
 
-
-        /* =================================================
-           FIND COLUMNS
-           ================================================= */
-
-        const dateColumn =
-            findColumn(
-                headers,
-                [
-                    "Date",
-                    "Order Date",
-                    "Date of Order",
-                    "Issue Date",
-                    "Order Issue Date"
-                ]
-            );
-
-
-        const subjectColumn =
-            findColumn(
-                headers,
-                [
-                    "Subject",
-                    "Title",
-                    "Order",
-                    "Order Subject",
-                    "Order Title",
-                    "Description",
-                    "Particulars"
-                ]
-            );
-
-
-        const linkColumn =
-            findColumn(
-                headers,
-                [
-                    "Download Link",
-                    "Download",
-                    "Link",
-                    "URL",
-                    "PDF",
-                    "PDF Link",
-                    "File",
-                    "File Link",
-                    "Document Link",
-                    "Document URL",
-                    "Order Link",
-                    "Order PDF"
-                ]
-            );
-
-
-        console.log(
-            "Date column:",
-            dateColumn
-        );
-
-        console.log(
-            "Subject column:",
-            subjectColumn
-        );
-
-        console.log(
-            "Link column:",
-            linkColumn
-        );
-
-
-        /* =================================================
-           BUILD ORDERS ARRAY
-           ================================================= */
 
         orders = [];
 
@@ -1504,47 +1051,36 @@ async function loadOrders() {
                 rows[i];
 
 
-            const date =
-                dateColumn !== -1
-                ? row[dateColumn] || ""
-                : "";
-
-
-            const subject =
-                subjectColumn !== -1
-                ? row[subjectColumn] || ""
-                : "";
-
-
-            const link =
-                linkColumn !== -1
-                ? row[linkColumn] || ""
-                : "";
-
-
-            /* Ignore completely empty rows */
+            /* Ignore empty rows */
 
             if (
-                !date &&
-                !subject &&
-                !link
+                !row ||
+                row.every(
+                    value =>
+                    !value.trim()
+                )
             ) {
 
                 continue;
-
             }
 
 
             orders.push({
 
+                sno:
+                    row[0] || "",
+
+                orderNo:
+                    row[1] || "",
+
                 date:
-                    date.trim(),
+                    row[2] || "",
 
                 subject:
-                    subject.trim(),
+                    row[3] || "",
 
-                link:
-                    link.trim()
+                download:
+                    row[4] || ""
 
             });
 
@@ -1570,7 +1106,7 @@ async function loadOrders() {
             <tr>
 
                 <td
-                    colspan="4"
+                    colspan="5"
                     class="error">
 
                     Unable to load orders.
@@ -1580,15 +1116,14 @@ async function loadOrders() {
 
             </tr>
         `;
-
     }
 
 }
 
 
-/* =========================================================
-   RENDER ORDERS
-   ========================================================= */
+/* =====================================================
+   DISPLAY ORDERS
+   ===================================================== */
 
 function renderOrders(
     data
@@ -1601,17 +1136,17 @@ function renderOrders(
 
 
     if (
-        !data.length
+        data.length === 0
     ) {
 
         body.innerHTML = `
             <tr>
 
                 <td
-                    colspan="4"
+                    colspan="5"
                     class="no-results">
 
-                    No orders available.
+                    No matching orders found.
 
                 </td>
 
@@ -1619,7 +1154,6 @@ function renderOrders(
         `;
 
         return;
-
     }
 
 
@@ -1635,18 +1169,37 @@ function renderOrders(
                 );
 
 
-            /* S.NO */
+            /* =========================
+               S.NO.
+            ========================= */
 
-            const serial =
+            const sno =
                 document.createElement(
                     "td"
                 );
 
-            serial.textContent =
+            sno.textContent =
+                item.sno ||
                 index + 1;
 
 
-            /* DATE */
+            /* =========================
+               ORDER NO.
+            ========================= */
+
+            const orderNo =
+                document.createElement(
+                    "td"
+                );
+
+            orderNo.textContent =
+                item.orderNo ||
+                "—";
+
+
+            /* =========================
+               DATE
+            ========================= */
 
             const date =
                 document.createElement(
@@ -1658,19 +1211,19 @@ function renderOrders(
                 item.date
             ) {
 
-                const span =
+                const dateSpan =
                     document.createElement(
                         "span"
                     );
 
-                span.className =
+                dateSpan.className =
                     "date";
 
-                span.textContent =
+                dateSpan.textContent =
                     item.date;
 
                 date.appendChild(
-                    span
+                    dateSpan
                 );
 
             }
@@ -1678,11 +1231,12 @@ function renderOrders(
 
                 date.textContent =
                     "—";
-
             }
 
 
-            /* SUBJECT */
+            /* =========================
+               SUBJECT / DESCRIPTION
+            ========================= */
 
             const subject =
                 document.createElement(
@@ -1694,7 +1248,9 @@ function renderOrders(
                 "Office Order";
 
 
-            /* DOWNLOAD */
+            /* =========================
+               DOWNLOAD
+            ========================= */
 
             const download =
                 document.createElement(
@@ -1703,32 +1259,37 @@ function renderOrders(
 
 
             if (
-                item.link
+                item.download
             ) {
 
-                const a =
+                const link =
                     document.createElement(
                         "a"
                     );
 
-                a.href =
-                    item.link;
 
-                a.target =
+                link.href =
+                    item.download;
+
+
+                link.target =
                     "_blank";
 
-                a.rel =
+
+                link.rel =
                     "noopener noreferrer";
 
-                a.className =
+
+                link.className =
                     "download-btn";
 
-                a.textContent =
+
+                link.textContent =
                     "Download";
 
 
                 download.appendChild(
-                    a
+                    link
                 );
 
             }
@@ -1736,12 +1297,17 @@ function renderOrders(
 
                 download.textContent =
                     "—";
-
             }
 
 
+            /* Add all five columns */
+
             tr.appendChild(
-                serial
+                sno
+            );
+
+            tr.appendChild(
+                orderNo
             );
 
             tr.appendChild(
@@ -1767,9 +1333,9 @@ function renderOrders(
 }
 
 
-/* =========================================================
-   SEARCH
-   ========================================================= */
+/* =====================================================
+   SEARCH ORDERS
+   ===================================================== */
 
 document
 .getElementById(
@@ -1794,7 +1360,6 @@ document
             );
 
             return;
-
         }
 
 
@@ -1802,15 +1367,27 @@ document
             orders.filter(
                 item =>
 
-                    item.subject
+                    item.orderNo
                         .toLowerCase()
-                        .includes(query)
+                        .includes(
+                            query
+                        )
 
                     ||
 
                     item.date
                         .toLowerCase()
-                        .includes(query)
+                        .includes(
+                            query
+                        )
+
+                    ||
+
+                    item.subject
+                        .toLowerCase()
+                        .includes(
+                            query
+                        )
 
             );
 
@@ -1823,9 +1400,9 @@ document
 );
 
 
-/* =========================================================
+/* =====================================================
    START
-   ========================================================= */
+   ===================================================== */
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -1833,6 +1410,7 @@ document.addEventListener(
 );
 
 </script>
+
 
 </body>
 
