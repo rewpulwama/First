@@ -1011,11 +1011,13 @@ body {
 })();
 </script>
 
-<!-- LATEST UPDATES -->
+<!-- =========================================================
+     LATEST UPDATES
+========================================================= -->
+
+<!-- NOTICES + TENDERS -->
 
 <div class="two-column">
-
-    <!-- LATEST NOTICES -->
 
     <section class="section">
 
@@ -1033,8 +1035,6 @@ body {
 
     </section>
 
-
-    <!-- LATEST TENDERS -->
 
     <section class="section">
 
@@ -1055,11 +1055,9 @@ body {
 </div>
 
 
-<!-- OTHER LATEST UPDATES -->
+<!-- CIRCULARS + ORDERS -->
 
 <div class="two-column">
-
-    <!-- LATEST CIRCULARS -->
 
     <section class="section">
 
@@ -1077,8 +1075,6 @@ body {
 
     </section>
 
-
-    <!-- LATEST ORDERS -->
 
     <section class="section">
 
@@ -1099,24 +1095,44 @@ body {
 </div>
 
 
-<!-- LATEST CORRIGENDUM -->
+<!-- CORRIGENDUM + LOI -->
 
-<section class="section">
+<div class="two-column">
 
-    <div class="section-title">
-        Latest Corrigendum
-    </div>
+    <section class="section">
 
-    <div class="section-body">
+        <div class="section-title">
+            Latest Corrigendum
+        </div>
 
-        <ul class="notice-list" id="latestCorrigendum">
-            <li>Loading...</li>
-        </ul>
+        <div class="section-body">
 
-    </div>
+            <ul class="notice-list" id="latestCorrigendum">
+                <li>Loading...</li>
+            </ul>
 
-</section>
+        </div>
 
+    </section>
+
+
+    <section class="section">
+
+        <div class="section-title">
+            Latest LOIs
+        </div>
+
+        <div class="section-body">
+
+            <ul class="notice-list" id="latestLOI">
+                <li>Loading...</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+</div>
 <!-- CONTACT -->
 
 <section class="section">
@@ -1273,9 +1289,9 @@ body {
 </footer>
 <script>
 
-/* =====================================================
-   GOOGLE SHEET CSV URLS
-===================================================== */
+/* =========================================================
+   GOOGLE SHEET CSV LINKS
+========================================================= */
 
 const SHEETS = {
 
@@ -1292,14 +1308,17 @@ const SHEETS = {
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=0&single=true&output=csv",
 
     corrigendum:
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=211947423&single=true&output=csv"
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=211947423&single=true&output=csv",
+
+    loi:
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1483979790&single=true&output=csv"
 
 };
 
 
-/* =====================================================
-   CSV FETCH
-===================================================== */
+/* =========================================================
+   LOAD CSV
+========================================================= */
 
 async function loadCSV(url) {
 
@@ -1308,7 +1327,7 @@ async function loadCSV(url) {
     );
 
     if (!response.ok) {
-        throw new Error("CSV could not be loaded");
+        throw new Error("Unable to load CSV");
     }
 
     const text = await response.text();
@@ -1317,9 +1336,9 @@ async function loadCSV(url) {
 }
 
 
-/* =====================================================
+/* =========================================================
    CSV PARSER
-===================================================== */
+========================================================= */
 
 function parseCSV(text) {
 
@@ -1334,7 +1353,11 @@ function parseCSV(text) {
         const char = text[i];
         const next = text[i + 1];
 
-        if (char === '"' && insideQuotes && next === '"') {
+        if (
+            char === '"' &&
+            insideQuotes &&
+            next === '"'
+        ) {
 
             value += '"';
             i++;
@@ -1347,7 +1370,10 @@ function parseCSV(text) {
 
         }
 
-        else if (char === "," && !insideQuotes) {
+        else if (
+            char === "," &&
+            !insideQuotes
+        ) {
 
             row.push(value.trim());
             value = "";
@@ -1355,17 +1381,24 @@ function parseCSV(text) {
         }
 
         else if (
-            (char === "\n" || char === "\r")
-            && !insideQuotes
+            (char === "\n" || char === "\r") &&
+            !insideQuotes
         ) {
 
-            if (char === "\r" && next === "\n") {
+            if (
+                char === "\r" &&
+                next === "\n"
+            ) {
                 i++;
             }
 
             row.push(value.trim());
 
-            if (row.some(cell => cell !== "")) {
+            if (
+                row.some(
+                    cell => cell !== ""
+                )
+            ) {
                 rows.push(row);
             }
 
@@ -1379,24 +1412,35 @@ function parseCSV(text) {
             value += char;
 
         }
+
     }
 
-    if (value !== "" || row.length > 0) {
+
+    if (
+        value !== "" ||
+        row.length > 0
+    ) {
 
         row.push(value.trim());
 
-        if (row.some(cell => cell !== "")) {
+        if (
+            row.some(
+                cell => cell !== ""
+            )
+        ) {
             rows.push(row);
         }
+
     }
+
 
     return rows;
 }
 
 
-/* =====================================================
-   NORMALIZE HEADER
-===================================================== */
+/* =========================================================
+   CLEAN HEADER
+========================================================= */
 
 function cleanHeader(value) {
 
@@ -1410,32 +1454,46 @@ function cleanHeader(value) {
 }
 
 
-/* =====================================================
+/* =========================================================
    FIND COLUMN
-===================================================== */
+========================================================= */
 
 function findColumn(headers, names) {
 
-    for (let i = 0; i < headers.length; i++) {
+    for (
+        let i = 0;
+        i < headers.length;
+        i++
+    ) {
 
-        const header = cleanHeader(headers[i]);
+        const header =
+            cleanHeader(headers[i]);
 
-        for (const name of names) {
 
-            if (header === cleanHeader(name)) {
+        for (
+            const name of names
+        ) {
+
+            if (
+                header ===
+                cleanHeader(name)
+            ) {
+
                 return i;
+
             }
 
         }
+
     }
 
     return -1;
 }
 
 
-/* =====================================================
+/* =========================================================
    DATE CONVERSION
-===================================================== */
+========================================================= */
 
 function convertDate(value) {
 
@@ -1448,33 +1506,53 @@ function convertDate(value) {
     let date;
 
 
-    /* DD-MM-YYYY */
+    /* DD-MM-YYYY or DD/MM/YYYY */
 
-    if (/^\d{1,2}[-\/]\d{1,2}[-\/]\d{4}$/.test(value)) {
+    if (
+        /^\d{1,2}[-\/]\d{1,2}[-\/]\d{4}$/
+        .test(value)
+    ) {
 
-        const parts = value.split(/[-\/]/);
+        const parts =
+            value.split(/[-\/]/);
+
 
         date = new Date(
+
             Number(parts[2]),
+
             Number(parts[1]) - 1,
+
             Number(parts[0])
+
         );
 
     }
+
 
     /* YYYY-MM-DD */
 
-    else if (/^\d{4}[-\/]\d{1,2}[-\/]\d{1,2}$/.test(value)) {
+    else if (
+        /^\d{4}[-\/]\d{1,2}[-\/]\d{1,2}$/
+        .test(value)
+    ) {
 
-        const parts = value.split(/[-\/]/);
+        const parts =
+            value.split(/[-\/]/);
+
 
         date = new Date(
+
             Number(parts[0]),
+
             Number(parts[1]) - 1,
+
             Number(parts[2])
+
         );
 
     }
+
 
     else {
 
@@ -1483,25 +1561,37 @@ function convertDate(value) {
     }
 
 
-    if (isNaN(date.getTime())) {
+    if (
+        isNaN(date.getTime())
+    ) {
+
         return new Date(0);
+
     }
+
 
     return date;
 }
 
 
-/* =====================================================
+/* =========================================================
    DISPLAY DATE
-===================================================== */
+========================================================= */
 
 function displayDate(value) {
 
-    const date = convertDate(value);
+    const date =
+        convertDate(value);
 
-    if (date.getTime() === 0) {
+
+    if (
+        date.getTime() === 0
+    ) {
+
         return value || "";
+
     }
+
 
     return date.toLocaleDateString(
         "en-GB",
@@ -1515,60 +1605,61 @@ function displayDate(value) {
 }
 
 
-/* =====================================================
-   CREATE ITEM
-===================================================== */
+/* =========================================================
+   CREATE LIST ITEM
+========================================================= */
 
-function createItem(date, title, link, isNew) {
+function createItem(
+    date,
+    title,
+    link,
+    isNew
+) {
 
-    const li = document.createElement("li");
+    const li =
+        document.createElement("li");
 
 
-    const dateSpan = document.createElement("span");
+    const dateSpan =
+        document.createElement("span");
+
 
     dateSpan.className = "date";
 
-    dateSpan.textContent = displayDate(date);
+
+    dateSpan.textContent =
+        displayDate(date);
+
 
     li.appendChild(dateSpan);
 
 
-    if (link && link.startsWith("http")) {
+    const a =
+        document.createElement("a");
 
-        const a = document.createElement("a");
 
-        a.href = link;
+    a.href =
+        link || "#";
 
-        a.target = "_blank";
 
-        a.rel = "noopener";
+    a.textContent =
+        title || "View Document";
 
-        a.textContent = title || "View Document";
 
-        li.appendChild(a);
-
-    }
-
-    else {
-
-        const a = document.createElement("a");
-
-        a.href = link || "#";
-
-        a.textContent = title || "View Document";
-
-        li.appendChild(a);
-
-    }
+    li.appendChild(a);
 
 
     if (isNew) {
 
-        const newLabel = document.createElement("span");
+        const newLabel =
+            document.createElement("span");
+
 
         newLabel.className = "new";
 
+
         newLabel.textContent = "NEW";
+
 
         li.appendChild(newLabel);
 
@@ -1576,13 +1667,12 @@ function createItem(date, title, link, isNew) {
 
 
     return li;
-
 }
 
 
-/* =====================================================
-   LOAD ONE SECTION
-===================================================== */
+/* =========================================================
+   LOAD ONE GOOGLE SHEET
+========================================================= */
 
 async function loadSection(
     sheetURL,
@@ -1593,6 +1683,7 @@ async function loadSection(
 
     const container =
         document.getElementById(elementID);
+
 
     if (!container) {
         return;
@@ -1619,34 +1710,51 @@ async function loadSection(
 
 
         const dateColumn =
-            findColumn(headers, [
-                "date",
-                "updated date",
-                "last updated"
-            ]);
+            findColumn(
+                headers,
+                [
+                    "date",
+                    "updated date",
+                    "last updated"
+                ]
+            );
 
 
         const titleColumn =
-            findColumn(headers, titleColumns);
+            findColumn(
+                headers,
+                titleColumns
+            );
 
 
         const downloadColumn =
-            findColumn(headers, [
-                "download",
-                "download link",
-                "link",
-                "url"
-            ]);
+            findColumn(
+                headers,
+                [
+                    "download",
+                    "download link",
+                    "link",
+                    "url"
+                ]
+            );
 
 
         const records = [];
 
 
-        for (let i = 1; i < rows.length; i++) {
+        for (
+            let i = 1;
+            i < rows.length;
+            i++
+        ) {
 
             const row = rows[i];
 
-            if (!row || row.length === 0) {
+
+            if (
+                !row ||
+                row.length === 0
+            ) {
                 continue;
             }
 
@@ -1687,7 +1795,7 @@ async function loadSection(
         }
 
 
-        /* NEWEST DATE FIRST */
+        /* SORT NEWEST DATE FIRST */
 
         records.sort(
             (a, b) =>
@@ -1699,27 +1807,36 @@ async function loadSection(
         container.innerHTML = "";
 
 
-        /* SHOW LATEST 3 */
+        /* SHOW LATEST 3 RECORDS */
 
         records
             .slice(0, 3)
-            .forEach((record, index) => {
+            .forEach(
+                (record, index) => {
 
-                container.appendChild(
+                    container.appendChild(
 
-                    createItem(
-                        record.date,
-                        record.title,
-                        record.link,
-                        index === 0
-                    )
+                        createItem(
 
-                );
+                            record.date,
 
-            });
+                            record.title,
+
+                            record.link,
+
+                            index === 0
+
+                        )
+
+                    );
+
+                }
+            );
 
 
-        if (records.length === 0) {
+        if (
+            records.length === 0
+        ) {
 
             container.innerHTML =
                 "<li>No records available.</li>";
@@ -1728,12 +1845,14 @@ async function loadSection(
 
     }
 
+
     catch (error) {
 
         console.error(
-            "Error loading " + elementID,
+            "Google Sheet error:",
             error
         );
+
 
         container.innerHTML =
             "<li>Unable to load data.</li>";
@@ -1743,12 +1862,9 @@ async function loadSection(
 }
 
 
-/* =====================================================
-   LOAD ALL FIVE SECTIONS
-===================================================== */
-
-
-/* NOTICES */
+/* =========================================================
+   LOAD NOTICES
+========================================================= */
 
 loadSection(
 
@@ -1769,49 +1885,9 @@ loadSection(
 );
 
 
-/* CIRCULARS */
-
-loadSection(
-
-    SHEETS.circulars,
-
-    "latestCirculars",
-
-    [
-        "circular / subject",
-        "circular/subject",
-        "circular",
-        "subject",
-        "description"
-    ],
-
-    "circulars.html"
-
-);
-
-
-/* ORDERS */
-
-loadSection(
-
-    SHEETS.orders,
-
-    "latestOrders",
-
-    [
-        "order / subject",
-        "order/subject",
-        "order",
-        "subject",
-        "description"
-    ],
-
-    "orders.html"
-
-);
-
-
-/* TENDERS */
+/* =========================================================
+   LOAD TENDERS
+========================================================= */
 
 loadSection(
 
@@ -1832,7 +1908,55 @@ loadSection(
 );
 
 
-/* CORRIGENDUM */
+/* =========================================================
+   LOAD CIRCULARS
+========================================================= */
+
+loadSection(
+
+    SHEETS.circulars,
+
+    "latestCirculars",
+
+    [
+        "circular / subject",
+        "circular/subject",
+        "circular",
+        "subject",
+        "description"
+    ],
+
+    "circulars.html"
+
+);
+
+
+/* =========================================================
+   LOAD ORDERS
+========================================================= */
+
+loadSection(
+
+    SHEETS.orders,
+
+    "latestOrders",
+
+    [
+        "order / subject",
+        "order/subject",
+        "order",
+        "subject",
+        "description"
+    ],
+
+    "orders.html"
+
+);
+
+
+/* =========================================================
+   LOAD CORRIGENDUM
+========================================================= */
 
 loadSection(
 
@@ -1849,6 +1973,29 @@ loadSection(
     ],
 
     "corri.html"
+
+);
+
+
+/* =========================================================
+   LOAD LOIs
+========================================================= */
+
+loadSection(
+
+    SHEETS.loi,
+
+    "latestLOI",
+
+    [
+        "loi no.",
+        "loi no",
+        "loi",
+        "description",
+        "subject"
+    ],
+
+    "loi.html"
 
 );
 
