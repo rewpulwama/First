@@ -701,165 +701,572 @@ body {
 
 <script>
 
-/* =========================================================
-   CORRIGENDUM GOOGLE SHEET
-   ========================================================= */
+const SHEET_ID =
+"2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY";
+
+const GID =
+"211947423";
 
 const SHEET_URL =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=211947423&single=true&output=csv";
+"https://docs.google.com/spreadsheets/d/e/" +
+SHEET_ID +
+"/gviz/tq?tqx=out:json&gid=" +
+GID;
 
 
 let corrigenda = [];
 
 
-/* =========================================================
-   CSV PARSER
-   ========================================================= */
+/* =========================
+   LOAD GOOGLE SHEET
+========================= */
 
-function parseCSV(text) {
+async function loadCorrigenda() {
 
-    const rows = [];
+    const body =
+        document.getElementById("corriBody");
 
-    let row = [];
-    let cell = "";
-    let quoted = false;
+    body.innerHTML = `
+        <tr>
+            <td colspan="4" class="loading">
+                Loading corrigenda...
+            </td>
+        </tr>
+    `;
 
+    try {
 
-    for (
-        let i = 0;
-        i < text.length;
-        i++
-    ) {
-
-        const char = text[i];
-
-        const next = text[i + 1];
-
-
-        /* Escaped quotes */
-
-        if (
-            char === '"' &&
-            quoted &&
-            next === '"'
-        ) {
-
-            cell += '"';
-
-            i++;
-
-            continue;
-
-        }
-
-
-        /* Quote */
-
-        if (char === '"') {
-
-            quoted = !quoted;
-
-            continue;
-
-        }
-
-
-        /* Comma */
-
-        if (
-            char === "," &&
-            !quoted
-        ) {
-
-            row.push(
-                cell.trim()
+        const response =
+            await fetch(
+                SHEET_URL +
+                "&cache=" +
+                Date.now()
             );
 
-            cell = "";
+        if (!response.ok) {
 
-            continue;
+            throw new Error(
+                "Google Sheet could not be accessed."
+            );
 
         }
 
-
-        /* New line */
-
-        if (
-            (char === "\n" ||
-             char === "\r") &&
-            !quoted
-        ) {
-
-            if (
-                char === "\r" &&
-                next === "\n"
-            ) {
-
-                i++;
-
-            }
+        const text =
+            await response.text();
 
 
-            row.push(
-                cell.trim()
+        /*
+         Google GViz returns:
+         google.visualization.Query.setResponse(...)
+        */
+
+        const jsonText =
+            text.substring(
+                text.indexOf("{"),
+                text.lastIndexOf("}") + 1
             );
 
 
-            if (
-                row.some(
-                    value => value !== ""
-                )
-            ) {
-
-                rows.push(row);
-
-            }
+        const data =
+            JSON.parse(jsonText);
 
 
-            row = [];
+        if (
+            !data.table ||
+            !data.table.rows
+        ) {
 
-            cell = "";
-
-            continue;
+            throw new Error(
+                "No data returned from Google Sheet."
+            );
 
         }
 
 
-        cell += char;
+        const rows =
+            data.table.rows;
 
-    }
+
+        /*
+         Read column headings
+        */
+
+        const columns =
+            data.table.cols.map(
+                col =>
+                    (col.label || "")
+                        .trim()
+                        .toLowerCase()
+            );
 
 
-    /* Last row */
-
-    if (
-        cell !== "" ||
-        row.length
-    ) {
-
-        row.push(
-            cell.trim()
+        console.log(
+            "Google Sheet columns:",
+            columns
         );
 
 
-        if (
-            row.some(
-                value => value !== ""
-            )
-        ) {
+        /*
+         Find columns automatically
+        */
 
-            rows.push(row);
+        const dateColumn =
+            findColumn(
+                columns,
+                [
+                    "date",
+                    "corrigendum date",
+                    "issue date",
+                    "date of corrigendum"
+                ]
+            );
 
-        }
+
+        const titleColumn =
+            findColumn(
+                columns,
+                [
+                    "subject",
+                    "title",
+                    "corrigendum",
+                    "corrigendum title",
+                    "corrigendum subject",
+                    "description",
+                    "particulars",
+                    "document",
+                    "document name",
+                    "file name"
+                ]
+            );
+
+
+        const linkColumn =
+            findColumn(
+                columns,
+                [
+                    "download link",
+                    "download",
+                    "link",
+                    "url",
+                    "pdf",
+                    "pdf link",
+                    "file",
+                    "file link",
+                    "document link",
+                    "document url",
+                    "corrigendum link",
+                    "corrigendum pdf"
+                ]
+            );
+
+
+        console.log(
+            "Date column:",
+            dateColumn
+        );
+
+        console.log(
+            "Title column:",
+            titleColumn
+        );
+
+        console.log(
+            "Link column:",
+            linkColumn
+        );
+
+
+        corrigenda = [];
+
+
+        /*
+         Process rows
+        */
+
+        rows.forEach(
+            row => {
+
+                const cells =
+                    row.c || [];
+
+
+                const getValue =
+                    index => {
+
+                        if (
+                            index === -1 ||
+                            !cells[index]
+                        ) {
+                            return "";
+                        }
+
+                        return (
+                            cells[index].f ??
+                            cells[index].v ??
+                            ""
+                        ).toString().trim();
+
+                    };
+
+
+                const date =
+                    getValue(
+                        dateColumn
+                    );
+
+
+                const title =
+                    getValue(
+                        titleColumn
+                    );
+
+
+                const link =
+                    getValue(
+                        linkColumn
+                    );
+
+
+                if (
+                    !date &&
+                    !title &&
+                    !link
+                ) {
+                    return;
+                }
+
+
+                corrigenda.push({
+
+                    date: date,
+
+                    title:
+                        title ||
+                        "Corrigendum",
+
+                    link: link
+
+                });
+
+            }
+        );
+
+
+        renderCorrigenda(
+            corrigenda
+        );
 
     }
 
 
-    return rows;
+    catch (error) {
+
+        console.error(
+            "CORRIGENDUM ERROR:",
+            error
+        );
+
+
+        body.innerHTML = `
+            <tr>
+                <td
+                    colspan="4"
+                    class="error">
+
+                    Unable to load corrigenda.
+
+                    <br><br>
+
+                    Please make sure the Google Sheet
+                    is published to the web.
+
+                </td>
+            </tr>
+        `;
+
+    }
 
 }
 
 
+/* =========================
+   FIND COLUMN
+========================= */
+
+function findColumn(
+    columns,
+    names
+) {
+
+    for (
+        const name of names
+    ) {
+
+        const index =
+            columns.indexOf(
+                name.toLowerCase()
+            );
+
+
+        if (
+            index !== -1
+        ) {
+
+            return index;
+
+        }
+
+    }
+
+
+    return -1;
+
+}
+
+
+/* =========================
+   RENDER
+========================= */
+
+function renderCorrigenda(
+    data
+) {
+
+    const body =
+        document.getElementById(
+            "corriBody"
+        );
+
+
+    if (
+        !data.length
+    ) {
+
+        body.innerHTML = `
+            <tr>
+                <td
+                    colspan="4"
+                    class="no-results">
+
+                    No corrigenda available.
+
+                </td>
+            </tr>
+        `;
+
+        return;
+
+    }
+
+
+    body.innerHTML = "";
+
+
+    data.forEach(
+        (item, index) => {
+
+            const tr =
+                document.createElement(
+                    "tr"
+                );
+
+
+            /* S.NO */
+
+            const serial =
+                document.createElement(
+                    "td"
+                );
+
+            serial.textContent =
+                index + 1;
+
+
+            /* DATE */
+
+            const date =
+                document.createElement(
+                    "td"
+                );
+
+
+            if (
+                item.date
+            ) {
+
+                const span =
+                    document.createElement(
+                        "span"
+                    );
+
+                span.className =
+                    "date";
+
+                span.textContent =
+                    item.date;
+
+                date.appendChild(
+                    span
+                );
+
+            }
+            else {
+
+                date.textContent =
+                    "—";
+
+            }
+
+
+            /* TITLE */
+
+            const title =
+                document.createElement(
+                    "td"
+                );
+
+            title.textContent =
+                item.title ||
+                "Corrigendum";
+
+
+            /* DOWNLOAD */
+
+            const download =
+                document.createElement(
+                    "td"
+                );
+
+
+            if (
+                item.link
+            ) {
+
+                const a =
+                    document.createElement(
+                        "a"
+                    );
+
+                a.href =
+                    item.link;
+
+                a.target =
+                    "_blank";
+
+                a.rel =
+                    "noopener noreferrer";
+
+                a.className =
+                    "download-btn";
+
+                a.textContent =
+                    "Download";
+
+
+                download.appendChild(
+                    a
+                );
+
+            }
+            else {
+
+                download.textContent =
+                    "—";
+
+            }
+
+
+            tr.appendChild(
+                serial
+            );
+
+            tr.appendChild(
+                date
+            );
+
+            tr.appendChild(
+                title
+            );
+
+            tr.appendChild(
+                download
+            );
+
+
+            body.appendChild(
+                tr
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+document
+.getElementById("searchInput")
+.addEventListener(
+    "input",
+    function () {
+
+        const query =
+            this.value
+                .toLowerCase()
+                .trim();
+
+
+        if (
+            !query
+        ) {
+
+            renderCorrigenda(
+                corrigenda
+            );
+
+            return;
+
+        }
+
+
+        const filtered =
+            corrigenda.filter(
+                item =>
+
+                    item.title
+                        .toLowerCase()
+                        .includes(query)
+
+                    ||
+
+                    item.date
+                        .toLowerCase()
+                        .includes(query)
+
+            );
+
+
+        renderCorrigenda(
+            filtered
+        );
+
+    }
+);
+
+
+/* =========================
+   START
+========================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadCorrigenda
+);
+
+</script>
 /* =========================================================
    NORMALIZE HEADER
    ========================================================= */
