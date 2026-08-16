@@ -6,10 +6,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Corrigenda | REW Pulwama</title>
+<title>Corrigendum | REW Pulwama</title>
 
 <meta name="description"
-content="Official corrigenda issued by the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
+content="Official Corrigenda of the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
 
 <style>
 
@@ -24,14 +24,13 @@ content="Official corrigenda issued by the Office of the Executive Engineer, Rur
     --dark-blue: #063b69;
     --light-blue: #eaf4fb;
     --gold: #d89b24;
-    --red: #b52b2b;
     --text: #333;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f8;
     color: var(--text);
+    background: #f4f6f8;
     line-height: 1.6;
 }
 
@@ -79,6 +78,7 @@ body {
     font-size: 18px;
     font-weight: bold;
     color: #555;
+    margin-bottom: 3px;
 }
 
 .header-text .department {
@@ -184,12 +184,11 @@ body {
     background: white;
 
     border: 1px solid #ddd;
+    border-radius: 4px;
 
     padding: 15px;
 
     margin-bottom: 20px;
-
-    border-radius: 4px;
 }
 
 .search-box input {
@@ -198,7 +197,6 @@ body {
     padding: 12px 14px;
 
     border: 1px solid #ccc;
-
     border-radius: 4px;
 
     font-size: 15px;
@@ -217,7 +215,6 @@ body {
     background: white;
 
     border: 1px solid #ddd;
-
     border-radius: 4px;
 
     overflow: hidden;
@@ -227,7 +224,7 @@ body {
     overflow-x: auto;
 }
 
-.corrigendum-table {
+.corri-table {
     width: 100%;
 
     border-collapse: collapse;
@@ -235,7 +232,7 @@ body {
     min-width: 850px;
 }
 
-.corrigendum-table th {
+.corri-table th {
     background: var(--dark-blue);
 
     color: white;
@@ -247,7 +244,7 @@ body {
     font-size: 14px;
 }
 
-.corrigendum-table td {
+.corri-table td {
     padding: 13px 12px;
 
     border-bottom: 1px solid #e5e5e5;
@@ -257,11 +254,11 @@ body {
     font-size: 14px;
 }
 
-.corrigendum-table tr:hover {
+.corri-table tr:hover {
     background: #f5f9fc;
 }
 
-.corrigendum-table tr:last-child td {
+.corri-table tr:last-child td {
     border-bottom: none;
 }
 
@@ -285,15 +282,6 @@ body {
 }
 
 
-/* ================= CORRIGENDUM NUMBER ================= */
-
-.corrigendum-number {
-    font-weight: bold;
-
-    color: var(--dark-blue);
-}
-
-
 /* ================= DOWNLOAD BUTTON ================= */
 
 .download-btn {
@@ -303,7 +291,7 @@ body {
 
     color: white;
 
-    padding: 8px 14px;
+    padding: 8px 15px;
 
     border-radius: 4px;
 
@@ -338,7 +326,7 @@ body {
 }
 
 .error {
-    color: #a00;
+    color: #a00000;
 }
 
 
@@ -518,8 +506,7 @@ body {
         ORDERS
     </a>
 
-    <a href="corrigendum.html"
-       class="active">
+    <a href="corri.html" class="active">
         CORRIGENDUM
     </a>
 
@@ -541,45 +528,43 @@ body {
 <main class="container">
 
 
-<!-- PAGE TITLE -->
-
 <section class="page-title">
 
     <div class="page-title-top">
-        Corrigenda
+        Corrigendum
     </div>
 
     <div class="page-title-body">
 
-        Official corrigenda issued by the
-        Office of the Executive Engineer,
-        Rural Engineering Wing (REW), Pulwama.
+        Official corrigenda issued by the Office of the
+        Executive Engineer, Rural Engineering Wing (REW),
+        Pulwama.
 
     </div>
 
 </section>
 
 
-<!-- SEARCH -->
+<!-- ================= SEARCH ================= -->
 
 <div class="search-box">
 
     <input
         type="search"
         id="searchInput"
-        placeholder="Search corrigenda by number, date or subject..."
+        placeholder="Search corrigendum..."
         autocomplete="off">
 
 </div>
 
 
-<!-- TABLE -->
+<!-- ================= TABLE ================= -->
 
 <section class="table-box">
 
 <div class="table-wrapper">
 
-<table class="corrigendum-table">
+<table class="corri-table">
 
 <thead>
 
@@ -589,16 +574,12 @@ body {
         S.No.
     </th>
 
-    <th style="width:190px;">
-        Corrigendum No.
-    </th>
-
-    <th style="width:150px;">
+    <th style="width:160px;">
         Date
     </th>
 
     <th>
-        Subject / Description
+        Corrigendum / Subject
     </th>
 
     <th style="width:150px;">
@@ -610,12 +591,12 @@ body {
 </thead>
 
 
-<tbody id="corrigendumBody">
+<tbody id="corriBody">
 
 <tr>
 
     <td
-        colspan="5"
+        colspan="4"
         class="loading">
 
         Loading corrigenda...
@@ -673,16 +654,12 @@ body {
     <ul>
 
         <li>Home</li>
-
         <li>About Office</li>
-
         <li>Tenders</li>
-
         <li>Notices</li>
-
         <li>Circulars</li>
-
         <li>Orders</li>
+        <li>Downloads</li>
 
     </ul>
 
@@ -698,11 +675,8 @@ body {
     <ul>
 
         <li>Privacy Policy</li>
-
         <li>Disclaimer</li>
-
         <li>Accessibility</li>
-
         <li>Site Map</li>
 
     </ul>
@@ -727,11 +701,9 @@ body {
 
 <script>
 
-/*
-==========================================================
-GOOGLE SHEET — CORRIGENDUM
-==========================================================
-*/
+/* =========================================================
+   CORRIGENDUM GOOGLE SHEET
+   ========================================================= */
 
 const SHEET_URL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=211947423&single=true&output=csv";
@@ -740,20 +712,16 @@ const SHEET_URL =
 let corrigenda = [];
 
 
-/*
-==========================================================
-CSV PARSER
-==========================================================
-*/
+/* =========================================================
+   CSV PARSER
+   ========================================================= */
 
 function parseCSV(text) {
 
     const rows = [];
 
     let row = [];
-
     let cell = "";
-
     let quoted = false;
 
 
@@ -768,9 +736,7 @@ function parseCSV(text) {
         const next = text[i + 1];
 
 
-        /*
-        Double quote inside quoted cell
-        */
+        /* Escaped quotes */
 
         if (
             char === '"' &&
@@ -787,9 +753,7 @@ function parseCSV(text) {
         }
 
 
-        /*
-        Start / end quote
-        */
+        /* Quote */
 
         if (char === '"') {
 
@@ -800,9 +764,7 @@ function parseCSV(text) {
         }
 
 
-        /*
-        New column
-        */
+        /* Comma */
 
         if (
             char === "," &&
@@ -820,9 +782,7 @@ function parseCSV(text) {
         }
 
 
-        /*
-        New row
-        */
+        /* New line */
 
         if (
             (char === "\n" ||
@@ -847,8 +807,7 @@ function parseCSV(text) {
 
             if (
                 row.some(
-                    value =>
-                    value !== ""
+                    value => value !== ""
                 )
             ) {
 
@@ -871,9 +830,7 @@ function parseCSV(text) {
     }
 
 
-    /*
-    Last row
-    */
+    /* Last row */
 
     if (
         cell !== "" ||
@@ -887,8 +844,7 @@ function parseCSV(text) {
 
         if (
             row.some(
-                value =>
-                value !== ""
+                value => value !== ""
             )
         ) {
 
@@ -904,11 +860,9 @@ function parseCSV(text) {
 }
 
 
-/*
-==========================================================
-NORMALIZE COLUMN NAME
-==========================================================
-*/
+/* =========================================================
+   NORMALIZE HEADER
+   ========================================================= */
 
 function normalize(value) {
 
@@ -919,16 +873,11 @@ function normalize(value) {
 }
 
 
-/*
-==========================================================
-FIND COLUMN
-==========================================================
-*/
+/* =========================================================
+   FIND COLUMN
+   ========================================================= */
 
-function findColumn(
-    headers,
-    names
-) {
+function findColumn(headers, names) {
 
     const normalizedHeaders =
         headers.map(normalize);
@@ -944,7 +893,9 @@ function findColumn(
             );
 
 
-        if (index !== -1) {
+        if (
+            index !== -1
+        ) {
 
             return index;
 
@@ -958,17 +909,15 @@ function findColumn(
 }
 
 
-/*
-==========================================================
-LOAD GOOGLE SHEET
-==========================================================
-*/
+/* =========================================================
+   LOAD CORRIGENDA
+   ========================================================= */
 
 async function loadCorrigenda() {
 
     const body =
         document.getElementById(
-            "corrigendumBody"
+            "corriBody"
         );
 
 
@@ -985,10 +934,12 @@ async function loadCorrigenda() {
             );
 
 
-        if (!response.ok) {
+        if (
+            !response.ok
+        ) {
 
             throw new Error(
-                "Unable to load Google Sheet."
+                "Unable to access Google Sheet."
             );
 
         }
@@ -996,6 +947,20 @@ async function loadCorrigenda() {
 
         const text =
             await response.text();
+
+
+        /* Check for HTML error page */
+
+        if (
+            text.trim().startsWith("<!DOCTYPE") ||
+            text.trim().startsWith("<html")
+        ) {
+
+            throw new Error(
+                "Google Sheet did not return CSV data."
+            );
+
+        }
 
 
         const rows =
@@ -1007,7 +972,7 @@ async function loadCorrigenda() {
         ) {
 
             throw new Error(
-                "No corrigenda found in the Google Sheet."
+                "No corrigendum records found."
             );
 
         }
@@ -1018,137 +983,67 @@ async function loadCorrigenda() {
 
 
         console.log(
-            "Corrigendum Sheet Headers:",
+            "Corrigendum Headers:",
             headers
         );
 
 
-        /*
-        ==================================================
-        CORRIGENDUM NUMBER
-        ==================================================
-        */
-
-        const numberColumn =
-            findColumn(
-                headers,
-                [
-
-                    "Corrigendum No",
-
-                    "Corrigendum Number",
-
-                    "Corrigendum No.",
-
-                    "Corrigendum",
-
-                    "Corrigendum ID",
-
-                    "Reference No",
-
-                    "Reference Number"
-
-                ]
-            );
-
-
-        /*
-        ==================================================
-        DATE
-        ==================================================
-        */
+        /* ================= DATE ================= */
 
         const dateColumn =
             findColumn(
                 headers,
                 [
-
                     "Date",
-
                     "Corrigendum Date",
-
-                    "Date of Corrigendum",
-
                     "Issue Date",
-
-                    "Date of Issue"
-
+                    "Date of Corrigendum",
+                    "Upload Date"
                 ]
             );
 
 
-        /*
-        ==================================================
-        SUBJECT
-        ==================================================
-        */
+        /* ================= SUBJECT ================= */
 
-        const subjectColumn =
+        const titleColumn =
             findColumn(
                 headers,
                 [
-
-                    "Subject",
-
-                    "Corrigendum Subject",
-
-                    "Description",
-
                     "Title",
-
+                    "Subject",
+                    "Corrigendum",
+                    "Corrigendum Title",
+                    "Corrigendum Subject",
+                    "Description",
                     "Particulars",
-
-                    "Details",
-
-                    "Corrigendum Description",
-
-                    "Work Description"
-
+                    "Document",
+                    "Document Name",
+                    "File Name"
                 ]
             );
 
 
-        /*
-        ==================================================
-        DOWNLOAD LINK
-        ==================================================
-        */
+        /* ================= LINK ================= */
 
         const linkColumn =
             findColumn(
                 headers,
                 [
-
                     "Download",
-
                     "Download Link",
-
                     "Link",
-
                     "URL",
-
                     "PDF",
-
                     "PDF Link",
-
                     "File",
-
                     "File Link",
-
-                    "Document",
-
                     "Document Link",
-
-                    "PDF URL"
-
+                    "Document URL",
+                    "Corrigendum Link",
+                    "Corrigendum PDF"
                 ]
             );
 
-
-        console.log(
-            "Number column:",
-            numberColumn
-        );
 
         console.log(
             "Date column:",
@@ -1156,24 +1051,20 @@ async function loadCorrigenda() {
         );
 
         console.log(
-            "Subject column:",
-            subjectColumn
+            "Title column:",
+            titleColumn
         );
 
         console.log(
-            "Download column:",
+            "Link column:",
             linkColumn
         );
 
 
-        /*
-        ==================================================
-        BUILD CORRIGENDA
-        ==================================================
-        */
-
         corrigenda = [];
 
+
+        /* ================= BUILD DATA ================= */
 
         for (
             let i = 1;
@@ -1185,21 +1076,15 @@ async function loadCorrigenda() {
                 rows[i];
 
 
-            const number =
-                numberColumn !== -1
-                ? row[numberColumn] || ""
-                : "";
-
-
             const date =
                 dateColumn !== -1
                 ? row[dateColumn] || ""
                 : "";
 
 
-            const subject =
-                subjectColumn !== -1
-                ? row[subjectColumn] || ""
+            const title =
+                titleColumn !== -1
+                ? row[titleColumn] || ""
                 : "";
 
 
@@ -1209,14 +1094,11 @@ async function loadCorrigenda() {
                 : "";
 
 
-            /*
-            Ignore completely blank rows
-            */
+            /* Skip completely empty rows */
 
             if (
-                !number &&
                 !date &&
-                !subject &&
+                !title &&
                 !link
             ) {
 
@@ -1227,14 +1109,11 @@ async function loadCorrigenda() {
 
             corrigenda.push({
 
-                number:
-                    number.trim(),
-
                 date:
                     date.trim(),
 
-                subject:
-                    subject.trim(),
+                title:
+                    title.trim(),
 
                 link:
                     link.trim()
@@ -1264,7 +1143,7 @@ async function loadCorrigenda() {
             <tr>
 
                 <td
-                    colspan="5"
+                    colspan="4"
                     class="error">
 
                     Unable to load corrigenda.
@@ -1282,17 +1161,15 @@ async function loadCorrigenda() {
 }
 
 
-/*
-==========================================================
-RENDER
-==========================================================
-*/
+/* =========================================================
+   RENDER CORRIGENDA
+   ========================================================= */
 
 function renderCorrigenda(data) {
 
     const body =
         document.getElementById(
-            "corrigendumBody"
+            "corriBody"
         );
 
 
@@ -1305,7 +1182,7 @@ function renderCorrigenda(data) {
             <tr>
 
                 <td
-                    colspan="5"
+                    colspan="4"
                     class="no-results">
 
                     No corrigenda available.
@@ -1334,9 +1211,7 @@ function renderCorrigenda(data) {
                 );
 
 
-            /*
-            S.NO.
-            */
+            /* S.NO. */
 
             const serial =
                 document.createElement(
@@ -1347,26 +1222,7 @@ function renderCorrigenda(data) {
                 index + 1;
 
 
-            /*
-            CORRIGENDUM NUMBER
-            */
-
-            const number =
-                document.createElement(
-                    "td"
-                );
-
-            number.className =
-                "corrigendum-number";
-
-            number.textContent =
-                item.number ||
-                "—";
-
-
-            /*
-            DATE
-            */
+            /* DATE */
 
             const date =
                 document.createElement(
@@ -1393,9 +1249,7 @@ function renderCorrigenda(data) {
                     span
                 );
 
-            }
-
-            else {
+            } else {
 
                 date.textContent =
                     "—";
@@ -1403,23 +1257,19 @@ function renderCorrigenda(data) {
             }
 
 
-            /*
-            SUBJECT
-            */
+            /* SUBJECT */
 
-            const subject =
+            const title =
                 document.createElement(
                     "td"
                 );
 
-            subject.textContent =
-                item.subject ||
-                "—";
+            title.textContent =
+                item.title ||
+                "Corrigendum";
 
 
-            /*
-            DOWNLOAD
-            */
+            /* DOWNLOAD */
 
             const download =
                 document.createElement(
@@ -1456,9 +1306,7 @@ function renderCorrigenda(data) {
                     a
                 );
 
-            }
-
-            else {
+            } else {
 
                 download.textContent =
                     "—";
@@ -1466,16 +1314,8 @@ function renderCorrigenda(data) {
             }
 
 
-            /*
-            ADD CELLS
-            */
-
             tr.appendChild(
                 serial
-            );
-
-            tr.appendChild(
-                number
             );
 
             tr.appendChild(
@@ -1483,7 +1323,7 @@ function renderCorrigenda(data) {
             );
 
             tr.appendChild(
-                subject
+                title
             );
 
             tr.appendChild(
@@ -1501,11 +1341,9 @@ function renderCorrigenda(data) {
 }
 
 
-/*
-==========================================================
-SEARCH
-==========================================================
-*/
+/* =========================================================
+   SEARCH
+   ========================================================= */
 
 document
 .getElementById("searchInput")
@@ -1520,10 +1358,6 @@ document
                 .trim();
 
 
-        /*
-        Show everything
-        */
-
         if (
             !query
         ) {
@@ -1537,28 +1371,17 @@ document
         }
 
 
-        /*
-        Search number,
-        date and subject
-        */
-
         const filtered =
             corrigenda.filter(
                 item =>
 
-                item.number
+                item.title
                     .toLowerCase()
                     .includes(query)
 
                 ||
 
                 item.date
-                    .toLowerCase()
-                    .includes(query)
-
-                ||
-
-                item.subject
                     .toLowerCase()
                     .includes(query)
 
@@ -1573,11 +1396,9 @@ document
 );
 
 
-/*
-==========================================================
-START
-==========================================================
-*/
+/* =========================================================
+   START
+   ========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -1585,6 +1406,7 @@ document.addEventListener(
 );
 
 </script>
+
 
 </body>
 
