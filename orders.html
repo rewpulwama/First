@@ -9,7 +9,7 @@
 <title>Orders | REW Pulwama</title>
 
 <meta name="description"
-content="Official Orders of the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
+content="Official Orders issued by the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
 
 <style>
 
@@ -24,6 +24,7 @@ content="Official Orders of the Office of the Executive Engineer, Rural Engineer
     --dark-blue: #063b69;
     --light-blue: #eaf4fb;
     --gold: #d89b24;
+    --red: #b52b2b;
     --text: #333;
 }
 
@@ -33,6 +34,7 @@ body {
     background: #f4f6f8;
     line-height: 1.6;
 }
+
 
 /* ================= HEADER ================= */
 
@@ -46,6 +48,7 @@ body {
     margin: auto;
     padding: 14px 20px;
     min-height: 150px;
+
     display: flex;
     align-items: center;
     gap: 20px;
@@ -54,9 +57,11 @@ body {
 .emblem {
     width: 110px;
     height: 125px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     flex-shrink: 0;
 }
 
@@ -95,6 +100,7 @@ body {
     font-weight: 600;
 }
 
+
 /* ================= NAVIGATION ================= */
 
 .navbar {
@@ -105,6 +111,7 @@ body {
 .nav-inner {
     max-width: 1250px;
     margin: auto;
+
     display: flex;
     overflow-x: auto;
 }
@@ -112,10 +119,14 @@ body {
 .nav-inner a {
     color: white;
     text-decoration: none;
+
     padding: 15px 18px;
+
     font-size: 14px;
     font-weight: bold;
+
     white-space: nowrap;
+
     border-right: 1px solid rgba(255,255,255,.12);
 }
 
@@ -124,54 +135,73 @@ body {
     background: var(--blue);
 }
 
+
 /* ================= MAIN ================= */
 
 .container {
     max-width: 1250px;
     margin: 25px auto;
+
     padding: 0 20px 40px;
 }
+
 
 /* ================= PAGE TITLE ================= */
 
 .page-title {
     background: white;
+
     border: 1px solid #ddd;
     border-radius: 4px;
+
     overflow: hidden;
+
     margin-bottom: 20px;
 }
 
 .page-title-top {
     background: var(--blue);
+
     color: white;
+
     padding: 13px 18px;
+
     font-size: 21px;
     font-weight: bold;
+
     border-left: 5px solid var(--gold);
 }
 
 .page-title-body {
     padding: 18px;
+
     color: #555;
 }
+
 
 /* ================= SEARCH ================= */
 
 .search-box {
     background: white;
+
     border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 20px;
     border-radius: 4px;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
 }
 
 .search-box input {
     width: 100%;
+
     padding: 12px 14px;
+
     border: 1px solid #ccc;
     border-radius: 4px;
+
     font-size: 15px;
+
     outline: none;
 }
 
@@ -179,12 +209,15 @@ body {
     border-color: var(--blue);
 }
 
+
 /* ================= TABLE ================= */
 
 .table-box {
     background: white;
+
     border: 1px solid #ddd;
     border-radius: 4px;
+
     overflow: hidden;
 }
 
@@ -194,22 +227,31 @@ body {
 
 .orders-table {
     width: 100%;
+
     border-collapse: collapse;
+
     min-width: 850px;
 }
 
 .orders-table th {
     background: var(--dark-blue);
+
     color: white;
+
     padding: 13px 12px;
+
     text-align: left;
+
     font-size: 14px;
 }
 
 .orders-table td {
     padding: 13px 12px;
+
     border-bottom: 1px solid #e5e5e5;
+
     vertical-align: middle;
+
     font-size: 14px;
 }
 
@@ -221,29 +263,45 @@ body {
     border-bottom: none;
 }
 
+
 /* ================= DATE ================= */
 
 .date {
     display: inline-block;
+
     background: #edf3f8;
+
     color: var(--blue);
+
     padding: 4px 8px;
+
     border-radius: 3px;
+
     font-size: 12px;
+
     white-space: nowrap;
 }
 
-/* ================= DOWNLOAD BUTTON ================= */
+
+/* ================= DOWNLOAD ================= */
 
 .download-btn {
     display: inline-block;
+
     background: var(--blue);
+
     color: white;
+
     padding: 8px 15px;
+
     border-radius: 4px;
+
     text-decoration: none;
+
     font-size: 13px;
+
     font-weight: bold;
+
     white-space: nowrap;
 }
 
@@ -255,13 +313,16 @@ body {
     content: "↓ ";
 }
 
-/* ================= MESSAGES ================= */
+
+/* ================= STATUS ================= */
 
 .loading,
 .error,
 .no-results {
     padding: 35px;
+
     text-align: center;
+
     color: #666;
 }
 
@@ -269,20 +330,28 @@ body {
     color: #a00000;
 }
 
+
 /* ================= FOOTER ================= */
 
 .footer {
     background: #062f52;
+
     color: white;
+
     margin-top: 30px;
 }
 
 .footer-inner {
     max-width: 1250px;
+
     margin: auto;
+
     padding: 35px 20px;
+
     display: grid;
+
     grid-template-columns: 2fr 1fr 1fr;
+
     gap: 35px;
 }
 
@@ -293,6 +362,7 @@ body {
 .footer p,
 .footer li {
     font-size: 13px;
+
     color: #d9e5ee;
 }
 
@@ -306,11 +376,16 @@ body {
 
 .footer-bottom {
     background: #041f37;
+
     padding: 12px;
+
     text-align: center;
+
     font-size: 12px;
+
     color: #cbd9e4;
 }
+
 
 /* ================= MOBILE ================= */
 
@@ -318,7 +393,9 @@ body {
 
     .header-inner {
         flex-wrap: wrap;
+
         justify-content: center;
+
         text-align: center;
     }
 
@@ -430,7 +507,7 @@ body {
         ORDERS
     </a>
 
-    <a href="corrigendum.html">
+    <a href="corri.html">
         CORRIGENDUM
     </a>
 
@@ -455,13 +532,14 @@ body {
 <section class="page-title">
 
     <div class="page-title-top">
-        Official Orders
+        Office Orders
     </div>
 
     <div class="page-title-body">
 
-        Office Orders issued by the Office of the Executive Engineer,
-        Rural Engineering Wing (REW), Pulwama.
+        Official Office Orders issued by the Office of the
+        Executive Engineer, Rural Engineering Wing (REW),
+        Pulwama.
 
     </div>
 
@@ -481,7 +559,7 @@ body {
 </div>
 
 
-<!-- ================= ORDERS TABLE ================= -->
+<!-- ================= TABLE ================= -->
 
 <section class="table-box">
 
@@ -518,8 +596,12 @@ body {
 
 <tr>
 
-    <td colspan="4" class="loading">
+    <td
+        colspan="4"
+        class="loading">
+
         Loading orders...
+
     </td>
 
 </tr>
@@ -555,8 +637,10 @@ body {
     </p>
 
     <p style="margin-top:10px;">
+
         Department of Rural Development & Panchayati Raj,
         Government of Jammu & Kashmir.
+
     </p>
 
 </div>
@@ -575,6 +659,7 @@ body {
         <li>Tenders</li>
         <li>Notices</li>
         <li>Circulars</li>
+        <li>Orders</li>
         <li>Downloads</li>
 
     </ul>
@@ -618,7 +703,7 @@ body {
 <script>
 
 /* =========================================================
-   GOOGLE SHEET URL
+   GOOGLE SHEET — ORDERS
    ========================================================= */
 
 const SHEET_URL =
@@ -637,8 +722,10 @@ function parseCSV(text) {
     const rows = [];
 
     let row = [];
+
     let cell = "";
-    let quoted = false;
+
+    let insideQuotes = false;
 
 
     for (
@@ -648,14 +735,15 @@ function parseCSV(text) {
     ) {
 
         const char = text[i];
+
         const next = text[i + 1];
 
 
-        /* Escaped quotation mark */
+        /* Handle escaped quotes */
 
         if (
             char === '"' &&
-            quoted &&
+            insideQuotes &&
             next === '"'
         ) {
 
@@ -668,25 +756,30 @@ function parseCSV(text) {
         }
 
 
-        /* Start/end quoted field */
+        /* Handle quotes */
 
-        if (char === '"') {
+        if (
+            char === '"'
+        ) {
 
-            quoted = !quoted;
+            insideQuotes =
+                !insideQuotes;
 
             continue;
 
         }
 
 
-        /* Column */
+        /* Handle comma */
 
         if (
             char === "," &&
-            !quoted
+            !insideQuotes
         ) {
 
-            row.push(cell.trim());
+            row.push(
+                cell.trim()
+            );
 
             cell = "";
 
@@ -695,12 +788,12 @@ function parseCSV(text) {
         }
 
 
-        /* New row */
+        /* Handle new line */
 
         if (
             (char === "\n" ||
              char === "\r") &&
-            !quoted
+            !insideQuotes
         ) {
 
             if (
@@ -713,12 +806,15 @@ function parseCSV(text) {
             }
 
 
-            row.push(cell.trim());
+            row.push(
+                cell.trim()
+            );
 
 
             if (
                 row.some(
-                    value => value !== ""
+                    value =>
+                    value !== ""
                 )
             ) {
 
@@ -748,12 +844,15 @@ function parseCSV(text) {
         row.length
     ) {
 
-        row.push(cell.trim());
+        row.push(
+            cell.trim()
+        );
 
 
         if (
             row.some(
-                value => value !== ""
+                value =>
+                value !== ""
             )
         ) {
 
@@ -773,11 +872,18 @@ function parseCSV(text) {
    NORMALIZE HEADER
    ========================================================= */
 
-function normalize(value) {
+function normalizeHeader(
+    value
+) {
 
-    return String(value || "")
-        .toLowerCase()
-        .replace(/[^a-z0-9]/g, "");
+    return String(
+        value || ""
+    )
+    .toLowerCase()
+    .replace(
+        /[^a-z0-9]/g,
+        ""
+    );
 
 }
 
@@ -786,23 +892,30 @@ function normalize(value) {
    FIND COLUMN
    ========================================================= */
 
-function findColumn(headers, names) {
+function findColumn(
+    headers,
+    possibleNames
+) {
 
-    const normalizedHeaders =
-        headers.map(normalize);
+    const normalized =
+        headers.map(
+            normalizeHeader
+        );
 
 
     for (
-        const name of names
+        const name of possibleNames
     ) {
 
         const index =
-            normalizedHeaders.indexOf(
-                normalize(name)
+            normalized.indexOf(
+                normalizeHeader(name)
             );
 
 
-        if (index !== -1) {
+        if (
+            index !== -1
+        ) {
 
             return index;
 
@@ -841,47 +954,66 @@ async function loadOrders() {
             );
 
 
-        if (!response.ok) {
+        if (
+            !response.ok
+        ) {
 
             throw new Error(
-                "Unable to access Google Sheet."
+                "Google Sheet request failed."
             );
 
         }
 
 
-        const text =
+        const csv =
             await response.text();
 
 
-        /*
-        Check whether Google returned HTML
-        instead of CSV.
-        */
+        console.log(
+            "Orders CSV:",
+            csv
+        );
+
+
+        /* Make sure Google returned CSV */
 
         if (
-            text.trim().startsWith("<!DOCTYPE") ||
-            text.trim().startsWith("<html")
+            csv.includes(
+                "<html"
+            ) ||
+            csv.includes(
+                "<!DOCTYPE"
+            )
         ) {
 
             throw new Error(
-                "Google Sheet did not return CSV data."
+                "Google did not return CSV data."
             );
 
         }
 
 
         const rows =
-            parseCSV(text);
+            parseCSV(csv);
 
 
         if (
             rows.length < 2
         ) {
 
-            throw new Error(
-                "No order records found."
-            );
+            body.innerHTML = `
+                <tr>
+                    <td
+                        colspan="4"
+                        class="no-results">
+
+                        No orders available.
+
+                    </td>
+                </tr>
+            `;
+
+            return;
 
         }
 
@@ -891,12 +1023,14 @@ async function loadOrders() {
 
 
         console.log(
-            "Orders Sheet Headers:",
+            "Orders headers:",
             headers
         );
 
 
-        /* ================= DATE ================= */
+        /* =================================================
+           FIND COLUMNS
+           ================================================= */
 
         const dateColumn =
             findColumn(
@@ -904,41 +1038,34 @@ async function loadOrders() {
                 [
                     "Date",
                     "Order Date",
-                    "Issue Date",
                     "Date of Order",
-                    "Upload Date"
+                    "Issue Date",
+                    "Order Issue Date"
                 ]
             );
 
 
-        /* ================= SUBJECT ================= */
-
-        const titleColumn =
+        const subjectColumn =
             findColumn(
                 headers,
                 [
-                    "Title",
                     "Subject",
+                    "Title",
                     "Order",
-                    "Order Title",
                     "Order Subject",
+                    "Order Title",
                     "Description",
-                    "Particulars",
-                    "Document",
-                    "Document Name",
-                    "File Name"
+                    "Particulars"
                 ]
             );
 
-
-        /* ================= LINK ================= */
 
         const linkColumn =
             findColumn(
                 headers,
                 [
-                    "Download",
                     "Download Link",
+                    "Download",
                     "Link",
                     "URL",
                     "PDF",
@@ -960,7 +1087,7 @@ async function loadOrders() {
 
         console.log(
             "Subject column:",
-            titleColumn
+            subjectColumn
         );
 
         console.log(
@@ -969,10 +1096,12 @@ async function loadOrders() {
         );
 
 
+        /* =================================================
+           BUILD ORDERS ARRAY
+           ================================================= */
+
         orders = [];
 
-
-        /* ================= BUILD DATA ================= */
 
         for (
             let i = 1;
@@ -990,9 +1119,9 @@ async function loadOrders() {
                 : "";
 
 
-            const title =
-                titleColumn !== -1
-                ? row[titleColumn] || ""
+            const subject =
+                subjectColumn !== -1
+                ? row[subjectColumn] || ""
                 : "";
 
 
@@ -1002,13 +1131,11 @@ async function loadOrders() {
                 : "";
 
 
-            /*
-            Skip empty rows
-            */
+            /* Ignore completely empty rows */
 
             if (
                 !date &&
-                !title &&
+                !subject &&
                 !link
             ) {
 
@@ -1022,8 +1149,8 @@ async function loadOrders() {
                 date:
                     date.trim(),
 
-                title:
-                    title.trim(),
+                subject:
+                    subject.trim(),
 
                 link:
                     link.trim()
@@ -1043,13 +1170,12 @@ async function loadOrders() {
     catch (error) {
 
         console.error(
-            "Orders Error:",
+            "Orders loading error:",
             error
         );
 
 
         body.innerHTML = `
-
             <tr>
 
                 <td
@@ -1057,13 +1183,11 @@ async function loadOrders() {
                     class="error">
 
                     Unable to load orders.
-                    Please check that the Google Sheet
-                    is published to the web.
+                    Please try again later.
 
                 </td>
 
             </tr>
-
         `;
 
     }
@@ -1075,7 +1199,9 @@ async function loadOrders() {
    RENDER ORDERS
    ========================================================= */
 
-function renderOrders(data) {
+function renderOrders(
+    data
+) {
 
     const body =
         document.getElementById(
@@ -1088,7 +1214,6 @@ function renderOrders(data) {
     ) {
 
         body.innerHTML = `
-
             <tr>
 
                 <td
@@ -1100,7 +1225,6 @@ function renderOrders(data) {
                 </td>
 
             </tr>
-
         `;
 
         return;
@@ -1114,14 +1238,13 @@ function renderOrders(data) {
     data.forEach(
         (item, index) => {
 
-
             const tr =
                 document.createElement(
                     "tr"
                 );
 
 
-            /* S.NO. */
+            /* S.NO */
 
             const serial =
                 document.createElement(
@@ -1159,7 +1282,8 @@ function renderOrders(data) {
                     span
                 );
 
-            } else {
+            }
+            else {
 
                 date.textContent =
                     "—";
@@ -1167,15 +1291,15 @@ function renderOrders(data) {
             }
 
 
-            /* ORDER SUBJECT */
+            /* SUBJECT */
 
-            const title =
+            const subject =
                 document.createElement(
                     "td"
                 );
 
-            title.textContent =
-                item.title ||
+            subject.textContent =
+                item.subject ||
                 "Office Order";
 
 
@@ -1196,9 +1320,6 @@ function renderOrders(data) {
                         "a"
                     );
 
-                a.className =
-                    "download-btn";
-
                 a.href =
                     item.link;
 
@@ -1208,6 +1329,9 @@ function renderOrders(data) {
                 a.rel =
                     "noopener noreferrer";
 
+                a.className =
+                    "download-btn";
+
                 a.textContent =
                     "Download";
 
@@ -1216,7 +1340,8 @@ function renderOrders(data) {
                     a
                 );
 
-            } else {
+            }
+            else {
 
                 download.textContent =
                     "—";
@@ -1233,7 +1358,7 @@ function renderOrders(data) {
             );
 
             tr.appendChild(
-                title
+                subject
             );
 
             tr.appendChild(
@@ -1256,11 +1381,12 @@ function renderOrders(data) {
    ========================================================= */
 
 document
-.getElementById("searchInput")
+.getElementById(
+    "searchInput"
+)
 .addEventListener(
     "input",
     function () {
-
 
         const query =
             this.value
@@ -1268,7 +1394,9 @@ document
                 .trim();
 
 
-        if (!query) {
+        if (
+            !query
+        ) {
 
             renderOrders(
                 orders
@@ -1283,15 +1411,15 @@ document
             orders.filter(
                 item =>
 
-                item.title
-                    .toLowerCase()
-                    .includes(query)
+                    item.subject
+                        .toLowerCase()
+                        .includes(query)
 
-                ||
+                    ||
 
-                item.date
-                    .toLowerCase()
-                    .includes(query)
+                    item.date
+                        .toLowerCase()
+                        .includes(query)
 
             );
 
@@ -1315,6 +1443,6 @@ document.addEventListener(
 
 </script>
 
-
 </body>
+
 </html>
