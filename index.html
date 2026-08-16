@@ -96,6 +96,7 @@ body {
     object-fit: contain;
     display: block;
 }
+
 .header-text {
     flex: 1;
 }
@@ -285,7 +286,7 @@ body {
 
 .stats {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(7, minmax(0, 1fr));
     gap: 15px;
     margin-bottom: 22px;
 }
@@ -589,96 +590,9 @@ body {
     }
 }
 
-@media(max-width:600px) {
-
-    .top-inner {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .top-links a {
-        margin: 0 5px;
-    }
-
-    .header-text .govt {
-        font-size: 15px;
-    }
-
-    .header-text .department {
-        font-size: 14px;
-    }
-
-    .header-text h1 {
-        font-size: 20px;
-    }
-
-    .header-text h2 {
-        font-size: 16px;
-    }
-
-    .hero-box {
-        height: 300px;
-    }
-
-    .hero-content h2 {
-        font-size: 27px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-    }
-
-   .stats {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    width: 100%;
-    margin-bottom: 22px;
-}
-
-.stat {
-    width: 100%;
-    min-width: 0;
-    padding: 18px 8px;
-    text-align: center;
-    overflow: hidden;
-}
-
-.stat-number {
-    font-size: 25px;
-    line-height: 1.2;
-    font-weight: bold;
-    white-space: nowrap;
-}
-
-.stat-label {
-    margin-top: 8px;
-    font-size: 14px;
-    line-height: 1.4;
-    word-break: normal;
-    overflow-wrap: break-word;
-}
-    .two-column,
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .quick-links {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-<style>
-
-/* ALL YOUR EXISTING CSS ABOVE */
-/* ... */
-
-/* =================================================
-   MOBILE SECTION
-   ================================================= */
+/* =========================================================
+   MOBILE FIX
+   ========================================================= */
 
 @media(max-width:600px) {
 
@@ -722,34 +636,40 @@ body {
     /* MOBILE STATISTICS */
 
     .stats {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        width: 100% !important;
+        margin-bottom: 22px !important;
+    }
+
+    .stats .stat {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        padding: 18px 8px !important;
+        text-align: center !important;
+        overflow: hidden !important;
+    }
+
+    .stats .stat-number {
+        display: block;
         width: 100%;
-        margin-bottom: 22px;
+        font-size: 25px !important;
+        line-height: 1.2 !important;
+        font-weight: bold !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
     }
 
-    .stat {
-        width: 100%;
-        min-width: 0;
-        padding: 18px 8px;
-        text-align: center;
-        overflow: hidden;
-    }
-
-    .stat-number {
-        font-size: 25px;
-        line-height: 1.2;
-        font-weight: bold;
-        white-space: nowrap;
-    }
-
-    .stat-label {
-        margin-top: 8px;
-        font-size: 14px;
-        line-height: 1.4;
-        word-break: normal;
-        overflow-wrap: break-word;
+    .stats .stat-label {
+        margin-top: 8px !important;
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
     }
 
     .two-column,
@@ -765,52 +685,12 @@ body {
         grid-template-columns: 1fr 1fr;
     }
 
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
 }
 
 </style>
-    /* =========================================================
-   FINAL MOBILE FIX FOR STATISTICS
-   ========================================================= */
-
-@media screen and (max-width: 700px) {
-
-    .stats {
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 10px !important;
-        width: 100% !important;
-        margin-bottom: 22px !important;
-    }
-
-    .stats .stat {
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: none !important;
-        padding: 18px 8px !important;
-        text-align: center !important;
-        overflow: hidden !important;
-    }
-
-    .stats .stat-number {
-        font-size: 25px !important;
-        line-height: 1.2 !important;
-        font-weight: bold !important;
-        white-space: nowrap !important;
-        overflow: hidden !important;
-    }
-
-    .stats .stat-label {
-        margin-top: 8px !important;
-        font-size: 14px !important;
-        line-height: 1.4 !important;
-        white-space: normal !important;
-        word-break: normal !important;
-        overflow-wrap: break-word !important;
-    }
-
-}
-</style>
-
 </head>
 
 <body>
@@ -819,18 +699,19 @@ body {
 
 <div class="top-bar">
     <div class="top-inner">
+
         <div>
             Official Website
         </div>
 
-    <div class="top-links">
-        <a href="#">Skip to Main Content</a>
-        <a href="#">A+</a>
-        <a href="#">A</a>
-        <a href="#">A-</a>
-    </div>
-</div>
+        <div class="top-links">
+            <a href="#">Skip to Main Content</a>
+            <a href="#">A+</a>
+            <a href="#">A</a>
+            <a href="#">A-</a>
+        </div>
 
+    </div>
 </div>
 
 <!-- HEADER -->
@@ -840,9 +721,13 @@ body {
 <div class="header-inner">
 
     <div class="emblem">
-<img src="images/Emblem_of_India.svg" alt="State Emblem of India">
 
-</div>
+        <img
+            src="images/Emblem_of_India.svg"
+            alt="State Emblem of India"
+        >
+
+    </div>
 
     <div class="header-text">
 
@@ -865,10 +750,12 @@ body {
     </div>
 
     <div class="logo-right">
+
         DEPARTMENT<br>
         LOGO<br>
         WILL BE<br>
         ADDED
+
     </div>
 
 </div>
@@ -882,14 +769,22 @@ body {
 <div class="nav-inner">
 
     <a href="#" class="active">HOME</a>
+
     <a href="about.html">ABOUT</a>
-     <a href="officials.html">OFFICIALS</a>
-     <a href="approvals.html">APPROVALS</a>
-   <a href="tenders.html">TENDERS</a>
-      <a href="loi.html">LOIs</a>
-   <a href="notices.html">NOTICES</a>
+
+    <a href="officials.html">OFFICIALS</a>
+
+    <a href="approvals.html">APPROVALS</a>
+
+    <a href="tenders.html">TENDERS</a>
+
+    <a href="loi.html">LOIs</a>
+
+    <a href="notices.html">NOTICES</a>
+
     <a href="downloads.html">DOWNLOADS</a>
-   <a href="contact.html">CONTACT</a>
+
+    <a href="contact.html">CONTACT</a>
 
 </div>
 
@@ -925,7 +820,8 @@ body {
 <!-- MAIN -->
 
 <main class="container">
-    <!-- PROGRESS REPORT HEADING -->
+
+<!-- PROGRESS REPORT HEADING -->
 
 <div style="
     text-align:center;
@@ -954,53 +850,103 @@ body {
 
 <!-- STATISTICS -->
 
-<!-- STATISTICS -->
-
-<div class="stats" style="
-    display:grid;
-    grid-template-columns:repeat(7,minmax(0,1fr));
-    gap:15px;
-    margin-bottom:22px;
-">
+<div class="stats">
 
     <div class="stat">
-        <div class="stat-number" id="totalWorks">--</div>
-        <div class="stat-label">Total Works</div>
+
+        <div class="stat-number" id="totalWorks">
+            --
+        </div>
+
+        <div class="stat-label">
+            Total Works
+        </div>
+
     </div>
 
-    <div class="stat">
-        <div class="stat-number" id="gemWorks">--</div>
-        <div class="stat-label">GeM Procurement Works</div>
-    </div>
 
     <div class="stat">
-        <div class="stat-number" id="worksToBeTendered">--</div>
-        <div class="stat-label">Works to be Tendered</div>
+
+        <div class="stat-number" id="gemWorks">
+            --
+        </div>
+
+        <div class="stat-label">
+            GeM Procurement Works
+        </div>
+
     </div>
 
-    <div class="stat">
-        <div class="stat-number" id="worksTendered">--</div>
-        <div class="stat-label">Works Tendered</div>
-    </div>
 
     <div class="stat">
-        <div class="stat-number" id="worksAllotted">--</div>
-        <div class="stat-label">Works Allotted</div>
+
+        <div class="stat-number" id="worksToBeTendered">
+            --
+        </div>
+
+        <div class="stat-label">
+            Works to be Tendered
+        </div>
+
     </div>
 
-    <div class="stat">
-        <div class="stat-number" id="worksTakenUp">--</div>
-        <div class="stat-label">Works Taken Up</div>
-    </div>
 
     <div class="stat">
-        <div class="stat-number" id="worksCompleted">--</div>
-        <div class="stat-label">Works Completed</div>
+
+        <div class="stat-number" id="worksTendered">
+            --
+        </div>
+
+        <div class="stat-label">
+            Works Tendered
+        </div>
+
+    </div>
+
+
+    <div class="stat">
+
+        <div class="stat-number" id="worksAllotted">
+            --
+        </div>
+
+        <div class="stat-label">
+            Works Allotted
+        </div>
+
+    </div>
+
+
+    <div class="stat">
+
+        <div class="stat-number" id="worksTakenUp">
+            --
+        </div>
+
+        <div class="stat-label">
+            Works Taken Up
+        </div>
+
+    </div>
+
+
+    <div class="stat">
+
+        <div class="stat-number" id="worksCompleted">
+            --
+        </div>
+
+        <div class="stat-label">
+            Works Completed
+        </div>
+
     </div>
 
 </div>
 
+
 <script>
+
 (function () {
 
     const SHEET_ID =
@@ -1021,10 +967,16 @@ body {
 
     window.rewProgressStats = function (response) {
 
-        console.log("Google Sheet response:", response);
+        console.log(
+            "Google Sheet response:",
+            response
+        );
 
 
-        if (!response || response.status !== "ok") {
+        if (
+            !response ||
+            response.status !== "ok"
+        ) {
 
             console.error(
                 "Google Sheet error:",
@@ -1059,28 +1011,30 @@ body {
                 return "--";
             }
 
-            const cell = cells[index];
+            const cell =
+                cells[index];
 
-            /*
-             * Use the formatted value when available.
-             * Otherwise use the raw value.
-             */
 
             const value =
                 cell.f !== undefined
                     ? cell.f
                     : cell.v;
 
+
             if (
                 value === undefined ||
                 value === null ||
                 value === ""
             ) {
+
                 return "--";
+
             }
+
 
             return Number(value)
                 .toLocaleString("en-IN");
+
         }
 
 
@@ -1103,31 +1057,45 @@ body {
          */
 
 
-        document.getElementById("totalWorks").textContent =
+        document.getElementById(
+            "totalWorks"
+        ).textContent =
             getValue(0);
 
 
-        document.getElementById("gemWorks").textContent =
+        document.getElementById(
+            "gemWorks"
+        ).textContent =
             getValue(2);
 
 
-        document.getElementById("worksToBeTendered").textContent =
+        document.getElementById(
+            "worksToBeTendered"
+        ).textContent =
             getValue(4);
 
 
-        document.getElementById("worksTendered").textContent =
+        document.getElementById(
+            "worksTendered"
+        ).textContent =
             getValue(6);
 
 
-        document.getElementById("worksAllotted").textContent =
+        document.getElementById(
+            "worksAllotted"
+        ).textContent =
             getValue(8);
 
 
-        document.getElementById("worksTakenUp").textContent =
+        document.getElementById(
+            "worksTakenUp"
+        ).textContent =
             getValue(10);
 
 
-        document.getElementById("worksCompleted").textContent =
+        document.getElementById(
+            "worksCompleted"
+        ).textContent =
             getValue(12);
 
 
@@ -1148,23 +1116,33 @@ body {
     const script =
         document.createElement("script");
 
-    script.src = url;
 
-    script.async = true;
+    script.src =
+        url;
 
-    script.onerror = function () {
 
-        console.error(
-            "Unable to connect to Google Sheets."
-        );
+    script.async =
+        true;
 
-    };
 
-    document.head.appendChild(script);
+    script.onerror =
+        function () {
 
+            console.error(
+                "Unable to connect to Google Sheets."
+            );
+
+        };
+
+
+    document.head.appendChild(
+        script
+    );
 
 })();
+
 </script>
+
 
 <!-- =========================================================
      LATEST UPDATES
@@ -1182,8 +1160,13 @@ body {
 
         <div class="section-body">
 
-            <ul class="notice-list" id="latestNotices">
-                <li>Loading...</li>
+            <ul
+                class="notice-list"
+                id="latestNotices"
+            >
+                <li>
+                    Loading...
+                </li>
             </ul>
 
         </div>
@@ -1199,8 +1182,13 @@ body {
 
         <div class="section-body">
 
-            <ul class="notice-list" id="latestTenders">
-                <li>Loading...</li>
+            <ul
+                class="notice-list"
+                id="latestTenders"
+            >
+                <li>
+                    Loading...
+                </li>
             </ul>
 
         </div>
@@ -1222,8 +1210,13 @@ body {
 
         <div class="section-body">
 
-            <ul class="notice-list" id="latestCirculars">
-                <li>Loading...</li>
+            <ul
+                class="notice-list"
+                id="latestCirculars"
+            >
+                <li>
+                    Loading...
+                </li>
             </ul>
 
         </div>
@@ -1239,8 +1232,13 @@ body {
 
         <div class="section-body">
 
-            <ul class="notice-list" id="latestOrders">
-                <li>Loading...</li>
+            <ul
+                class="notice-list"
+                id="latestOrders"
+            >
+                <li>
+                    Loading...
+                </li>
             </ul>
 
         </div>
@@ -1262,8 +1260,13 @@ body {
 
         <div class="section-body">
 
-            <ul class="notice-list" id="latestCorrigendum">
-                <li>Loading...</li>
+            <ul
+                class="notice-list"
+                id="latestCorrigendum"
+            >
+                <li>
+                    Loading...
+                </li>
             </ul>
 
         </div>
@@ -1279,8 +1282,13 @@ body {
 
         <div class="section-body">
 
-            <ul class="notice-list" id="latestLOI">
-                <li>Loading...</li>
+            <ul
+                class="notice-list"
+                id="latestLOI"
+            >
+                <li>
+                    Loading...
+                </li>
             </ul>
 
         </div>
@@ -1288,6 +1296,8 @@ body {
     </section>
 
 </div>
+
+
 <!-- CONTACT -->
 
 <section class="section">
@@ -1370,6 +1380,7 @@ body {
 
 </main>
 
+
 <!-- FOOTER -->
 
 <footer class="footer">
@@ -1402,11 +1413,36 @@ body {
         </h3>
 
         <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Office</a></li>
-    <li><a href="tenders.html">Tenders</a></li>
-    <li><a href="notices.html">Notices</a></li>
-    <li><a href="downloads.html">Downloads</a></li>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About Office
+                </a>
+            </li>
+
+            <li>
+                <a href="tenders.html">
+                    Tenders
+                </a>
+            </li>
+
+            <li>
+                <a href="notices.html">
+                    Notices
+                </a>
+            </li>
+
+            <li>
+                <a href="downloads.html">
+                    Downloads
+                </a>
+            </li>
 
         </ul>
 
@@ -1421,10 +1457,21 @@ body {
 
         <ul>
 
-            <li>Privacy Policy</li>
-            <li>Disclaimer</li>
-            <li>Accessibility</li>
-            <li>Site Map</li>
+            <li>
+                Privacy Policy
+            </li>
+
+            <li>
+                Disclaimer
+            </li>
+
+            <li>
+                Accessibility
+            </li>
+
+            <li>
+                Site Map
+            </li>
 
         </ul>
 
@@ -1442,6 +1489,8 @@ body {
 </div>
 
 </footer>
+
+
 <script>
 
 /* =========================================================
@@ -1477,17 +1526,27 @@ const SHEETS = {
 
 async function loadCSV(url) {
 
-    const response = await fetch(
-        url + "&cache=" + Date.now()
-    );
+    const response =
+        await fetch(
+            url + "&cache=" + Date.now()
+        );
+
 
     if (!response.ok) {
-        throw new Error("Unable to load CSV");
+
+        throw new Error(
+            "Unable to load CSV"
+        );
+
     }
 
-    const text = await response.text();
+
+    const text =
+        await response.text();
+
 
     return parseCSV(text);
+
 }
 
 
@@ -1503,10 +1562,19 @@ function parseCSV(text) {
     let value = "";
     let insideQuotes = false;
 
-    for (let i = 0; i < text.length; i++) {
 
-        const char = text[i];
-        const next = text[i + 1];
+    for (
+        let i = 0;
+        i < text.length;
+        i++
+    ) {
+
+        const char =
+            text[i];
+
+        const next =
+            text[i + 1];
+
 
         if (
             char === '"' &&
@@ -1515,28 +1583,41 @@ function parseCSV(text) {
         ) {
 
             value += '"';
+
             i++;
 
         }
 
-        else if (char === '"') {
 
-            insideQuotes = !insideQuotes;
+        else if (
+            char === '"'
+        ) {
+
+            insideQuotes =
+                !insideQuotes;
 
         }
+
 
         else if (
             char === "," &&
             !insideQuotes
         ) {
 
-            row.push(value.trim());
+            row.push(
+                value.trim()
+            );
+
             value = "";
 
         }
 
+
         else if (
-            (char === "\n" || char === "\r") &&
+            (
+                char === "\n" ||
+                char === "\r"
+            ) &&
             !insideQuotes
         ) {
 
@@ -1544,23 +1625,34 @@ function parseCSV(text) {
                 char === "\r" &&
                 next === "\n"
             ) {
+
                 i++;
+
             }
 
-            row.push(value.trim());
+
+            row.push(
+                value.trim()
+            );
+
 
             if (
                 row.some(
                     cell => cell !== ""
                 )
             ) {
+
                 rows.push(row);
+
             }
 
+
             row = [];
+
             value = "";
 
         }
+
 
         else {
 
@@ -1576,20 +1668,26 @@ function parseCSV(text) {
         row.length > 0
     ) {
 
-        row.push(value.trim());
+        row.push(
+            value.trim()
+        );
+
 
         if (
             row.some(
                 cell => cell !== ""
             )
         ) {
+
             rows.push(row);
+
         }
 
     }
 
 
     return rows;
+
 }
 
 
@@ -1613,7 +1711,10 @@ function cleanHeader(value) {
    FIND COLUMN
 ========================================================= */
 
-function findColumn(headers, names) {
+function findColumn(
+    headers,
+    names
+) {
 
     for (
         let i = 0;
@@ -1622,7 +1723,9 @@ function findColumn(headers, names) {
     ) {
 
         const header =
-            cleanHeader(headers[i]);
+            cleanHeader(
+                headers[i]
+            );
 
 
         for (
@@ -1642,7 +1745,9 @@ function findColumn(headers, names) {
 
     }
 
+
     return -1;
+
 }
 
 
@@ -1653,10 +1758,15 @@ function findColumn(headers, names) {
 function convertDate(value) {
 
     if (!value) {
+
         return new Date(0);
+
     }
 
-    value = String(value).trim();
+
+    value =
+        String(value).trim();
+
 
     let date;
 
@@ -1672,15 +1782,16 @@ function convertDate(value) {
             value.split(/[-\/]/);
 
 
-        date = new Date(
+        date =
+            new Date(
 
-            Number(parts[2]),
+                Number(parts[2]),
 
-            Number(parts[1]) - 1,
+                Number(parts[1]) - 1,
 
-            Number(parts[0])
+                Number(parts[0])
 
-        );
+            );
 
     }
 
@@ -1696,28 +1807,32 @@ function convertDate(value) {
             value.split(/[-\/]/);
 
 
-        date = new Date(
+        date =
+            new Date(
 
-            Number(parts[0]),
+                Number(parts[0]),
 
-            Number(parts[1]) - 1,
+                Number(parts[1]) - 1,
 
-            Number(parts[2])
+                Number(parts[2])
 
-        );
+            );
 
     }
 
 
     else {
 
-        date = new Date(value);
+        date =
+            new Date(value);
 
     }
 
 
     if (
-        isNaN(date.getTime())
+        isNaN(
+            date.getTime()
+        )
     ) {
 
         return new Date(0);
@@ -1726,6 +1841,7 @@ function convertDate(value) {
 
 
     return date;
+
 }
 
 
@@ -1779,14 +1895,17 @@ function createItem(
         document.createElement("span");
 
 
-    dateSpan.className = "date";
+    dateSpan.className =
+        "date";
 
 
     dateSpan.textContent =
         displayDate(date);
 
 
-    li.appendChild(dateSpan);
+    li.appendChild(
+        dateSpan
+    );
 
 
     const a =
@@ -1801,7 +1920,9 @@ function createItem(
         title || "View Document";
 
 
-    li.appendChild(a);
+    li.appendChild(
+        a
+    );
 
 
     if (isNew) {
@@ -1810,18 +1931,23 @@ function createItem(
             document.createElement("span");
 
 
-        newLabel.className = "new";
+        newLabel.className =
+            "new";
 
 
-        newLabel.textContent = "NEW";
+        newLabel.textContent =
+            "NEW";
 
 
-        li.appendChild(newLabel);
+        li.appendChild(
+            newLabel
+        );
 
     }
 
 
     return li;
+
 }
 
 
@@ -1837,21 +1963,29 @@ async function loadSection(
 ) {
 
     const container =
-        document.getElementById(elementID);
+        document.getElementById(
+            elementID
+        );
 
 
     if (!container) {
+
         return;
+
     }
 
 
     try {
 
         const rows =
-            await loadCSV(sheetURL);
+            await loadCSV(
+                sheetURL
+            );
 
 
-        if (rows.length <= 1) {
+        if (
+            rows.length <= 1
+        ) {
 
             container.innerHTML =
                 "<li>No records available.</li>";
@@ -1861,7 +1995,8 @@ async function loadSection(
         }
 
 
-        const headers = rows[0];
+        const headers =
+            rows[0];
 
 
         const dateColumn =
@@ -1903,14 +2038,17 @@ async function loadSection(
             i++
         ) {
 
-            const row = rows[i];
+            const row =
+                rows[i];
 
 
             if (
                 !row ||
                 row.length === 0
             ) {
+
                 continue;
+
             }
 
 
@@ -1933,17 +2071,23 @@ async function loadSection(
 
 
             if (!link) {
-                link = defaultPage;
+
+                link =
+                    defaultPage;
+
             }
 
 
             records.push({
 
-                date: date,
+                date:
+                    date,
 
-                title: title,
+                title:
+                    title,
 
-                link: link
+                link:
+                    link
 
             });
 
@@ -1959,7 +2103,8 @@ async function loadSection(
         );
 
 
-        container.innerHTML = "";
+        container.innerHTML =
+            "";
 
 
         /* SHOW LATEST 3 RECORDS */
@@ -2155,5 +2300,6 @@ loadSection(
 );
 
 </script>
+
 </body>
 </html>
