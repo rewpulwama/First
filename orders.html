@@ -702,173 +702,564 @@ body {
 
 <script>
 
-/* =========================================================
-   GOOGLE SHEET — ORDERS
-   ========================================================= */
-
 const SHEET_URL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1751045669&single=true&output=csv";
-
 
 let orders = [];
 
 
-/* =========================================================
+/* ===============================
    CSV PARSER
-   ========================================================= */
+================================ */
 
 function parseCSV(text) {
 
     const rows = [];
-
     let row = [];
-
     let cell = "";
+    let quoted = false;
 
-    let insideQuotes = false;
-
-
-    for (
-        let i = 0;
-        i < text.length;
-        i++
-    ) {
+    for (let i = 0; i < text.length; i++) {
 
         const char = text[i];
-
         const next = text[i + 1];
-
-
-        /* Handle escaped quotes */
 
         if (
             char === '"' &&
-            insideQuotes &&
+            quoted &&
             next === '"'
         ) {
-
             cell += '"';
-
             i++;
-
             continue;
-
         }
 
-
-        /* Handle quotes */
-
-        if (
-            char === '"'
-        ) {
-
-            insideQuotes =
-                !insideQuotes;
-
+        if (char === '"') {
+            quoted = !quoted;
             continue;
-
         }
-
-
-        /* Handle comma */
 
         if (
             char === "," &&
-            !insideQuotes
+            !quoted
         ) {
-
-            row.push(
-                cell.trim()
-            );
-
+            row.push(cell.trim());
             cell = "";
-
             continue;
-
         }
 
-
-        /* Handle new line */
-
         if (
-            (char === "\n" ||
-             char === "\r") &&
-            !insideQuotes
+            (char === "\n" || char === "\r") &&
+            !quoted
         ) {
 
             if (
                 char === "\r" &&
                 next === "\n"
             ) {
-
                 i++;
-
             }
 
-
-            row.push(
-                cell.trim()
-            );
-
+            row.push(cell.trim());
 
             if (
                 row.some(
-                    value =>
-                    value !== ""
+                    value => value !== ""
                 )
             ) {
-
                 rows.push(row);
-
             }
 
-
             row = [];
-
             cell = "";
 
             continue;
-
         }
 
-
         cell += char;
-
     }
-
-
-    /* Last row */
 
     if (
         cell !== "" ||
         row.length
     ) {
 
-        row.push(
-            cell.trim()
-        );
-
+        row.push(cell.trim());
 
         if (
             row.some(
-                value =>
-                value !== ""
+                value => value !== ""
             )
         ) {
-
             rows.push(row);
+        }
+    }
+
+    return rows;
+}
+
+
+/* ===============================
+   NORMALIZE HEADER
+================================ */
+
+function normalize(value) {
+
+    return String(value || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, "");
+}
+
+
+/* ===============================
+   LOAD ORDERS
+================================ */
+
+async function loadOrders() {
+
+    const body =
+        document.getElementById("ordersBody");
+
+    try {
+
+        const response =
+            await fetch(
+                SHEET_URL +
+                "&t=" +
+                Date.now(),
+                {
+                    cache: "no-store"
+                }
+            );
+
+        if (!response.ok) {
+            throw new Error(
+                "Unable to access Google Sheet."
+            );
+        }
+
+        const csv =
+            await response.text();
+
+        console.log(
+            "Orders CSV:",
+            csv
+        );
+
+        if (
+            csv.trim().startsWith("<") ||
+            csv.includes("<html")
+        ) {
+            throw new Error(
+                "Google did not return CSV data."
+            );
+        }
+
+        const rows =
+            parseCSV(csv);
+
+        if (
+            rows.length < 2
+        ) {
+
+            body.innerHTML = `
+                <tr>
+                    <td colspan="5"
+                        class="no-results">
+                        No orders available.
+                    </td>
+                </tr>
+            `;
+
+            return;
+        }
+
+
+        /* ===============================
+           HEADERS
+        =============================== */
+
+        const headers =
+            rows[0].map(normalize);
+
+        console.log(
+            "Orders headers:",
+            headers
+        );
+
+
+        /* ===============================
+           FIND COLUMNS
+        =============================== */
+
+        const snoColumn =
+            headers.indexOf("sno");
+
+        const orderNoColumn =
+            headers.indexOf("orderno");
+
+        const dateColumn =
+            headers.indexOf("date");
+
+        const subjectColumn =
+            headers.indexOf("subjectdescription");
+
+        const downloadColumn =
+            headers.indexOf("download");
+
+
+        console.log(
+            "S.No column:",
+            snoColumn
+        );
+
+        console.log(
+            "Order No column:",
+            orderNoColumn
+        );
+
+        console.log(
+            "Date column:",
+            dateColumn
+        );
+
+        console.log(
+            "Subject column:",
+            subjectColumn
+        );
+
+        console.log(
+            "Download column:",
+            downloadColumn
+        );
+
+
+        /* ===============================
+           READ DATA
+        =============================== */
+
+        orders = [];
+
+
+        for (
+            let i = 1;
+            i < rows.length;
+            i++
+        ) {
+
+            const row =
+                rows[i];
+
+
+            if (
+                !row ||
+                row.every(
+                    value => !value
+                )
+            ) {
+                continue;
+            }
+
+
+            const sno =
+                snoColumn >= 0
+                ? row[snoColumn] || ""
+                : i;
+
+
+            const orderNo =
+                orderNoColumn >= 0
+                ? row[orderNoColumn] || ""
+                : "";
+
+
+            const date =
+                dateColumn >= 0
+                ? row[dateColumn] || ""
+                : "";
+
+
+            const subject =
+                subjectColumn >= 0
+                ? row[subjectColumn] || ""
+                : "";
+
+
+            const download =
+                downloadColumn >= 0
+                ? row[downloadColumn] || ""
+                : "";
+
+
+            orders.push({
+
+                sno:
+                    sno.trim(),
+
+                orderNo:
+                    orderNo.trim(),
+
+                date:
+                    date.trim(),
+
+                subject:
+                    subject.trim(),
+
+                download:
+                    download.trim()
+
+            });
 
         }
+
+
+        renderOrders(orders);
 
     }
 
 
-    return rows;
+    catch (error) {
 
+        console.error(
+            "Orders error:",
+            error
+        );
+
+        body.innerHTML = `
+            <tr>
+                <td colspan="5"
+                    class="error">
+
+                    Unable to load orders.
+                    Please try again later.
+
+                </td>
+            </tr>
+        `;
+    }
 }
 
 
-/* =========================================================
+/* ===============================
+   RENDER ORDERS
+================================ */
+
+function renderOrders(data) {
+
+    const body =
+        document.getElementById(
+            "ordersBody"
+        );
+
+
+    if (
+        !data.length
+    ) {
+
+        body.innerHTML = `
+            <tr>
+                <td colspan="5"
+                    class="no-results">
+
+                    No orders available.
+
+                </td>
+            </tr>
+        `;
+
+        return;
+    }
+
+
+    body.innerHTML = "";
+
+
+    data.forEach(
+        (item, index) => {
+
+            const tr =
+                document.createElement("tr");
+
+
+            /* S.NO */
+
+            const sno =
+                document.createElement("td");
+
+            sno.textContent =
+                item.sno || index + 1;
+
+
+            /* ORDER NO */
+
+            const orderNo =
+                document.createElement("td");
+
+            orderNo.textContent =
+                item.orderNo || "—";
+
+
+            /* DATE */
+
+            const date =
+                document.createElement("td");
+
+
+            if (
+                item.date
+            ) {
+
+                const span =
+                    document.createElement(
+                        "span"
+                    );
+
+                span.className =
+                    "date";
+
+                span.textContent =
+                    item.date;
+
+                date.appendChild(span);
+
+            }
+            else {
+
+                date.textContent =
+                    "—";
+            }
+
+
+            /* SUBJECT */
+
+            const subject =
+                document.createElement("td");
+
+            subject.textContent =
+                item.subject ||
+                "Office Order";
+
+
+            /* DOWNLOAD */
+
+            const download =
+                document.createElement("td");
+
+
+            if (
+                item.download
+            ) {
+
+                const link =
+                    document.createElement("a");
+
+                link.href =
+                    item.download;
+
+                link.target =
+                    "_blank";
+
+                link.rel =
+                    "noopener noreferrer";
+
+                link.className =
+                    "download-btn";
+
+                link.textContent =
+                    "Download";
+
+                download.appendChild(
+                    link
+                );
+
+            }
+            else {
+
+                download.textContent =
+                    "—";
+            }
+
+
+            tr.appendChild(sno);
+            tr.appendChild(orderNo);
+            tr.appendChild(date);
+            tr.appendChild(subject);
+            tr.appendChild(download);
+
+            body.appendChild(tr);
+
+        }
+    );
+}
+
+
+/* ===============================
+   SEARCH
+================================ */
+
+document
+.getElementById("searchInput")
+.addEventListener(
+    "input",
+    function () {
+
+        const query =
+            this.value
+                .toLowerCase()
+                .trim();
+
+
+        if (!query) {
+
+            renderOrders(
+                orders
+            );
+
+            return;
+        }
+
+
+        const filtered =
+            orders.filter(
+                item =>
+
+                    item.orderNo
+                        .toLowerCase()
+                        .includes(query)
+
+                    ||
+
+                    item.date
+                        .toLowerCase()
+                        .includes(query)
+
+                    ||
+
+                    item.subject
+                        .toLowerCase()
+                        .includes(query)
+
+            );
+
+
+        renderOrders(
+            filtered
+        );
+
+    }
+);
+
+
+/* ===============================
+   START
+================================ */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadOrders
+);
+
+</script>
    NORMALIZE HEADER
    ========================================================= */
 
