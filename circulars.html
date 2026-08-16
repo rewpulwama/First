@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Circulars | REW Pulwama</title>
 
 <meta name="description"
-      content="Official circulars and departmental communications of Rural Engineering Wing (REW), Pulwama.">
+content="Official Circulars of the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
 
 <style>
 
@@ -28,12 +30,13 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f8;
     color: var(--text);
+    background: #f4f6f8;
     line-height: 1.6;
 }
 
-/* HEADER */
+
+/* ================= HEADER ================= */
 
 .header {
     background: white;
@@ -45,6 +48,7 @@ body {
     margin: auto;
     padding: 14px 20px;
     min-height: 150px;
+
     display: flex;
     align-items: center;
     gap: 20px;
@@ -53,9 +57,11 @@ body {
 .emblem {
     width: 110px;
     height: 125px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     flex-shrink: 0;
 }
 
@@ -73,6 +79,7 @@ body {
     font-size: 18px;
     font-weight: bold;
     color: #555;
+    margin-bottom: 3px;
 }
 
 .header-text .department {
@@ -93,7 +100,8 @@ body {
     font-weight: 600;
 }
 
-/* NAVIGATION */
+
+/* ================= NAVIGATION ================= */
 
 .navbar {
     background: var(--dark-blue);
@@ -122,7 +130,8 @@ body {
     background: var(--blue);
 }
 
-/* PAGE */
+
+/* ================= MAIN ================= */
 
 .container {
     max-width: 1250px;
@@ -130,7 +139,8 @@ body {
     padding: 0 20px 40px;
 }
 
-/* PAGE TITLE */
+
+/* ================= PAGE TITLE ================= */
 
 .page-title {
     background: white;
@@ -154,7 +164,8 @@ body {
     color: #555;
 }
 
-/* SEARCH */
+
+/* ================= SEARCH ================= */
 
 .search-box {
     background: white;
@@ -177,7 +188,8 @@ body {
     border-color: var(--blue);
 }
 
-/* TABLE */
+
+/* ================= TABLE ================= */
 
 .table-box {
     background: white;
@@ -193,7 +205,7 @@ body {
 .circular-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 750px;
+    min-width: 800px;
 }
 
 .circular-table th {
@@ -219,7 +231,8 @@ body {
     border-bottom: none;
 }
 
-/* DATE */
+
+/* ================= DATE ================= */
 
 .date {
     display: inline-block;
@@ -231,13 +244,14 @@ body {
     white-space: nowrap;
 }
 
-/* DOWNLOAD BUTTON */
+
+/* ================= BUTTON ================= */
 
 .download-btn {
     display: inline-block;
     background: var(--blue);
     color: white;
-    padding: 7px 13px;
+    padding: 8px 15px;
     border-radius: 4px;
     text-decoration: none;
     font-size: 13px;
@@ -253,21 +267,23 @@ body {
     content: "↓ ";
 }
 
-/* STATUS */
+
+/* ================= STATUS ================= */
 
 .loading,
 .error,
 .no-results {
-    padding: 30px;
+    padding: 35px;
     text-align: center;
     color: #666;
 }
 
 .error {
-    color: #a00;
+    color: #a00000;
 }
 
-/* FOOTER */
+
+/* ================= FOOTER ================= */
 
 .footer {
     background: #062f52;
@@ -279,6 +295,7 @@ body {
     max-width: 1250px;
     margin: auto;
     padding: 35px 20px;
+
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 35px;
@@ -310,9 +327,10 @@ body {
     color: #cbd9e4;
 }
 
-/* MOBILE */
 
-@media(max-width: 700px) {
+/* ================= MOBILE ================= */
+
+@media(max-width:700px) {
 
     .header-inner {
         flex-wrap: wrap;
@@ -335,407 +353,609 @@ body {
     .footer-inner {
         grid-template-columns: 1fr;
     }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- HEADER -->
+
+<!-- ================= HEADER ================= -->
 
 <header class="header">
 
-    <div class="header-inner">
+<div class="header-inner">
 
-        <div class="emblem">
-            <img src="images/Emblem_of_India.svg"
-                 alt="State Emblem of India">
-        </div>
+    <div class="emblem">
 
-        <div class="header-text">
-
-            <div class="govt">
-                Government of Jammu & Kashmir
-            </div>
-
-            <div class="department">
-                Department of Rural Development & Panchayati Raj
-            </div>
-
-            <h1>
-                Office of the Executive Engineer
-            </h1>
-
-            <h2>
-                Rural Engineering Wing (REW), Pulwama
-            </h2>
-
-        </div>
+        <img
+            src="images/Emblem_of_India.svg"
+            alt="State Emblem of India">
 
     </div>
+
+
+    <div class="header-text">
+
+        <div class="govt">
+            Government of Jammu & Kashmir
+        </div>
+
+        <div class="department">
+            Department of Rural Development & Panchayati Raj
+        </div>
+
+        <h1>
+            Office of the Executive Engineer
+        </h1>
+
+        <h2>
+            Rural Engineering Wing (REW), Pulwama
+        </h2>
+
+    </div>
+
+</div>
 
 </header>
 
 
-<!-- NAVIGATION -->
+<!-- ================= NAVIGATION ================= -->
 
 <nav class="navbar">
 
-    <div class="nav-inner">
+<div class="nav-inner">
 
-        <a href="index.html">HOME</a>
-        <a href="about.html">ABOUT</a>
-        <a href="officials.html">OFFICIALS</a>
-        <a href="approvals.html">APPROVALS</a>
-        <a href="tenders.html">TENDERS</a>
-        <a href="loi.html">LOIs</a>
-        <a href="notices.html">NOTICES</a>
-        <a href="circulars.html" class="active">CIRCULARS</a>
-        <a href="downloads.html">DOWNLOADS</a>
-        <a href="contact.html">CONTACT</a>
+    <a href="index.html">
+        HOME
+    </a>
 
-    </div>
+    <a href="about.html">
+        ABOUT
+    </a>
+
+    <a href="officials.html">
+        OFFICIALS
+    </a>
+
+    <a href="approvals.html">
+        APPROVALS
+    </a>
+
+    <a href="tenders.html">
+        TENDERS
+    </a>
+
+    <a href="loi.html">
+        LOIs
+    </a>
+
+    <a href="notices.html">
+        NOTICES
+    </a>
+
+    <a href="circulars.html" class="active">
+        CIRCULARS
+    </a>
+
+    <a href="orders.html">
+        ORDERS
+    </a>
+
+    <a href="corrigendum.html">
+        CORRIGENDUM
+    </a>
+
+    <a href="downloads.html">
+        DOWNLOADS
+    </a>
+
+    <a href="contact.html">
+        CONTACT
+    </a>
+
+</div>
 
 </nav>
 
 
-<!-- MAIN -->
+<!-- ================= MAIN ================= -->
 
 <main class="container">
 
-    <section class="page-title">
 
-        <div class="page-title-top">
-            Departmental Circulars
-        </div>
+<section class="page-title">
 
-        <div class="page-title-body">
-            Official circulars and departmental communications
-            issued by the Office of the Executive Engineer,
-            Rural Engineering Wing (REW), Pulwama.
-        </div>
+    <div class="page-title-top">
+        Official Circulars
+    </div>
 
-    </section>
+    <div class="page-title-body">
 
-
-    <!-- SEARCH -->
-
-    <div class="search-box">
-
-        <input
-            type="search"
-            id="searchInput"
-            placeholder="Search circulars..."
-            autocomplete="off">
+        Circulars issued by the Office of the Executive Engineer,
+        Rural Engineering Wing (REW), Pulwama.
 
     </div>
 
+</section>
 
-    <!-- TABLE -->
 
-    <section class="table-box">
+<!-- ================= SEARCH ================= -->
 
-        <div class="table-wrapper">
+<div class="search-box">
 
-            <table class="circular-table">
+    <input
+        type="search"
+        id="searchInput"
+        placeholder="Search circulars..."
+        autocomplete="off">
 
-                <thead>
-                    <tr>
-                        <th style="width:80px;">S.No.</th>
-                        <th style="width:150px;">Date</th>
-                        <th>Circular / Subject</th>
-                        <th style="width:150px;">Download</th>
-                    </tr>
-                </thead>
+</div>
 
-                <tbody id="circularBody">
 
-                    <tr>
-                        <td colspan="4"
-                            class="loading">
-                            Loading circulars...
-                        </td>
-                    </tr>
+<!-- ================= CIRCULAR TABLE ================= -->
 
-                </tbody>
+<section class="table-box">
 
-            </table>
+<div class="table-wrapper">
 
-        </div>
+<table class="circular-table">
 
-    </section>
+<thead>
+
+<tr>
+
+    <th style="width:80px;">
+        S.No.
+    </th>
+
+    <th style="width:160px;">
+        Date
+    </th>
+
+    <th>
+        Circular / Subject
+    </th>
+
+    <th style="width:150px;">
+        Download
+    </th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="circularBody">
+
+<tr>
+
+    <td colspan="4" class="loading">
+        Loading circulars...
+    </td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
 
 </main>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
-    <div class="footer-inner">
+<div class="footer-inner">
 
-        <div>
 
-            <h3>REW Pulwama</h3>
+<div>
 
-            <p>
-                Office of the Executive Engineer,
-                Rural Engineering Wing (REW), Pulwama.
-            </p>
+    <h3>
+        REW Pulwama
+    </h3>
 
-            <p style="margin-top:10px;">
-                Department of Rural Development & Panchayati Raj,
-                Government of Jammu & Kashmir.
-            </p>
-
-        </div>
-
-        <div>
-
-            <h3>Important Links</h3>
-
-            <ul>
-                <li>Home</li>
-                <li>About Office</li>
-                <li>Tenders</li>
-                <li>Notices</li>
-                <li>Downloads</li>
-            </ul>
-
-        </div>
-
-        <div>
-
-            <h3>Website Information</h3>
-
-            <ul>
-                <li>Privacy Policy</li>
-                <li>Disclaimer</li>
-                <li>Accessibility</li>
-                <li>Site Map</li>
-            </ul>
-
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-
-        © 2026 Office of the Executive Engineer,
+    <p>
+        Office of the Executive Engineer,
         Rural Engineering Wing (REW), Pulwama.
-        All Rights Reserved.
+    </p>
 
-    </div>
+    <p style="margin-top:10px;">
+
+        Department of Rural Development & Panchayati Raj,
+        Government of Jammu & Kashmir.
+
+    </p>
+
+</div>
+
+
+<div>
+
+    <h3>
+        Important Links
+    </h3>
+
+    <ul>
+
+        <li>Home</li>
+        <li>About Office</li>
+        <li>Tenders</li>
+        <li>Notices</li>
+        <li>Downloads</li>
+
+    </ul>
+
+</div>
+
+
+<div>
+
+    <h3>
+        Website Information
+    </h3>
+
+    <ul>
+
+        <li>Privacy Policy</li>
+        <li>Disclaimer</li>
+        <li>Accessibility</li>
+        <li>Site Map</li>
+
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+    © 2026 Office of the Executive Engineer,
+    Rural Engineering Wing (REW), Pulwama.
+    All Rights Reserved.
+
+</div>
 
 </footer>
 
 
+
 <script>
 
-/*
-=========================================================
-GOOGLE SHEET
-=========================================================
+/* =========================================================
+   GOOGLE SHEET
+   ========================================================= */
 
-Paste your published CSV address below.
-
-IMPORTANT:
-The Google Sheet must be published to the web.
-
-=========================================================
-*/
-
-const SHEET_URL = "PASTE_YOUR_GOOGLE_SHEET_CSV_URL_HERE";
+const SHEET_URL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1051031097&single=true&output=csv";
 
 
 let circulars = [];
 
 
-/* -------------------------------------------------------
+/* =========================================================
    CSV PARSER
-------------------------------------------------------- */
+   ========================================================= */
 
 function parseCSV(text) {
 
     const rows = [];
+
     let row = [];
     let cell = "";
-    let insideQuotes = false;
+    let quoted = false;
 
-    for (let i = 0; i < text.length; i++) {
+
+    for (
+        let i = 0;
+        i < text.length;
+        i++
+    ) {
 
         const char = text[i];
         const next = text[i + 1];
 
-        if (char === '"' && insideQuotes && next === '"') {
+
+        if (
+            char === '"' &&
+            quoted &&
+            next === '"'
+        ) {
+
             cell += '"';
             i++;
             continue;
+
         }
+
 
         if (char === '"') {
-            insideQuotes = !insideQuotes;
+
+            quoted = !quoted;
             continue;
+
         }
 
-        if (char === "," && !insideQuotes) {
-            row.push(cell.trim());
-            cell = "";
-            continue;
-        }
 
         if (
-            (char === "\n" || char === "\r") &&
-            !insideQuotes
+            char === "," &&
+            !quoted
         ) {
 
-            if (char === "\r" && next === "\n") {
+            row.push(cell.trim());
+            cell = "";
+
+            continue;
+
+        }
+
+
+        if (
+            (char === "\n" ||
+             char === "\r") &&
+            !quoted
+        ) {
+
+            if (
+                char === "\r" &&
+                next === "\n"
+            ) {
+
                 i++;
+
             }
+
 
             row.push(cell.trim());
 
-            if (row.some(value => value !== "")) {
+
+            if (
+                row.some(
+                    value => value !== ""
+                )
+            ) {
+
                 rows.push(row);
+
             }
+
 
             row = [];
             cell = "";
 
             continue;
+
         }
 
+
         cell += char;
+
     }
 
-    if (cell !== "" || row.length) {
+
+    if (
+        cell !== "" ||
+        row.length
+    ) {
 
         row.push(cell.trim());
 
-        if (row.some(value => value !== "")) {
+        if (
+            row.some(
+                value => value !== ""
+            )
+        ) {
+
             rows.push(row);
+
         }
+
     }
+
 
     return rows;
+
 }
 
 
-/* -------------------------------------------------------
-   FIND COLUMN
-------------------------------------------------------- */
+/* =========================================================
+   NORMALIZE HEADER
+   ========================================================= */
 
-function findColumn(headers, possibleNames) {
+function normalize(value) {
+
+    return String(value || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, "");
+
+}
+
+
+/* =========================================================
+   FIND COLUMN
+   ========================================================= */
+
+function findColumn(headers, names) {
 
     const normalizedHeaders =
-        headers.map(h =>
-            String(h)
-                .toLowerCase()
-                .replace(/[^a-z0-9]/g, "")
-        );
+        headers.map(normalize);
 
-    for (const name of possibleNames) {
 
-        const normalized =
-            name
-                .toLowerCase()
-                .replace(/[^a-z0-9]/g, "");
+    for (
+        const name of names
+    ) {
 
         const index =
-            normalizedHeaders.indexOf(normalized);
+            normalizedHeaders.indexOf(
+                normalize(name)
+            );
+
 
         if (index !== -1) {
+
             return index;
+
         }
+
     }
 
+
     return -1;
+
 }
 
 
-/* -------------------------------------------------------
-   LOAD SHEET
-------------------------------------------------------- */
+/* =========================================================
+   LOAD CIRCULARS
+   ========================================================= */
 
 async function loadCirculars() {
 
     const body =
-        document.getElementById("circularBody");
+        document.getElementById(
+            "circularBody"
+        );
+
 
     try {
 
-        const response = await fetch(
-            SHEET_URL +
-            (SHEET_URL.includes("?") ? "&" : "?") +
-            "t=" + Date.now(),
-            {
-                cache: "no-store"
-            }
-        );
+        const response =
+            await fetch(
+                SHEET_URL +
+                "&t=" +
+                Date.now(),
+                {
+                    cache: "no-store"
+                }
+            );
+
 
         if (!response.ok) {
+
             throw new Error(
-                "Unable to load Google Sheet."
+                "Unable to access Google Sheet."
             );
+
         }
+
 
         const text =
             await response.text();
 
-        const rows =
-            parseCSV(text);
 
-        if (rows.length < 2) {
+        /*
+        Make sure Google returned CSV,
+        not an HTML error/login page.
+        */
+
+        if (
+            text.trim().startsWith("<!DOCTYPE") ||
+            text.trim().startsWith("<html")
+        ) {
+
             throw new Error(
-                "No circular records found."
+                "Google Sheet did not return CSV data."
             );
+
         }
 
 
-        const headers = rows[0];
+        const rows =
+            parseCSV(text);
+
+
+        if (
+            rows.length < 2
+        ) {
+
+            throw new Error(
+                "No circular records found."
+            );
+
+        }
+
+
+        const headers =
+            rows[0];
+
+
+        console.log(
+            "Circular Sheet Headers:",
+            headers
+        );
 
 
         /*
-         * Automatically find columns.
-         */
+        DATE COLUMN
+        */
 
         const dateColumn =
-            findColumn(headers, [
-                "Date",
-                "Circular Date",
-                "Date of Circular",
-                "Issue Date"
-            ]);
+            findColumn(
+                headers,
+                [
+                    "Date",
+                    "Circular Date",
+                    "Issue Date",
+                    "Date of Circular",
+                    "Upload Date"
+                ]
+            );
 
+
+        /*
+        SUBJECT / TITLE COLUMN
+        */
 
         const titleColumn =
-            findColumn(headers, [
-                "Circular",
-                "Circular Name",
-                "Circular Title",
-                "Subject",
-                "Title",
-                "Description",
-                "Particulars"
-            ]);
+            findColumn(
+                headers,
+                [
+                    "Title",
+                    "Subject",
+                    "Circular",
+                    "Circular Title",
+                    "Description",
+                    "Particulars",
+                    "Document",
+                    "Document Name",
+                    "File Name"
+                ]
+            );
 
+
+        /*
+        LINK COLUMN
+        */
 
         const linkColumn =
-            findColumn(headers, [
-                "Download",
-                "Download Link",
-                "Link",
-                "URL",
-                "File",
-                "PDF",
-                "PDF Link",
-                "Document",
-                "Document Link"
-            ]);
+            findColumn(
+                headers,
+                [
+                    "Download",
+                    "Download Link",
+                    "Link",
+                    "URL",
+                    "PDF",
+                    "PDF Link",
+                    "File",
+                    "File Link",
+                    "Document Link",
+                    "Document URL"
+                ]
+            );
 
-
-        console.log("Headers:", headers);
 
         console.log(
             "Date column:",
@@ -753,72 +973,99 @@ async function loadCirculars() {
         );
 
 
-        if (titleColumn === -1) {
-
-            throw new Error(
-                "Could not find the Circular/Subject column. Check the first row of your Google Sheet."
-            );
-        }
-
-
         circulars = [];
 
 
-        for (let i = 1; i < rows.length; i++) {
+        /*
+        BUILD RECORDS
+        */
 
-            const row = rows[i];
+        for (
+            let i = 1;
+            i < rows.length;
+            i++
+        ) {
 
-            const title =
-                row[titleColumn] || "";
-
-            if (!title.trim()) {
-                continue;
-            }
+            const row =
+                rows[i];
 
 
             const date =
                 dateColumn !== -1
-                    ? row[dateColumn] || ""
-                    : "";
+                ? row[dateColumn] || ""
+                : "";
+
+
+            const title =
+                titleColumn !== -1
+                ? row[titleColumn] || ""
+                : "";
 
 
             const link =
                 linkColumn !== -1
-                    ? row[linkColumn] || ""
-                    : "";
+                ? row[linkColumn] || ""
+                : "";
+
+
+            if (
+                !date &&
+                !title &&
+                !link
+            ) {
+
+                continue;
+
+            }
 
 
             circulars.push({
 
-                date: date.trim(),
+                date:
+                    date.trim(),
 
-                title: title.trim(),
+                title:
+                    title.trim(),
 
-                link: link.trim()
+                link:
+                    link.trim()
 
             });
 
         }
 
 
-        renderCirculars(circulars);
+        renderCirculars(
+            circulars
+        );
 
     }
+
 
     catch (error) {
 
         console.error(
-            "Circulars error:",
+            "Circulars Error:",
             error
         );
 
+
         body.innerHTML = `
+
             <tr>
-                <td colspan="4" class="error">
+
+                <td
+                    colspan="4"
+                    class="error">
+
                     Unable to load circulars.
-                    Please try again later.
+                    Please check that the Google Sheet
+                    is published to the web.
+
                 </td>
+
             </tr>
+
         `;
 
     }
@@ -826,174 +1073,252 @@ async function loadCirculars() {
 }
 
 
-/* -------------------------------------------------------
-   RENDER
-------------------------------------------------------- */
+/* =========================================================
+   RENDER CIRCULARS
+   ========================================================= */
 
 function renderCirculars(data) {
 
     const body =
-        document.getElementById("circularBody");
+        document.getElementById(
+            "circularBody"
+        );
 
-    if (!data.length) {
+
+    if (
+        !data.length
+    ) {
 
         body.innerHTML = `
+
             <tr>
-                <td colspan="4"
+
+                <td
+                    colspan="4"
                     class="no-results">
+
                     No circulars available.
+
                 </td>
+
             </tr>
+
         `;
 
         return;
+
     }
 
 
     body.innerHTML = "";
 
 
-    data.forEach((item, index) => {
-
-        const tr =
-            document.createElement("tr");
+    data.forEach(
+        (item, index) => {
 
 
-        const serial =
-            document.createElement("td");
-
-        serial.textContent =
-            index + 1;
-
-
-        const date =
-            document.createElement("td");
-
-        if (item.date) {
-
-            const span =
-                document.createElement("span");
-
-            span.className = "date";
-
-            span.textContent =
-                item.date;
-
-            date.appendChild(span);
-
-        } else {
-
-            date.textContent = "—";
-
-        }
-
-
-        const title =
-            document.createElement("td");
-
-        title.textContent =
-            item.title;
-
-
-        const download =
-            document.createElement("td");
-
-
-        if (item.link) {
-
-            const a =
-                document.createElement("a");
-
-            a.className =
-                "download-btn";
-
-            a.href =
-                item.link;
-
-            a.target =
-                "_blank";
-
-            a.rel =
-                "noopener noreferrer";
-
-            a.textContent =
-                "Download";
-
-            download.appendChild(a);
-
-        } else {
-
-            download.textContent =
-                "—";
-
-        }
-
-
-        tr.appendChild(serial);
-        tr.appendChild(date);
-        tr.appendChild(title);
-        tr.appendChild(download);
-
-        body.appendChild(tr);
-
-    });
-
-}
-
-
-/* -------------------------------------------------------
-   SEARCH
-------------------------------------------------------- */
-
-document
-    .getElementById("searchInput")
-    .addEventListener(
-        "input",
-        function () {
-
-            const query =
-                this.value
-                    .toLowerCase()
-                    .trim();
-
-
-            if (!query) {
-
-                renderCirculars(
-                    circulars
+            const tr =
+                document.createElement(
+                    "tr"
                 );
 
-                return;
+
+            /*
+            S.NO.
+            */
+
+            const serial =
+                document.createElement(
+                    "td"
+                );
+
+            serial.textContent =
+                index + 1;
+
+
+            /*
+            DATE
+            */
+
+            const date =
+                document.createElement(
+                    "td"
+                );
+
+
+            if (
+                item.date
+            ) {
+
+                const span =
+                    document.createElement(
+                        "span"
+                    );
+
+                span.className =
+                    "date";
+
+                span.textContent =
+                    item.date;
+
+                date.appendChild(
+                    span
+                );
+
+            } else {
+
+                date.textContent =
+                    "—";
+
             }
 
 
-            const filtered =
-                circulars.filter(item =>
+            /*
+            TITLE
+            */
 
-                    item.title
-                        .toLowerCase()
-                        .includes(query)
+            const title =
+                document.createElement(
+                    "td"
+                );
 
-                    ||
+            title.textContent =
+                item.title ||
+                "Circular";
 
-                    item.date
-                        .toLowerCase()
-                        .includes(query)
 
+            /*
+            DOWNLOAD
+            */
+
+            const download =
+                document.createElement(
+                    "td"
                 );
 
 
-            renderCirculars(
-                filtered
+            if (
+                item.link
+            ) {
+
+                const a =
+                    document.createElement(
+                        "a"
+                    );
+
+                a.className =
+                    "download-btn";
+
+                a.href =
+                    item.link;
+
+                a.target =
+                    "_blank";
+
+                a.rel =
+                    "noopener noreferrer";
+
+                a.textContent =
+                    "Download";
+
+
+                download.appendChild(
+                    a
+                );
+
+            } else {
+
+                download.textContent =
+                    "—";
+
+            }
+
+
+            tr.appendChild(
+                serial
+            );
+
+            tr.appendChild(
+                date
+            );
+
+            tr.appendChild(
+                title
+            );
+
+            tr.appendChild(
+                download
+            );
+
+
+            body.appendChild(
+                tr
             );
 
         }
     );
 
+}
 
-/* -------------------------------------------------------
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+document
+.getElementById("searchInput")
+.addEventListener(
+    "input",
+    function () {
+
+
+        const query =
+            this.value
+                .toLowerCase()
+                .trim();
+
+
+        if (
+            !query
+        ) {
+
+            renderCirculars(
+                circulars
+            );
+
+            return;
+
+        }
+
+
+        const filtered =
+            circulars.filter(
+                item =>
+
+                item.title
+                    .toLowerCase()
+                    .includes(query)
+
+                ||
+
+                item.date
+                    .toLowerCase()
+                    .includes(query)
+
+            );
+
+
+        renderCirculars(
+            filtered
+        );
+
+    }
+);
+
+
+/* =========================================================
    START
-------------------------------------------------------- */
+   ========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -1001,6 +1326,7 @@ document.addEventListener(
 );
 
 </script>
+
 
 </body>
 </html>
