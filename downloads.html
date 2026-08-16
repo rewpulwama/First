@@ -1,483 +1,1455 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Downloads | REW Pulwama</title>
 
+<meta name="description"
+content="Official downloads of the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
+
 <style>
-    * {
-        box-sizing: border-box;
-    }
 
-    body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f5f7fa;
-        color: #222;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    /* Header */
-    header {
-        background: #003b6f;
-        color: white;
-        padding: 22px 20px;
-    }
+:root {
+    --blue: #07579a;
+    --dark-blue: #063b69;
+    --light-blue: #eaf4fb;
+    --gold: #d89b24;
+    --text: #333;
+}
 
-    .header-container {
-        max-width: 1200px;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        gap: 18px;
-    }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: #f4f6f8;
+    line-height: 1.6;
+}
 
-    .emblem {
-        width: 65px;
-        height: 80px;
-        display: flex;
-        align-items: center;
+
+/* ================= HEADER ================= */
+
+.header {
+    background: white;
+    border-bottom: 4px solid var(--gold);
+}
+
+.header-inner {
+    max-width: 1250px;
+    margin: auto;
+    padding: 14px 20px;
+    min-height: 150px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.emblem {
+    width: 110px;
+    height: 125px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.emblem img {
+    width: 65px;
+    height: 85px;
+    object-fit: contain;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.header-text .govt {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+.header-text .department {
+    font-size: 17px;
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.header-text h1 {
+    font-size: 25px;
+    color: var(--dark-blue);
+    margin-top: 5px;
+}
+
+.header-text h2 {
+    font-size: 19px;
+    color: #333;
+    font-weight: 600;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+.navbar {
+    background: var(--dark-blue);
+    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+}
+
+.nav-inner {
+    max-width: 1250px;
+    margin: auto;
+
+    display: flex;
+    overflow-x: auto;
+}
+
+.nav-inner a {
+    color: white;
+    text-decoration: none;
+
+    padding: 15px 18px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    border-right: 1px solid rgba(255,255,255,.12);
+}
+
+.nav-inner a:hover,
+.nav-inner a.active {
+    background: var(--blue);
+}
+
+
+/* ================= MAIN ================= */
+
+.container {
+    max-width: 1250px;
+    margin: 25px auto;
+    padding: 0 20px 40px;
+}
+
+
+/* ================= TITLE ================= */
+
+.page-title {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.page-title-top {
+    background: var(--blue);
+    color: white;
+
+    padding: 13px 18px;
+
+    font-size: 21px;
+    font-weight: bold;
+
+    border-left: 5px solid var(--gold);
+}
+
+.page-title-body {
+    padding: 18px;
+    color: #555;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-box {
+    background: white;
+    border: 1px solid #ddd;
+
+    padding: 15px;
+    margin-bottom: 20px;
+
+    border-radius: 4px;
+}
+
+.search-box input {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: var(--blue);
+}
+
+
+/* ================= TABLE ================= */
+
+.table-box {
+    background: white;
+
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+    overflow: hidden;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.download-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    min-width: 800px;
+}
+
+.download-table th {
+    background: var(--dark-blue);
+
+    color: white;
+
+    padding: 13px 12px;
+
+    text-align: left;
+
+    font-size: 14px;
+}
+
+.download-table td {
+    padding: 13px 12px;
+
+    border-bottom: 1px solid #e5e5e5;
+
+    vertical-align: middle;
+
+    font-size: 14px;
+}
+
+.download-table tr:hover {
+    background: #f5f9fc;
+}
+
+.download-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ================= DATE ================= */
+
+.date {
+    display: inline-block;
+
+    background: #edf3f8;
+
+    color: var(--blue);
+
+    padding: 4px 8px;
+
+    border-radius: 3px;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+
+/* ================= DOWNLOAD BUTTON ================= */
+
+.download-btn {
+    display: inline-block;
+
+    background: var(--blue);
+
+    color: white;
+
+    padding: 8px 15px;
+
+    border-radius: 4px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+.download-btn:hover {
+    background: var(--dark-blue);
+}
+
+.download-btn::before {
+    content: "↓ ";
+}
+
+
+/* ================= MESSAGES ================= */
+
+.loading,
+.error,
+.no-results {
+    padding: 35px;
+
+    text-align: center;
+
+    color: #666;
+}
+
+.error {
+    color: #a00000;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+    background: #062f52;
+
+    color: white;
+
+    margin-top: 30px;
+}
+
+.footer-inner {
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 35px 20px;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 35px;
+}
+
+.footer h3 {
+    margin-bottom: 12px;
+}
+
+.footer p,
+.footer li {
+    font-size: 13px;
+    color: #d9e5ee;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer li {
+    margin-bottom: 7px;
+}
+
+.footer-bottom {
+    background: #041f37;
+
+    padding: 12px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    color: #cbd9e4;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px) {
+
+    .header-inner {
+        flex-wrap: wrap;
+
         justify-content: center;
-        flex-shrink: 0;
+
+        text-align: center;
     }
 
-    .emblem img {
-        max-width: 55px;
-        max-height: 70px;
-        object-fit: contain;
+    .header-text {
+        flex-basis: 100%;
     }
 
     .header-text h1 {
-        margin: 0;
-        font-size: 25px;
-        font-weight: 700;
+        font-size: 21px;
     }
 
-    .header-text p {
-        margin: 5px 0 0;
-        font-size: 15px;
-    }
-
-    /* Navigation */
-    nav {
-        background: #ffffff;
-        border-bottom: 1px solid #ddd;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    }
-
-    .nav-container {
-        max-width: 1200px;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    nav a {
-        display: block;
-        padding: 15px 18px;
-        text-decoration: none;
-        color: #003b6f;
-        font-weight: 600;
-    }
-
-    nav a:hover {
-        background: #eef4f9;
-    }
-
-    /* Main */
-    main {
-        max-width: 1200px;
-        margin: 40px auto;
-        padding: 0 20px;
-    }
-
-    .page-title {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .page-title h2 {
-        margin: 0;
-        color: #003b6f;
-        font-size: 30px;
-    }
-
-    .page-title p {
-        color: #666;
-        margin-top: 8px;
-    }
-
-    /* Downloads table */
-    .downloads-box {
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        overflow: hidden;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    th {
-        background: #003b6f;
-        color: white;
-        padding: 15px;
-        text-align: left;
+    .header-text h2 {
         font-size: 16px;
     }
 
-    td {
-        padding: 15px;
-        border-bottom: 1px solid #e5e5e5;
-        vertical-align: middle;
+    .footer-inner {
+        grid-template-columns: 1fr;
     }
 
-    tr:last-child td {
-        border-bottom: none;
-    }
+}
 
-    tr:hover {
-        background: #f7fafc;
-    }
-
-    .download-btn {
-        display: inline-block;
-        background: #0066a1;
-        color: white;
-        padding: 9px 16px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 14px;
-    }
-
-    .download-btn:hover {
-        background: #004d7a;
-    }
-
-    .loading {
-        text-align: center;
-        padding: 30px;
-        color: #666;
-    }
-
-    .error {
-        text-align: center;
-        padding: 30px;
-        color: #b00020;
-    }
-
-    .no-files {
-        text-align: center;
-        padding: 30px;
-        color: #666;
-    }
-
-    /* Footer */
-    footer {
-        margin-top: 60px;
-        background: #003b6f;
-        color: white;
-        text-align: center;
-        padding: 25px 15px;
-        font-size: 14px;
-    }
-
-    /* Mobile */
-    @media (max-width: 700px) {
-
-        .header-container {
-            align-items: flex-start;
-        }
-
-        .header-text h1 {
-            font-size: 19px;
-        }
-
-        .header-text p {
-            font-size: 13px;
-        }
-
-        nav a {
-            padding: 12px 10px;
-            font-size: 13px;
-        }
-
-        .page-title h2 {
-            font-size: 25px;
-        }
-
-        table,
-        thead,
-        tbody,
-        th,
-        td,
-        tr {
-            display: block;
-        }
-
-        thead {
-            display: none;
-        }
-
-        tr {
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        td {
-            border: none;
-            padding: 8px 5px;
-        }
-
-        td:first-child {
-            font-weight: 600;
-            color: #003b6f;
-        }
-
-        .download-btn {
-            width: 100%;
-            text-align: center;
-            margin-top: 5px;
-        }
-    }
 </style>
+
 </head>
+
 
 <body>
 
-<header>
-    <div class="header-container">
 
-        <div class="emblem">
-            <img src="images/Emblem_of_India.svg"
-                 alt="Government Emblem">
-        </div>
+<!-- ================= HEADER ================= -->
 
-        <div class="header-text">
-            <h1>Government of Jammu & Kashmir</h1>
-            <p>Department of Rural Development & Panchayati Raj</p>
-            <p>Office of the Executive Engineer</p>
-            <p>Rural Engineering Wing (REW), Pulwama</p>
-        </div>
+<header class="header">
+
+<div class="header-inner">
+
+    <div class="emblem">
+
+        <img
+            src="images/Emblem_of_India.svg"
+            alt="State Emblem of India">
 
     </div>
+
+
+    <div class="header-text">
+
+        <div class="govt">
+            Government of Jammu & Kashmir
+        </div>
+
+        <div class="department">
+            Department of Rural Development & Panchayati Raj
+        </div>
+
+        <h1>
+            Office of the Executive Engineer
+        </h1>
+
+        <h2>
+            Rural Engineering Wing (REW), Pulwama
+        </h2>
+
+    </div>
+
+</div>
+
 </header>
 
-<nav>
-    <div class="nav-container">
 
-        <a href="index.html">Home</a>
+<!-- ================= NAVIGATION ================= -->
 
-        <a href="downloads.html">Downloads</a>
+<nav class="navbar">
 
-    </div>
+<div class="nav-inner">
+
+    <a href="index.html">
+        HOME
+    </a>
+
+    <a href="about.html">
+        ABOUT
+    </a>
+
+    <a href="officials.html">
+        OFFICIALS
+    </a>
+
+    <a href="approvals.html">
+        APPROVALS
+    </a>
+
+    <a href="tenders.html">
+        TENDERS
+    </a>
+
+    <a href="loi.html">
+        LOIs
+    </a>
+
+    <a href="notices.html">
+        NOTICES
+    </a>
+
+    <a href="circulars.html">
+        CIRCULARS
+    </a>
+
+    <a href="orders.html">
+        ORDERS
+    </a>
+
+    <a href="corrigendum.html">
+        CORRIGENDUM
+    </a>
+
+    <a href="downloads.html"
+       class="active">
+        DOWNLOADS
+    </a>
+
+    <a href="contact.html">
+        CONTACT
+    </a>
+
+</div>
+
 </nav>
 
-<main>
 
-    <div class="page-title">
-        <h2>Downloads</h2>
-        <p>Official documents and notices</p>
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+
+<section class="page-title">
+
+    <div class="page-title-top">
+        Downloads
     </div>
 
-    <div class="downloads-box">
+    <div class="page-title-body">
 
-        <table>
-
-            <thead>
-                <tr>
-                    <th>File Name</th>
-                    <th style="width:180px;">Download</th>
-                </tr>
-            </thead>
-
-            <tbody id="downloadsTable">
-
-                <tr>
-                    <td colspan="2" class="loading">
-                        Loading files...
-                    </td>
-                </tr>
-
-            </tbody>
-
-        </table>
+        Download official documents, forms, notices,
+        orders and other documents issued by the
+        Office of the Executive Engineer,
+        Rural Engineering Wing (REW), Pulwama.
 
     </div>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<div class="search-box">
+
+    <input
+        type="search"
+        id="searchInput"
+        placeholder="Search downloads..."
+        autocomplete="off">
+
+</div>
+
+
+<!-- ================= TABLE ================= -->
+
+<section class="table-box">
+
+<div class="table-wrapper">
+
+<table class="download-table">
+
+<thead>
+
+<tr>
+
+    <th style="width:80px;">
+        S.No.
+    </th>
+
+    <th style="width:160px;">
+        Date
+    </th>
+
+    <th>
+        Document / Description
+    </th>
+
+    <th style="width:150px;">
+        Download
+    </th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="downloadBody">
+
+<tr>
+
+    <td
+        colspan="4"
+        class="loading">
+
+        Loading downloads...
+
+    </td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
 
 </main>
 
-<footer>
 
-    <div>
-        Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama
-    </div>
+<!-- ================= FOOTER ================= -->
 
-    <div style="margin-top:8px;">
-        Government of Jammu & Kashmir
-    </div>
+<footer class="footer">
+
+<div class="footer-inner">
+
+
+<div>
+
+    <h3>
+        REW Pulwama
+    </h3>
+
+    <p>
+        Office of the Executive Engineer,
+        Rural Engineering Wing (REW), Pulwama.
+    </p>
+
+    <p style="margin-top:10px;">
+
+        Department of Rural Development & Panchayati Raj,
+        Government of Jammu & Kashmir.
+
+    </p>
+
+</div>
+
+
+<div>
+
+    <h3>
+        Important Links
+    </h3>
+
+    <ul>
+
+        <li>Home</li>
+        <li>About Office</li>
+        <li>Tenders</li>
+        <li>Notices</li>
+        <li>Circulars</li>
+        <li>Orders</li>
+
+    </ul>
+
+</div>
+
+
+<div>
+
+    <h3>
+        Website Information
+    </h3>
+
+    <ul>
+
+        <li>Privacy Policy</li>
+        <li>Disclaimer</li>
+        <li>Accessibility</li>
+        <li>Site Map</li>
+
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+    © 2026 Office of the Executive Engineer,
+    Rural Engineering Wing (REW), Pulwama.
+    All Rights Reserved.
+
+</div>
 
 </footer>
 
 
+
 <script>
 
-const sheetURL =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDIBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdCOFGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1742338928&single=true&output=csv";
+/*
+===========================================================
+GOOGLE SHEET
+===========================================================
+*/
+
+const SHEET_URL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1742338928&single=true&output=csv";
 
 
-async function loadDownloads() {
-
-    const table = document.getElementById("downloadsTable");
-
-    try {
-
-        const response = await fetch(sheetURL);
-
-        if (!response.ok) {
-            throw new Error("Unable to load Google Sheet");
-        }
-
-        const csvText = await response.text();
-
-        const rows = parseCSV(csvText);
-
-        table.innerHTML = "";
-
-        /*
-         Column A = File Name
-         Column B = Download Link
-        */
-
-        for (let i = 1; i < rows.length; i++) {
-
-            const fileName = rows[i][0]?.trim();
-            const downloadLink = rows[i][1]?.trim();
-
-            if (!fileName || !downloadLink) {
-                continue;
-            }
-
-            const tr = document.createElement("tr");
-
-            const nameCell = document.createElement("td");
-            nameCell.textContent = fileName;
-
-            const linkCell = document.createElement("td");
-
-            const link = document.createElement("a");
-
-            link.href = downloadLink;
-            link.target = "_blank";
-            link.rel = "noopener noreferrer";
-            link.className = "download-btn";
-            link.textContent = "Download";
-
-            linkCell.appendChild(link);
-
-            tr.appendChild(nameCell);
-            tr.appendChild(linkCell);
-
-            table.appendChild(tr);
-        }
-
-        if (table.children.length === 0) {
-
-            table.innerHTML = `
-                <tr>
-                    <td colspan="2" class="no-files">
-                        No files available.
-                    </td>
-                </tr>
-            `;
-        }
-
-    } catch (error) {
-
-        console.error(error);
-
-        table.innerHTML = `
-            <tr>
-                <td colspan="2" class="error">
-                    Unable to load downloads. Please try again later.
-                </td>
-            </tr>
-        `;
-    }
-}
+let downloads = [];
 
 
 /*
- Simple CSV parser that also handles commas
- inside quoted cells.
+===========================================================
+CSV PARSER
+===========================================================
 */
 
 function parseCSV(text) {
 
     const rows = [];
+
     let row = [];
     let cell = "";
-    let insideQuotes = false;
+    let quoted = false;
 
-    for (let i = 0; i < text.length; i++) {
+
+    for (
+        let i = 0;
+        i < text.length;
+        i++
+    ) {
 
         const char = text[i];
         const next = text[i + 1];
 
-        if (char === '"' && insideQuotes && next === '"') {
+
+        /*
+        Handle escaped quotes
+        */
+
+        if (
+            char === '"' &&
+            quoted &&
+            next === '"'
+        ) {
 
             cell += '"';
+
             i++;
 
-        } else if (char === '"') {
+            continue;
 
-            insideQuotes = !insideQuotes;
+        }
 
-        } else if (char === "," && !insideQuotes) {
 
-            row.push(cell);
+        /*
+        Start / end quoted cell
+        */
+
+        if (char === '"') {
+
+            quoted = !quoted;
+
+            continue;
+
+        }
+
+
+        /*
+        Column separator
+        */
+
+        if (
+            char === "," &&
+            !quoted
+        ) {
+
+            row.push(
+                cell.trim()
+            );
+
             cell = "";
 
-        } else if ((char === "\n" || char === "\r") && !insideQuotes) {
+            continue;
 
-            if (char === "\r" && next === "\n") {
+        }
+
+
+        /*
+        Row separator
+        */
+
+        if (
+            (char === "\n" ||
+             char === "\r") &&
+            !quoted
+        ) {
+
+            if (
+                char === "\r" &&
+                next === "\n"
+            ) {
+
                 i++;
+
             }
 
-            row.push(cell);
 
-            if (row.some(value => value.trim() !== "")) {
+            row.push(
+                cell.trim()
+            );
+
+
+            if (
+                row.some(
+                    value =>
+                    value !== ""
+                )
+            ) {
+
                 rows.push(row);
+
             }
+
 
             row = [];
             cell = "";
 
-        } else {
+            continue;
 
-            cell += char;
         }
+
+
+        cell += char;
+
     }
 
-    if (cell !== "" || row.length > 0) {
 
-        row.push(cell);
+    /*
+    Last row
+    */
 
-        if (row.some(value => value.trim() !== "")) {
+    if (
+        cell !== "" ||
+        row.length
+    ) {
+
+        row.push(
+            cell.trim()
+        );
+
+
+        if (
+            row.some(
+                value =>
+                value !== ""
+            )
+        ) {
+
             rows.push(row);
+
         }
+
     }
+
 
     return rows;
+
 }
 
 
-loadDownloads();
+/*
+===========================================================
+NORMALIZE HEADER
+===========================================================
+*/
+
+function normalize(value) {
+
+    return String(value || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, "");
+
+}
+
+
+/*
+===========================================================
+FIND COLUMN
+===========================================================
+*/
+
+function findColumn(headers, names) {
+
+    const normalizedHeaders =
+        headers.map(normalize);
+
+
+    for (
+        const name of names
+    ) {
+
+        const index =
+            normalizedHeaders.indexOf(
+                normalize(name)
+            );
+
+
+        if (index !== -1) {
+
+            return index;
+
+        }
+
+    }
+
+
+    return -1;
+
+}
+
+
+/*
+===========================================================
+LOAD GOOGLE SHEET
+===========================================================
+*/
+
+async function loadDownloads() {
+
+    const body =
+        document.getElementById(
+            "downloadBody"
+        );
+
+
+    try {
+
+        const response =
+            await fetch(
+                SHEET_URL +
+                "&t=" +
+                Date.now(),
+                {
+                    cache: "no-store"
+                }
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Google Sheet could not be loaded."
+            );
+
+        }
+
+
+        const text =
+            await response.text();
+
+
+        /*
+        Detect if Google returned HTML
+        instead of CSV.
+        */
+
+        if (
+            text.trim().startsWith("<!DOCTYPE") ||
+            text.trim().startsWith("<html")
+        ) {
+
+            throw new Error(
+                "Google Sheet is not returning CSV data."
+            );
+
+        }
+
+
+        const rows =
+            parseCSV(text);
+
+
+        if (
+            rows.length < 2
+        ) {
+
+            throw new Error(
+                "No download records found."
+            );
+
+        }
+
+
+        const headers =
+            rows[0];
+
+
+        console.log(
+            "Downloads Sheet Headers:",
+            headers
+        );
+
+
+        /*
+        ===================================================
+        DATE
+        ===================================================
+        */
+
+        const dateColumn =
+            findColumn(
+                headers,
+                [
+                    "Date",
+                    "Upload Date",
+                    "Document Date",
+                    "Issue Date"
+                ]
+            );
+
+
+        /*
+        ===================================================
+        TITLE / DESCRIPTION
+        ===================================================
+        */
+
+        const titleColumn =
+            findColumn(
+                headers,
+                [
+                    "Title",
+                    "Document",
+                    "Document Name",
+                    "Description",
+                    "Subject",
+                    "Particulars",
+                    "File Name",
+                    "Name"
+                ]
+            );
+
+
+        /*
+        ===================================================
+        DOWNLOAD LINK
+        ===================================================
+        */
+
+        const linkColumn =
+            findColumn(
+                headers,
+                [
+                    "Download",
+                    "Download Link",
+                    "Link",
+                    "URL",
+                    "PDF",
+                    "PDF Link",
+                    "File",
+                    "File Link",
+                    "Document Link",
+                    "Document URL"
+                ]
+            );
+
+
+        console.log(
+            "Date column:",
+            dateColumn
+        );
+
+        console.log(
+            "Title column:",
+            titleColumn
+        );
+
+        console.log(
+            "Link column:",
+            linkColumn
+        );
+
+
+        /*
+        ===================================================
+        BUILD DOWNLOAD LIST
+        ===================================================
+        */
+
+        downloads = [];
+
+
+        for (
+            let i = 1;
+            i < rows.length;
+            i++
+        ) {
+
+            const row =
+                rows[i];
+
+
+            const date =
+                dateColumn !== -1
+                ? row[dateColumn] || ""
+                : "";
+
+
+            const title =
+                titleColumn !== -1
+                ? row[titleColumn] || ""
+                : "";
+
+
+            const link =
+                linkColumn !== -1
+                ? row[linkColumn] || ""
+                : "";
+
+
+            /*
+            Ignore completely empty rows
+            */
+
+            if (
+                !date &&
+                !title &&
+                !link
+            ) {
+
+                continue;
+
+            }
+
+
+            downloads.push({
+
+                date:
+                    date.trim(),
+
+                title:
+                    title.trim(),
+
+                link:
+                    link.trim()
+
+            });
+
+        }
+
+
+        renderDownloads(
+            downloads
+        );
+
+    }
+
+
+    catch (error) {
+
+        console.error(
+            "Downloads Error:",
+            error
+        );
+
+
+        body.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="4"
+                    class="error">
+
+                    Unable to load downloads.
+                    Please check that the Google Sheet
+                    is published to the web.
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+}
+
+
+/*
+===========================================================
+RENDER DOWNLOADS
+===========================================================
+*/
+
+function renderDownloads(data) {
+
+    const body =
+        document.getElementById(
+            "downloadBody"
+        );
+
+
+    if (
+        !data.length
+    ) {
+
+        body.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="4"
+                    class="no-results">
+
+                    No downloads available.
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    body.innerHTML = "";
+
+
+    data.forEach(
+        (item, index) => {
+
+
+            const tr =
+                document.createElement(
+                    "tr"
+                );
+
+
+            /*
+            S.NO.
+            */
+
+            const serial =
+                document.createElement(
+                    "td"
+                );
+
+            serial.textContent =
+                index + 1;
+
+
+            /*
+            DATE
+            */
+
+            const date =
+                document.createElement(
+                    "td"
+                );
+
+
+            if (
+                item.date
+            ) {
+
+                const span =
+                    document.createElement(
+                        "span"
+                    );
+
+                span.className =
+                    "date";
+
+                span.textContent =
+                    item.date;
+
+                date.appendChild(
+                    span
+                );
+
+            } else {
+
+                date.textContent =
+                    "—";
+
+            }
+
+
+            /*
+            TITLE
+            */
+
+            const title =
+                document.createElement(
+                    "td"
+                );
+
+            title.textContent =
+                item.title ||
+                "Document";
+
+
+            /*
+            DOWNLOAD
+            */
+
+            const download =
+                document.createElement(
+                    "td"
+                );
+
+
+            if (
+                item.link
+            ) {
+
+                const a =
+                    document.createElement(
+                        "a"
+                    );
+
+                a.className =
+                    "download-btn";
+
+                a.href =
+                    item.link;
+
+                /*
+                Opens the file directly.
+                */
+
+                a.target =
+                    "_blank";
+
+                a.rel =
+                    "noopener noreferrer";
+
+                a.textContent =
+                    "Download";
+
+
+                download.appendChild(
+                    a
+                );
+
+            }
+
+            else {
+
+                download.textContent =
+                    "—";
+
+            }
+
+
+            /*
+            ADD ROW
+            */
+
+            tr.appendChild(
+                serial
+            );
+
+            tr.appendChild(
+                date
+            );
+
+            tr.appendChild(
+                title
+            );
+
+            tr.appendChild(
+                download
+            );
+
+
+            body.appendChild(
+                tr
+            );
+
+        }
+    );
+
+}
+
+
+/*
+===========================================================
+SEARCH
+===========================================================
+*/
+
+document
+.getElementById("searchInput")
+.addEventListener(
+    "input",
+    function () {
+
+
+        const query =
+            this.value
+                .toLowerCase()
+                .trim();
+
+
+        if (
+            !query
+        ) {
+
+            renderDownloads(
+                downloads
+            );
+
+            return;
+
+        }
+
+
+        const filtered =
+            downloads.filter(
+                item =>
+
+                item.title
+                    .toLowerCase()
+                    .includes(query)
+
+                ||
+
+                item.date
+                    .toLowerCase()
+                    .includes(query)
+
+            );
+
+
+        renderDownloads(
+            filtered
+        );
+
+    }
+);
+
+
+/*
+===========================================================
+START
+===========================================================
+*/
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadDownloads
+);
 
 </script>
 
