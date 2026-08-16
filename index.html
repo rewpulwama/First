@@ -1011,82 +1011,111 @@ body {
 })();
 </script>
 
-<!-- NOTICES + TENDERS -->
+<!-- LATEST UPDATES -->
 
 <div class="two-column">
 
-<section class="section">
+    <!-- LATEST NOTICES -->
 
-    <div class="section-title">
-        Latest Notices
-    </div>
+    <section class="section">
 
-    <div class="section-body">
+        <div class="section-title">
+            Latest Notices
+        </div>
 
-        <ul class="notice-list">
+        <div class="section-body">
 
-            <li>
-                <span class="date">07 Aug 2026</span>
-                <a href="notices.html">
-                    Notice to Contractors
-                </a>
-                <span class="new">NEW</span>
-            </li>
+            <ul class="notice-list" id="latestNotices">
+                <li>Loading...</li>
+            </ul>
 
+        </div>
 
-            <li>
-                <span class="date">01 Aug 2026</span>
-                <a href="circulars.html">
-                    Important Departmental Circular
-                </a>
-            </li>
-
-            <li>
-                <span class="date">28 Jul 2026</span>
-                <a href="orders.html">
-                    Office Orders
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-
-</section>
+    </section>
 
 
-<section class="section">
+    <!-- LATEST TENDERS -->
 
-    <div class="section-title">
-        Latest Tenders
-    </div>
+    <section class="section">
 
-    <div class="section-body">
+        <div class="section-title">
+            Latest Tenders
+        </div>
 
-        <ul class="notice-list">
+        <div class="section-body">
 
-            <li>
-                <span class="date">07 Aug 2026</span>
-                <a href="tenders.html">
-                    Tender Notice – Rural Development Works
-                </a>
-                <span class="new">NEW</span>
-            </li>
+            <ul class="notice-list" id="latestTenders">
+                <li>Loading...</li>
+            </ul>
 
-            <li>
-                <span class="date">25 Jul 2026</span>
-                <a href="corri.html">
-                    Corrigendum
-                </a>
-            </li>
+        </div>
 
-        </ul>
-
-    </div>
-
-</section>
+    </section>
 
 </div>
+
+
+<!-- OTHER LATEST UPDATES -->
+
+<div class="two-column">
+
+    <!-- LATEST CIRCULARS -->
+
+    <section class="section">
+
+        <div class="section-title">
+            Latest Circulars
+        </div>
+
+        <div class="section-body">
+
+            <ul class="notice-list" id="latestCirculars">
+                <li>Loading...</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- LATEST ORDERS -->
+
+    <section class="section">
+
+        <div class="section-title">
+            Latest Orders
+        </div>
+
+        <div class="section-body">
+
+            <ul class="notice-list" id="latestOrders">
+                <li>Loading...</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- LATEST CORRIGENDUM -->
+
+<section class="section">
+
+    <div class="section-title">
+        Latest Corrigendum
+    </div>
+
+    <div class="section-body">
+
+        <ul class="notice-list" id="latestCorrigendum">
+            <li>Loading...</li>
+        </ul>
+
+    </div>
+
+</section>
 
 <!-- CONTACT -->
 
@@ -1242,6 +1271,587 @@ body {
 </div>
 
 </footer>
+<script>
 
+/* =====================================================
+   GOOGLE SHEET CSV URLS
+===================================================== */
+
+const SHEETS = {
+
+    notices:
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1487795258&single=true&output=csv",
+
+    circulars:
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1051031097&single=true&output=csv",
+
+    orders:
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1751045669&single=true&output=csv",
+
+    tenders:
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=0&single=true&output=csv",
+
+    corrigendum:
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=211947423&single=true&output=csv"
+
+};
+
+
+/* =====================================================
+   CSV FETCH
+===================================================== */
+
+async function loadCSV(url) {
+
+    const response = await fetch(
+        url + "&cache=" + Date.now()
+    );
+
+    if (!response.ok) {
+        throw new Error("CSV could not be loaded");
+    }
+
+    const text = await response.text();
+
+    return parseCSV(text);
+}
+
+
+/* =====================================================
+   CSV PARSER
+===================================================== */
+
+function parseCSV(text) {
+
+    const rows = [];
+
+    let row = [];
+    let value = "";
+    let insideQuotes = false;
+
+    for (let i = 0; i < text.length; i++) {
+
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (char === '"' && insideQuotes && next === '"') {
+
+            value += '"';
+            i++;
+
+        }
+
+        else if (char === '"') {
+
+            insideQuotes = !insideQuotes;
+
+        }
+
+        else if (char === "," && !insideQuotes) {
+
+            row.push(value.trim());
+            value = "";
+
+        }
+
+        else if (
+            (char === "\n" || char === "\r")
+            && !insideQuotes
+        ) {
+
+            if (char === "\r" && next === "\n") {
+                i++;
+            }
+
+            row.push(value.trim());
+
+            if (row.some(cell => cell !== "")) {
+                rows.push(row);
+            }
+
+            row = [];
+            value = "";
+
+        }
+
+        else {
+
+            value += char;
+
+        }
+    }
+
+    if (value !== "" || row.length > 0) {
+
+        row.push(value.trim());
+
+        if (row.some(cell => cell !== "")) {
+            rows.push(row);
+        }
+    }
+
+    return rows;
+}
+
+
+/* =====================================================
+   NORMALIZE HEADER
+===================================================== */
+
+function cleanHeader(value) {
+
+    return String(value || "")
+        .toLowerCase()
+        .replace(/\|/g, "")
+        .replace(/\*/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+
+}
+
+
+/* =====================================================
+   FIND COLUMN
+===================================================== */
+
+function findColumn(headers, names) {
+
+    for (let i = 0; i < headers.length; i++) {
+
+        const header = cleanHeader(headers[i]);
+
+        for (const name of names) {
+
+            if (header === cleanHeader(name)) {
+                return i;
+            }
+
+        }
+    }
+
+    return -1;
+}
+
+
+/* =====================================================
+   DATE CONVERSION
+===================================================== */
+
+function convertDate(value) {
+
+    if (!value) {
+        return new Date(0);
+    }
+
+    value = String(value).trim();
+
+    let date;
+
+
+    /* DD-MM-YYYY */
+
+    if (/^\d{1,2}[-\/]\d{1,2}[-\/]\d{4}$/.test(value)) {
+
+        const parts = value.split(/[-\/]/);
+
+        date = new Date(
+            Number(parts[2]),
+            Number(parts[1]) - 1,
+            Number(parts[0])
+        );
+
+    }
+
+    /* YYYY-MM-DD */
+
+    else if (/^\d{4}[-\/]\d{1,2}[-\/]\d{1,2}$/.test(value)) {
+
+        const parts = value.split(/[-\/]/);
+
+        date = new Date(
+            Number(parts[0]),
+            Number(parts[1]) - 1,
+            Number(parts[2])
+        );
+
+    }
+
+    else {
+
+        date = new Date(value);
+
+    }
+
+
+    if (isNaN(date.getTime())) {
+        return new Date(0);
+    }
+
+    return date;
+}
+
+
+/* =====================================================
+   DISPLAY DATE
+===================================================== */
+
+function displayDate(value) {
+
+    const date = convertDate(value);
+
+    if (date.getTime() === 0) {
+        return value || "";
+    }
+
+    return date.toLocaleDateString(
+        "en-GB",
+        {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        }
+    );
+
+}
+
+
+/* =====================================================
+   CREATE ITEM
+===================================================== */
+
+function createItem(date, title, link, isNew) {
+
+    const li = document.createElement("li");
+
+
+    const dateSpan = document.createElement("span");
+
+    dateSpan.className = "date";
+
+    dateSpan.textContent = displayDate(date);
+
+    li.appendChild(dateSpan);
+
+
+    if (link && link.startsWith("http")) {
+
+        const a = document.createElement("a");
+
+        a.href = link;
+
+        a.target = "_blank";
+
+        a.rel = "noopener";
+
+        a.textContent = title || "View Document";
+
+        li.appendChild(a);
+
+    }
+
+    else {
+
+        const a = document.createElement("a");
+
+        a.href = link || "#";
+
+        a.textContent = title || "View Document";
+
+        li.appendChild(a);
+
+    }
+
+
+    if (isNew) {
+
+        const newLabel = document.createElement("span");
+
+        newLabel.className = "new";
+
+        newLabel.textContent = "NEW";
+
+        li.appendChild(newLabel);
+
+    }
+
+
+    return li;
+
+}
+
+
+/* =====================================================
+   LOAD ONE SECTION
+===================================================== */
+
+async function loadSection(
+    sheetURL,
+    elementID,
+    titleColumns,
+    defaultPage
+) {
+
+    const container =
+        document.getElementById(elementID);
+
+    if (!container) {
+        return;
+    }
+
+
+    try {
+
+        const rows =
+            await loadCSV(sheetURL);
+
+
+        if (rows.length <= 1) {
+
+            container.innerHTML =
+                "<li>No records available.</li>";
+
+            return;
+
+        }
+
+
+        const headers = rows[0];
+
+
+        const dateColumn =
+            findColumn(headers, [
+                "date",
+                "updated date",
+                "last updated"
+            ]);
+
+
+        const titleColumn =
+            findColumn(headers, titleColumns);
+
+
+        const downloadColumn =
+            findColumn(headers, [
+                "download",
+                "download link",
+                "link",
+                "url"
+            ]);
+
+
+        const records = [];
+
+
+        for (let i = 1; i < rows.length; i++) {
+
+            const row = rows[i];
+
+            if (!row || row.length === 0) {
+                continue;
+            }
+
+
+            const date =
+                dateColumn >= 0
+                    ? row[dateColumn]
+                    : "";
+
+
+            const title =
+                titleColumn >= 0
+                    ? row[titleColumn]
+                    : "View Document";
+
+
+            let link =
+                downloadColumn >= 0
+                    ? row[downloadColumn]
+                    : "";
+
+
+            if (!link) {
+                link = defaultPage;
+            }
+
+
+            records.push({
+
+                date: date,
+
+                title: title,
+
+                link: link
+
+            });
+
+        }
+
+
+        /* NEWEST DATE FIRST */
+
+        records.sort(
+            (a, b) =>
+                convertDate(b.date) -
+                convertDate(a.date)
+        );
+
+
+        container.innerHTML = "";
+
+
+        /* SHOW LATEST 3 */
+
+        records
+            .slice(0, 3)
+            .forEach((record, index) => {
+
+                container.appendChild(
+
+                    createItem(
+                        record.date,
+                        record.title,
+                        record.link,
+                        index === 0
+                    )
+
+                );
+
+            });
+
+
+        if (records.length === 0) {
+
+            container.innerHTML =
+                "<li>No records available.</li>";
+
+        }
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Error loading " + elementID,
+            error
+        );
+
+        container.innerHTML =
+            "<li>Unable to load data.</li>";
+
+    }
+
+}
+
+
+/* =====================================================
+   LOAD ALL FIVE SECTIONS
+===================================================== */
+
+
+/* NOTICES */
+
+loadSection(
+
+    SHEETS.notices,
+
+    "latestNotices",
+
+    [
+        "notice / subject",
+        "notice/subject",
+        "notice",
+        "subject",
+        "description"
+    ],
+
+    "notices.html"
+
+);
+
+
+/* CIRCULARS */
+
+loadSection(
+
+    SHEETS.circulars,
+
+    "latestCirculars",
+
+    [
+        "circular / subject",
+        "circular/subject",
+        "circular",
+        "subject",
+        "description"
+    ],
+
+    "circulars.html"
+
+);
+
+
+/* ORDERS */
+
+loadSection(
+
+    SHEETS.orders,
+
+    "latestOrders",
+
+    [
+        "order / subject",
+        "order/subject",
+        "order",
+        "subject",
+        "description"
+    ],
+
+    "orders.html"
+
+);
+
+
+/* TENDERS */
+
+loadSection(
+
+    SHEETS.tenders,
+
+    "latestTenders",
+
+    [
+        "tender / subject",
+        "tender/subject",
+        "tender",
+        "subject",
+        "description"
+    ],
+
+    "tenders.html"
+
+);
+
+
+/* CORRIGENDUM */
+
+loadSection(
+
+    SHEETS.corrigendum,
+
+    "latestCorrigendum",
+
+    [
+        "corrigendum no.",
+        "corrigendum no",
+        "corrigendum",
+        "description",
+        "subject"
+    ],
+
+    "corri.html"
+
+);
+
+</script>
 </body>
 </html>
