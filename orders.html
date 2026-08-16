@@ -13,11 +13,20 @@ content="Official Office Orders issued by the Office of the Executive Engineer, 
 
 <style>
 
+/* =========================
+   RESET
+========================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+
+/* =========================
+   VARIABLES
+========================= */
 
 :root {
     --blue: #07579a;
@@ -25,12 +34,18 @@ content="Official Office Orders issued by the Office of the Executive Engineer, 
     --light-blue: #eaf4fb;
     --gold: #d89b24;
     --text: #333;
+    --light: #f4f6f8;
 }
+
+
+/* =========================
+   BODY
+========================= */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text);
-    background: #f4f6f8;
+    background: var(--light);
     line-height: 1.6;
 }
 
@@ -48,12 +63,16 @@ body {
     max-width: 1250px;
     margin: auto;
     padding: 14px 20px;
+
     min-height: 150px;
 
     display: flex;
     align-items: center;
     gap: 20px;
 }
+
+
+/* EMBLEM */
 
 .emblem {
     width: 110px;
@@ -69,8 +88,12 @@ body {
 .emblem img {
     width: 65px;
     height: 85px;
+
     object-fit: contain;
 }
+
+
+/* HEADER TEXT */
 
 .header-text {
     flex: 1;
@@ -222,13 +245,14 @@ body {
 
 
 /* =========================
-   TABLE
+   TABLE CONTAINER
 ========================= */
 
 .table-box {
     background: white;
 
     border: 1px solid #ddd;
+
     border-radius: 4px;
 
     overflow: hidden;
@@ -238,10 +262,15 @@ body {
     overflow-x: auto;
 }
 
+
+/* =========================
+   ORDERS TABLE
+========================= */
+
 .orders-table {
     width: 100%;
 
-    min-width: 850px;
+    min-width: 900px;
 
     border-collapse: collapse;
 
@@ -249,84 +278,108 @@ body {
 }
 
 
-/* TABLE HEADER */
+/* HEADER */
 
 .orders-table th {
     background: var(--dark-blue);
 
     color: white;
 
-    padding: 12px 10px;
+    padding: 13px 12px;
 
     text-align: left;
 
+    font-size: 15px;
+
     font-weight: bold;
+
+    white-space: nowrap;
 
     border-right: 1px solid rgba(255,255,255,.15);
 }
 
 
-/* TABLE CELLS */
+/* CELLS */
 
 .orders-table td {
-    padding: 12px 10px;
+    padding: 13px 12px;
 
     border-bottom: 1px solid #e1e1e1;
 
     vertical-align: middle;
+
+    background: white;
 }
 
-.orders-table tr:hover {
+.orders-table tbody tr:hover td {
     background: #f4f9fc;
 }
 
 
-/* COLUMN WIDTHS */
+/* =========================
+   COLUMN WIDTHS
+========================= */
+
+/* S.No. */
 
 .orders-table th:nth-child(1),
 .orders-table td:nth-child(1) {
-    width: 70px;
+    width: 75px;
+
     text-align: center;
 }
+
+
+/* Order No. */
 
 .orders-table th:nth-child(2),
 .orders-table td:nth-child(2) {
     width: 160px;
 }
 
+
+/* Date */
+
 .orders-table th:nth-child(3),
 .orders-table td:nth-child(3) {
-    width: 140px;
+    width: 150px;
 }
+
+
+/* Subject */
 
 .orders-table th:nth-child(4),
 .orders-table td:nth-child(4) {
-    min-width: 350px;
+    min-width: 400px;
 }
+
+
+/* Download */
 
 .orders-table th:nth-child(5),
 .orders-table td:nth-child(5) {
-    width: 140px;
+    width: 150px;
+
     text-align: center;
 }
 
 
 /* =========================
-   DATE
+   DATE BADGE
 ========================= */
 
-.date {
+.date-badge {
     display: inline-block;
 
     background: #edf3f8;
 
     color: var(--blue);
 
-    padding: 4px 8px;
+    padding: 5px 9px;
 
-    border-radius: 3px;
+    border-radius: 4px;
 
-    font-size: 12px;
+    font-size: 13px;
 
     white-space: nowrap;
 }
@@ -345,7 +398,7 @@ body {
 
     text-decoration: none;
 
-    padding: 8px 15px;
+    padding: 9px 16px;
 
     border-radius: 4px;
 
@@ -354,6 +407,8 @@ body {
     font-weight: bold;
 
     white-space: nowrap;
+
+    transition: background .2s ease;
 }
 
 .download-btn:hover {
@@ -366,7 +421,7 @@ body {
 
 
 /* =========================
-   MESSAGES
+   LOADING / ERROR
 ========================= */
 
 .loading,
@@ -412,6 +467,8 @@ body {
 
 .footer h3 {
     margin-bottom: 12px;
+
+    color: white;
 }
 
 .footer p,
@@ -490,294 +547,292 @@ body {
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <header class="header">
 
-<div class="header-inner">
+    <div class="header-inner">
 
 
-    <div class="emblem">
+        <div class="emblem">
 
-        <img
-            src="images/Emblem_of_India.svg"
-            alt="State Emblem of India">
+            <img
+                src="images/Emblem_of_India.svg"
+                alt="State Emblem of India">
 
-    </div>
-
-
-    <div class="header-text">
-
-        <div class="govt">
-            Government of Jammu & Kashmir
         </div>
 
-        <div class="department">
-            Department of Rural Development & Panchayati Raj
+
+        <div class="header-text">
+
+            <div class="govt">
+                Government of Jammu & Kashmir
+            </div>
+
+            <div class="department">
+                Department of Rural Development & Panchayati Raj
+            </div>
+
+            <h1>
+                Office of the Executive Engineer
+            </h1>
+
+            <h2>
+                Rural Engineering Wing (REW), Pulwama
+            </h2>
+
         </div>
 
-        <h1>
-            Office of the Executive Engineer
-        </h1>
-
-        <h2>
-            Rural Engineering Wing (REW), Pulwama
-        </h2>
 
     </div>
-
-
-</div>
 
 </header>
 
 
-<!-- =========================
+<!-- =====================================================
      NAVIGATION
-========================= -->
+===================================================== -->
 
 <nav class="navbar">
 
-<div class="nav-inner">
+    <div class="nav-inner">
 
-    <a href="index.html">
-        HOME
-    </a>
+        <a href="index.html">
+            HOME
+        </a>
 
-    <a href="about.html">
-        ABOUT
-    </a>
+        <a href="about.html">
+            ABOUT
+        </a>
 
-    <a href="officials.html">
-        OFFICIALS
-    </a>
+        <a href="officials.html">
+            OFFICIALS
+        </a>
 
-    <a href="approvals.html">
-        APPROVALS
-    </a>
+        <a href="approvals.html">
+            APPROVALS
+        </a>
 
-    <a href="tenders.html">
-        TENDERS
-    </a>
+        <a href="tenders.html">
+            TENDERS
+        </a>
 
-    <a href="loi.html">
-        LOIs
-    </a>
+        <a href="loi.html">
+            LOIs
+        </a>
 
-    <a href="notices.html">
-        NOTICES
-    </a>
+        <a href="notices.html">
+            NOTICES
+        </a>
 
-    <a href="circulars.html">
-        CIRCULARS
-    </a>
+        <a href="circulars.html">
+            CIRCULARS
+        </a>
 
-    <a href="orders.html" class="active">
-        ORDERS
-    </a>
+        <a href="orders.html" class="active">
+            ORDERS
+        </a>
 
-    <a href="corri.html">
-        CORRIGENDUM
-    </a>
+        <a href="corri.html">
+            CORRIGENDUM
+        </a>
 
-    <a href="downloads.html">
-        DOWNLOADS
-    </a>
+        <a href="downloads.html">
+            DOWNLOADS
+        </a>
 
-    <a href="contact.html">
-        CONTACT
-    </a>
+        <a href="contact.html">
+            CONTACT
+        </a>
 
-</div>
+    </div>
 
 </nav>
 
 
-<!-- =========================
+<!-- =====================================================
      MAIN
-========================= -->
+===================================================== -->
 
 <main class="container">
 
 
-<!-- PAGE TITLE -->
+    <!-- PAGE TITLE -->
 
-<section class="page-title">
+    <section class="page-title">
 
-    <div class="page-title-title">
-        Office Orders
+        <div class="page-title-title">
+            Office Orders
+        </div>
+
+        <div class="page-title-body">
+
+            Official Office Orders issued by the Office of
+            the Executive Engineer, Rural Engineering Wing
+            (REW), Pulwama.
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Search by Order No., Date or Subject / Description..."
+            autocomplete="off">
+
     </div>
 
-    <div class="page-title-body">
 
-        Official Office Orders issued by the Office of the
-        Executive Engineer, Rural Engineering Wing (REW),
-        Pulwama.
+    <!-- ORDERS TABLE -->
 
-    </div>
+    <section class="table-box">
 
-</section>
+        <div class="table-wrapper">
 
+            <table class="orders-table">
 
-<!-- SEARCH -->
+                <thead>
 
-<div class="search-box">
+                    <tr>
 
-    <input
-        type="search"
-        id="searchInput"
-        placeholder="Search by Order No., Date or Subject / Description..."
-        autocomplete="off">
+                        <th>
+                            S.No.
+                        </th>
 
-</div>
+                        <th>
+                            Order No.
+                        </th>
 
+                        <th>
+                            Date
+                        </th>
 
-<!-- ORDERS TABLE -->
+                        <th>
+                            Subject / Description
+                        </th>
 
-<section class="table-box">
+                        <th>
+                            Download
+                        </th>
 
-<div class="table-wrapper">
+                    </tr>
 
-<table class="orders-table">
-
-
-<thead>
-
-<tr>
-
-    <th>
-        S.No.
-    </th>
-
-    <th>
-        Order No.
-    </th>
-
-    <th>
-        Date
-    </th>
-
-    <th>
-        Subject / Description
-    </th>
-
-    <th>
-        Download
-    </th>
-
-</tr>
-
-</thead>
+                </thead>
 
 
-<tbody id="ordersBody">
+                <tbody id="ordersBody">
 
-<tr>
+                    <tr>
 
-    <td
-        colspan="5"
-        class="loading">
+                        <td
+                            colspan="5"
+                            class="loading">
 
-        Loading orders...
+                            Loading orders...
 
-    </td>
+                        </td>
 
-</tr>
+                    </tr>
 
-</tbody>
+                </tbody>
 
+            </table>
 
-</table>
+        </div>
 
-</div>
-
-</section>
+    </section>
 
 
 </main>
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer class="footer">
 
-<div class="footer-inner">
+    <div class="footer-inner">
 
 
-<div>
+        <div>
 
-    <h3>
-        REW Pulwama
-    </h3>
+            <h3>
+                REW Pulwama
+            </h3>
 
-    <p>
-        Office of the Executive Engineer,
+            <p>
+                Office of the Executive Engineer,
+                Rural Engineering Wing (REW), Pulwama.
+            </p>
+
+            <p style="margin-top:10px;">
+
+                Department of Rural Development &
+                Panchayati Raj, Government of Jammu & Kashmir.
+
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Important Links
+            </h3>
+
+            <ul>
+
+                <li>Home</li>
+                <li>About Office</li>
+                <li>Tenders</li>
+                <li>Notices</li>
+                <li>Circulars</li>
+                <li>Orders</li>
+                <li>Downloads</li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Website Information
+            </h3>
+
+            <ul>
+
+                <li>Privacy Policy</li>
+                <li>Disclaimer</li>
+                <li>Accessibility</li>
+                <li>Site Map</li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Office of the Executive Engineer,
         Rural Engineering Wing (REW), Pulwama.
-    </p>
+        All Rights Reserved.
 
-    <p style="margin-top:10px;">
-
-        Department of Rural Development & Panchayati Raj,
-        Government of Jammu & Kashmir.
-
-    </p>
-
-</div>
-
-
-<div>
-
-    <h3>
-        Important Links
-    </h3>
-
-    <ul>
-
-        <li>Home</li>
-        <li>About Office</li>
-        <li>Tenders</li>
-        <li>Notices</li>
-        <li>Circulars</li>
-        <li>Orders</li>
-        <li>Downloads</li>
-
-    </ul>
-
-</div>
-
-
-<div>
-
-    <h3>
-        Website Information
-    </h3>
-
-    <ul>
-
-        <li>Privacy Policy</li>
-        <li>Disclaimer</li>
-        <li>Accessibility</li>
-        <li>Site Map</li>
-
-    </ul>
-
-</div>
-
-
-</div>
-
-
-<div class="footer-bottom">
-
-    © 2026 Office of the Executive Engineer,
-    Rural Engineering Wing (REW), Pulwama.
-    All Rights Reserved.
-
-</div>
+    </div>
 
 </footer>
 
@@ -786,19 +841,21 @@ body {
 <script>
 
 /* =====================================================
-   GOOGLE SHEET URL
-   ===================================================== */
+   GOOGLE SHEET CSV URL
+===================================================== */
 
 const SHEET_URL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1751045669&single=true&output=csv";
 
+
+/* Store all orders */
 
 let orders = [];
 
 
 /* =====================================================
    CSV PARSER
-   ===================================================== */
+===================================================== */
 
 function parseCSV(text) {
 
@@ -822,7 +879,7 @@ function parseCSV(text) {
         const next = text[i + 1];
 
 
-        /* Escaped quotation mark */
+        /* Handle escaped quotation marks */
 
         if (
             char === '"' &&
@@ -838,7 +895,7 @@ function parseCSV(text) {
         }
 
 
-        /* Start / end quotation */
+        /* Handle quotation */
 
         if (
             char === '"'
@@ -851,7 +908,7 @@ function parseCSV(text) {
         }
 
 
-        /* Comma */
+        /* Handle comma */
 
         if (
             char === "," &&
@@ -868,7 +925,7 @@ function parseCSV(text) {
         }
 
 
-        /* New line */
+        /* Handle new line */
 
         if (
             (char === "\n" ||
@@ -913,7 +970,7 @@ function parseCSV(text) {
     }
 
 
-    /* Last row */
+    /* Add final row */
 
     if (
         cell !== "" ||
@@ -934,6 +991,7 @@ function parseCSV(text) {
 
             rows.push(row);
         }
+
     }
 
 
@@ -942,8 +1000,8 @@ function parseCSV(text) {
 
 
 /* =====================================================
-   LOAD ORDERS FROM GOOGLE SHEET
-   ===================================================== */
+   LOAD ORDERS
+===================================================== */
 
 async function loadOrders() {
 
@@ -973,6 +1031,7 @@ async function loadOrders() {
             throw new Error(
                 "Unable to access Google Sheet."
             );
+
         }
 
 
@@ -981,12 +1040,12 @@ async function loadOrders() {
 
 
         console.log(
-            "Orders CSV:",
+            "Google Sheet CSV:",
             csv
         );
 
 
-        /* Check that Google returned CSV */
+        /* Make sure Google returned CSV */
 
         if (
             csv.includes("<html") ||
@@ -996,6 +1055,7 @@ async function loadOrders() {
             throw new Error(
                 "Google returned HTML instead of CSV."
             );
+
         }
 
 
@@ -1009,7 +1069,6 @@ async function loadOrders() {
 
             body.innerHTML = `
                 <tr>
-
                     <td
                         colspan="5"
                         class="no-results">
@@ -1017,7 +1076,6 @@ async function loadOrders() {
                         No orders available.
 
                     </td>
-
                 </tr>
             `;
 
@@ -1025,20 +1083,18 @@ async function loadOrders() {
         }
 
 
-        /* =============================================
-           IMPORTANT:
+        orders = [];
 
-           The Google Sheet columns MUST be:
+
+        /* =================================================
+           GOOGLE SHEET COLUMN ORDER
 
            A = S.No.
            B = Order No.
            C = Date
            D = Subject / Description
            E = Download
-        ============================================= */
-
-
-        orders = [];
+        ================================================= */
 
 
         for (
@@ -1050,8 +1106,6 @@ async function loadOrders() {
             const row =
                 rows[i];
 
-
-            /* Ignore empty rows */
 
             if (
                 !row ||
@@ -1097,7 +1151,7 @@ async function loadOrders() {
     catch (error) {
 
         console.error(
-            "Orders loading error:",
+            "Orders Error:",
             error
         );
 
@@ -1110,20 +1164,22 @@ async function loadOrders() {
                     class="error">
 
                     Unable to load orders.
-                    Please try again later.
+                    Please check that the Google Sheet
+                    is published to the web.
 
                 </td>
 
             </tr>
         `;
+
     }
 
 }
 
 
 /* =====================================================
-   DISPLAY ORDERS
-   ===================================================== */
+   RENDER ORDERS
+===================================================== */
 
 function renderOrders(
     data
@@ -1162,6 +1218,7 @@ function renderOrders(
 
     data.forEach(
         (item, index) => {
+
 
             const tr =
                 document.createElement(
@@ -1211,19 +1268,19 @@ function renderOrders(
                 item.date
             ) {
 
-                const dateSpan =
+                const dateBadge =
                     document.createElement(
                         "span"
                     );
 
-                dateSpan.className =
-                    "date";
+                dateBadge.className =
+                    "date-badge";
 
-                dateSpan.textContent =
+                dateBadge.textContent =
                     item.date;
 
                 date.appendChild(
-                    dateSpan
+                    dateBadge
                 );
 
             }
@@ -1231,6 +1288,7 @@ function renderOrders(
 
                 date.textContent =
                     "—";
+
             }
 
 
@@ -1245,7 +1303,7 @@ function renderOrders(
 
             subject.textContent =
                 item.subject ||
-                "Office Order";
+                "—";
 
 
             /* =========================
@@ -1259,7 +1317,8 @@ function renderOrders(
 
 
             if (
-                item.download
+                item.download &&
+                item.download.trim() !== ""
             ) {
 
                 const link =
@@ -1269,7 +1328,7 @@ function renderOrders(
 
 
                 link.href =
-                    item.download;
+                    item.download.trim();
 
 
                 link.target =
@@ -1297,10 +1356,19 @@ function renderOrders(
 
                 download.textContent =
                     "—";
+
             }
 
 
-            /* Add all five columns */
+            /* =================================================
+               ADD COLUMNS IN EXACT ORDER
+
+               S.No.
+               Order No.
+               Date
+               Subject / Description
+               Download
+            ================================================= */
 
             tr.appendChild(
                 sno
@@ -1334,8 +1402,8 @@ function renderOrders(
 
 
 /* =====================================================
-   SEARCH ORDERS
-   ===================================================== */
+   SEARCH
+===================================================== */
 
 document
 .getElementById(
@@ -1345,11 +1413,14 @@ document
     "input",
     function () {
 
+
         const query =
             this.value
                 .toLowerCase()
                 .trim();
 
+
+        /* Show everything */
 
         if (
             !query
@@ -1363,31 +1434,42 @@ document
         }
 
 
+        /* Search these three fields */
+
         const filtered =
             orders.filter(
                 item =>
 
-                    item.orderNo
-                        .toLowerCase()
-                        .includes(
-                            query
-                        )
+                    (
+                        item.orderNo ||
+                        ""
+                    )
+                    .toLowerCase()
+                    .includes(
+                        query
+                    )
 
                     ||
 
-                    item.date
-                        .toLowerCase()
-                        .includes(
-                            query
-                        )
+                    (
+                        item.date ||
+                        ""
+                    )
+                    .toLowerCase()
+                    .includes(
+                        query
+                    )
 
                     ||
 
-                    item.subject
-                        .toLowerCase()
-                        .includes(
-                            query
-                        )
+                    (
+                        item.subject ||
+                        ""
+                    )
+                    .toLowerCase()
+                    .includes(
+                        query
+                    )
 
             );
 
@@ -1401,12 +1483,16 @@ document
 
 
 /* =====================================================
-   START
-   ===================================================== */
+   LOAD WHEN PAGE OPENS
+===================================================== */
 
 document.addEventListener(
     "DOMContentLoaded",
-    loadOrders
+    function () {
+
+        loadOrders();
+
+    }
 );
 
 </script>
