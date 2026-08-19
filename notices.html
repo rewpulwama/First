@@ -1,41 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Notices | REW Pulwama</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Notices - REW Pulwama</title>
+
+<meta name="description"
+      content="Official notices of the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
 
 <style>
+
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #07579a;
+    --dark-blue: #063b69;
+    --light-blue: #eaf4fb;
+    --gold: #d89b24;
+    --text: #333;
+    --light: #f5f7fa;
 }
 
 body {
-    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f7fa;
-    color: #222;
+    color: var(--text);
+    background: #f4f6f8;
+    line-height: 1.6;
 }
+
+/* TOP BAR */
+
+.top-bar {
+    background: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    font-size: 13px;
+}
+
+.top-inner {
+    max-width: 1250px;
+    margin: auto;
+    padding: 7px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-links a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 18px;
+}
+
+.top-links a:hover {
+    color: var(--blue);
+}
+
 
 /* HEADER */
-header {
-    background: #003b6f;
-    color: white;
-    padding: 18px 20px;
+
+.header {
+    background: white;
+    border-bottom: 4px solid var(--gold);
 }
 
-.header-container {
-    max-width: 1200px;
+.header-inner {
+    max-width: 1250px;
     margin: auto;
+    padding: 14px 20px;
+    min-height: 150px;
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 20px;
 }
 
 .emblem {
-    width: 65px;
-    height: 80px;
+    width: 110px;
+    height: 125px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,230 +93,459 @@ header {
 }
 
 .emblem img {
-    width: 55px;
-    height: 70px;
+    width: 65px;
+    height: 85px;
     object-fit: contain;
+    display: block;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.header-text .govt {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 3px;
+}
+
+.header-text .department {
+    font-size: 17px;
+    color: var(--blue);
+    font-weight: bold;
 }
 
 .header-text h1 {
-    margin: 0;
     font-size: 25px;
+    color: var(--dark-blue);
+    margin-top: 5px;
 }
 
-.header-text p {
-    margin: 4px 0;
-    font-size: 15px;
+.header-text h2 {
+    font-size: 19px;
+    color: #333;
+    font-weight: 600;
 }
+
+.logo-right {
+    width: 95px;
+    height: 75px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10px;
+    color: #777;
+}
+
 
 /* NAVIGATION */
-nav {
-    background: white;
-    border-bottom: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+
+.navbar {
+    background: var(--dark-blue);
+    box-shadow: 0 2px 5px rgba(0,0,0,.15);
 }
 
-.nav-container {
-    max-width: 1200px;
+.nav-inner {
+    max-width: 1250px;
     margin: auto;
     display: flex;
+    align-items: center;
 }
 
-nav a {
-    padding: 15px 18px;
+.nav-inner a {
+    color: white;
     text-decoration: none;
-    color: #003b6f;
-    font-weight: 600;
+    padding: 15px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    border-right: 1px solid rgba(255,255,255,.12);
 }
 
-nav a:hover {
-    background: #eef4f9;
+.nav-inner a:hover,
+.nav-inner a.active {
+    background: var(--blue);
 }
+
 
 /* MAIN */
-main {
+
+.container {
     max-width: 1250px;
-    margin: 40px auto;
-    padding: 0 20px;
+    margin: auto;
+    padding: 30px 20px 40px;
 }
+
+
+/* PAGE TITLE */
 
 .page-title {
-    text-align: center;
-    margin-bottom: 30px;
+    background: var(--blue);
+    color: white;
+    padding: 15px 20px;
+    font-size: 28px;
+    font-weight: bold;
+    border-left: 7px solid var(--gold);
+    border-radius: 5px 5px 0 0;
 }
 
-.page-title h2 {
-    margin: 0;
-    color: #003b6f;
-    font-size: 30px;
-}
-
-.page-title p {
-    color: #666;
-    margin-top: 8px;
-}
 
 /* TABLE */
-.notices-box {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    overflow-x: auto;
-}
 
-table {
+.table-wrapper {
     width: 100%;
-    min-width: 750px;
+    overflow-x: auto;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+}
+
+.notice-table {
+    width: 100%;
     border-collapse: collapse;
+    background: white;
+    min-width: 750px;
 }
 
-th {
-    background: #003b6f;
+.notice-table th {
+    background: var(--dark-blue);
     color: white;
-    padding: 15px 12px;
-    text-align: center;
-    font-size: 15px;
-}
-
-td {
     padding: 14px 12px;
-    border-bottom: 1px solid #e5e5e5;
-    vertical-align: middle;
-}
-
-tr:last-child td {
-    border-bottom: none;
-}
-
-tr:hover {
-    background: #f7fafc;
-}
-
-/* COLUMN WIDTHS */
-
-.notice-number {
-    width: 130px;
-    text-align: center;
-    font-weight: 600;
-}
-
-.notice-date {
-    width: 130px;
-    text-align: center;
-}
-
-.notice-description {
+    font-size: 16px;
     text-align: left;
 }
 
-.notice-pdf {
-    width: 150px;
-    text-align: center;
+.notice-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    vertical-align: middle;
 }
 
-/* PDF BUTTON */
+.notice-table tr:hover {
+    background: #f5f9fc;
+}
 
-.pdf-btn {
+.notice-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* COLUMN WIDTHS */
+
+.notice-no {
+    width: 18%;
+}
+
+.notice-date {
+    width: 15%;
+}
+
+.notice-description {
+    width: 47%;
+}
+
+.notice-download {
+    width: 20%;
+    text-align: center !important;
+}
+
+
+/* DATE */
+
+.date {
     display: inline-block;
-    background: #0066a1;
-    color: white;
-    padding: 9px 14px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 13px;
+    background: #edf3f8;
+    color: var(--blue);
+    padding: 5px 9px;
+    border-radius: 4px;
     white-space: nowrap;
 }
 
-.pdf-btn:hover {
-    background: #004d7a;
+
+/* DOWNLOAD BUTTON */
+
+.download-btn {
+    display: inline-block;
+    background: var(--blue);
+    color: white !important;
+    text-decoration: none;
+    padding: 9px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
-.loading,
-.error,
-.no-notices {
+.download-btn:hover {
+    background: var(--dark-blue);
+}
+
+
+/* LOADING */
+
+.loading {
     text-align: center;
     padding: 30px;
     color: #666;
+    font-size: 16px;
 }
 
-.error {
-    color: #b00020;
-}
 
 /* FOOTER */
 
-footer {
-    margin-top: 60px;
-    background: #003b6f;
+.footer {
+    background: #062f52;
     color: white;
-    text-align: center;
-    padding: 25px 15px;
-    font-size: 14px;
+    margin-top: 20px;
 }
 
-/* MOBILE */
+.footer-inner {
+    max-width: 1250px;
+    margin: auto;
+    padding: 35px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 35px;
+}
 
-@media (max-width: 700px) {
+.footer h3 {
+    margin-bottom: 12px;
+    color: white;
+}
 
-    .header-container {
-        align-items: flex-start;
+.footer p,
+.footer li {
+    font-size: 13px;
+    color: #d9e5ee;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer li {
+    margin-bottom: 7px;
+}
+
+.footer-bottom {
+    background: #041f37;
+    padding: 12px;
+    text-align: center;
+    font-size: 12px;
+    color: #cbd9e4;
+}
+
+.footer a {
+    color: #d9e5ee !important;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white !important;
+    text-decoration: underline;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px) {
+
+    .header-inner {
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .header-text {
+        flex-basis: 100%;
+        order: 2;
+    }
+
+    .emblem {
+        order: 1;
+    }
+
+    .logo-right {
+        order: 3;
+    }
+
+    .nav-inner {
+        overflow-x: auto;
+    }
+
+    .nav-inner a {
+        white-space: nowrap;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media(max-width:600px) {
+
+    .top-inner {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .top-links a {
+        margin: 0 5px;
+    }
+
+    .header-text .govt {
+        font-size: 15px;
+    }
+
+    .header-text .department {
+        font-size: 14px;
     }
 
     .header-text h1 {
-        font-size: 19px;
+        font-size: 20px;
     }
 
-    .header-text p {
-        font-size: 13px;
+    .header-text h2 {
+        font-size: 16px;
     }
 
-    nav a {
-        padding: 12px 10px;
-        font-size: 13px;
+    .container {
+        padding: 20px 10px 30px;
     }
 
-    .page-title h2 {
-        font-size: 25px;
+    .page-title {
+        font-size: 22px;
+        padding: 13px 15px;
     }
 
-    main {
-        padding: 0 10px;
-    }
+    /*
+       On mobile the table remains horizontally
+       scrollable instead of squeezing the columns.
+    */
 
-    .notices-box {
+    .table-wrapper {
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
+
+    .notice-table {
+        min-width: 700px;
+    }
+
+    .notice-table th,
+    .notice-table td {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
 }
+
+
+/* VERY SMALL SCREENS */
+
+@media(max-width:400px) {
+
+    .notice-table {
+        min-width: 650px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+
+}
+
 </style>
+
 </head>
 
 
 <body>
 
 
+<!-- TOP BAR -->
+
+<div class="top-bar">
+
+    <div class="top-inner">
+
+        <div>
+            Official Website
+        </div>
+
+        <div class="top-links">
+
+            <a href="#">
+                Skip to Main Content
+            </a>
+
+            <a href="#">
+                A+
+            </a>
+
+            <a href="#">
+                A
+            </a>
+
+            <a href="#">
+                A-
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
 <!-- HEADER -->
 
-<header>
+<header class="header">
 
-    <div class="header-container">
+    <div class="header-inner">
 
         <div class="emblem">
 
-            <img src="images/Emblem_of_India.svg"
-                 alt="Government Emblem">
+            <img
+                src="images/Emblem_of_India.svg"
+                alt="State Emblem of India"
+            >
 
         </div>
 
 
         <div class="header-text">
 
-            <h1>Government of Jammu & Kashmir</h1>
+            <div class="govt">
+                Government of Jammu & Kashmir
+            </div>
 
-            <p>Department of Rural Development & Panchayati Raj</p>
+            <div class="department">
+                Department of Rural Development & Panchayati Raj
+            </div>
 
-            <p>Office of the Executive Engineer</p>
+            <h1>
+                Office of the Executive Engineer
+            </h1>
 
-            <p>Rural Engineering Wing (REW), Pulwama</p>
+            <h2>
+                Rural Engineering Wing (REW), Pulwama
+            </h2>
+
+        </div>
+
+
+        <div class="logo-right">
+
+            DEPARTMENT<br>
+            LOGO<br>
+            WILL BE<br>
+            ADDED
 
         </div>
 
@@ -278,15 +556,45 @@ footer {
 
 <!-- NAVIGATION -->
 
-<nav>
+<nav class="navbar">
 
-    <div class="nav-container">
+    <div class="nav-inner">
 
-        <a href="index.html">Home</a>
+        <a href="index.html">
+            HOME
+        </a>
 
-        <a href="notices.html">Notices</a>
+        <a href="about.html">
+            ABOUT
+        </a>
 
-        <a href="downloads.html">Downloads</a>
+        <a href="officials.html">
+            OFFICIALS
+        </a>
+
+        <a href="approvals.html">
+            APPROVALS
+        </a>
+
+        <a href="tenders.html">
+            TENDERS
+        </a>
+
+        <a href="loi.html">
+            LOIs
+        </a>
+
+        <a href="notices.html" class="active">
+            NOTICES
+        </a>
+
+        <a href="downloads.html">
+            DOWNLOADS
+        </a>
+
+        <a href="contact.html">
+            CONTACT
+        </a>
 
     </div>
 
@@ -295,47 +603,52 @@ footer {
 
 <!-- MAIN -->
 
-<main>
+<main class="container">
+
 
     <div class="page-title">
-
-        <h2>Notices</h2>
-
-        <p>
-            Official Notices issued by the Office of the Executive Engineer,
-            Rural Engineering Wing (REW), Pulwama
-        </p>
-
+        Notice Documents
     </div>
 
 
-    <div class="notices-box">
+    <div class="table-wrapper">
 
-        <table>
+        <table class="notice-table">
 
             <thead>
 
                 <tr>
 
-                    <th>Notice No.</th>
+                    <th class="notice-no">
+                        Notice No.
+                    </th>
 
-                    <th>Notice Date</th>
+                    <th class="notice-date">
+                        Date
+                    </th>
 
-                    <th>Notice Description</th>
+                    <th class="notice-description">
+                        Description
+                    </th>
 
-                    <th>Notice PDF</th>
+                    <th class="notice-download">
+                        Download
+                    </th>
 
                 </tr>
 
             </thead>
 
 
-            <tbody id="noticesTable">
+            <tbody id="noticeTableBody">
 
                 <tr>
 
-                    <td colspan="4" class="loading">
+                    <td colspan="4"
+                        class="loading">
+
                         Loading notices...
+
                     </td>
 
                 </tr>
@@ -351,221 +664,156 @@ footer {
 
 <!-- FOOTER -->
 
-<footer>
+<footer class="footer">
 
-    <div>
-        Office of the Executive Engineer,
-        Rural Engineering Wing (REW), Pulwama
+    <div class="footer-inner">
+
+
+        <div>
+
+            <h3>
+                REW Pulwama
+            </h3>
+
+            <p>
+                Office of the Executive Engineer,
+                Rural Engineering Wing (REW), Pulwama.
+            </p>
+
+            <p style="margin-top:10px;">
+
+                Department of Rural Development &
+                Panchayati Raj,
+                Government of Jammu & Kashmir.
+
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Important Links
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About Office
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tenders.html">
+                        Tenders
+                    </a>
+                </li>
+
+                <li>
+                    <a href="notices.html">
+                        Notices
+                    </a>
+                </li>
+
+                <li>
+                    <a href="downloads.html">
+                        Downloads
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Website Information
+            </h3>
+
+            <ul>
+
+                <li>
+                    Privacy Policy
+                </li>
+
+                <li>
+                    Disclaimer
+                </li>
+
+                <li>
+                    Accessibility
+                </li>
+
+                <li>
+                    Site Map
+                </li>
+
+            </ul>
+
+        </div>
+
     </div>
 
-    <div style="margin-top:8px;">
-        Government of Jammu & Kashmir
+
+    <div class="footer-bottom">
+
+        © 2026 Office of the Executive Engineer,
+        Rural Engineering Wing (REW), Pulwama.
+        All Rights Reserved.
+
     </div>
 
 </footer>
 
 
+<!-- GOOGLE SHEET SCRIPT -->
+
 <script>
 
-/* =========================================================
-   GOOGLE SHEET - NOTICES TAB
-   ========================================================= */
-
-const sheetURL =
+const SHEET_URL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1487795258&single=true&output=csv";
 
 
 /* =========================================================
-   LOAD NOTICES
-   ========================================================= */
+   LOAD CSV
+========================================================= */
 
-async function loadNotices() {
+async function loadCSV(url) {
 
-    const table = document.getElementById("noticesTable");
+    const response =
+        await fetch(
+            url + "&cache=" + Date.now()
+        );
 
-    try {
+    if (!response.ok) {
 
-        const response = await fetch(sheetURL);
-
-        if (!response.ok) {
-            throw new Error("Unable to load Google Sheet");
-        }
-
-        const csvText = await response.text();
-
-        const rows = parseCSV(csvText);
-
-        table.innerHTML = "";
-
-
-        /*
-        GOOGLE SHEET STRUCTURE
-
-        Column A = Notice No.
-        Column B = Notice Date
-        Column C = Notice Description
-        Column D = Notice PDF
-        */
-
-
-        for (let i = 1; i < rows.length; i++) {
-
-            const noticeNo =
-                rows[i][0]?.trim();
-
-            const noticeDate =
-                rows[i][1]?.trim();
-
-            const noticeDescription =
-                rows[i][2]?.trim();
-
-            const noticePDF =
-                rows[i][3]?.trim();
-
-
-            /*
-            Skip completely empty rows
-            */
-
-            if (
-                !noticeNo &&
-                !noticeDate &&
-                !noticeDescription &&
-                !noticePDF
-            ) {
-                continue;
-            }
-
-
-            const tr = document.createElement("tr");
-
-
-            /* NOTICE NUMBER */
-
-            const numberCell =
-                document.createElement("td");
-
-            numberCell.className =
-                "notice-number";
-
-            numberCell.textContent =
-                noticeNo || "-";
-
-
-            /* NOTICE DATE */
-
-            const dateCell =
-                document.createElement("td");
-
-            dateCell.className =
-                "notice-date";
-
-            dateCell.textContent =
-                noticeDate || "-";
-
-
-            /* DESCRIPTION */
-
-            const descriptionCell =
-                document.createElement("td");
-
-            descriptionCell.className =
-                "notice-description";
-
-            descriptionCell.textContent =
-                noticeDescription || "-";
-
-
-            /* PDF */
-
-            const pdfCell =
-                document.createElement("td");
-
-            pdfCell.className =
-                "notice-pdf";
-
-
-            if (noticePDF) {
-
-                const pdfLink =
-                    document.createElement("a");
-
-                pdfLink.href =
-                    noticePDF;
-
-                pdfLink.target =
-                    "_blank";
-
-                pdfLink.rel =
-                    "noopener noreferrer";
-
-                pdfLink.className =
-                    "pdf-btn";
-
-                pdfLink.textContent =
-                    "View PDF";
-
-
-                pdfCell.appendChild(pdfLink);
-
-            } else {
-
-                pdfCell.textContent =
-                    "Not Available";
-
-            }
-
-
-            tr.appendChild(numberCell);
-
-            tr.appendChild(dateCell);
-
-            tr.appendChild(descriptionCell);
-
-            tr.appendChild(pdfCell);
-
-
-            table.appendChild(tr);
-
-        }
-
-
-        /* NO RECORDS */
-
-        if (table.children.length === 0) {
-
-            table.innerHTML = `
-                <tr>
-                    <td colspan="4" class="no-notices">
-                        No notices available.
-                    </td>
-                </tr>
-            `;
-
-        }
-
-
-    } catch (error) {
-
-        console.error(error);
-
-        table.innerHTML = `
-            <tr>
-                <td colspan="4" class="error">
-                    Unable to load notices. Please try again later.
-                </td>
-            </tr>
-        `;
+        throw new Error(
+            "Unable to load Google Sheet"
+        );
 
     }
+
+    const text =
+        await response.text();
+
+    return parseCSV(text);
 
 }
 
 
 /* =========================================================
    CSV PARSER
-   Handles commas and quoted text
-   ========================================================= */
+========================================================= */
 
 function parseCSV(text) {
 
@@ -573,12 +821,16 @@ function parseCSV(text) {
 
     let row = [];
 
-    let cell = "";
+    let value = "";
 
     let insideQuotes = false;
 
 
-    for (let i = 0; i < text.length; i++) {
+    for (
+        let i = 0;
+        i < text.length;
+        i++
+    ) {
 
         const char = text[i];
 
@@ -591,29 +843,36 @@ function parseCSV(text) {
             next === '"'
         ) {
 
-            cell += '"';
+            value += '"';
 
             i++;
 
         }
 
-        else if (char === '"') {
+
+        else if (
+            char === '"'
+        ) {
 
             insideQuotes =
                 !insideQuotes;
 
         }
 
+
         else if (
             char === "," &&
             !insideQuotes
         ) {
 
-            row.push(cell);
+            row.push(
+                value.trim()
+            );
 
-            cell = "";
+            value = "";
 
         }
+
 
         else if (
             (char === "\n" ||
@@ -625,16 +884,20 @@ function parseCSV(text) {
                 char === "\r" &&
                 next === "\n"
             ) {
+
                 i++;
+
             }
 
-            row.push(cell);
+
+            row.push(
+                value.trim()
+            );
 
 
             if (
                 row.some(
-                    value =>
-                    value.trim() !== ""
+                    cell => cell !== ""
                 )
             ) {
 
@@ -645,13 +908,14 @@ function parseCSV(text) {
 
             row = [];
 
-            cell = "";
+            value = "";
 
         }
 
+
         else {
 
-            cell += char;
+            value += char;
 
         }
 
@@ -659,17 +923,18 @@ function parseCSV(text) {
 
 
     if (
-        cell !== "" ||
+        value !== "" ||
         row.length > 0
     ) {
 
-        row.push(cell);
+        row.push(
+            value.trim()
+        );
 
 
         if (
             row.some(
-                value =>
-                value.trim() !== ""
+                cell => cell !== ""
             )
         ) {
 
@@ -685,7 +950,612 @@ function parseCSV(text) {
 }
 
 
-/* START */
+/* =========================================================
+   CLEAN HEADER
+========================================================= */
+
+function cleanHeader(value) {
+
+    return String(value || "")
+        .toLowerCase()
+        .replace(/[|,*]/g, "")
+        .replace(/\./g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+
+}
+
+
+/* =========================================================
+   FIND COLUMN
+========================================================= */
+
+function findColumn(
+    headers,
+    names
+) {
+
+    for (
+        let i = 0;
+        i < headers.length;
+        i++
+    ) {
+
+        const header =
+            cleanHeader(
+                headers[i]
+            );
+
+
+        for (
+            const name of names
+        ) {
+
+            if (
+                header ===
+                cleanHeader(name)
+            ) {
+
+                return i;
+
+            }
+
+        }
+
+    }
+
+
+    return -1;
+
+}
+
+
+/* =========================================================
+   DATE CONVERSION
+========================================================= */
+
+function convertDate(value) {
+
+    if (!value) {
+
+        return new Date(0);
+
+    }
+
+
+    value =
+        String(value).trim();
+
+
+    let date;
+
+
+    /* DD-MM-YYYY / DD/MM/YYYY */
+
+    if (
+        /^\d{1,2}[-\/]\d{1,2}[-\/]\d{4}$/
+        .test(value)
+    ) {
+
+        const parts =
+            value.split(/[-\/]/);
+
+
+        date =
+            new Date(
+                Number(parts[2]),
+                Number(parts[1]) - 1,
+                Number(parts[0])
+            );
+
+    }
+
+
+    /* YYYY-MM-DD */
+
+    else if (
+        /^\d{4}[-\/]\d{1,2}[-\/]\d{1,2}$/
+        .test(value)
+    ) {
+
+        const parts =
+            value.split(/[-\/]/);
+
+
+        date =
+            new Date(
+                Number(parts[0]),
+                Number(parts[1]) - 1,
+                Number(parts[2])
+            );
+
+    }
+
+
+    else {
+
+        date =
+            new Date(value);
+
+    }
+
+
+    if (
+        isNaN(
+            date.getTime()
+        )
+    ) {
+
+        return new Date(0);
+
+    }
+
+
+    return date;
+
+}
+
+
+/* =========================================================
+   DISPLAY DATE
+========================================================= */
+
+function displayDate(value) {
+
+    const date =
+        convertDate(value);
+
+
+    if (
+        date.getTime() === 0
+    ) {
+
+        return value || "";
+
+    }
+
+
+    return date.toLocaleDateString(
+        "en-GB",
+        {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CREATE ROW
+========================================================= */
+
+function createNoticeRow(
+    noticeNo,
+    date,
+    description,
+    link
+) {
+
+    const tr =
+        document.createElement("tr");
+
+
+    /* NOTICE NUMBER */
+
+    const noCell =
+        document.createElement("td");
+
+    noCell.textContent =
+        noticeNo || "—";
+
+    tr.appendChild(noCell);
+
+
+    /* DATE */
+
+    const dateCell =
+        document.createElement("td");
+
+
+    const dateSpan =
+        document.createElement("span");
+
+    dateSpan.className =
+        "date";
+
+    dateSpan.textContent =
+        displayDate(date);
+
+    dateCell.appendChild(
+        dateSpan
+    );
+
+    tr.appendChild(dateCell);
+
+
+    /* DESCRIPTION */
+
+    const descriptionCell =
+        document.createElement("td");
+
+    descriptionCell.textContent =
+        description || "—";
+
+    tr.appendChild(
+        descriptionCell
+    );
+
+
+    /* DOWNLOAD */
+
+    const downloadCell =
+        document.createElement("td");
+
+    downloadCell.className =
+        "notice-download";
+
+
+    const button =
+        document.createElement("a");
+
+    button.className =
+        "download-btn";
+
+    button.textContent =
+        "View / Download";
+
+
+    if (
+        link &&
+        link.trim() !== ""
+    ) {
+
+        button.href =
+            link.trim();
+
+        button.target =
+            "_blank";
+
+        button.rel =
+            "noopener noreferrer";
+
+    }
+
+    else {
+
+        button.href =
+            "#";
+
+        button.onclick =
+            function(event) {
+
+                event.preventDefault();
+
+                alert(
+                    "No document link is available for this notice."
+                );
+
+            };
+
+    }
+
+
+    downloadCell.appendChild(
+        button
+    );
+
+    tr.appendChild(
+        downloadCell
+    );
+
+
+    return tr;
+
+}
+
+
+/* =========================================================
+   LOAD NOTICES
+========================================================= */
+
+async function loadNotices() {
+
+    const tableBody =
+        document.getElementById(
+            "noticeTableBody"
+        );
+
+
+    try {
+
+        const rows =
+            await loadCSV(
+                SHEET_URL
+            );
+
+
+        if (
+            rows.length <= 1
+        ) {
+
+            tableBody.innerHTML =
+                `
+                <tr>
+                    <td colspan="4"
+                        class="loading">
+                        No notices available.
+                    </td>
+                </tr>
+                `;
+
+            return;
+
+        }
+
+
+        const headers =
+            rows[0];
+
+
+        console.log(
+            "Notice Sheet Headers:",
+            headers
+        );
+
+
+        /* FIND COLUMNS */
+
+        const noticeNoColumn =
+            findColumn(
+                headers,
+                [
+                    "notice no",
+                    "notice no.",
+                    "notice number",
+                    "notice no,"
+                ]
+            );
+
+
+        const dateColumn =
+            findColumn(
+                headers,
+                [
+                    "date",
+                    "notice date",
+                    "updated date",
+                    "last updated"
+                ]
+            );
+
+
+        const descriptionColumn =
+            findColumn(
+                headers,
+                [
+                    "description",
+                    "notice / subject",
+                    "notice/subject",
+                    "notice subject",
+                    "subject"
+                ]
+            );
+
+
+        const downloadColumn =
+            findColumn(
+                headers,
+                [
+                    "download",
+                    "download link",
+                    "link",
+                    "url"
+                ]
+            );
+
+
+        console.log(
+            "Notice No Column:",
+            noticeNoColumn
+        );
+
+        console.log(
+            "Date Column:",
+            dateColumn
+        );
+
+        console.log(
+            "Description Column:",
+            descriptionColumn
+        );
+
+        console.log(
+            "Download Column:",
+            downloadColumn
+        );
+
+
+        const records = [];
+
+
+        /* READ ROWS */
+
+        for (
+            let i = 1;
+            i < rows.length;
+            i++
+        ) {
+
+            const row =
+                rows[i];
+
+
+            if (
+                !row ||
+                row.length === 0
+            ) {
+
+                continue;
+
+            }
+
+
+            const noticeNo =
+                noticeNoColumn >= 0
+                    ? row[noticeNoColumn]
+                    : "";
+
+
+            const date =
+                dateColumn >= 0
+                    ? row[dateColumn]
+                    : "";
+
+
+            const description =
+                descriptionColumn >= 0
+                    ? row[descriptionColumn]
+                    : "";
+
+
+            const link =
+                downloadColumn >= 0
+                    ? row[downloadColumn]
+                    : "";
+
+
+            /*
+             * Skip completely empty rows
+             */
+
+            if (
+                !noticeNo &&
+                !date &&
+                !description &&
+                !link
+            ) {
+
+                continue;
+
+            }
+
+
+            records.push({
+
+                noticeNo:
+                    noticeNo,
+
+                date:
+                    date,
+
+                description:
+                    description,
+
+                link:
+                    link
+
+            });
+
+        }
+
+
+        /* =================================================
+           SORT NEWEST FIRST
+        ================================================= */
+
+        records.sort(
+            function(a, b) {
+
+                return (
+                    convertDate(b.date) -
+                    convertDate(a.date)
+                );
+
+            }
+        );
+
+
+        tableBody.innerHTML =
+            "";
+
+
+        /* =================================================
+           DISPLAY ALL NOTICES
+        ================================================= */
+
+        records.forEach(
+            function(record) {
+
+                tableBody.appendChild(
+
+                    createNoticeRow(
+
+                        record.noticeNo,
+
+                        record.date,
+
+                        record.description,
+
+                        record.link
+
+                    )
+
+                );
+
+            }
+        );
+
+
+        if (
+            records.length === 0
+        ) {
+
+            tableBody.innerHTML =
+                `
+                <tr>
+                    <td colspan="4"
+                        class="loading">
+                        No notices available.
+                    </td>
+                </tr>
+                `;
+
+        }
+
+    }
+
+
+    catch (error) {
+
+        console.error(
+            "Notice loading error:",
+            error
+        );
+
+
+        tableBody.innerHTML =
+            `
+            <tr>
+                <td colspan="4"
+                    class="loading">
+
+                    Unable to load notices.
+                    Please try again later.
+
+                </td>
+            </tr>
+            `;
+
+    }
+
+}
+
+
+/* =========================================================
+   START
+========================================================= */
 
 loadNotices();
 
