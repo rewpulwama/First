@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>Approvals | REW Pulwama</title>
+<title>LOIs | REW Pulwama</title>
 
 <meta name="description"
-      content="Approvals issued by the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
+content="Official Letters of Intent (LOIs) issued by the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
 
 <style>
 
@@ -27,7 +25,6 @@
     --light-blue: #eaf4fb;
     --gold: #d89b24;
     --text: #333;
-    --light: #f5f7fa;
 }
 
 body {
@@ -37,38 +34,8 @@ body {
     line-height: 1.6;
 }
 
-/* =========================
-   TOP BAR
-========================= */
 
-.top-bar {
-    background: #f1f1f1;
-    border-bottom: 1px solid #ddd;
-    font-size: 13px;
-}
-
-.top-inner {
-    max-width: 1250px;
-    margin: auto;
-    padding: 7px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.top-links a {
-    color: #333;
-    text-decoration: none;
-    margin-left: 18px;
-}
-
-.top-links a:hover {
-    color: var(--blue);
-}
-
-/* =========================
-   HEADER
-========================= */
+/* ================= HEADER ================= */
 
 .header {
     background: white;
@@ -80,6 +47,7 @@ body {
     margin: auto;
     padding: 14px 20px;
     min-height: 150px;
+
     display: flex;
     align-items: center;
     gap: 20px;
@@ -88,18 +56,18 @@ body {
 .emblem {
     width: 110px;
     height: 125px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     flex-shrink: 0;
-    overflow: hidden;
 }
 
 .emblem img {
     width: 65px;
     height: 85px;
     object-fit: contain;
-    display: block;
 }
 
 .header-text {
@@ -110,7 +78,6 @@ body {
     font-size: 18px;
     font-weight: bold;
     color: #555;
-    margin-bottom: 3px;
 }
 
 .header-text .department {
@@ -131,22 +98,8 @@ body {
     font-weight: 600;
 }
 
-.logo-right {
-    width: 95px;
-    height: 75px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 10px;
-    color: #777;
-}
 
-/* =========================
-   NAVIGATION
-========================= */
+/* ================= NAVIGATION ================= */
 
 .navbar {
     background: var(--dark-blue);
@@ -156,16 +109,22 @@ body {
 .nav-inner {
     max-width: 1250px;
     margin: auto;
+
     display: flex;
-    align-items: center;
+    overflow-x: auto;
 }
 
 .nav-inner a {
     color: white;
     text-decoration: none;
+
     padding: 15px 18px;
+
     font-size: 14px;
     font-weight: bold;
+
+    white-space: nowrap;
+
     border-right: 1px solid rgba(255,255,255,.12);
 }
 
@@ -174,150 +133,228 @@ body {
     background: var(--blue);
 }
 
-/* =========================
-   MAIN
-========================= */
+
+/* ================= MAIN ================= */
 
 .container {
     max-width: 1250px;
-    margin: auto;
-    padding: 30px 20px 50px;
+    margin: 25px auto;
+    padding: 0 20px 40px;
 }
 
-/* =========================
-   PAGE TITLE
-========================= */
+
+/* ================= TITLE ================= */
 
 .page-title {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.page-title h2 {
-    color: var(--dark-blue);
-    font-size: 32px;
-    margin-bottom: 5px;
-}
-
-.page-title p {
-    color: #555;
-    font-size: 16px;
-}
-
-/* =========================
-   SECTION
-========================= */
-
-.section {
     background: white;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 4px;
     overflow: hidden;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-.section-title {
+.page-title-top {
     background: var(--blue);
     color: white;
-    padding: 15px 20px;
+
+    padding: 13px 18px;
+
     font-size: 21px;
     font-weight: bold;
-    border-left: 6px solid var(--gold);
+
+    border-left: 5px solid var(--gold);
 }
 
-/* =========================
-   TABLE
-========================= */
+.page-title-body {
+    padding: 18px;
+    color: #555;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-box {
+    background: white;
+    border: 1px solid #ddd;
+
+    padding: 15px;
+    margin-bottom: 20px;
+
+    border-radius: 4px;
+}
+
+.search-box input {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: var(--blue);
+}
+
+
+/* ================= TABLE ================= */
+
+.table-box {
+    background: white;
+
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+    overflow: hidden;
+}
 
 .table-wrapper {
-    width: 100%;
     overflow-x: auto;
 }
 
-.approval-table {
+.loi-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 15px;
+
+    min-width: 800px;
 }
 
-.approval-table th {
+.loi-table th {
     background: var(--dark-blue);
+
     color: white;
-    padding: 13px 15px;
+
+    padding: 13px 12px;
+
     text-align: left;
+
+    font-size: 14px;
 }
 
-.approval-table td {
-    padding: 13px 15px;
-    border-bottom: 1px solid #e1e1e1;
+.loi-table td {
+    padding: 13px 12px;
+
+    border-bottom: 1px solid #e5e5e5;
+
     vertical-align: middle;
+
+    font-size: 14px;
 }
 
-.approval-table tr:hover {
+.loi-table tr:hover {
     background: #f5f9fc;
 }
 
-.approval-table tr:last-child td {
+.loi-table tr:last-child td {
     border-bottom: none;
 }
 
-/* =========================
-   DOWNLOAD BUTTON
-========================= */
+
+/* ================= DATE ================= */
+
+.date {
+    display: inline-block;
+
+    background: #edf3f8;
+
+    color: var(--blue);
+
+    padding: 4px 8px;
+
+    border-radius: 3px;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+
+/* ================= LOI NUMBER ================= */
+
+.loi-number {
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+
+/* ================= DOWNLOAD BUTTON ================= */
 
 .download-btn {
     display: inline-block;
+
     background: var(--blue);
+
     color: white;
-    padding: 7px 14px;
+
+    padding: 8px 15px;
+
     border-radius: 4px;
+
     text-decoration: none;
+
     font-size: 13px;
+
     font-weight: bold;
+
+    white-space: nowrap;
 }
 
 .download-btn:hover {
     background: var(--dark-blue);
 }
 
-/* =========================
-   LOADING
-========================= */
+.download-btn::before {
+    content: "↓ ";
+}
 
-.loading {
+
+/* ================= MESSAGES ================= */
+
+.loading,
+.error,
+.no-results {
+    padding: 35px;
+
     text-align: center;
-    padding: 30px;
+
     color: #666;
 }
 
 .error {
-    text-align: center;
-    padding: 30px;
-    color: #b52b2b;
+    color: #a00000;
 }
 
-/* =========================
-   FOOTER
-========================= */
+
+/* ================= FOOTER ================= */
 
 .footer {
     background: #062f52;
+
     color: white;
-    margin-top: 20px;
+
+    margin-top: 30px;
 }
 
 .footer-inner {
     max-width: 1250px;
+
     margin: auto;
+
     padding: 35px 20px;
+
     display: grid;
+
     grid-template-columns: 2fr 1fr 1fr;
+
     gap: 35px;
 }
 
 .footer h3 {
     margin-bottom: 12px;
-    color: white;
 }
 
 .footer p,
@@ -336,118 +373,43 @@ body {
 
 .footer-bottom {
     background: #041f37;
+
     padding: 12px;
+
     text-align: center;
+
     font-size: 12px;
+
     color: #cbd9e4;
 }
 
-.footer a {
-    color: #d9e5ee !important;
-    text-decoration: none;
-}
 
-.footer a:hover {
-    color: white !important;
-    text-decoration: underline;
-}
+/* ================= MOBILE ================= */
 
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:900px) {
+@media(max-width:700px) {
 
     .header-inner {
         flex-wrap: wrap;
-        text-align: center;
+
         justify-content: center;
+
+        text-align: center;
     }
 
     .header-text {
         flex-basis: 100%;
-        order: 2;
-    }
-
-    .emblem {
-        order: 1;
-    }
-
-    .logo-right {
-        order: 3;
-    }
-
-    .nav-inner {
-        overflow-x: auto;
-    }
-
-    .nav-inner a {
-        white-space: nowrap;
-    }
-
-    .footer-inner {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-@media(max-width:600px) {
-
-    .top-inner {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .top-links a {
-        margin: 0 5px;
-    }
-
-    .header-text .govt {
-        font-size: 15px;
-    }
-
-    .header-text .department {
-        font-size: 14px;
     }
 
     .header-text h1 {
-        font-size: 20px;
+        font-size: 21px;
     }
 
     .header-text h2 {
         font-size: 16px;
     }
 
-    .container {
-        padding: 25px 12px 40px;
-    }
-
-    .page-title h2 {
-        font-size: 28px;
-    }
-
-    .page-title p {
-        font-size: 14px;
-    }
-
-    .section-title {
-        font-size: 19px;
-        padding: 13px 15px;
-    }
-
-    .approval-table {
-        font-size: 14px;
-        min-width: 600px;
-    }
-
-    .approval-table th,
-    .approval-table td {
-        padding: 11px 12px;
-    }
-
-    .download-btn {
-        padding: 7px 11px;
-        font-size: 12px;
+    .footer-inner {
+        grid-template-columns: 1fr;
     }
 
 }
@@ -458,660 +420,300 @@ body {
 
 <body>
 
+<!-- ================= HEADER ================= -->
 
-<!-- =========================
-     TOP BAR
-========================= -->
+<header class="header">
 
-<div class="top-bar">
+<div class="header-inner">
 
-    <div class="top-inner">
+<div class="emblem">
 
-        <div>
-            Official Website
-        </div>
-
-        <div class="top-links">
-
-            <a href="#">
-                Skip to Main Content
-            </a>
-
-            <a href="#">
-                A+
-            </a>
-
-            <a href="#">
-                A
-            </a>
-
-            <a href="#">
-                A-
-            </a>
-
-        </div>
-
-    </div>
+    <img
+        src="images/Emblem_of_India.svg"
+        alt="State Emblem of India">
 
 </div>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<div class="header-text">
 
-<header class="header">
-
-    <div class="header-inner">
-
-        <div class="emblem">
-
-            <img
-                src="images/Emblem_of_India.svg"
-                alt="State Emblem of India">
-
-        </div>
-
-
-        <div class="header-text">
-
-            <div class="govt">
-                Government of Jammu & Kashmir
-            </div>
-
-            <div class="department">
-                Department of Rural Development & Panchayati Raj
-            </div>
-
-            <h1>
-                Office of the Executive Engineer
-            </h1>
-
-            <h2>
-                Rural Engineering Wing (REW), Pulwama
-            </h2>
-
-        </div>
-
-
-        <div class="logo-right">
-
-            DEPARTMENT<br>
-            LOGO<br>
-            WILL BE<br>
-            ADDED
-
-        </div>
-
+    <div class="govt">
+        Government of Jammu & Kashmir
     </div>
+
+    <div class="department">
+        Department of Rural Development & Panchayati Raj
+    </div>
+
+    <h1>
+        Office of the Executive Engineer
+    </h1>
+
+    <h2>
+        Rural Engineering Wing (REW), Pulwama
+    </h2>
+
+</div>
+
+</div>
 
 </header>
 
-
-<!-- =========================
-     NAVIGATION
-========================= -->
+<!-- ================= NAVIGATION ================= -->
 
 <nav class="navbar">
 
-    <div class="nav-inner">
+<div class="nav-inner">
 
-        <a href="index.html">
-            HOME
-        </a>
+<a href="index.html">
+    HOME
+</a>
 
-        <a href="about.html">
-            ABOUT
-        </a>
+<a href="about.html">
+    ABOUT
+</a>
 
-        <a href="officials.html">
-            OFFICIALS
-        </a>
+<a href="officials.html">
+    OFFICIALS
+</a>
 
-        <a href="approvals.html"
-           class="active">
-            APPROVALS
-        </a>
+<a href="approvals.html">
+    APPROVALS
+</a>
 
-        <a href="tenders.html">
-            TENDERS
-        </a>
+<a href="tenders.html">
+    TENDERS
+</a>
 
-        <a href="loi.html">
-            LOIs
-        </a>
+<a href="loi.html"
+   class="active">
+    LOIs
+</a>
 
-        <a href="notices.html">
-            NOTICES
-        </a>
+<a href="notices.html">
+    NOTICES
+</a>
 
-        <a href="downloads.html">
-            DOWNLOADS
-        </a>
+<a href="circulars.html">
+    CIRCULARS
+</a>
 
-        <a href="contact.html">
-            CONTACT
-        </a>
+<a href="orders.html">
+    ORDERS
+</a>
 
-    </div>
+<a href="corri.html">
+    CORRIGENDUM
+</a>
+
+<a href="downloads.html">
+    DOWNLOADS
+</a>
+
+<a href="contact.html">
+    CONTACT
+</a>
+
+</div>
 
 </nav>
 
-
-<!-- =========================
-     MAIN
-========================= -->
+<!-- ================= MAIN ================= -->
 
 <main class="container">
 
+<section class="page-title">
 
-    <div class="page-title">
+<div class="page-title-top">
+    Letters of Intent (LOIs)
+</div>
 
-        <h2>
-            Approvals
-        </h2>
+<div class="page-title-body">
 
-        <p>
-            Approval documents issued by Rural Engineering Wing (REW), Pulwama
-        </p>
+    Official Letters of Intent issued by the
+    Office of the Executive Engineer,
+    Rural Engineering Wing (REW), Pulwama.
 
-    </div>
+</div>
 
+</section>
 
-    <section class="section">
+<!-- ================= SEARCH ================= -->
 
-        <div class="section-title">
-            Approval Documents
-        </div>
+<div class="search-box">
 
+<input
+    type="search"
+    id="searchInput"
+    placeholder="Search LOIs..."
+    autocomplete="off">
 
-        <div class="table-wrapper">
+</div>
 
-            <table class="approval-table">
+<!-- ================= TABLE ================= -->
 
-                <thead>
+<section class="table-box">
 
-                    <tr>
+<div class="table-wrapper">
 
-                        <th>
-                            Approval No.
-                        </th>
+<table class="loi-table">
 
-                        <th>
-                            Scheme
-                        </th>
+<thead>
 
-                        <th>
-                            Download
-                        </th>
+<tr>
 
-                    </tr>
+<th style="width:80px;">
+    S.No.
+</th>
 
-                </thead>
+<th style="width:160px;">
+    LOI No.
+</th>
 
+<th style="width:160px;">
+    Date
+</th>
 
-                <tbody id="approvalTableBody">
+<th>
+    FOR NIT No.
+</th>
 
-                    <tr>
+<th style="width:150px;">
+    Download
+</th>
 
-                        <td
-                            colspan="3"
-                            class="loading">
+</tr>
 
-                            Loading approvals...
+</thead>
 
-                        </td>
+<tbody id="loiBody">
 
-                    </tr>
+<tr>
 
-                </tbody>
+<td
+    colspan="5"
+    class="loading">
 
-            </table>
+    Loading LOIs...
 
-        </div>
+</td>
 
-    </section>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
 
 </main>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
-    <div class="footer-inner">
+<div class="footer-inner">
 
+<div>
 
-        <div>
+<h3>
+    REW Pulwama
+</h3>
 
-            <h3>
-                REW Pulwama
-            </h3>
+<p>
+    Office of the Executive Engineer,
+    Rural Engineering Wing (REW), Pulwama.
+</p>
 
-            <p>
-                Office of the Executive Engineer,
-                Rural Engineering Wing (REW), Pulwama.
-            </p>
+<p style="margin-top:10px;">
 
-            <p style="margin-top:10px;">
+    Department of Rural Development & Panchayati Raj,
+    Government of Jammu & Kashmir.
 
-                Department of Rural Development & Panchayati Raj,
-                Government of Jammu & Kashmir.
+</p>
 
-            </p>
+</div>
 
-        </div>
+<div>
 
+<h3>
+    Important Links
+</h3>
 
-        <div>
+<ul>
 
-            <h3>
-                Important Links
-            </h3>
+    <li>Home</li>
+    <li>About Office</li>
+    <li>Tenders</li>
+    <li>Notices</li>
+    <li>Circulars</li>
+    <li>Orders</li>
 
-            <ul>
+</ul>
 
-                <li>
-                    <a href="index.html">
-                        Home
-                    </a>
-                </li>
+</div>
 
-                <li>
-                    <a href="about.html">
-                        About Office
-                    </a>
-                </li>
+<div>
 
-                <li>
-                    <a href="tenders.html">
-                        Tenders
-                    </a>
-                </li>
+<h3>
+    Website Information
+</h3>
 
-                <li>
-                    <a href="notices.html">
-                        Notices
-                    </a>
-                </li>
+<ul>
 
-                <li>
-                    <a href="downloads.html">
-                        Downloads
-                    </a>
-                </li>
+    <li>Privacy Policy</li>
+    <li>Disclaimer</li>
+    <li>Accessibility</li>
+    <li>Site Map</li>
 
-            </ul>
+</ul>
 
-        </div>
+</div>
 
+</div>
 
-        <div>
+<div class="footer-bottom">
 
-            <h3>
-                Website Information
-            </h3>
+© 2026 Office of the Executive Engineer,
+Rural Engineering Wing (REW), Pulwama.
+All Rights Reserved.
 
-            <ul>
-
-                <li>
-                    Privacy Policy
-                </li>
-
-                <li>
-                    Disclaimer
-                </li>
-
-                <li>
-                    Accessibility
-                </li>
-
-                <li>
-                    Site Map
-                </li>
-
-            </ul>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        © 2026 Office of the Executive Engineer,
-        Rural Engineering Wing (REW), Pulwama.
-        All Rights Reserved.
-
-    </div>
+</div>
 
 </footer>
 
 
-<!-- =========================
-     GOOGLE SHEET SCRIPT
-========================= -->
 
 <script>
 
-const APPROVAL_SHEET =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=285284483&single=true&output=csv";
+/*
+===========================================================
+GOOGLE SHEET
+===========================================================
+*/
 
+const SHEET_URL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1483979790&single=true&output=csv";
 
-/* =========================
-   LOAD CSV
-========================= */
 
-async function loadApprovals() {
+let lois = [];
 
-    const tableBody =
-        document.getElementById(
-            "approvalTableBody"
-        );
 
-
-    try {
-
-        const response =
-            await fetch(
-                APPROVAL_SHEET +
-                "&cache=" +
-                Date.now()
-            );
-
-
-        if (!response.ok) {
-
-            throw new Error(
-                "Unable to load Google Sheet"
-            );
-
-        }
-
-
-        const text =
-            await response.text();
-
-
-        const rows =
-            parseCSV(text);
-
-
-        if (
-            rows.length <= 1
-        ) {
-
-            tableBody.innerHTML = `
-
-                <tr>
-
-                    <td
-                        colspan="3"
-                        class="loading">
-
-                        No approval records available.
-
-                    </td>
-
-                </tr>
-
-            `;
-
-            return;
-
-        }
-
-
-        const headers =
-            rows[0];
-
-
-        const approvalColumn =
-            findColumn(
-                headers,
-                [
-                    "approval no",
-                    "approval no.",
-                    "approval number",
-                    "approval"
-                ]
-            );
-
-
-        const schemeColumn =
-            findColumn(
-                headers,
-                [
-                    "scheme",
-                    "scheme name",
-                    "description",
-                    "subject"
-                ]
-            );
-
-
-        const downloadColumn =
-            findColumn(
-                headers,
-                [
-                    "download",
-                    "download link",
-                    "link",
-                    "url"
-                ]
-            );
-
-
-        tableBody.innerHTML = "";
-
-
-        for (
-            let i = 1;
-            i < rows.length;
-            i++
-        ) {
-
-            const row =
-                rows[i];
-
-
-            if (
-                !row ||
-                row.length === 0
-            ) {
-
-                continue;
-
-            }
-
-
-            const approvalNo =
-                approvalColumn >= 0
-                    ? row[approvalColumn]
-                    : "";
-
-
-            const scheme =
-                schemeColumn >= 0
-                    ? row[schemeColumn]
-                    : "";
-
-
-            const download =
-                downloadColumn >= 0
-                    ? row[downloadColumn]
-                    : "";
-
-
-            if (
-                !approvalNo &&
-                !scheme &&
-                !download
-            ) {
-
-                continue;
-
-            }
-
-
-            const tr =
-                document.createElement("tr");
-
-
-            /* APPROVAL NUMBER */
-
-            const approvalCell =
-                document.createElement("td");
-
-            approvalCell.textContent =
-                approvalNo || "—";
-
-            tr.appendChild(
-                approvalCell
-            );
-
-
-            /* SCHEME */
-
-            const schemeCell =
-                document.createElement("td");
-
-            schemeCell.textContent =
-                scheme || "—";
-
-            tr.appendChild(
-                schemeCell
-            );
-
-
-            /* DOWNLOAD */
-
-            const downloadCell =
-                document.createElement("td");
-
-
-            if (download) {
-
-                const link =
-                    document.createElement("a");
-
-
-                link.href =
-                    download;
-
-
-                link.target =
-                    "_blank";
-
-
-                link.rel =
-                    "noopener noreferrer";
-
-
-                link.className =
-                    "download-btn";
-
-
-                link.textContent =
-                    "View / Download";
-
-
-                downloadCell.appendChild(
-                    link
-                );
-
-            }
-
-            else {
-
-                downloadCell.textContent =
-                    "Not Available";
-
-            }
-
-
-            tr.appendChild(
-                downloadCell
-            );
-
-
-            tableBody.appendChild(
-                tr
-            );
-
-        }
-
-
-        if (
-            tableBody.children.length === 0
-        ) {
-
-            tableBody.innerHTML = `
-
-                <tr>
-
-                    <td
-                        colspan="3"
-                        class="loading">
-
-                        No approval records available.
-
-                    </td>
-
-                </tr>
-
-            `;
-
-        }
-
-    }
-
-
-    catch (error) {
-
-        console.error(
-            "Approval Sheet Error:",
-            error
-        );
-
-
-        tableBody.innerHTML = `
-
-            <tr>
-
-                <td
-                    colspan="3"
-                    class="error">
-
-                    Unable to load approval records.
-
-                </td>
-
-            </tr>
-
-        `;
-
-    }
-
-}
-
-
-/* =========================
-   CSV PARSER
-========================= */
+/*
+===========================================================
+CSV PARSER
+===========================================================
+*/
 
 function parseCSV(text) {
 
     const rows = [];
 
     let row = [];
-
-    let value = "";
-
-    let insideQuotes = false;
+    let cell = "";
+    let quoted = false;
 
 
     for (
@@ -1120,53 +722,54 @@ function parseCSV(text) {
         i++
     ) {
 
-        const char =
-            text[i];
-
-        const next =
-            text[i + 1];
+        const char = text[i];
+        const next = text[i + 1];
 
 
         if (
             char === '"' &&
-            insideQuotes &&
+            quoted &&
             next === '"'
         ) {
 
-            value += '"';
+            cell += '"';
 
             i++;
 
-        }
-
-        else if (
-            char === '"'
-        ) {
-
-            insideQuotes =
-                !insideQuotes;
+            continue;
 
         }
 
-        else if (
+
+        if (char === '"') {
+
+            quoted = !quoted;
+
+            continue;
+
+        }
+
+
+        if (
             char === "," &&
-            !insideQuotes
+            !quoted
         ) {
 
             row.push(
-                value.trim()
+                cell.trim()
             );
 
-            value = "";
+            cell = "";
+
+            continue;
 
         }
 
-        else if (
-            (
-                char === "\n" ||
-                char === "\r"
-            ) &&
-            !insideQuotes
+
+        if (
+            (char === "\n" ||
+             char === "\r") &&
+            !quoted
         ) {
 
             if (
@@ -1180,14 +783,14 @@ function parseCSV(text) {
 
 
             row.push(
-                value.trim()
+                cell.trim()
             );
 
 
             if (
                 row.some(
-                    cell =>
-                    cell !== ""
+                    value =>
+                    value !== ""
                 )
             ) {
 
@@ -1197,34 +800,32 @@ function parseCSV(text) {
 
 
             row = [];
+            cell = "";
 
-            value = "";
-
-        }
-
-        else {
-
-            value += char;
+            continue;
 
         }
+
+
+        cell += char;
 
     }
 
 
     if (
-        value !== "" ||
-        row.length > 0
+        cell !== "" ||
+        row.length
     ) {
 
         row.push(
-            value.trim()
+            cell.trim()
         );
 
 
         if (
             row.some(
-                cell =>
-                cell !== ""
+                value =>
+                value !== ""
             )
         ) {
 
@@ -1240,51 +841,46 @@ function parseCSV(text) {
 }
 
 
-/* =========================
-   FIND COLUMN
-========================= */
+/*
+===========================================================
+NORMALIZE HEADER
+===========================================================
+*/
 
-function cleanHeader(value) {
+function normalize(value) {
 
     return String(value || "")
-        .replace(/\|/g, "")
-        .replace(/\*/g, "")
-        .replace(/\s+/g, " ")
-        .trim()
-        .toLowerCase();
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, "");
 
 }
 
 
-function findColumn(
-    headers,
-    names
-) {
+/*
+===========================================================
+FIND COLUMN
+===========================================================
+*/
+
+function findColumn(headers, names) {
+
+    const normalizedHeaders =
+        headers.map(normalize);
+
 
     for (
-        let i = 0;
-        i < headers.length;
-        i++
+        const name of names
     ) {
 
-        const header =
-            cleanHeader(
-                headers[i]
+        const index =
+            normalizedHeaders.indexOf(
+                normalize(name)
             );
 
 
-        for (
-            const name of names
-        ) {
+        if (index !== -1) {
 
-            if (
-                header ===
-                cleanHeader(name)
-            ) {
-
-                return i;
-
-            }
+            return index;
 
         }
 
@@ -1296,15 +892,597 @@ function findColumn(
 }
 
 
-/* =========================
-   START
-========================= */
+/*
+===========================================================
+LOAD LOIs
+===========================================================
+*/
 
-loadApprovals();
+async function loadLOIs() {
+
+    const body =
+        document.getElementById(
+            "loiBody"
+        );
+
+
+    try {
+
+        const response =
+            await fetch(
+                SHEET_URL +
+                "&t=" +
+                Date.now(),
+                {
+                    cache: "no-store"
+                }
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Google Sheet could not be loaded."
+            );
+
+        }
+
+
+        const text =
+            await response.text();
+
+
+        /*
+        Check that Google returned CSV.
+        */
+
+        if (
+            text.trim().startsWith("<!DOCTYPE") ||
+            text.trim().startsWith("<html")
+        ) {
+
+            throw new Error(
+                "Google Sheet is not returning CSV data."
+            );
+
+        }
+
+
+        const rows =
+            parseCSV(text);
+
+
+        if (
+            rows.length < 2
+        ) {
+
+            throw new Error(
+                "No LOI records found."
+            );
+
+        }
+
+
+        const headers =
+            rows[0];
+
+
+        console.log(
+            "LOI Sheet Headers:",
+            headers
+        );
+
+
+        /*
+        ===================================================
+        LOI NUMBER
+        ===================================================
+        */
+
+        const loiColumn =
+            findColumn(
+                headers,
+                [
+                    "LOI No.",
+                    "LOI No",
+                    "LOI Number",
+                    "LOI"
+                ]
+            );
+
+
+        /*
+        ===================================================
+        DATE
+        ===================================================
+        */
+
+        const dateColumn =
+            findColumn(
+                headers,
+                [
+                    "Date",
+                    "LOI Date",
+                    "Issue Date"
+                ]
+            );
+
+
+        /*
+        ===================================================
+        FOR NIT NUMBER
+        ===================================================
+        */
+
+        const nitColumn =
+            findColumn(
+                headers,
+                [
+                    "FOR NIT No.",
+                    "FOR NIT No",
+                    "NIT No.",
+                    "NIT No",
+                    "FOR NIT",
+                    "NIT"
+                ]
+            );
+
+
+        /*
+        ===================================================
+        LOI PDF
+        ===================================================
+        */
+
+        const linkColumn =
+            findColumn(
+                headers,
+                [
+                    "LOI PDF",
+                    "PDF",
+                    "PDF Link",
+                    "Download",
+                    "Download Link",
+                    "Link",
+                    "URL",
+                    "File",
+                    "File Link",
+                    "Document Link"
+                ]
+            );
+
+
+        console.log(
+            "LOI column:",
+            loiColumn
+        );
+
+        console.log(
+            "Date column:",
+            dateColumn
+        );
+
+        console.log(
+            "NIT column:",
+            nitColumn
+        );
+
+        console.log(
+            "PDF column:",
+            linkColumn
+        );
+
+
+        /*
+        ===================================================
+        BUILD LOI LIST
+        ===================================================
+        */
+
+        lois = [];
+
+
+        for (
+            let i = 1;
+            i < rows.length;
+            i++
+        ) {
+
+            const row =
+                rows[i];
+
+
+            const loi =
+                loiColumn !== -1
+                ? row[loiColumn] || ""
+                : "";
+
+
+            const date =
+                dateColumn !== -1
+                ? row[dateColumn] || ""
+                : "";
+
+
+            const nit =
+                nitColumn !== -1
+                ? row[nitColumn] || ""
+                : "";
+
+
+            const link =
+                linkColumn !== -1
+                ? row[linkColumn] || ""
+                : "";
+
+
+            /*
+            Ignore completely empty rows.
+            */
+
+            if (
+                !loi &&
+                !date &&
+                !nit &&
+                !link
+            ) {
+
+                continue;
+
+            }
+
+
+            lois.push({
+
+                loi:
+                    loi.trim(),
+
+                date:
+                    date.trim(),
+
+                nit:
+                    nit.trim(),
+
+                link:
+                    link.trim()
+
+            });
+
+        }
+
+
+        renderLOIs(
+            lois
+        );
+
+    }
+
+
+    catch (error) {
+
+        console.error(
+            "LOI Error:",
+            error
+        );
+
+
+        body.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="5"
+                    class="error">
+
+                    Unable to load LOIs.
+                    Please check that the Google Sheet
+                    is published to the web.
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+}
+
+
+/*
+===========================================================
+RENDER LOIs
+===========================================================
+*/
+
+function renderLOIs(data) {
+
+    const body =
+        document.getElementById(
+            "loiBody"
+        );
+
+
+    if (
+        !data.length
+    ) {
+
+        body.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="5"
+                    class="no-results">
+
+                    No LOIs available.
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    body.innerHTML = "";
+
+
+    data.forEach(
+        (item, index) => {
+
+
+            const tr =
+                document.createElement(
+                    "tr"
+                );
+
+
+            /*
+            S.NO.
+            */
+
+            const serial =
+                document.createElement(
+                    "td"
+                );
+
+            serial.textContent =
+                index + 1;
+
+
+            /*
+            LOI NUMBER
+            */
+
+            const loi =
+                document.createElement(
+                    "td"
+                );
+
+            loi.className =
+                "loi-number";
+
+            loi.textContent =
+                item.loi ||
+                "—";
+
+
+            /*
+            DATE
+            */
+
+            const date =
+                document.createElement(
+                    "td"
+                );
+
+
+            if (
+                item.date
+            ) {
+
+                const span =
+                    document.createElement(
+                        "span"
+                    );
+
+                span.className =
+                    "date";
+
+                span.textContent =
+                    item.date;
+
+                date.appendChild(
+                    span
+                );
+
+            }
+
+            else {
+
+                date.textContent =
+                    "—";
+
+            }
+
+
+            /*
+            FOR NIT NO.
+            */
+
+            const nit =
+                document.createElement(
+                    "td"
+                );
+
+            nit.textContent =
+                item.nit ||
+                "—";
+
+
+            /*
+            DOWNLOAD
+            */
+
+            const download =
+                document.createElement(
+                    "td"
+                );
+
+
+            if (
+                item.link
+            ) {
+
+                const a =
+                    document.createElement(
+                        "a"
+                    );
+
+                a.className =
+                    "download-btn";
+
+                a.href =
+                    item.link;
+
+                a.target =
+                    "_blank";
+
+                a.rel =
+                    "noopener noreferrer";
+
+                a.textContent =
+                    "Download";
+
+
+                download.appendChild(
+                    a
+                );
+
+            }
+
+            else {
+
+                download.textContent =
+                    "—";
+
+            }
+
+
+            /*
+            ADD ROW
+            */
+
+            tr.appendChild(
+                serial
+            );
+
+            tr.appendChild(
+                loi
+            );
+
+            tr.appendChild(
+                date
+            );
+
+            tr.appendChild(
+                nit
+            );
+
+            tr.appendChild(
+                download
+            );
+
+
+            body.appendChild(
+                tr
+            );
+
+        }
+    );
+
+}
+
+
+/*
+===========================================================
+SEARCH
+===========================================================
+*/
+
+document
+.getElementById("searchInput")
+.addEventListener(
+    "input",
+    function () {
+
+
+        const query =
+            this.value
+                .toLowerCase()
+                .trim();
+
+
+        if (
+            !query
+        ) {
+
+            renderLOIs(
+                lois
+            );
+
+            return;
+
+        }
+
+
+        const filtered =
+            lois.filter(
+                item =>
+
+                item.loi
+                    .toLowerCase()
+                    .includes(query)
+
+                ||
+
+                item.date
+                    .toLowerCase()
+                    .includes(query)
+
+                ||
+
+                item.nit
+                    .toLowerCase()
+                    .includes(query)
+
+            );
+
+
+        renderLOIs(
+            filtered
+        );
+
+    }
+);
+
+
+/*
+===========================================================
+START
+===========================================================
+*/
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadLOIs
+);
 
 </script>
 
-
 </body>
-
 </html>
