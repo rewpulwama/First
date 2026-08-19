@@ -8,10 +8,10 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>Approvals | REW Pulwama</title>
+<title>Notices - REW Pulwama</title>
 
 <meta name="description"
-      content="Approvals issued by the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
+      content="Official notices of the Office of the Executive Engineer, Rural Engineering Wing (REW), Pulwama.">
 
 <style>
 
@@ -37,9 +37,7 @@ body {
     line-height: 1.6;
 }
 
-/* =========================
-   TOP BAR
-========================= */
+/* TOP BAR */
 
 .top-bar {
     background: #f1f1f1;
@@ -66,9 +64,8 @@ body {
     color: var(--blue);
 }
 
-/* =========================
-   HEADER
-========================= */
+
+/* HEADER */
 
 .header {
     background: white;
@@ -144,9 +141,8 @@ body {
     color: #777;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+
+/* NAVIGATION */
 
 .navbar {
     background: var(--dark-blue);
@@ -174,131 +170,132 @@ body {
     background: var(--blue);
 }
 
-/* =========================
-   MAIN
-========================= */
+
+/* MAIN */
 
 .container {
     max-width: 1250px;
     margin: auto;
-    padding: 30px 20px 50px;
+    padding: 30px 20px 40px;
 }
 
-/* =========================
-   PAGE TITLE
-========================= */
+
+/* PAGE TITLE */
 
 .page-title {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.page-title h2 {
-    color: var(--dark-blue);
-    font-size: 32px;
-    margin-bottom: 5px;
-}
-
-.page-title p {
-    color: #555;
-    font-size: 16px;
-}
-
-/* =========================
-   SECTION
-========================= */
-
-.section {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 25px;
-}
-
-.section-title {
     background: var(--blue);
     color: white;
     padding: 15px 20px;
-    font-size: 21px;
+    font-size: 28px;
     font-weight: bold;
-    border-left: 6px solid var(--gold);
+    border-left: 7px solid var(--gold);
+    border-radius: 5px 5px 0 0;
 }
 
-/* =========================
-   TABLE
-========================= */
+
+/* TABLE */
 
 .table-wrapper {
     width: 100%;
     overflow-x: auto;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
 }
 
-.approval-table {
+.notice-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 15px;
+    background: white;
+    min-width: 750px;
 }
 
-.approval-table th {
+.notice-table th {
     background: var(--dark-blue);
     color: white;
-    padding: 13px 15px;
+    padding: 14px 12px;
+    font-size: 16px;
     text-align: left;
 }
 
-.approval-table td {
-    padding: 13px 15px;
-    border-bottom: 1px solid #e1e1e1;
+.notice-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
     vertical-align: middle;
 }
 
-.approval-table tr:hover {
+.notice-table tr:hover {
     background: #f5f9fc;
 }
 
-.approval-table tr:last-child td {
+.notice-table tr:last-child td {
     border-bottom: none;
 }
 
-/* =========================
-   DOWNLOAD BUTTON
-========================= */
+
+/* COLUMN WIDTHS */
+
+.notice-no {
+    width: 18%;
+}
+
+.notice-date {
+    width: 15%;
+}
+
+.notice-description {
+    width: 47%;
+}
+
+.notice-download {
+    width: 20%;
+    text-align: center !important;
+}
+
+
+/* DATE */
+
+.date {
+    display: inline-block;
+    background: #edf3f8;
+    color: var(--blue);
+    padding: 5px 9px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+
+/* DOWNLOAD BUTTON */
 
 .download-btn {
     display: inline-block;
     background: var(--blue);
-    color: white;
-    padding: 7px 14px;
-    border-radius: 4px;
+    color: white !important;
     text-decoration: none;
-    font-size: 13px;
+    padding: 9px 15px;
+    border-radius: 5px;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .download-btn:hover {
     background: var(--dark-blue);
 }
 
-/* =========================
-   LOADING
-========================= */
+
+/* LOADING */
 
 .loading {
     text-align: center;
     padding: 30px;
     color: #666;
+    font-size: 16px;
 }
 
-.error {
-    text-align: center;
-    padding: 30px;
-    color: #b52b2b;
-}
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 .footer {
     background: #062f52;
@@ -352,9 +349,8 @@ body {
     text-decoration: underline;
 }
 
-/* =========================
-   MOBILE
-========================= */
+
+/* RESPONSIVE */
 
 @media(max-width:900px) {
 
@@ -388,8 +384,8 @@ body {
     .footer-inner {
         grid-template-columns: 1fr;
     }
-
 }
+
 
 @media(max-width:600px) {
 
@@ -419,35 +415,47 @@ body {
     }
 
     .container {
-        padding: 25px 12px 40px;
+        padding: 20px 10px 30px;
     }
 
-    .page-title h2 {
-        font-size: 28px;
-    }
-
-    .page-title p {
-        font-size: 14px;
-    }
-
-    .section-title {
-        font-size: 19px;
+    .page-title {
+        font-size: 22px;
         padding: 13px 15px;
     }
 
-    .approval-table {
+    /*
+       On mobile the table remains horizontally
+       scrollable instead of squeezing the columns.
+    */
+
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .notice-table {
+        min-width: 700px;
+    }
+
+    .notice-table th,
+    .notice-table td {
+        padding: 12px 10px;
         font-size: 14px;
-        min-width: 600px;
     }
 
-    .approval-table th,
-    .approval-table td {
-        padding: 11px 12px;
+}
+
+
+/* VERY SMALL SCREENS */
+
+@media(max-width:400px) {
+
+    .notice-table {
+        min-width: 650px;
     }
 
-    .download-btn {
-        padding: 7px 11px;
-        font-size: 12px;
+    .page-title {
+        font-size: 20px;
     }
 
 }
@@ -456,12 +464,11 @@ body {
 
 </head>
 
+
 <body>
 
 
-<!-- =========================
-     TOP BAR
-========================= -->
+<!-- TOP BAR -->
 
 <div class="top-bar">
 
@@ -496,9 +503,7 @@ body {
 </div>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header class="header">
 
@@ -508,7 +513,8 @@ body {
 
             <img
                 src="images/Emblem_of_India.svg"
-                alt="State Emblem of India">
+                alt="State Emblem of India"
+            >
 
         </div>
 
@@ -548,9 +554,7 @@ body {
 </header>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+<!-- NAVIGATION -->
 
 <nav class="navbar">
 
@@ -568,8 +572,7 @@ body {
             OFFICIALS
         </a>
 
-        <a href="approvals.html"
-           class="active">
+        <a href="approvals.html">
             APPROVALS
         </a>
 
@@ -581,7 +584,7 @@ body {
             LOIs
         </a>
 
-        <a href="notices.html">
+        <a href="notices.html" class="active">
             NOTICES
         </a>
 
@@ -598,86 +601,68 @@ body {
 </nav>
 
 
-<!-- =========================
-     MAIN
-========================= -->
+<!-- MAIN -->
 
 <main class="container">
 
 
     <div class="page-title">
-
-        <h2>
-            Approvals
-        </h2>
-
-        <p>
-            Approval documents issued by Rural Engineering Wing (REW), Pulwama
-        </p>
-
+        Notice Documents
     </div>
 
 
-    <section class="section">
+    <div class="table-wrapper">
 
-        <div class="section-title">
-            Approval Documents
-        </div>
+        <table class="notice-table">
 
+            <thead>
 
-        <div class="table-wrapper">
+                <tr>
 
-            <table class="approval-table">
+                    <th class="notice-no">
+                        Notice No.
+                    </th>
 
-                <thead>
+                    <th class="notice-date">
+                        Date
+                    </th>
 
-                    <tr>
+                    <th class="notice-description">
+                        Description
+                    </th>
 
-                        <th>
-                            Approval No.
-                        </th>
+                    <th class="notice-download">
+                        Download
+                    </th>
 
-                        <th>
-                            Scheme
-                        </th>
+                </tr>
 
-                        <th>
-                            Download
-                        </th>
-
-                    </tr>
-
-                </thead>
+            </thead>
 
 
-                <tbody id="approvalTableBody">
+            <tbody id="noticeTableBody">
 
-                    <tr>
+                <tr>
 
-                        <td
-                            colspan="3"
-                            class="loading">
+                    <td colspan="4"
+                        class="loading">
 
-                            Loading approvals...
+                        Loading notices...
 
-                        </td>
+                    </td>
 
-                    </tr>
+                </tr>
 
-                </tbody>
+            </tbody>
 
-            </table>
+        </table>
 
-        </div>
-
-    </section>
+    </div>
 
 </main>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer class="footer">
 
@@ -697,7 +682,8 @@ body {
 
             <p style="margin-top:10px;">
 
-                Department of Rural Development & Panchayati Raj,
+                Department of Rural Development &
+                Panchayati Raj,
                 Government of Jammu & Kashmir.
 
             </p>
@@ -776,7 +762,6 @@ body {
 
         </div>
 
-
     </div>
 
 
@@ -791,317 +776,44 @@ body {
 </footer>
 
 
-<!-- =========================
-     GOOGLE SHEET SCRIPT
-========================= -->
+<!-- GOOGLE SHEET SCRIPT -->
 
 <script>
 
-const APPROVAL_SHEET =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=285284483&single=true&output=csv";
+const SHEET_URL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1487795258&single=true&output=csv";
 
 
-/* =========================
+/* =========================================================
    LOAD CSV
-========================= */
+========================================================= */
 
-async function loadApprovals() {
+async function loadCSV(url) {
 
-    const tableBody =
-        document.getElementById(
-            "approvalTableBody"
+    const response =
+        await fetch(
+            url + "&cache=" + Date.now()
         );
 
-
-    try {
-
-        const response =
-            await fetch(
-                APPROVAL_SHEET +
-                "&cache=" +
-                Date.now()
-            );
-
-
-        if (!response.ok) {
-
-            throw new Error(
-                "Unable to load Google Sheet"
-            );
-
-        }
-
-
-        const text =
-            await response.text();
-
-
-        const rows =
-            parseCSV(text);
-
-
-        if (
-            rows.length <= 1
-        ) {
-
-            tableBody.innerHTML = `
-
-                <tr>
-
-                    <td
-                        colspan="3"
-                        class="loading">
-
-                        No approval records available.
-
-                    </td>
-
-                </tr>
-
-            `;
-
-            return;
-
-        }
-
-
-        const headers =
-            rows[0];
-
-
-        const approvalColumn =
-            findColumn(
-                headers,
-                [
-                    "approval no",
-                    "approval no.",
-                    "approval number",
-                    "approval"
-                ]
-            );
-
-
-        const schemeColumn =
-            findColumn(
-                headers,
-                [
-                    "scheme",
-                    "scheme name",
-                    "description",
-                    "subject"
-                ]
-            );
-
-
-        const downloadColumn =
-            findColumn(
-                headers,
-                [
-                    "download",
-                    "download link",
-                    "link",
-                    "url"
-                ]
-            );
-
-
-        tableBody.innerHTML = "";
-
-
-        for (
-            let i = 1;
-            i < rows.length;
-            i++
-        ) {
-
-            const row =
-                rows[i];
-
-
-            if (
-                !row ||
-                row.length === 0
-            ) {
-
-                continue;
-
-            }
-
-
-            const approvalNo =
-                approvalColumn >= 0
-                    ? row[approvalColumn]
-                    : "";
-
-
-            const scheme =
-                schemeColumn >= 0
-                    ? row[schemeColumn]
-                    : "";
-
-
-            const download =
-                downloadColumn >= 0
-                    ? row[downloadColumn]
-                    : "";
-
-
-            if (
-                !approvalNo &&
-                !scheme &&
-                !download
-            ) {
-
-                continue;
-
-            }
-
-
-            const tr =
-                document.createElement("tr");
-
-
-            /* APPROVAL NUMBER */
-
-            const approvalCell =
-                document.createElement("td");
-
-            approvalCell.textContent =
-                approvalNo || "—";
-
-            tr.appendChild(
-                approvalCell
-            );
-
-
-            /* SCHEME */
-
-            const schemeCell =
-                document.createElement("td");
-
-            schemeCell.textContent =
-                scheme || "—";
-
-            tr.appendChild(
-                schemeCell
-            );
-
-
-            /* DOWNLOAD */
-
-            const downloadCell =
-                document.createElement("td");
-
-
-            if (download) {
-
-                const link =
-                    document.createElement("a");
-
-
-                link.href =
-                    download;
-
-
-                link.target =
-                    "_blank";
-
-
-                link.rel =
-                    "noopener noreferrer";
-
-
-                link.className =
-                    "download-btn";
-
-
-                link.textContent =
-                    "View / Download";
-
-
-                downloadCell.appendChild(
-                    link
-                );
-
-            }
-
-            else {
-
-                downloadCell.textContent =
-                    "Not Available";
-
-            }
-
-
-            tr.appendChild(
-                downloadCell
-            );
-
-
-            tableBody.appendChild(
-                tr
-            );
-
-        }
-
-
-        if (
-            tableBody.children.length === 0
-        ) {
-
-            tableBody.innerHTML = `
-
-                <tr>
-
-                    <td
-                        colspan="3"
-                        class="loading">
-
-                        No approval records available.
-
-                    </td>
-
-                </tr>
-
-            `;
-
-        }
+    if (!response.ok) {
+
+        throw new Error(
+            "Unable to load Google Sheet"
+        );
 
     }
 
+    const text =
+        await response.text();
 
-    catch (error) {
-
-        console.error(
-            "Approval Sheet Error:",
-            error
-        );
-
-
-        tableBody.innerHTML = `
-
-            <tr>
-
-                <td
-                    colspan="3"
-                    class="error">
-
-                    Unable to load approval records.
-
-                </td>
-
-            </tr>
-
-        `;
-
-    }
+    return parseCSV(text);
 
 }
 
 
-/* =========================
+/* =========================================================
    CSV PARSER
-========================= */
+========================================================= */
 
 function parseCSV(text) {
 
@@ -1120,11 +832,9 @@ function parseCSV(text) {
         i++
     ) {
 
-        const char =
-            text[i];
+        const char = text[i];
 
-        const next =
-            text[i + 1];
+        const next = text[i + 1];
 
 
         if (
@@ -1139,6 +849,7 @@ function parseCSV(text) {
 
         }
 
+
         else if (
             char === '"'
         ) {
@@ -1147,6 +858,7 @@ function parseCSV(text) {
                 !insideQuotes;
 
         }
+
 
         else if (
             char === "," &&
@@ -1161,11 +873,10 @@ function parseCSV(text) {
 
         }
 
+
         else if (
-            (
-                char === "\n" ||
-                char === "\r"
-            ) &&
+            (char === "\n" ||
+             char === "\r") &&
             !insideQuotes
         ) {
 
@@ -1186,8 +897,7 @@ function parseCSV(text) {
 
             if (
                 row.some(
-                    cell =>
-                    cell !== ""
+                    cell => cell !== ""
                 )
             ) {
 
@@ -1201,6 +911,7 @@ function parseCSV(text) {
             value = "";
 
         }
+
 
         else {
 
@@ -1223,8 +934,7 @@ function parseCSV(text) {
 
         if (
             row.some(
-                cell =>
-                cell !== ""
+                cell => cell !== ""
             )
         ) {
 
@@ -1240,21 +950,25 @@ function parseCSV(text) {
 }
 
 
-/* =========================
-   FIND COLUMN
-========================= */
+/* =========================================================
+   CLEAN HEADER
+========================================================= */
 
 function cleanHeader(value) {
 
     return String(value || "")
-        .replace(/\|/g, "")
-        .replace(/\*/g, "")
+        .toLowerCase()
+        .replace(/[|,*]/g, "")
+        .replace(/\./g, "")
         .replace(/\s+/g, " ")
-        .trim()
-        .toLowerCase();
+        .trim();
 
 }
 
+
+/* =========================================================
+   FIND COLUMN
+========================================================= */
 
 function findColumn(
     headers,
@@ -1296,15 +1010,557 @@ function findColumn(
 }
 
 
-/* =========================
-   START
-========================= */
+/* =========================================================
+   DATE CONVERSION
+========================================================= */
 
-loadApprovals();
+function convertDate(value) {
+
+    if (!value) {
+
+        return new Date(0);
+
+    }
+
+
+    value =
+        String(value).trim();
+
+
+    let date;
+
+
+    /* DD-MM-YYYY / DD/MM/YYYY */
+
+    if (
+        /^\d{1,2}[-\/]\d{1,2}[-\/]\d{4}$/
+        .test(value)
+    ) {
+
+        const parts =
+            value.split(/[-\/]/);
+
+
+        date =
+            new Date(
+                Number(parts[2]),
+                Number(parts[1]) - 1,
+                Number(parts[0])
+            );
+
+    }
+
+
+    /* YYYY-MM-DD */
+
+    else if (
+        /^\d{4}[-\/]\d{1,2}[-\/]\d{1,2}$/
+        .test(value)
+    ) {
+
+        const parts =
+            value.split(/[-\/]/);
+
+
+        date =
+            new Date(
+                Number(parts[0]),
+                Number(parts[1]) - 1,
+                Number(parts[2])
+            );
+
+    }
+
+
+    else {
+
+        date =
+            new Date(value);
+
+    }
+
+
+    if (
+        isNaN(
+            date.getTime()
+        )
+    ) {
+
+        return new Date(0);
+
+    }
+
+
+    return date;
+
+}
+
+
+/* =========================================================
+   DISPLAY DATE
+========================================================= */
+
+function displayDate(value) {
+
+    const date =
+        convertDate(value);
+
+
+    if (
+        date.getTime() === 0
+    ) {
+
+        return value || "";
+
+    }
+
+
+    return date.toLocaleDateString(
+        "en-GB",
+        {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CREATE ROW
+========================================================= */
+
+function createNoticeRow(
+    noticeNo,
+    date,
+    description,
+    link
+) {
+
+    const tr =
+        document.createElement("tr");
+
+
+    /* NOTICE NUMBER */
+
+    const noCell =
+        document.createElement("td");
+
+    noCell.textContent =
+        noticeNo || "—";
+
+    tr.appendChild(noCell);
+
+
+    /* DATE */
+
+    const dateCell =
+        document.createElement("td");
+
+
+    const dateSpan =
+        document.createElement("span");
+
+    dateSpan.className =
+        "date";
+
+    dateSpan.textContent =
+        displayDate(date);
+
+    dateCell.appendChild(
+        dateSpan
+    );
+
+    tr.appendChild(dateCell);
+
+
+    /* DESCRIPTION */
+
+    const descriptionCell =
+        document.createElement("td");
+
+    descriptionCell.textContent =
+        description || "—";
+
+    tr.appendChild(
+        descriptionCell
+    );
+
+
+    /* DOWNLOAD */
+
+    const downloadCell =
+        document.createElement("td");
+
+    downloadCell.className =
+        "notice-download";
+
+
+    const button =
+        document.createElement("a");
+
+    button.className =
+        "download-btn";
+
+    button.textContent =
+        "View / Download";
+
+
+    if (
+        link &&
+        link.trim() !== ""
+    ) {
+
+        button.href =
+            link.trim();
+
+        button.target =
+            "_blank";
+
+        button.rel =
+            "noopener noreferrer";
+
+    }
+
+    else {
+
+        button.href =
+            "#";
+
+        button.onclick =
+            function(event) {
+
+                event.preventDefault();
+
+                alert(
+                    "No document link is available for this notice."
+                );
+
+            };
+
+    }
+
+
+    downloadCell.appendChild(
+        button
+    );
+
+    tr.appendChild(
+        downloadCell
+    );
+
+
+    return tr;
+
+}
+
+
+/* =========================================================
+   LOAD NOTICES
+========================================================= */
+
+async function loadNotices() {
+
+    const tableBody =
+        document.getElementById(
+            "noticeTableBody"
+        );
+
+
+    try {
+
+        const rows =
+            await loadCSV(
+                SHEET_URL
+            );
+
+
+        if (
+            rows.length <= 1
+        ) {
+
+            tableBody.innerHTML =
+                `
+                <tr>
+                    <td colspan="4"
+                        class="loading">
+                        No notices available.
+                    </td>
+                </tr>
+                `;
+
+            return;
+
+        }
+
+
+        const headers =
+            rows[0];
+
+
+        console.log(
+            "Notice Sheet Headers:",
+            headers
+        );
+
+
+        /* FIND COLUMNS */
+
+        const noticeNoColumn =
+            findColumn(
+                headers,
+                [
+                    "notice no",
+                    "notice no.",
+                    "notice number",
+                    "notice no,"
+                ]
+            );
+
+
+        const dateColumn =
+            findColumn(
+                headers,
+                [
+                    "date",
+                    "notice date",
+                    "updated date",
+                    "last updated"
+                ]
+            );
+
+
+        const descriptionColumn =
+            findColumn(
+                headers,
+                [
+                    "description",
+                    "notice / subject",
+                    "notice/subject",
+                    "notice subject",
+                    "subject"
+                ]
+            );
+
+
+        const downloadColumn =
+            findColumn(
+                headers,
+                [
+                    "download",
+                    "download link",
+                    "link",
+                    "url"
+                ]
+            );
+
+
+        console.log(
+            "Notice No Column:",
+            noticeNoColumn
+        );
+
+        console.log(
+            "Date Column:",
+            dateColumn
+        );
+
+        console.log(
+            "Description Column:",
+            descriptionColumn
+        );
+
+        console.log(
+            "Download Column:",
+            downloadColumn
+        );
+
+
+        const records = [];
+
+
+        /* READ ROWS */
+
+        for (
+            let i = 1;
+            i < rows.length;
+            i++
+        ) {
+
+            const row =
+                rows[i];
+
+
+            if (
+                !row ||
+                row.length === 0
+            ) {
+
+                continue;
+
+            }
+
+
+            const noticeNo =
+                noticeNoColumn >= 0
+                    ? row[noticeNoColumn]
+                    : "";
+
+
+            const date =
+                dateColumn >= 0
+                    ? row[dateColumn]
+                    : "";
+
+
+            const description =
+                descriptionColumn >= 0
+                    ? row[descriptionColumn]
+                    : "";
+
+
+            const link =
+                downloadColumn >= 0
+                    ? row[downloadColumn]
+                    : "";
+
+
+            /*
+             * Skip completely empty rows
+             */
+
+            if (
+                !noticeNo &&
+                !date &&
+                !description &&
+                !link
+            ) {
+
+                continue;
+
+            }
+
+
+            records.push({
+
+                noticeNo:
+                    noticeNo,
+
+                date:
+                    date,
+
+                description:
+                    description,
+
+                link:
+                    link
+
+            });
+
+        }
+
+
+        /* =================================================
+           SORT NEWEST FIRST
+        ================================================= */
+
+        records.sort(
+            function(a, b) {
+
+                return (
+                    convertDate(b.date) -
+                    convertDate(a.date)
+                );
+
+            }
+        );
+
+
+        tableBody.innerHTML =
+            "";
+
+
+        /* =================================================
+           DISPLAY ALL NOTICES
+        ================================================= */
+
+        records.forEach(
+            function(record) {
+
+                tableBody.appendChild(
+
+                    createNoticeRow(
+
+                        record.noticeNo,
+
+                        record.date,
+
+                        record.description,
+
+                        record.link
+
+                    )
+
+                );
+
+            }
+        );
+
+
+        if (
+            records.length === 0
+        ) {
+
+            tableBody.innerHTML =
+                `
+                <tr>
+                    <td colspan="4"
+                        class="loading">
+                        No notices available.
+                    </td>
+                </tr>
+                `;
+
+        }
+
+    }
+
+
+    catch (error) {
+
+        console.error(
+            "Notice loading error:",
+            error
+        );
+
+
+        tableBody.innerHTML =
+            `
+            <tr>
+                <td colspan="4"
+                    class="loading">
+
+                    Unable to load notices.
+                    Please try again later.
+
+                </td>
+            </tr>
+            `;
+
+    }
+
+}
+
+
+/* =========================================================
+   START
+========================================================= */
+
+loadNotices();
 
 </script>
 
 
 </body>
-
 </html>
