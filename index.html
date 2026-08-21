@@ -1494,9 +1494,9 @@ const SHEETS = {
     tenders:
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=0&single=true&output=csv",
 
-    corrigendum:
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=211947423&single=true&output=csv",
-
+   approvals:
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=285284483&single=true&output=csv",
+    
     loi:
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy3LDlBN3fBzF55BXy8VzGwHiyaU9ZNA3eJtlgTjM1Ta1aL1gdC0FGeBOae1jsOsrhPrnJMF1GguZY/pub?gid=1483979790&single=true&output=csv"
 
@@ -2236,28 +2236,30 @@ loadSection(
 
 );
 
-
 /* =========================================================
-   LOAD CORRIGENDUM
+   LOAD APPROVALS
 ========================================================= */
 
 loadSection(
 
-    SHEETS.corrigendum,
+    SHEETS.approvals,
 
-    "latestCorrigendum",
+    "latestApprovals",
 
     [
-        "corrigendum no.",
-        "corrigendum no",
-        "corrigendum",
+        "approval no.",
+        "approval no",
+        "approval number",
+        "approval",
+        "scheme",
         "description",
         "subject"
     ],
 
-    "corri.html"
+    "approvals.html"
 
 );
+
 
 
 /* =========================================================
