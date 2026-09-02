@@ -1,1 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Explore My Works | REW Pulwama</title>
+
+<style>
+
+:root {
+    --blue:#07579a;
+    --dark-blue:#063b69;
+    --gold:#d89b24;
+    --light:#f5f7fa;
+    --border:#dfe5eb;
+    --text:#333;
+}
+
+* {
+    box-sizing:border-box;
+}
+
+body {
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--light);
+    color:var(--text);
+}
+
+/* =========================
+   TOP BAR
+   ========================= */
+
+.top-bar {
+    background:var(--dark-blue);
+    color:white;
+    font-size:13px;
+    padding:7px 20px;
+}
+
+.top-bar-inner {
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.site-header {
+    background:white;
+    border-bottom:4px solid var(--gold);
+}
+
+.header-inner {
+    max-width:1250px;
+    margin:auto;
+    min-height:145px;
+    padding:15px 20px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.emblem {
+    width:90px;
+    height:110px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+
+.emblem img {
+    width:65px;
+    height:90px;
+    object-fit:contain;
+}
+
+.header-text {
+    flex:1;
+}
+
+.header-text .govt {
+    color:var(--dark-blue);
+    font-size:15px;
+    font-weight:600;
+    margin-bottom:5px;
+}
+
+.header-text h1 {
+    margin:0;
+    color:var(--blue);
+    font-size:25px;
+    line-height:1.25;
+}
+
+.header-text .department {
+    margin-top:7px;
+    color:#555;
+    font-size:15px;
+}
+
+.logo-right {
+    width:115px;
+    text-align:center;
+    color:var(--blue);
+    font-weight:bold;
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+.navbar {
+    background:var(--dark-blue);
+}
+
+.nav-inner {
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.navbar a {
+    color:white;
+    text-decoration:none;
+    padding:14px 18px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background:var(--blue);
+}
+
+/* =========================
+   MAIN
+   ========================= */
+
+.container {
+    max-width:1350px;
+    margin:35px auto;
+    padding:0 20px;
+}
+
+/* =========================
+   PAGE TITLE
+   ========================= */
+
+.page-title {
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.page-title h2 {
+    margin:0;
+    color:var(--dark-blue);
+    font-size:30px;
+}
+
+.page-title p {
+    margin:7px 0 0;
+    color:#666;
+    font-size:15px;
+}
+
+/* =========================
+   CONTROLS
+   ========================= */
+
+.controls {
+    background:white;
+    border:1px solid var(--border);
+    padding:20px;
+    margin-bottom:20px;
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:15px;
+    box-shadow:0 2px 7px rgba(0,0,0,.05);
+}
+
+.control label {
+    display:block;
+    font-weight:bold;
+    color:var(--dark-blue);
+    margin-bottom:7px;
+}
+
+select,
+input {
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    font-size:14px;
+    background:white;
+}
+
+input:focus,
+select:focus {
+    outline:none;
+    border-color:var(--blue);
+}
+
+/* =========================
+   RESULT INFO
+   ========================= */
+
+.result-info {
+    background:var(--dark-blue);
+    color:white;
+    padding:11px 15px;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:0;
+}
+
+/* =========================
+   TABLE
+   ========================= */
+
+.table-container {
+    background:white;
+    border:1px solid var(--border);
+    overflow-x:auto;
+}
+
+table {
+    width:100%;
+    border-collapse:collapse;
+    min-width:850px;
+}
+
+thead {
+    background:var(--dark-blue);
+    color:white;
+}
+
+th {
+    padding:13px 12px;
+    text-align:left;
+    font-size:14px;
+    white-space:nowrap;
+}
+
+td {
+    padding:12px;
+    border-bottom:1px solid var(--border);
+    font-size:14px;
+    vertical-align:top;
+}
+
+tbody tr:hover {
+    background:#f5f9fd;
+}
+
+tbody tr:last-child td {
+    border-bottom:none;
+}
+
+/* =========================
+   LOADING
+   ========================= */
+
+.loading {
+    text-align:center;
+    padding:35px;
+    color:#666;
+    font-weight:bold;
+}
+
+.error {
+    text-align:center;
+    padding:30px;
+    color:#b00020;
+    background:#fff5f5;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    background:var(--dark-blue);
+    color:white;
+    margin-top:55px;
+}
+
+.footer-bottom {
+    text-align:center;
+    padding:20px;
+    font-size:13px;
+    color:#d9e4ee;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media(max-width:700px) {
+
+    .top-bar-inner {
+        justify-content:center;
+        text-align:center;
+    }
+
+    .header-inner {
+        min-height:auto;
+    }
+
+    .emblem {
+        width:65px;
+        height:85px;
+    }
+
+    .emblem img {
+        width:50px;
+        height:70px;
+    }
+
+    .header-text h1 {
+        font-size:19px;
+    }
+
+    .logo-right {
+        display:none;
+    }
+
+    .controls {
+        grid-template-columns:1fr;
+    }
+
+    .navbar a {
+        padding:11px 12px;
+        font-size:12px;
+    }
+
+    .page-title h2 {
+        font-size:24px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+     ========================= -->
+
+<div class="top-bar">
+
+    <div class="top-bar-inner">
+
+        <div>
+            Government of Jammu & Kashmir
+        </div>
+
+        <div>
+            Department of Rural Development & Panchayati Raj
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <div class="emblem">
+
+            <img
+                src="images/Emblem_of_India.svg"
+                alt="Government Emblem"
+            >
+
+        </div>
+
+
+        <div class="header-text">
+
+            <div class="govt">
+
+                Government of Jammu & Kashmir
+
+            </div>
+
+
+            <h1>
+
+                Office of the Executive Engineer,
+                Rural Engineering Wing (REW), Pulwama
+
+            </h1>
+
+
+            <div class="department">
+
+                Department of Rural Development & Panchayati Raj
+
+            </div>
+
+        </div>
+
+
+        <div class="logo-right">
+
+            REW<br>
+            PULWAMA
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     NAVIGATION
+     ========================= -->
+
+<nav class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="about.html">
+            ABOUT
+        </a>
+
+        <a href="officials.html">
+            OFFICIALS
+        </a>
+
+        <a href="approvals.html">
+            APPROVALS
+        </a>
+
+        <a href="tenders.html">
+            TENDERS
+        </a>
+
+        <a href="loi.html">
+            LOIs
+        </a>
+
+        <a href="notices.html">
+            NOTICES
+        </a>
+
+        <a href="downloads.html">
+            DOWNLOADS
+        </a>
+
+        <a href="exp.html" class="active">
+            EXPLORE MY WORKS
+        </a>
+
+        <a href="contact.html">
+            CONTACT
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     MAIN
+     ========================= -->
+
+<main class="container">
+
+
+    <div class="page-title">
+
+        <h2>
+            Explore My Works
+        </h2>
+
+        <p>
+            Search and view works under various schemes
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         CONTROLS
+         ========================= -->
+
+    <div class="controls">
+
+
+        <div class="control">
+
+            <label for="scheme">
+                Select Scheme
+            </label>
+
+
+            <select id="scheme">
+
+                <option value="">
+                    Select Scheme
+                </option>
+
+                <option value="PRI">
+                    PRI
+                </option>
+
+                <option value="BDC">
+                    BDC
+                </option>
+
+                <option value="DDC">
+                    DDC
+                </option>
+
+                <option value="APDP">
+                    APDP
+                </option>
+
+                <option value="ABDP">
+                    ABDP
+                </option>
+
+                <option value="SANITARY">
+                    Sanitary Complex CSC
+                </option>
+
+                <option value="COMPOST">
+                    Compost Pit
+                </option>
+
+                <option value="SOAKAGE">
+                    Soakage Pit
+                </option>
+
+                <option value="OTHER">
+                    Other Deptt
+                </option>
+
+                <option value="MPLADS">
+                    MPLADS
+                </option>
+
+                <option value="CDF">
+                    CDF
+                </option>
+
+                <option value="UT_CAPEX">
+                    UT Capex
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="control">
+
+            <label for="search">
+                Search Works
+            </label>
+
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Search by any detail..."
+                disabled
+            >
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         RESULT COUNT
+         ========================= -->
+
+    <div
+        id="resultInfo"
+        class="result-info"
+        style="display:none;"
+    ></div>
+
+
+    <!-- =========================
+         TABLE
+         ========================= -->
+
+    <div
+        id="tableContainer"
+        class="table-container"
+    >
+
+        <div class="loading">
+
+            Select a scheme to view works.
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+    <div class="footer-bottom">
+
+        © 2026 Office of the Executive Engineer,
+        Rural Engineering Wing (REW), Pulwama.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================================================
+   GOOGLE SHEET CONFIGURATION
+   ========================================================= */
+
+
+/*
+   Your published Google Spreadsheet.
+*/
+
+const SPREADSHEET_ID =
+
+"2PACX-1vSlKb4rzKgzr7n-Rx2khlwfOwJrwp-Hq5Csy_yuvzWYEXNWtdcA0XZ_cbvlXBkq8qCqZTLiqJiY7IMV";
+
+
+
+/*
+   All Google Sheet tabs and their GIDs.
+*/
+
+const SHEETS = {
+
+
+    PRI: {
+
+        name:"PRI",
+
+        gid:"1068845303"
+
+    },
+
+
+    BDC: {
+
+        name:"BDC",
+
+        gid:"1045311657"
+
+    },
+
+
+    DDC: {
+
+        name:"DDC",
+
+        gid:"1824127271"
+
+    },
+
+
+    APDP: {
+
+        name:"APDP",
+
+        gid:"104423786"
+
+    },
+
+
+    ABDP: {
+
+        name:"ABDP",
+
+        gid:"681492954"
+
+    },
+
+
+    SANITARY: {
+
+        name:"Sanitary Complex CSC",
+
+        gid:"2071735905"
+
+    },
+
+
+    COMPOST: {
+
+        name:"Compost Pit",
+
+        gid:"1529761235"
+
+    },
+
+
+    SOAKAGE: {
+
+        name:"Soakage Pit",
+
+        gid:"1809424720"
+
+    },
+
+
+    OTHER: {
+
+        name:"Other Deptt",
+
+        gid:"634219296"
+
+    },
+
+
+    MPLADS: {
+
+        name:"MPLADS",
+
+        gid:"1216189768"
+
+    },
+
+
+    CDF: {
+
+        name:"CDF",
+
+        gid:"1108715801"
+
+    },
+
+
+    UT_CAPEX: {
+
+        name:"UT Capex",
+
+        gid:"1467897902"
+
+    }
+
+};
+
+
+
+/* =========================================================
+   PAGE ELEMENTS
+   ========================================================= */
+
+const schemeSelect =
+    document.getElementById("scheme");
+
+
+const searchInput =
+    document.getElementById("search");
+
+
+const tableContainer =
+    document.getElementById("tableContainer");
+
+
+const resultInfo =
+    document.getElementById("resultInfo");
+
+
+
+/*
+   Currently loaded data.
+*/
+
+let currentRows = [];
+
+let currentHeaders = [];
+
+
+
+/* =========================================================
+   CREATE CSV URL
+   ========================================================= */
+
+function getCSVUrl(gid) {
+
+
+    return (
+
+        "https://docs.google.com/spreadsheets/d/e/" +
+
+        SPREADSHEET_ID +
+
+        "/pub?gid=" +
+
+        gid +
+
+        "&single=true&output=csv"
+
+    );
+
+}
+
+
+
+/* =========================================================
+   CSV PARSER
+   ========================================================= */
+
+function parseCSV(text) {
+
+
+    const rows = [];
+
+    let row = [];
+
+    let cell = "";
+
+    let quoted = false;
+
+
+    for (
+        let i = 0;
+        i < text.length;
+        i++
+    ) {
+
+
+        const char = text[i];
+
+        const next = text[i + 1];
+
+
+        /*
+           Handle escaped quotation marks.
+        */
+
+        if (
+            char === '"' &&
+            quoted &&
+            next === '"'
+        ) {
+
+            cell += '"';
+
+            i++;
+
+            continue;
+
+        }
+
+
+        /*
+           Start/end quoted field.
+        */
+
+        if (char === '"') {
+
+            quoted = !quoted;
+
+            continue;
+
+        }
+
+
+        /*
+           New CSV cell.
+        */
+
+        if (
+            char === "," &&
+            !quoted
+        ) {
+
+            row.push(cell);
+
+            cell = "";
+
+            continue;
+
+        }
+
+
+        /*
+           New CSV row.
+        */
+
+        if (
+            (char === "\n" ||
+             char === "\r") &&
+            !quoted
+        ) {
+
+
+            if (
+                char === "\r" &&
+                next === "\n"
+            ) {
+
+                i++;
+
+            }
+
+
+            row.push(cell);
+
+            cell = "";
+
+
+            if (
+                row.some(
+                    value =>
+                        String(value).trim() !== ""
+                )
+            ) {
+
+                rows.push(row);
+
+            }
+
+
+            row = [];
+
+            continue;
+
+        }
+
+
+        cell += char;
+
+    }
+
+
+    /*
+       Add final cell.
+    */
+
+    if (
+        cell !== "" ||
+        row.length
+    ) {
+
+        row.push(cell);
+
+    }
+
+
+    if (
+        row.some(
+            value =>
+                String(value).trim() !== ""
+        )
+    ) {
+
+        rows.push(row);
+
+    }
+
+
+    return rows;
+
+}
+
+
+
+/* =========================================================
+   LOAD SELECTED SCHEME
+   ========================================================= */
+
+async function loadScheme(scheme) {
+
+
+    const sheet =
+        SHEETS[scheme];
+
+
+    if (!sheet) {
+
+        return;
+
+    }
+
+
+    tableContainer.innerHTML = `
+
+        <div class="loading">
+
+            Loading
+            <strong>${escapeHTML(sheet.name)}</strong>
+            works...
+
+        </div>
+
+    `;
+
+
+    searchInput.disabled = true;
+
+
+    try {
+
+
+        const response =
+
+            await fetch(
+
+                getCSVUrl(sheet.gid),
+
+                {
+                    cache:"no-store"
+                }
+
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to load Google Sheet."
+            );
+
+        }
+
+
+        const text =
+            await response.text();
+
+
+        const rows =
+            parseCSV(text);
+
+
+        if (!rows.length) {
+
+            throw new Error(
+                "No data found."
+            );
+
+        }
+
+
+        /*
+           First row = column headings.
+        */
+
+        currentHeaders =
+            rows[0];
+
+
+        /*
+           Remaining rows = works.
+        */
+
+        currentRows =
+            rows.slice(1);
+
+
+        searchInput.disabled = false;
+
+
+        searchInput.value = "";
+
+
+        displayTable(
+            currentRows
+        );
+
+
+    }
+
+
+    catch(error) {
+
+
+        console.error(
+            "Google Sheet error:",
+            error
+        );
+
+
+        tableContainer.innerHTML = `
+
+            <div class="error">
+
+                Unable to load
+                <strong>${escapeHTML(sheet.name)}</strong>
+                works.
+
+                <br><br>
+
+                Please check that the Google Sheet
+                tab is published and the GID is correct.
+
+            </div>
+
+        `;
+
+
+        resultInfo.style.display =
+            "none";
+
+    }
+
+}
+
+
+
+/* =========================================================
+   DISPLAY TABLE
+   ========================================================= */
+
+function displayTable(rows) {
+
+
+    if (!rows.length) {
+
+
+        tableContainer.innerHTML = `
+
+            <div class="loading">
+
+                No works found.
+
+            </div>
+
+        `;
+
+
+        resultInfo.style.display =
+            "block";
+
+
+        resultInfo.textContent =
+            "0 works found";
+
+
+        return;
+
+    }
+
+
+    let html =
+        "<table>";
+
+
+    /*
+       TABLE HEADER
+    */
+
+    html +=
+        "<thead><tr>";
+
+
+    currentHeaders.forEach(
+        header => {
+
+
+            html +=
+
+                `<th>
+                    ${escapeHTML(header)}
+                 </th>`;
+
+        }
+    );
+
+
+    html +=
+        "</tr></thead>";
+
+
+    /*
+       TABLE BODY
+    */
+
+    html +=
+        "<tbody>";
+
+
+    rows.forEach(
+        row => {
+
+
+            /*
+               Ignore completely empty rows.
+            */
+
+            if (
+                !row.some(
+                    cell =>
+                        String(cell).trim() !== ""
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            html +=
+                "<tr>";
+
+
+            currentHeaders.forEach(
+                (_, index) => {
+
+
+                    const value =
+                        row[index] ?? "";
+
+
+                    html +=
+
+                        `<td>
+                            ${escapeHTML(value)}
+                         </td>`;
+
+                }
+            );
+
+
+            html +=
+                "</tr>";
+
+        }
+    );
+
+
+    html +=
+        "</tbody>";
+
+
+    html +=
+        "</table>";
+
+
+    tableContainer.innerHTML =
+        html;
+
+
+    resultInfo.style.display =
+        "block";
+
+
+    resultInfo.textContent =
+
+        `${rows.length.toLocaleString("en-IN")}
+         works found`;
+
+}
+
+
+
+/* =========================================================
+   SEARCH WORKS
+   ========================================================= */
+
+function searchWorks() {
+
+
+    const searchText =
+
+        searchInput.value
+            .trim()
+            .toLowerCase();
+
+
+    /*
+       If search is empty,
+       show everything.
+    */
+
+    if (!searchText) {
+
+        displayTable(
+            currentRows
+        );
+
+        return;
+
+    }
+
+
+    /*
+       Search ALL columns.
+    */
+
+    const filtered =
+
+        currentRows.filter(
+            row =>
+
+
+                row.some(
+                    cell =>
+
+
+                        String(
+                            cell ?? ""
+                        )
+                        .toLowerCase()
+                        .includes(
+                            searchText
+                        )
+
+                )
+
+        );
+
+
+    displayTable(
+        filtered
+    );
+
+}
+
+
+
+/* =========================================================
+   ESCAPE HTML
+   ========================================================= */
+
+function escapeHTML(value) {
+
+
+    return String(
+        value ?? ""
+    )
+
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+
+    .replace(
+        /</g,
+        "&lt;"
+    )
+
+    .replace(
+        />/g,
+        "&gt;"
+    )
+
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+
+    .replace(
+        /'/g,
+        "&#039;"
+    );
+
+}
+
+
+
+/* =========================================================
+   SCHEME SELECTION
+   ========================================================= */
+
+schemeSelect.addEventListener(
+
+    "change",
+
+    function() {
+
+
+        const selectedScheme =
+            this.value;
+
+
+        if (selectedScheme) {
+
+
+            loadScheme(
+                selectedScheme
+            );
+
+
+        }
+
+        else {
+
+
+            searchInput.disabled =
+                true;
+
+
+            searchInput.value =
+                "";
+
+
+            resultInfo.style.display =
+                "none";
+
+
+            tableContainer.innerHTML = `
+
+                <div class="loading">
+
+                    Select a scheme to
+                    view works.
+
+                </div>
+
+            `;
+
+        }
+
+    }
+
+);
+
+
+
+/* =========================================================
+   SEARCH EVENT
+   ========================================================= */
+
+searchInput.addEventListener(
+
+    "input",
+
+    searchWorks
+
+);
+
+
+</script>
+
+
+</body>
+
+</html>
