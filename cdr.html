@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDR Calculator | REW Pulwama</title>
+
+<style>
+:root{
+    --blue:#003b73;
+    --light-blue:#eaf3fb;
+    --border:#d8d8d8;
+    --text:#222;
+    --muted:#666;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fa;
+    color:var(--text);
+}
+
+/* HEADER */
+
+.header{
+    background:var(--blue);
+    color:white;
+    padding:16px 20px;
+}
+
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.emblem{
+    width:72px;
+    height:82px;
+    object-fit:contain;
+    background:white;
+    padding:4px;
+    border-radius:3px;
+}
+
+.header-text{
+    line-height:1.35;
+}
+
+.header-text .govt{
+    font-size:17px;
+    font-weight:bold;
+}
+
+.header-text .dept{
+    font-size:16px;
+}
+
+.header-text .office{
+    font-size:21px;
+    font-weight:bold;
+}
+
+.header-text .wing{
+    font-size:16px;
+}
+
+/* NAVIGATION */
+
+.nav{
+    background:white;
+    border-bottom:1px solid #ddd;
+    box-shadow:0 1px 3px rgba(0,0,0,.08);
+}
+
+.nav-inner{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.nav a{
+    color:#222;
+    text-decoration:none;
+    padding:13px 15px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.nav a:hover,
+.nav a.active{
+    background:var(--blue);
+    color:white;
+}
+
+/* MAIN */
+
+.container{
+    max-width:1000px;
+    margin:28px auto;
+    padding:0 18px;
+}
+
+.page-title{
+    background:white;
+    border-left:5px solid var(--blue);
+    padding:18px 20px;
+    margin-bottom:20px;
+    box-shadow:0 1px 4px rgba(0,0,0,.08);
+}
+
+.page-title h1{
+    margin:0;
+    color:var(--blue);
+    font-size:27px;
+}
+
+.page-title p{
+    margin:7px 0 0;
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* CALCULATOR */
+
+.calculator{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:5px;
+    padding:25px;
+    box-shadow:0 2px 7px rgba(0,0,0,.08);
+}
+
+.input-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.form-group label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:8px;
+    color:#333;
+}
+
+.form-group input{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid #bbb;
+    border-radius:4px;
+    font-size:17px;
+    outline:none;
+}
+
+.form-group input:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 0 2px rgba(0,59,115,.10);
+}
+
+.hint{
+    display:block;
+    margin-top:5px;
+    font-size:12px;
+    color:#777;
+}
+
+.results-title{
+    font-size:19px;
+    font-weight:bold;
+    color:var(--blue);
+    margin:5px 0 12px;
+}
+
+/* RESULTS TABLE */
+
+.result-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.result-table th,
+.result-table td{
+    padding:13px 14px;
+    border:1px solid var(--border);
+    text-align:left;
+}
+
+.result-table th{
+    background:var(--light-blue);
+    color:#333;
+}
+
+.result-table td.amount{
+    text-align:right;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.result-table tr.highlight td{
+    background:#f1f7fd;
+    color:var(--blue);
+    font-size:17px;
+    font-weight:bold;
+}
+
+/* NOTE */
+
+.note{
+    margin-top:20px;
+    padding:13px 15px;
+    background:#fafafa;
+    border-left:4px solid #aaa;
+    color:#555;
+    font-size:13px;
+    line-height:1.5;
+}
+
+/* FOOTER */
+
+.footer{
+    margin-top:40px;
+    background:var(--blue);
+    color:white;
+    text-align:center;
+    padding:20px 15px;
+    font-size:13px;
+}
+
+.footer strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .header-inner{
+        align-items:flex-start;
+    }
+
+    .emblem{
+        width:58px;
+        height:68px;
+    }
+
+    .header-text .govt{
+        font-size:14px;
+    }
+
+    .header-text .dept{
+        font-size:13px;
+    }
+
+    .header-text .office{
+        font-size:17px;
+    }
+
+    .header-text .wing{
+        font-size:13px;
+    }
+
+    .nav-inner{
+        overflow-x:auto;
+        flex-wrap:nowrap;
+    }
+
+    .nav a{
+        white-space:nowrap;
+    }
+
+    .input-grid{
+        grid-template-columns:1fr;
+    }
+
+    .calculator{
+        padding:17px;
+    }
+
+    .page-title h1{
+        font-size:23px;
+    }
+
+    .result-table th,
+    .result-table td{
+        padding:11px 9px;
+        font-size:13px;
+    }
+
+    .result-table td.amount{
+        font-size:14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <img
+            src="Emblem_of_India.svg"
+            class="emblem"
+            alt="Government of India Emblem"
+        >
+
+        <div class="header-text">
+
+            <div class="govt">
+                Government of Jammu &amp; Kashmir
+            </div>
+
+            <div class="dept">
+                Department of Rural Development &amp; Panchayati Raj
+            </div>
+
+            <div class="office">
+                Office of the Executive Engineer
+            </div>
+
+            <div class="wing">
+                Rural Engineering Wing (REW), Pulwama
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav class="nav">
+
+    <div class="nav-inner">
+
+        <a href="index.html">HOME</a>
+
+        <a href="about.html">ABOUT US</a>
+
+        <a href="notices.html">NOTICES</a>
+
+        <a href="approvals.html">APPROVALS</a>
+
+        <a href="exp.html">EXPLORE MY WORKS</a>
+
+        <a href="officials.html">OFFICIALS</a>
+
+        <a href="downloads.html">DOWNLOADS</a>
+
+        <a href="contact.html">CONTACT</a>
+
+        <a href="cdr.html" class="active">CDR CALCULATOR</a>
+
+    </div>
+
+</nav>
+
+
+<!-- MAIN CONTENT -->
+
+<main class="container">
+
+    <section class="page-title">
+
+        <h1>CDR Calculator</h1>
+
+        <p>
+            Calculate CDR required for Tender and Allotment based on
+            Estimated Cost and Rate Quoted.
+        </p>
+
+    </section>
+
+
+    <section class="calculator">
+
+        <!-- INPUTS -->
+
+        <div class="input-grid">
+
+            <div class="form-group">
+
+                <label for="advertisedCost">
+                    Estimated / Advertised Cost (₹)
+                </label>
+
+                <input
+                    type="number"
+                    id="advertisedCost"
+                    min="0"
+                    step="any"
+                    placeholder="Enter estimated cost"
+                    oninput="calculateCDR()"
+                >
+
+                <span class="hint">
+                    Enter the advertised cost in rupees.
+                </span>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="rateQuoted">
+                    Rate Quoted (%)
+                </label>
+
+                <input
+                    type="number"
+                    id="rateQuoted"
+                    min="0"
+                    step="any"
+                    placeholder="Enter rate quoted"
+                    oninput="calculateCDR()"
+                >
+
+                <span class="hint">
+                    Enter the quoted rate/reduction percentage.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESULTS -->
+
+        <div class="results-title">
+            Calculation Details
+        </div>
+
+
+        <table class="result-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Particular
+                    </th>
+
+                    <th>
+                        Amount
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        Allotted Cost
+                    </td>
+
+                    <td
+                        class="amount"
+                        id="allottedCost"
+                    >
+                        ₹0.00
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Performance Security
+                    </td>
+
+                    <td
+                        class="amount"
+                        id="performanceSecurity"
+                    >
+                        ₹0.00
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Additional Security Rate
+                    </td>
+
+                    <td
+                        class="amount"
+                        id="additionalSecurityRate"
+                    >
+                        0.00%
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Additional Security
+                    </td>
+
+                    <td
+                        class="amount"
+                        id="additionalSecurity"
+                    >
+                        ₹0.00
+                    </td>
+
+                </tr>
+
+
+                <tr class="highlight">
+
+                    <td>
+                        Total CDR (For Tender)
+                    </td>
+
+                    <td
+                        class="amount"
+                        id="totalTender"
+                    >
+                        ₹0.00
+                    </td>
+
+                </tr>
+
+
+                <tr class="highlight">
+
+                    <td>
+                        Total CDR (For Allotment)
+                    </td>
+
+                    <td
+                        class="amount"
+                        id="totalAllotment"
+                    >
+                        ₹0.00
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+        <!-- NOTE -->
+
+        <div class="note">
+
+            <strong>Note:</strong>
+            This calculator follows the calculation formulas used in
+            the supplied Excel CDR Calculator, including the
+            additional-security slabs based on the rate quoted.
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <strong>
+        Office of the Executive Engineer,
+        Rural Engineering Wing (REW), Pulwama
+    </strong>
+
+    Government of Jammu &amp; Kashmir |
+    Department of Rural Development &amp; Panchayati Raj
+
+</footer>
+
+
+<!-- CALCULATOR JAVASCRIPT -->
+
+<script>
+
+function formatRupees(value) {
+
+    if (!Number.isFinite(value)) {
+        return "₹0.00";
+    }
+
+    return "₹" + value.toLocaleString("en-IN", {
+
+        minimumFractionDigits: 2,
+
+        maximumFractionDigits: 2
+
+    });
+
+}
+
+
+/*
+    Additional Security calculation
+    copied from the supplied Excel formula.
+
+    Rate Quoted:
+
+    <=10%  = 0%
+    <=20%  = 1%
+    <=30%  = 3%
+    <=40%  = 5%
+    <=50%  = 7%
+    <=60%  = 9%
+    <=70%  = 11%
+    <=80%  = 13%
+    <=90%  = 15%
+    >90%   = 17%
+*/
+
+function getAdditionalSecurityRate(rate) {
+
+    if (rate <= 10)
+        return 0;
+
+    if (rate <= 20)
+        return 0.01;
+
+    if (rate <= 30)
+        return 0.03;
+
+    if (rate <= 40)
+        return 0.05;
+
+    if (rate <= 50)
+        return 0.07;
+
+    if (rate <= 60)
+        return 0.09;
+
+    if (rate <= 70)
+        return 0.11;
+
+    if (rate <= 80)
+        return 0.13;
+
+    if (rate <= 90)
+        return 0.15;
+
+    return 0.17;
+
+}
+
+
+function calculateCDR() {
+
+    const advertisedCost =
+        parseFloat(
+            document.getElementById("advertisedCost").value
+        );
+
+
+    const rateQuoted =
+        parseFloat(
+            document.getElementById("rateQuoted").value
+        );
+
+
+    /*
+        Reset if input is empty or invalid.
+    */
+
+    if (
+        !Number.isFinite(advertisedCost) ||
+        !Number.isFinite(rateQuoted) ||
+        advertisedCost < 0 ||
+        rateQuoted < 0
+    ) {
+
+        document.getElementById("allottedCost").textContent =
+            "₹0.00";
+
+        document.getElementById("performanceSecurity").textContent =
+            "₹0.00";
+
+        document.getElementById("additionalSecurityRate").textContent =
+            "0.00%";
+
+        document.getElementById("additionalSecurity").textContent =
+            "₹0.00";
+
+        document.getElementById("totalTender").textContent =
+            "₹0.00";
+
+        document.getElementById("totalAllotment").textContent =
+            "₹0.00";
+
+        return;
+
+    }
+
+
+    /*
+        Excel formula:
+
+        C4 = A4-(A4*B4/100)
+
+        Allotted Cost
+    */
+
+    const allottedCost =
+        advertisedCost -
+        (advertisedCost * rateQuoted / 100);
+
+
+    /*
+        Excel formula:
+
+        D4 = C4*0.05*100000
+
+        The Excel sheet treats the entered
+        Advertised Cost as being in lakhs.
+    */
+
+    const performanceSecurity =
+        allottedCost *
+        0.05 *
+        100000;
+
+
+    /*
+        Determine Additional Security slab.
+    */
+
+    const additionalRate =
+        getAdditionalSecurityRate(rateQuoted);
+
+
+    /*
+        Excel formulas:
+
+        E4 = A4 * additional rate
+
+        F4 = E4 * 100000
+    */
+
+    const additionalSecurity =
+        advertisedCost *
+        additionalRate *
+        100000;
+
+
+    /*
+        Excel formula:
+
+        G4 =
+        (A4*0.02*100000)+F4
+
+        Total CDR for Tender
+    */
+
+    const totalTender =
+        (advertisedCost *
+        0.02 *
+        100000) +
+        additionalSecurity;
+
+
+    /*
+        Excel formula:
+
+        H4 = D4+F4
+
+        Total CDR for Allotment
+    */
+
+    const totalAllotment =
+        performanceSecurity +
+        additionalSecurity;
+
+
+    /*
+        Display results.
+    */
+
+    document.getElementById("allottedCost").textContent =
+        formatRupees(
+            allottedCost * 100000
+        );
+
+
+    document.getElementById("performanceSecurity").textContent =
+        formatRupees(
+            performanceSecurity
+        );
+
+
+    document.getElementById("additionalSecurityRate").textContent =
+        (
+            additionalRate * 100
+        ).toFixed(2) + "%";
+
+
+    document.getElementById("additionalSecurity").textContent =
+        formatRupees(
+            additionalSecurity
+        );
+
+
+    document.getElementById("totalTender").textContent =
+        formatRupees(
+            totalTender
+        );
+
+
+    document.getElementById("totalAllotment").textContent =
+        formatRupees(
+            totalAllotment
+        );
+
+}
+
+</script>
+
+</body>
+</html>
