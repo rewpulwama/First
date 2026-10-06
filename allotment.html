@@ -409,24 +409,18 @@ footer {
         <div class="header-text">
 
             <div class="govt">
-
                 Government of Jammu & Kashmir
-
             </div>
 
 
             <h1>
-
                 Office of the Executive Engineer,
                 Rural Engineering Wing (REW), Pulwama
-
             </h1>
 
 
             <div class="department">
-
                 Department of Rural Development & Panchayati Raj
-
             </div>
 
         </div>
@@ -533,16 +527,13 @@ footer {
         <div class="control">
 
             <label for="search">
-
                 Search Allotments
-
             </label>
-
 
             <input
                 type="text"
                 id="search"
-                placeholder="Search by Work Name, Allotment No., Contractor or any other detail..."
+                placeholder="Search by Work Name, Contractor or any other detail..."
                 disabled
             >
 
@@ -553,7 +544,7 @@ footer {
 
 
     <!-- =========================
-         RESULT COUNT
+         RESULT INFO
          ========================= -->
 
     <div
@@ -574,9 +565,7 @@ footer {
     >
 
         <div class="loading">
-
             Loading allotment details...
-
         </div>
 
     </div>
@@ -613,12 +602,106 @@ footer {
 
 /*
 =========================================================
-YOUR GOOGLE SHEET
+GOOGLE SHEET
 =========================================================
 */
 
 const SHEET_URL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQNIUapoZumaq5M8dBJ4vvV6KSWtL-TK41CnyLmfRSlqinNbQGkI5eVA-h4CjUIg/pub?gid=116582419&single=true&output=csv";
+
+
+
+/*
+=========================================================
+COLUMNS TO HIDE
+=========================================================
+
+These columns remain in the Google Sheet.
+
+They are only hidden from the public website.
+
+Search will STILL search these columns.
+=========================================================
+*/
+
+const hiddenColumns = [
+
+    "Exe",
+    "Allotment No.",
+    "Allotment Date",
+    "Agreement No.",
+    "Agreement Date",
+    "Call",
+    "S/o",
+    "R/o",
+    "reg No.",
+    "Alloted Cost",
+    "Lacs",
+    "Alloted cost in words",
+    "Adv Cost",
+    "Down %",
+    "CDR",
+    "ADD CDR",
+    "ADD CDR IN RS",
+    "INDICATOR",
+    "Rs1",
+    "No1",
+    "date 1",
+    "Rs2",
+    "No2",
+    "date 2",
+    "Rs3",
+    "No3",
+    "date 3",
+    "Rs 4",
+    "No 4",
+    "date 4",
+    "Rs 5",
+    "No 5",
+    "date 5",
+    "Days"
+
+];
+
+
+
+/*
+=========================================================
+NORMALIZE COLUMN NAME
+=========================================================
+
+This makes matching tolerant of:
+
+- capital letters
+- small letters
+- extra spaces
+- multiple spaces
+=========================================================
+*/
+
+function normalizeHeader(value) {
+
+    return String(value ?? "")
+        .trim()
+        .replace(/\s+/g, " ")
+        .toLowerCase();
+
+}
+
+
+
+/*
+=========================================================
+CREATE HIDDEN COLUMN SET
+=========================================================
+*/
+
+const hiddenColumnSet =
+    new Set(
+        hiddenColumns.map(
+            normalizeHeader
+        )
+    );
 
 
 
@@ -680,7 +763,7 @@ function parseCSV(text) {
 
 
         /*
-        Handle escaped quotation marks.
+        Escaped quotation mark
         */
 
         if (
@@ -699,7 +782,7 @@ function parseCSV(text) {
 
 
         /*
-        Start/end quoted field.
+        Start/end quoted field
         */
 
         if (char === '"') {
@@ -712,7 +795,7 @@ function parseCSV(text) {
 
 
         /*
-        New CSV cell.
+        New CSV cell
         */
 
         if (
@@ -730,7 +813,7 @@ function parseCSV(text) {
 
 
         /*
-        New CSV row.
+        New CSV row
         */
 
         if (
@@ -780,7 +863,7 @@ function parseCSV(text) {
 
 
     /*
-    Add final cell.
+    Add final cell
     */
 
     if (
@@ -854,6 +937,49 @@ function escapeHTML(value) {
 
 /*
 =========================================================
+GET VISIBLE COLUMN INDEXES
+=========================================================
+
+The Google Sheet may contain many columns.
+
+Only columns NOT included in hiddenColumns
+will be displayed.
+=========================================================
+*/
+
+function getVisibleColumnIndexes() {
+
+    const visibleIndexes = [];
+
+    currentHeaders.forEach(
+        (header, index) => {
+
+            const normalized =
+                normalizeHeader(header);
+
+
+            if (
+                !hiddenColumnSet.has(
+                    normalized
+                )
+            ) {
+
+                visibleIndexes.push(index);
+
+            }
+
+        }
+    );
+
+
+    return visibleIndexes;
+
+}
+
+
+
+/*
+=========================================================
 LOAD GOOGLE SHEET
 =========================================================
 */
@@ -873,7 +999,6 @@ async function loadAllotments() {
 
 
     try {
-
 
         const response =
             await fetch(
@@ -934,11 +1059,9 @@ async function loadAllotments() {
             currentRows
         );
 
-
     }
 
     catch(error) {
-
 
         console.error(
             "Google Sheet error:",
@@ -983,7 +1106,6 @@ function displayTable(rows) {
 
     if (!rows.length) {
 
-
         tableContainer.innerHTML = `
 
             <div class="loading">
@@ -1009,25 +1131,37 @@ function displayTable(rows) {
 
 
 
+    /*
+    Determine which columns are public.
+    */
+
+    const visibleIndexes =
+        getVisibleColumnIndexes();
+
+
+
     let html =
         "<table>";
 
 
-
     /*
+    =========================
     TABLE HEADER
+    =========================
     */
 
     html +=
         "<thead><tr>";
 
 
-    currentHeaders.forEach(
-        header => {
+    visibleIndexes.forEach(
+        index => {
 
             html +=
                 `<th>
-                    ${escapeHTML(header)}
+                    ${escapeHTML(
+                        currentHeaders[index]
+                    )}
                  </th>`;
 
         }
@@ -1040,7 +1174,9 @@ function displayTable(rows) {
 
 
     /*
+    =========================
     TABLE BODY
+    =========================
     */
 
     html +=
@@ -1052,7 +1188,7 @@ function displayTable(rows) {
 
 
             /*
-            Ignore empty rows.
+            Ignore completely empty rows.
             */
 
             if (
@@ -1071,9 +1207,8 @@ function displayTable(rows) {
                 "<tr>";
 
 
-            currentHeaders.forEach(
-                (_, index) => {
-
+            visibleIndexes.forEach(
+                index => {
 
                     const value =
                         row[index] ?? "";
@@ -1107,6 +1242,10 @@ function displayTable(rows) {
         html;
 
 
+    /*
+    Result count.
+    */
+
     resultInfo.style.display =
         "block";
 
@@ -1123,6 +1262,16 @@ function displayTable(rows) {
 =========================================================
 SEARCH ALLOTMENTS
 =========================================================
+
+IMPORTANT:
+
+Searches ALL Google Sheet columns,
+including the hidden columns.
+
+Therefore a user can search using a
+hidden field if needed, but that field
+will never be displayed in the results.
+=========================================================
 */
 
 function searchAllotments() {
@@ -1136,8 +1285,7 @@ function searchAllotments() {
 
 
     /*
-    If search is empty,
-    show everything.
+    Empty search = show all records.
     */
 
     if (!searchText) {
@@ -1153,7 +1301,7 @@ function searchAllotments() {
 
 
     /*
-    Search ALL columns.
+    Search every column.
     */
 
     const filtered =
