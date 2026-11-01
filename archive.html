@@ -1,91 +1,630 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Work Archive | REW Pulwama</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--blue:#07579a;--dark-blue:#063b69;--light-blue:#eaf4fb;--gold:#d89b24;--green:#23884b;--red:#b52b2b;--text:#333;--light:#f5f7fa}
-body{font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#f4f6f8;line-height:1.6}
-.top-bar{background:#f1f1f1;border-bottom:1px solid #ddd;font-size:13px}
-.top-inner{max-width:1250px;margin:auto;padding:7px 20px;display:flex;justify-content:space-between;align-items:center}
-.top-links a{color:#333;text-decoration:none;margin-left:18px}.top-links a:hover{color:var(--blue)}
-.header{background:white;border-bottom:4px solid var(--gold)}
-.header-inner{max-width:1250px;margin:auto;padding:14px 20px;min-height:150px;display:flex;align-items:center;gap:20px}
-.emblem{width:110px;height:125px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
-.emblem img{width:65px;height:85px;object-fit:contain;display:block}
-.header-text{flex:1}.header-text .govt{font-size:18px;font-weight:bold;color:#555;margin-bottom:3px}
-.header-text .department{font-size:17px;color:var(--blue);font-weight:bold}
-.header-text h1{font-size:25px;color:var(--dark-blue);margin-top:5px}
-.header-text h2{font-size:19px;color:#333;font-weight:600}
-.logo-right{width:95px;height:75px;border:2px solid #ddd;border-radius:5px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:10px;color:#777}
-.navbar{background:var(--dark-blue);box-shadow:0 2px 5px rgba(0,0,0,.15)}
-.nav-inner{max-width:1250px;margin:auto;display:flex;align-items:center;overflow-x:auto}
-.nav-inner a{color:white;text-decoration:none;padding:15px 18px;font-size:14px;font-weight:bold;border-right:1px solid rgba(255,255,255,.12);white-space:nowrap}
-.nav-inner a:hover,.nav-inner a.active{background:var(--blue)}
-.container{max-width:1250px;margin:auto;padding:22px 20px 30px}
-.section{background:white;border:1px solid #ddd;margin-bottom:22px;border-radius:4px;overflow:hidden}
-.section-title{background:var(--blue);color:white;padding:12px 18px;font-size:18px;font-weight:bold;border-left:5px solid var(--gold)}
-.section-body{padding:18px}
-.intro{margin-bottom:14px;color:#555}
-.year-tabs,.sheet-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.year-btn,.sheet-btn{border:1px solid var(--dark-blue);background:white;color:var(--dark-blue);padding:9px 18px;border-radius:3px;font-weight:bold;cursor:pointer;font-size:14px}
-.year-btn.active,.sheet-btn.active,.year-btn:hover,.sheet-btn:hover{background:var(--dark-blue);color:white}
-.sheet-frame{width:100%;height:720px;border:1px solid #d5dce3;background:white}
-.note{font-size:13px;color:#666;margin-top:10px}
-.footer{background:#062f52;color:white;margin-top:20px}
-.footer-inner{max-width:1250px;margin:auto;padding:35px 20px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px}
-.footer h3{margin-bottom:12px;font-size:17px}.footer p,.footer a{font-size:13px;color:#d8e3ec;text-decoration:none}
-.footer a:hover{color:white}.footer-bottom{background:#041f37;padding:12px;text-align:center;font-size:12px;color:#cbd9e4}
-@media(max-width:900px){.header-inner{flex-wrap:wrap;justify-content:center;text-align:center}.header-text{flex-basis:100%}.logo-right{display:none}.footer-inner{grid-template-columns:1fr}}
-@media(max-width:600px){.top-inner{flex-direction:column;gap:5px}.top-links a{margin:0 7px}.header-text .govt{font-size:15px}.header-text .department{font-size:14px}.header-text h1{font-size:20px}.header-text h2{font-size:16px}.nav-inner{width:100%}.nav-inner a{padding:13px 14px;font-size:13px}.container{padding:16px 12px 24px}.section-body{padding:12px}.sheet-frame{height:650px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Archive | REW Pulwama</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #07579a;
+      --dark-blue: #063b69;
+      --light-blue: #eaf4fb;
+      --gold: #d89b24;
+      --green: #23884b;
+      --red: #b52b2b;
+      --text: #333;
+      --light: #f5f7fa;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #f4f6f8;
+      line-height: 1.6;
+    }
+    .top-bar {
+      background: #f1f1f1;
+      border-bottom: 1px solid #ddd;
+      font-size: 13px;
+    }
+    .top-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 7px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-links a {
+      color: #333;
+      text-decoration: none;
+      margin-left: 18px;
+    }
+    .top-links a:hover {
+      color: var(--blue);
+    }
+    .header {
+      background: white;
+      border-bottom: 4px solid var(--gold);
+    }
+    .header-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 14px 20px;
+      min-height: 150px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .emblem {
+      width: 110px;
+      height: 125px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .emblem img {
+      width: 65px;
+      height: 85px;
+      object-fit: contain;
+      display: block;
+    }
+    .header-text {
+      flex: 1;
+    }
+    .header-text .govt {
+      font-size: 18px;
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 3px;
+    }
+    .header-text .department {
+      font-size: 17px;
+      color: var(--blue);
+      font-weight: bold;
+    }
+    .header-text h1 {
+      font-size: 25px;
+      color: var(--dark-blue);
+      margin-top: 5px;
+    }
+    .header-text h2 {
+      font-size: 19px;
+      color: #333;
+      font-weight: 600;
+    }
+    .logo-right {
+      width: 95px;
+      height: 75px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 10px;
+      color: #777;
+    }
+    .navbar {
+      background: var(--dark-blue);
+      box-shadow: 0 2px 5px rgba(0,0,0,.15);
+    }
+    .nav-inner {
+      max-width: 1250px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      overflow-x: auto;
+    }
+    .nav-inner a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 18px;
+      font-size: 14px;
+      font-weight: bold;
+      border-right: 1px solid rgba(255,255,255,.12);
+      white-space: nowrap;
+    }
+    .nav-inner a:hover,
+    .nav-inner a.active {
+      background: var(--blue);
+    }
+    .container {
+      max-width: 1250px;
+      margin: auto;
+      padding: 22px 20px 30px;
+    }
+    .section {
+      background: white;
+      border: 1px solid #ddd;
+      margin-bottom: 22px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .section-title {
+      background: var(--blue);
+      color: white;
+      padding: 12px 18px;
+      font-size: 18px;
+      font-weight: bold;
+      border-left: 5px solid var(--gold);
+    }
+    .section-body {
+      padding: 18px;
+    }
+    .intro {
+      margin-bottom: 14px;
+      color: #555;
+    }
+
+    /* Controls & Tabs */
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      background: #f8fafc;
+      padding: 12px 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+    }
+    .year-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .year-btn {
+      border: 1px solid var(--dark-blue);
+      background: white;
+      color: var(--dark-blue);
+      padding: 8px 16px;
+      border-radius: 3px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 13px;
+      transition: all 0.2s;
+    }
+    .year-btn.active,
+    .year-btn:hover {
+      background: var(--dark-blue);
+      color: white;
+    }
+    .search-box {
+      flex: 1;
+      max-width: 380px;
+      min-width: 240px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 9px 12px;
+      font-size: 14px;
+      border: 1px solid #ccd5df;
+      border-radius: 3px;
+      outline: none;
+    }
+    .search-input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 2px rgba(7, 87, 154, 0.15);
+    }
+    .record-count {
+      font-size: 13px;
+      color: #555;
+      font-weight: bold;
+    }
+
+    /* Table Styles matching index.html */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid #d5dce3;
+      border-radius: 4px;
+      background: white;
+      max-height: 650px;
+      overflow-y: auto;
+    }
+    .archive-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+      white-space: nowrap;
+    }
+    .archive-table th {
+      background: var(--dark-blue);
+      color: white;
+      padding: 10px 14px;
+      font-weight: 600;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    .archive-table td {
+      padding: 8px 14px;
+      border-bottom: 1px solid #eef2f5;
+      border-right: 1px solid #f2f4f7;
+      color: #333;
+    }
+    .archive-table tr:hover td {
+      background-color: #f3f8fc;
+    }
+    .badge-year {
+      display: inline-block;
+      padding: 2px 7px;
+      font-size: 11px;
+      font-weight: bold;
+      border-radius: 3px;
+      background: #edf3f8;
+      color: var(--blue);
+    }
+    .status-msg {
+      text-align: center;
+      padding: 30px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .footer {
+      background: #062f52;
+      color: white;
+      margin-top: 20px;
+    }
+    .footer-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 35px 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 35px;
+    }
+    .footer h3 {
+      margin-bottom: 12px;
+      font-size: 17px;
+    }
+    .footer p,
+    .footer a {
+      font-size: 13px;
+      color: #d8e3ec;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      color: white;
+    }
+    .footer-bottom {
+      background: #041f37;
+      padding: 12px;
+      text-align: center;
+      font-size: 12px;
+      color: #cbd9e4;
+    }
+
+    @media (max-width: 900px) {
+      .header-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+      }
+      .header-text {
+        flex-basis: 100%;
+      }
+      .logo-right {
+        display: none;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      .top-inner {
+        flex-direction: column;
+        gap: 5px;
+      }
+      .top-links a {
+        margin: 0 7px;
+      }
+      .header-text .govt {
+        font-size: 15px;
+      }
+      .header-text .department {
+        font-size: 14px;
+      }
+      .header-text h1 {
+        font-size: 20px;
+      }
+      .header-text h2 {
+        font-size: 16px;
+      }
+      .nav-inner {
+        width: 100%;
+      }
+      .nav-inner a {
+        padding: 13px 14px;
+        font-size: 13px;
+      }
+      .container {
+        padding: 16px 12px 24px;
+      }
+      .section-body {
+        padding: 12px;
+      }
+      .controls-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search-box {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="top-bar"><div class="top-inner">
-<div>Government of Jammu &amp; Kashmir</div>
-<div class="top-links"><a href="index.html">Home</a><a href="contact.html">Contact</a></div>
-</div></div>
-<header class="header"><div class="header-inner">
-<div class="emblem"><img src="images/Emblem_of_India.svg" alt="Emblem of India"></div>
-<div class="header-text">
-<div class="govt">Government of Jammu &amp; Kashmir</div>
-<div class="department">Department of Rural Development &amp; Panchayati Raj</div>
-<h1>Office of the Executive Engineer</h1>
-<h2>Rural Engineering Wing (REW), Pulwama</h2>
-</div><div class="logo-right">REW<br>PULWAMA</div>
-</div></header>
-<nav class="navbar"><div class="nav-inner">
-<a href="index.html">HOME</a><a href="about.html">ABOUT</a><a href="cdr.html">CALCULATE CDR</a><a href="officials.html">OFFICIALS</a><a href="approvals.html">APPROVALS</a><a href="tenders.html">TENDERS</a><a href="lois.html">LOIs</a><a href="notices.html">NOTICES</a><a href="downloads.html">DOWNLOADS</a><a href="contact.html">CONTACT</a><a class="active" href="archive.html">ARCHIVE</a>
-</div></nav>
-<main class="container">
-<section class="section">
-<div class="section-title">Work Archive – Financial Year Wise</div>
-<div class="section-body">
-<p class="intro">Select a financial year to view its published Google Sheets workbook. Use the worksheet tabs within the embedded workbook to move between categories.</p>
-<div class="year-tabs" role="tablist" aria-label="Financial years">
-<button class="year-btn active" data-year="y2526" onclick="showYear('y2526',this)">2025–26</button>
-<button class="year-btn" data-year="y2425" onclick="showYear('y2425',this)">2024–25</button>
-<button class="year-btn" data-year="y2324" onclick="showYear('y2324',this)">2023–24</button>
-</div>
-<div id="y2526" class="year-panel"><iframe class="sheet-frame" title="2025–26 all worksheets" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRR4p1CQASClc2MDVfDbAuLFJ1samE0Ift84lWVZ2F-kybd7ksJcdCV6OgOtacMDfK2RbgAZzGerprS/pubhtml?widget=true&amp;headers=false"></iframe></div>
-<div id="y2425" class="year-panel" hidden><iframe class="sheet-frame" title="2024–25 all worksheets" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQEli1UNPI7BEM6l-PJbBhlzDMfJNgy9QcgsF5-1da8B29PonxGqPJGbpd4sY3ge56-guhsUlbFW4DS/pubhtml?widget=true&amp;headers=false"></iframe></div>
-<div id="y2324" class="year-panel" hidden><iframe class="sheet-frame" title="2023–24 all worksheets" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwJ-snzEp1yv_xdKs-tCdUV2JW-GSnJsDfG44xw58qKCO54JPOIVEX1e96xL4lpPg7MgCMZ4fT5UZh/pubhtml?widget=true&amp;headers=false"></iframe></div>
-<p class="note">The workbook is displayed directly from its published Google Sheets document. Worksheet tabs and Google Sheets controls are provided by Google.</p>
-</div></section>
-</main>
-<footer class="footer"><div class="footer-inner">
-<div><h3>Rural Engineering Wing (REW), Pulwama</h3><p>Department of Rural Development &amp; Panchayati Raj<br>Government of Jammu &amp; Kashmir</p></div>
-<div><h3>Quick Links</h3><p><a href="index.html">Home</a><br><a href="downloads.html">Downloads</a><br><a href="notices.html">Notices</a><br><a href="archive.html">Archive</a></p></div>
-<div><h3>Contact</h3><p>Ground Floor, RDD Complex, Dangerpora, Pulwama, J&amp;K<br>01933-313247<br>xenrew-pulwama@jk.gov.in</p></div>
-</div><div class="footer-bottom">© Office of the Executive Engineer, REW Pulwama. All Rights Reserved.</div></footer>
-<script>
-function showYear(id,button){
- document.querySelectorAll('.year-panel').forEach(p=>p.hidden=true);
- document.getElementById(id).hidden=false;
- document.querySelectorAll('.year-btn').forEach(b=>b.classList.remove('active'));
- button.classList.add('active');
-}
-</script>
-</body></html>
+
+  <div class="top-bar">
+    <div class="top-inner">
+      <div>Government of Jammu &amp; Kashmir</div>
+      <div class="top-links">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="emblem">
+        <img src="images/Emblem_of_India.svg" alt="Emblem of India">
+      </div>
+      <div class="header-text">
+        <div class="govt">Government of Jammu &amp; Kashmir</div>
+        <div class="department">Department of Rural Development &amp; Panchayati Raj</div>
+        <h1>Office of the Executive Engineer</h1>
+        <h2>Rural Engineering Wing (REW), Pulwama</h2>
+      </div>
+      <div class="logo-right">REW<br>PULWAMA</div>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="cdr.html">CALCULATE CDR</a>
+      <a href="officials.html">OFFICIALS</a>
+      <a href="approvals.html">APPROVALS</a>
+      <a href="tenders.html">TENDERS</a>
+      <a href="lois.html">LOIs</a>
+      <a href="notices.html">NOTICES</a>
+      <a href="downloads.html">DOWNLOADS</a>
+      <a href="contact.html">CONTACT</a>
+      <a class="active" href="archive.html">ARCHIVE</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-title">Work Archive – Financial Year Wise</div>
+      <div class="section-body">
+        <p class="intro">
+          Search and filter developmental works executed by REW Pulwama across financial years. Switch financial years or type in the search box to find specific works, schemes, panchayats, or contractors.
+        </p>
+
+        <div class="controls-bar">
+          <div class="year-tabs" role="tablist">
+            <button class="year-btn active" onclick="setYear('all', this)">All Years</button>
+            <button class="year-btn" onclick="setYear('2025-26', this)">2025–26</button>
+            <button class="year-btn" onclick="setYear('2024-25', this)">2024–25</button>
+            <button class="year-btn" onclick="setYear('2023-24', this)">2023–24</button>
+          </div>
+
+          <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search by name, block, scheme, ID..." oninput="handleSearch()">
+          </div>
+
+          <div class="record-count" id="recordCount">Loading data...</div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="archive-table" id="archiveTable">
+            <thead>
+              <tr id="tableHead">
+                <th>Year</th>
+                <th>Loading...</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <tr>
+                <td colspan="6" class="status-msg">Fetching records from Google Sheets, please wait...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h3>Rural Engineering Wing (REW), Pulwama</h3>
+        <p>Department of Rural Development &amp; Panchayati Raj<br>Government of Jammu &amp; Kashmir</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <p>
+          <a href="index.html">Home</a><br>
+          <a href="downloads.html">Downloads</a><br>
+          <a href="notices.html">Notices</a><br>
+          <a href="archive.html">Archive</a>
+        </p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>
+          Ground Floor, RDD Complex, Dangerpora, Pulwama, J&amp;K<br>
+          01933-313247<br>
+          xenrew-pulwama@jk.gov.in
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © Office of the Executive Engineer, REW Pulwama. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    const SHEETS = [
+      {
+        year: '2025-26',
+        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRR4p1CQASClc2MDVfDbAuLFJ1samE0Ift84lWVZ2F-kybd7ksJcdCV6OgOtacMDfK2RbgAZzGerprS/pub?output=csv'
+      },
+      {
+        year: '2024-25',
+        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQEli1UNPI7BEM6l-PJbBhlzDMfJNgy9QcgsF5-1da8B29PonxGqPJGbpd4sY3ge56-guhsUlbFW4DS/pub?output=csv'
+      },
+      {
+        year: '2023-24',
+        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRwJ-snzEp1yv_xdKs-tCdUV2JW-GSnJsDfG44xw58qKCO54JPOIVEX1e96xL4lpPg7MgCMZ4fT5UZh/pub?output=csv'
+      }
+    ];
+
+    let allRecords = [];
+    let dynamicHeaders = [];
+    let selectedYear = 'all';
+
+    // Standard robust CSV row parser handling quotes & commas
+    function parseCSVLine(text) {
+      const result = [];
+      let cell = '';
+      let insideQuote = false;
+      for (let i = 0; i < text.length; i++) {
+        const c = text[i];
+        if (c === '"') {
+          if (insideQuote && text[i + 1] === '"') {
+            cell += '"';
+            i++;
+          } else {
+            insideQuote = !insideQuote;
+          }
+        } else if (c === ',' && !insideQuote) {
+          result.push(cell.trim());
+          cell = '';
+        } else {
+          cell += c;
+        }
+      }
+      result.push(cell.trim());
+      return result;
+    }
+
+    function parseCSV(text, year) {
+      const lines = text.split(/\r?\n/).filter(line => line.trim().length > 0);
+      if (lines.length < 2) return { headers: [], rows: [] };
+
+      const headers = parseCSVLine(lines[0]);
+      const rows = [];
+
+      for (let i = 1; i < lines.length; i++) {
+        const values = parseCSVLine(lines[i]);
+        if (values.every(v => v === '')) continue; // Skip blank lines
+        rows.push({
+          year: year,
+          data: values,
+          searchString: (year + ' ' + values.join(' ')).toLowerCase()
+        });
+      }
+      return { headers, rows };
+    }
+
+    async function loadAllSheets() {
+      const countEl = document.getElementById('recordCount');
+      try {
+        const promises = SHEETS.map(async (sheet) => {
+          const res = await fetch(sheet.url);
+          if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+          const csvText = await res.text();
+          return parseCSV(csvText, sheet.year);
+        });
+
+        const results = await Promise.all(promises);
+
+        // Deduce dominant headers from the first sheet that has headers
+        for (const res of results) {
+          if (res.headers.length > 0 && dynamicHeaders.length === 0) {
+            dynamicHeaders = res.headers;
+          }
+          allRecords = allRecords.concat(res.rows);
+        }
+
+        renderHeaders();
+        renderTable();
+      } catch (err) {
+        console.error('Failed to load Google Sheets:', err);
+        countEl.textContent = 'Error loading data';
+        document.getElementById('tableBody').innerHTML = `
+          <tr>
+            <td colspan="6" class="status-msg" style="color:var(--red);">
+              Unable to load Google Sheet data. Please ensure the sheets are published to web as CSV.
+            </td>
+          </tr>`;
+      }
+    }
+
+    function renderHeaders() {
+      const thead = document.getElementById('tableHead');
+      thead.innerHTML = `<th>Year</th>` + dynamicHeaders.map(h => `<th>${h || '-'}</th>`).join('');
+    }
+
+    function renderTable() {
+      const query = document.getElementById('searchInput').value.trim().toLowerCase();
+      const tbody = document.getElementById('tableBody');
+      const countEl = document.getElementById('recordCount');
+
+      const filtered = allRecords.filter(item => {
+        const matchesYear = (selectedYear === 'all' || item.year === selectedYear);
+        const matchesQuery = !query || item.searchString.includes(query);
+        return matchesYear && matchesQuery;
+      });
+
+      countEl.textContent = `Showing ${filtered.length} work${filtered.length === 1 ? '' : 's'}`;
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="${dynamicHeaders.length + 1}" class="status-msg">
+              No matching records found.
+            </td>
+          </tr>`;
+        return;
+      }
+
+      // Render rows efficiently
+      const html = filtered.map(row => {
+        const cells = dynamicHeaders.map((_, idx) => {
+          const val = row.data[idx] || '';
+          return `<td>${val}</td>`;
+        }).join('');
+        return `<tr><td><span class="badge-year">${row.year}</span></td>${cells}</tr>`;
+      }).join('');
+
+      tbody.innerHTML = html;
+    }
+
+    function setYear(year, btn) {
+      selectedYear = year;
+      document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderTable();
+    }
+
+    function handleSearch() {
+      renderTable();
+    }
+
+    window.addEventListener('DOMContentLoaded', loadAllSheets);
+  </script>
+</body>
+</html>
