@@ -1,0 +1,1012 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MGNREGA Status | REW Pulwama</title>
+
+<style>
+:root {
+    --blue: #07579a;
+    --dark-blue: #063b69;
+    --light-blue: #eaf4fb;
+    --gold: #d89b24;
+    --text: #333;
+    --light: #f5f7fa;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: #f4f6f8;
+    line-height: 1.6;
+}
+
+/* TOP BAR */
+
+.top-bar {
+    background: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    font-size: 13px;
+}
+
+.top-inner {
+    max-width: 1250px;
+    margin: auto;
+    padding: 7px 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* HEADER */
+
+.header {
+    background: white;
+    border-bottom: 4px solid var(--gold);
+}
+
+.header-inner {
+    max-width: 1250px;
+    margin: auto;
+    padding: 14px 20px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.emblem {
+    width: 110px;
+    min-width: 110px;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emblem img {
+    width: 65px;
+    height: 85px;
+    object-fit: contain;
+}
+
+.header-text .govt {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+.header-text .department {
+    font-size: 17px;
+    font-weight: bold;
+    color: var(--blue);
+}
+
+.header-text h1 {
+    font-size: 25px;
+    color: var(--dark-blue);
+    margin: 2px 0;
+}
+
+.header-text h2 {
+    font-size: 19px;
+    color: #333;
+    margin: 0;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    background: var(--dark-blue);
+}
+
+.nav-inner {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    overflow-x: auto;
+}
+
+.nav-inner a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    border-right: 1px solid #ffffff22;
+}
+
+.nav-inner a:hover,
+.nav-inner a.active {
+    background: var(--blue);
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 20px 30px;
+}
+
+/* PAGE HEADING */
+
+.page-title {
+    text-align: center;
+    margin: 28px 0 22px;
+}
+
+.page-title h2 {
+    color: var(--dark-blue);
+    font-size: 30px;
+    margin: 0;
+}
+
+.page-title p {
+    color: #555;
+    margin: 5px 0 0;
+    font-size: 15px;
+}
+
+/* SECTION */
+
+.section {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 22px;
+}
+
+.section-title {
+    background: var(--blue);
+    color: white;
+    padding: 12px 18px;
+    font-size: 18px;
+    font-weight: bold;
+    border-left: 5px solid var(--gold);
+}
+
+.section-body {
+    padding: 18px;
+}
+
+/* SEARCH */
+
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.control {
+    width: 100%;
+}
+
+.control label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.control input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+.control input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 3px #07579a55;
+}
+
+.control input:disabled {
+    background: #eee;
+}
+
+/* RESULT INFORMATION */
+
+.result-info {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--dark-blue);
+    margin: 12px 0;
+}
+
+/* TABLE */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: white;
+}
+
+.work-table {
+    width: 100%;
+    min-width: 1000px;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.work-table th {
+    background: var(--dark-blue);
+    color: white;
+    padding: 12px 10px;
+    text-align: left;
+    white-space: nowrap;
+    border: 1px solid #ffffff30;
+}
+
+.work-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.work-table tr:hover td {
+    background: #f3f8fc;
+}
+
+.loading,
+.error-message,
+.empty-message {
+    text-align: center;
+    padding: 25px;
+    color: #555;
+    font-size: 14px;
+}
+
+.error-message {
+    color: #b52b2b;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #062f52;
+    color: white;
+    margin-top: 20px;
+}
+
+.footer-inner {
+    max-width: 1250px;
+    margin: auto;
+    padding: 35px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 35px;
+}
+
+.footer h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+}
+
+.footer p,
+.footer a {
+    font-size: 13px;
+    color: #e3edf5;
+}
+
+.footer a {
+    display: block;
+    text-decoration: none;
+    margin: 4px 0;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    background: #041f37;
+    padding: 12px;
+    text-align: center;
+    font-size: 12px;
+    color: #cbd9e4;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+
+    .header-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header-text {
+        flex-basis: 100%;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .top-inner {
+        flex-direction: column;
+    }
+
+    .header-text .govt {
+        font-size: 15px;
+    }
+
+    .header-text .department {
+        font-size: 14px;
+    }
+
+    .header-text h1 {
+        font-size: 20px;
+    }
+
+    .header-text h2 {
+        font-size: 16px;
+    }
+
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .page-title h2 {
+        font-size: 24px;
+    }
+
+    .section-body {
+        padding: 12px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="top-bar">
+    <div class="top-inner">
+        <span>Government of Jammu &amp; Kashmir</span>
+        <span>Department of Rural Development &amp; Panchayati Raj</span>
+    </div>
+</div>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <div class="emblem">
+            <img
+                src="images/Emblem_of_India.svg"
+                alt="State Emblem of India"
+            >
+        </div>
+
+        <div class="header-text">
+
+            <div class="govt">
+                Government of Jammu &amp; Kashmir
+            </div>
+
+            <div class="department">
+                Department of Rural Development &amp; Panchayati Raj
+            </div>
+
+            <h1>
+                Office of the Executive Engineer
+            </h1>
+
+            <h2>
+                Rural Engineering Wing (REW), Pulwama
+            </h2>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="index.html">HOME</a>
+
+        <a href="about.html">ABOUT</a>
+
+        <a href="cdr.html">CALCULATE CDR</a>
+
+        <a href="officials.html">OFFICIALS</a>
+
+        <a href="approvals.html">APPROVALS</a>
+
+        <a href="tenders.html">TENDERS</a>
+
+        <a href="loi.html">LOIs</a>
+
+        <a href="notices.html">NOTICES</a>
+
+        <a href="downloads.html">DOWNLOADS</a>
+
+        <a href="contact.html">CONTACT</a>
+
+        <a href="archive.html">ARCHIVE</a>
+
+        <a href="nrega.html" class="active">
+            CHECK STATUS MGNREGA
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+    <div class="page-title">
+
+        <h2>Check Status MGNREGA</h2>
+
+        <p>
+            Search and view MGNREGA work details
+        </p>
+
+    </div>
+
+
+    <section class="section">
+
+        <div class="section-title">
+            MGNREGA Work Status
+        </div>
+
+        <div class="section-body">
+
+            <!-- SEARCH -->
+
+            <div class="controls">
+
+                <div class="control">
+
+                    <label for="nregaSearch">
+                        Search MGNREGA Records
+                    </label>
+
+                    <input
+                        type="search"
+                        id="nregaSearch"
+                        placeholder="Search by any displayed detail..."
+                        disabled
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- RESULT COUNT -->
+
+            <div
+                id="nregaResultInfo"
+                class="result-info"
+            ></div>
+
+
+            <!-- TABLE -->
+
+            <div
+                id="nregaTableContainer"
+                class="table-container"
+            >
+
+                <div class="loading">
+                    Loading MGNREGA records...
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-inner">
+
+        <div>
+
+            <h3>
+                Rural Engineering Wing (REW), Pulwama
+            </h3>
+
+            <p>
+                Office of the Executive Engineer<br>
+                Department of Rural Development &amp; Panchayati Raj<br>
+                Government of Jammu &amp; Kashmir
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="notices.html">Notices</a>
+            <a href="downloads.html">Downloads</a>
+            <a href="archive.html">Archive</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Contact</h3>
+
+            <p>
+                RDD Complex, Dangerpora, Pulwama, J&amp;K<br>
+                Email: xenrew-pulwama@jk.gov.in<br>
+                Phone: 01933-313247
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © Office of the Executive Engineer,
+        Rural Engineering Wing (REW), Pulwama.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- GOOGLE SHEET DATA SCRIPT -->
+
+<script>
+
+/*
+=================================================
+GOOGLE SHEET CONNECTION
+=================================================
+*/
+
+const NREGA_SHEET_URL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSlKb4rzKgzr7n-Rx2khlwfOwJrwp-Hq5Csy_yuvzWYEXNWtdcA0XZ_cbvlXBkq8qCqZTLiqJiY7IMV/pub?gid=1825655287&single=true&output=csv";
+
+
+/*
+=================================================
+REQUIRED COLUMNS
+
+A, B, C, D, AV, AW, AX, AY, AZ, BA, BB, BC
+
+JavaScript indexes start from zero.
+=================================================
+*/
+
+const NREGA_COLUMNS = [
+    0, 1, 2, 3,
+    47, 48, 49, 50, 51,
+    52, 53, 54
+];
+
+
+/*
+=================================================
+ROW 5 IS THE PERMANENT HEADER
+=================================================
+*/
+
+const HEADER_ROW_INDEX = 4;
+
+
+/*
+=================================================
+PAGE ELEMENTS
+=================================================
+*/
+
+const nregaSearch =
+    document.getElementById("nregaSearch");
+
+const nregaTableContainer =
+    document.getElementById("nregaTableContainer");
+
+const nregaResultInfo =
+    document.getElementById("nregaResultInfo");
+
+
+let nregaHeaders = [];
+let nregaRows = [];
+
+
+/*
+=================================================
+CSV PARSER
+Handles commas, quotation marks and line breaks
+inside quoted cells.
+=================================================
+*/
+
+function parseNregaCSV(text) {
+
+    const rows = [];
+
+    let row = [];
+    let cell = "";
+    let insideQuotes = false;
+
+    for (let i = 0; i < text.length; i++) {
+
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (char === '"' && insideQuotes && next === '"') {
+
+            cell += '"';
+            i++;
+
+        }
+
+        else if (char === '"') {
+
+            insideQuotes = !insideQuotes;
+
+        }
+
+        else if (char === "," && !insideQuotes) {
+
+            row.push(cell);
+            cell = "";
+
+        }
+
+        else if (
+            (char === "\n" || char === "\r") &&
+            !insideQuotes
+        ) {
+
+            if (char === "\r" && next === "\n") {
+                i++;
+            }
+
+            row.push(cell);
+            rows.push(row);
+
+            row = [];
+            cell = "";
+
+        }
+
+        else {
+
+            cell += char;
+
+        }
+
+    }
+
+    if (cell !== "" || row.length > 0) {
+
+        row.push(cell);
+        rows.push(row);
+
+    }
+
+    return rows;
+
+}
+
+
+/*
+=================================================
+HTML SECURITY
+=================================================
+*/
+
+function escapeNregaHTML(value) {
+
+    return String(value ?? "").replace(/[&<>"']/g, char => ({
+
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+
+    })[char]);
+
+}
+
+
+/*
+=================================================
+LOAD GOOGLE SHEET DATA
+=================================================
+*/
+
+async function loadNregaData() {
+
+    try {
+
+        nregaTableContainer.innerHTML =
+            '<div class="loading">Loading MGNREGA records...</div>';
+
+        nregaSearch.disabled = true;
+
+
+        const response = await fetch(
+            NREGA_SHEET_URL + "&t=" + Date.now()
+        );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to access Google Sheet."
+            );
+
+        }
+
+
+        const csvText = await response.text();
+
+
+        const allRows = parseNregaCSV(csvText);
+
+
+        /*
+        ROW 5 = HEADER
+
+        Array index 4 represents spreadsheet Row 5.
+        */
+
+        const headerRow =
+            allRows[HEADER_ROW_INDEX];
+
+
+        if (!headerRow) {
+
+            throw new Error(
+                "Row 5 could not be found in the Google Sheet."
+            );
+
+        }
+
+
+        /*
+        SELECT ONLY THE REQUIRED HEADER COLUMNS
+        */
+
+        nregaHeaders = NREGA_COLUMNS.map(index =>
+            headerRow[index] ?? ""
+        );
+
+
+        /*
+        ROW 6 ONWARDS = DATA
+
+        Only the selected columns are retained.
+        */
+
+        nregaRows = allRows
+
+            .slice(HEADER_ROW_INDEX + 1)
+
+            .filter(row =>
+                row.some(value =>
+                    String(value ?? "").trim() !== ""
+                )
+            )
+
+            .map(row =>
+                NREGA_COLUMNS.map(index =>
+                    row[index] ?? ""
+                )
+            );
+
+
+        nregaSearch.disabled = false;
+
+        displayNregaTable();
+
+
+    }
+
+    catch (error) {
+
+        nregaTableContainer.innerHTML =
+            '<div class="error-message">' +
+            'Error loading MGNREGA records: ' +
+            escapeNregaHTML(error.message) +
+            '</div>';
+
+        nregaResultInfo.textContent = "";
+
+        console.error(error);
+
+    }
+
+}
+
+
+/*
+=================================================
+DISPLAY TABLE AND SEARCH RESULTS
+=================================================
+*/
+
+function displayNregaTable() {
+
+    const searchText =
+        nregaSearch.value.trim().toLowerCase();
+
+
+    const filteredRows = nregaRows.filter(row =>
+
+        row.some(value =>
+
+            String(value ?? "")
+                .toLowerCase()
+                .includes(searchText)
+
+        )
+
+    );
+
+
+    if (filteredRows.length === 0) {
+
+        nregaTableContainer.innerHTML =
+            '<div class="empty-message">' +
+            'No matching records found.' +
+            '</div>';
+
+        nregaResultInfo.textContent =
+            "0 records found.";
+
+        return;
+
+    }
+
+
+    let tableHTML = `
+
+        <table class="work-table">
+
+            <thead>
+
+                <tr>
+
+    `;
+
+
+    nregaHeaders.forEach(header => {
+
+        tableHTML += `
+
+            <th>
+                ${escapeNregaHTML(header)}
+            </th>
+
+        `;
+
+    });
+
+
+    tableHTML += `
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+    `;
+
+
+    filteredRows.forEach(row => {
+
+        tableHTML += "<tr>";
+
+
+        row.forEach(value => {
+
+            tableHTML += `
+
+                <td>
+                    ${escapeNregaHTML(value)}
+                </td>
+
+            `;
+
+        });
+
+
+        tableHTML += "</tr>";
+
+    });
+
+
+    tableHTML += `
+
+            </tbody>
+
+        </table>
+
+    `;
+
+
+    nregaTableContainer.innerHTML = tableHTML;
+
+
+    nregaResultInfo.textContent =
+        "Showing " + filteredRows.length +
+        " of " + nregaRows.length +
+        " records.";
+
+}
+
+
+/*
+=================================================
+SEARCH EVENT
+=================================================
+*/
+
+nregaSearch.addEventListener(
+    "input",
+    displayNregaTable
+);
+
+
+/*
+=================================================
+LOAD DATA WHEN PAGE OPENS
+=================================================
+*/
+
+loadNregaData();
+
+</script>
+
+</body>
+</html>
+```
