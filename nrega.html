@@ -1,49 +1,35 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MGNREGA Status | REW Pulwama</title>
 
+<meta name="description" content="Check MGNREGA work status and download related documents from the Office of the Executive Engineer, REW Pulwama.">
+
 <style>
-:root {
-    --blue: #07579a;
-    --dark-blue: #063b69;
-    --light-blue: #eaf4fb;
-    --gold: #d89b24;
-    --text: #333;
-    --light: #f5f7fa;
-}
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #07579a;
+    --dark-blue: #063b69;
+    --gold: #d89b24;
+    --text: #333;
 }
 
 body {
-    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text);
     background: #f4f6f8;
     line-height: 1.6;
-}
-
-/* TOP BAR */
-
-.top-bar {
-    background: #f1f1f1;
-    border-bottom: 1px solid #ddd;
-    font-size: 13px;
-}
-
-.top-inner {
-    max-width: 1250px;
-    margin: auto;
-    padding: 7px 20px;
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
 }
 
 /* HEADER */
@@ -57,25 +43,30 @@ body {
     max-width: 1250px;
     margin: auto;
     padding: 14px 20px;
-    min-height: 150px;
+    min-height: 145px;
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
 .emblem {
-    width: 110px;
-    min-width: 110px;
-    height: 125px;
+    width: 90px;
+    height: 110px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .emblem img {
     width: 65px;
     height: 85px;
     object-fit: contain;
+}
+
+.header-text {
+    flex: 1;
+    text-align: center;
 }
 
 .header-text .govt {
@@ -86,32 +77,34 @@ body {
 
 .header-text .department {
     font-size: 17px;
-    font-weight: bold;
     color: var(--blue);
+    font-weight: bold;
 }
 
 .header-text h1 {
     font-size: 25px;
     color: var(--dark-blue);
-    margin: 2px 0;
+    margin-top: 5px;
 }
 
 .header-text h2 {
     font-size: 19px;
     color: #333;
-    margin: 0;
+    font-weight: 600;
 }
 
 /* NAVIGATION */
 
 .navbar {
     background: var(--dark-blue);
+    box-shadow: 0 2px 5px rgba(0,0,0,.15);
 }
 
 .nav-inner {
     max-width: 1250px;
     margin: auto;
     display: flex;
+    align-items: center;
     overflow-x: auto;
 }
 
@@ -121,8 +114,8 @@ body {
     padding: 15px 18px;
     font-size: 14px;
     font-weight: bold;
+    border-right: 1px solid rgba(255,255,255,.12);
     white-space: nowrap;
-    border-right: 1px solid #ffffff22;
 }
 
 .nav-inner a:hover,
@@ -130,147 +123,136 @@ body {
     background: var(--blue);
 }
 
-/* MAIN CONTAINER */
+/* MAIN */
 
 .container {
     max-width: 1250px;
     margin: auto;
-    padding: 0 20px 30px;
+    padding: 25px 20px 40px;
 }
-
-/* PAGE HEADING */
 
 .page-title {
     text-align: center;
-    margin: 28px 0 22px;
-}
-
-.page-title h2 {
     color: var(--dark-blue);
     font-size: 30px;
-    margin: 0;
+    margin-bottom: 8px;
 }
 
-.page-title p {
+.page-description {
+    text-align: center;
     color: #555;
-    margin: 5px 0 0;
-    font-size: 15px;
-}
-
-/* SECTION */
-
-.section {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    overflow: hidden;
-    margin-bottom: 22px;
-}
-
-.section-title {
-    background: var(--blue);
-    color: white;
-    padding: 12px 18px;
-    font-size: 18px;
-    font-weight: bold;
-    border-left: 5px solid var(--gold);
-}
-
-.section-body {
-    padding: 18px;
+    font-size: 16px;
+    margin-bottom: 25px;
 }
 
 /* SEARCH */
 
-.controls {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 18px;
+.search-box {
+    background: white;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
-.control {
+.search-box input {
     width: 100%;
-}
-
-.control label {
-    display: block;
-    font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 7px;
-}
-
-.control input {
-    width: 100%;
-    padding: 12px;
+    padding: 13px 15px;
     border: 1px solid #bbb;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 16px;
     outline: none;
 }
 
-.control input:focus {
+.search-box input:focus {
     border-color: var(--blue);
-    box-shadow: 0 0 3px #07579a55;
-}
-
-.control input:disabled {
-    background: #eee;
-}
-
-/* RESULT INFORMATION */
-
-.result-info {
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--dark-blue);
-    margin: 12px 0;
+    box-shadow: 0 0 4px rgba(7,87,154,.3);
 }
 
 /* TABLE */
 
 .table-container {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.table-scroll {
     width: 100%;
     overflow-x: auto;
-    background: white;
 }
 
-.work-table {
+table {
     width: 100%;
-    min-width: 1000px;
+    min-width: 1100px;
     border-collapse: collapse;
-    font-size: 13px;
-}
-
-.work-table th {
-    background: var(--dark-blue);
-    color: white;
-    padding: 12px 10px;
-    text-align: left;
-    white-space: nowrap;
-    border: 1px solid #ffffff30;
-}
-
-.work-table td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    vertical-align: top;
-}
-
-.work-table tr:hover td {
-    background: #f3f8fc;
-}
-
-.loading,
-.error-message,
-.empty-message {
-    text-align: center;
-    padding: 25px;
-    color: #555;
     font-size: 14px;
 }
 
-.error-message {
+thead th {
+    background: var(--dark-blue);
+    color: white;
+    padding: 13px 12px;
+    text-align: left;
+    white-space: nowrap;
+    border: 1px solid rgba(255,255,255,.15);
+}
+
+tbody td {
+    padding: 12px;
+    border: 1px solid #e1e1e1;
+    vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+    background: #f5f8fb;
+}
+
+tbody tr:hover {
+    background: #eaf4fb;
+}
+
+/* DOWNLOAD BUTTON */
+
+.download-btn {
+    display: inline-block;
+    background: var(--blue);
+    color: white !important;
+    padding: 7px 13px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.download-btn:hover {
+    background: var(--dark-blue);
+}
+
+/* STATUS */
+
+.message {
+    padding: 25px;
+    text-align: center;
+    color: #555;
+    font-size: 15px;
+}
+
+.error {
     color: #b52b2b;
+}
+
+/* RECORD COUNT */
+
+.record-count {
+    padding: 12px 15px;
+    background: #edf3f8;
+    color: var(--dark-blue);
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
 }
 
 /* FOOTER */
@@ -284,30 +266,37 @@ body {
 .footer-inner {
     max-width: 1250px;
     margin: auto;
-    padding: 35px 20px;
+    padding: 30px 20px;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 35px;
+    gap: 30px;
 }
 
 .footer h3 {
-    margin: 0 0 10px;
-    font-size: 16px;
+    margin-bottom: 12px;
 }
 
 .footer p,
-.footer a {
+.footer li {
     font-size: 13px;
-    color: #e3edf5;
+    color: #d9e5ee;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer li {
+    margin-bottom: 7px;
 }
 
 .footer a {
-    display: block;
+    color: #d9e5ee;
     text-decoration: none;
-    margin: 4px 0;
 }
 
 .footer a:hover {
+    color: white;
     text-decoration: underline;
 }
 
@@ -321,7 +310,7 @@ body {
 
 /* RESPONSIVE */
 
-@media(max-width: 900px) {
+@media(max-width:900px) {
 
     .header-inner {
         flex-wrap: wrap;
@@ -331,6 +320,11 @@ body {
 
     .header-text {
         flex-basis: 100%;
+        order: 2;
+    }
+
+    .emblem {
+        order: 1;
     }
 
     .footer-inner {
@@ -339,10 +333,20 @@ body {
 
 }
 
-@media(max-width: 600px) {
+@media(max-width:600px) {
 
-    .top-inner {
-        flex-direction: column;
+    .header-inner {
+        padding: 12px 10px;
+        min-height: auto;
+    }
+
+    .emblem {
+        height: 80px;
+    }
+
+    .emblem img {
+        height: 70px;
+        width: 55px;
     }
 
     .header-text .govt {
@@ -355,75 +359,83 @@ body {
 
     .header-text h1 {
         font-size: 20px;
+        line-height: 1.3;
     }
 
     .header-text h2 {
         font-size: 16px;
     }
 
+    .nav-inner a {
+        padding: 13px 14px;
+        font-size: 13px;
+    }
+
     .container {
-        padding-left: 12px;
-        padding-right: 12px;
+        padding: 20px 10px 30px;
     }
 
-    .page-title h2 {
-        font-size: 24px;
+    .page-title {
+        font-size: 25px;
     }
 
-    .section-body {
+    .page-description {
+        font-size: 14px;
+    }
+
+    .search-box {
         padding: 12px;
     }
 
+    .search-box input {
+        font-size: 15px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-
-<div class="top-bar">
-    <div class="top-inner">
-        <span>Government of Jammu &amp; Kashmir</span>
-        <span>Department of Rural Development &amp; Panchayati Raj</span>
-    </div>
-</div>
-
-
 <!-- HEADER -->
 
 <header class="header">
 
-    <div class="header-inner">
+<div class="header-inner">
 
-        <div class="emblem">
-            <img
-                src="images/Emblem_of_India.svg"
-                alt="State Emblem of India"
-            >
+    <div class="emblem">
+        <img
+            src="images/Emblem_of_India.svg"
+            alt="State Emblem of India"
+        >
+    </div>
+
+    <div class="header-text">
+
+        <div class="govt">
+            Government of Jammu & Kashmir
         </div>
 
-        <div class="header-text">
-
-            <div class="govt">
-                Government of Jammu &amp; Kashmir
-            </div>
-
-            <div class="department">
-                Department of Rural Development &amp; Panchayati Raj
-            </div>
-
-            <h1>
-                Office of the Executive Engineer
-            </h1>
-
-            <h2>
-                Rural Engineering Wing (REW), Pulwama
-            </h2>
-
+        <div class="department">
+            Department of Rural Development & Panchayati Raj
         </div>
+
+        <h1>
+            Office of the Executive Engineer
+        </h1>
+
+        <h2>
+            Rural Engineering Wing (REW), Pulwama
+        </h2>
 
     </div>
+
+</div>
 
 </header>
 
@@ -432,108 +444,82 @@ body {
 
 <nav class="navbar">
 
-    <div class="nav-inner">
+<div class="nav-inner">
 
-        <a href="index.html">HOME</a>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="cdr.html">CALCULATE CDR</a>
+    <a href="officials.html">OFFICIALS</a>
+    <a href="approvals.html">APPROVALS</a>
+    <a href="tenders.html">TENDERS</a>
+    <a href="loi.html">LOIs</a>
+    <a href="notices.html">NOTICES</a>
+    <a href="downloads.html">DOWNLOADS</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="archive.html">ARCHIVE</a>
+    <a href="nrega.html" class="active">MGNREGA STATUS</a>
 
-        <a href="about.html">ABOUT</a>
-
-        <a href="cdr.html">CALCULATE CDR</a>
-
-        <a href="officials.html">OFFICIALS</a>
-
-        <a href="approvals.html">APPROVALS</a>
-
-        <a href="tenders.html">TENDERS</a>
-
-        <a href="loi.html">LOIs</a>
-
-        <a href="notices.html">NOTICES</a>
-
-        <a href="downloads.html">DOWNLOADS</a>
-
-        <a href="contact.html">CONTACT</a>
-
-        <a href="archive.html">ARCHIVE</a>
-
-        <a href="nrega.html" class="active">
-            CHECK STATUS MGNREGA
-        </a>
-
-    </div>
+</div>
 
 </nav>
 
 
-<!-- MAIN -->
+<!-- MAIN CONTENT -->
 
 <main class="container">
 
-    <div class="page-title">
+    <h1 class="page-title">
+        Check Status MGNREGA
+    </h1>
 
-        <h2>Check Status MGNREGA</h2>
+    <p class="page-description">
+        MGNREGA Works and Related Documents – REW Pulwama
+    </p>
 
-        <p>
-            Search and view MGNREGA work details
-        </p>
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by work name, Panchayat, Block, work ID or other details..."
+            oninput="filterTable()"
+        >
 
     </div>
 
 
-    <section class="section">
+    <!-- TABLE -->
 
-        <div class="section-title">
-            MGNREGA Work Status
+    <div class="table-container">
+
+        <div class="record-count" id="recordCount">
+            Loading MGNREGA records...
         </div>
 
-        <div class="section-body">
+        <div class="table-scroll">
 
-            <!-- SEARCH -->
+            <table id="nregaTable">
 
-            <div class="controls">
+                <thead id="tableHead"></thead>
 
-                <div class="control">
+                <tbody id="tableBody">
 
-                    <label for="nregaSearch">
-                        Search MGNREGA Records
-                    </label>
+                    <tr>
+                        <td class="message">
+                            Loading data from Google Sheets...
+                        </td>
+                    </tr>
 
-                    <input
-                        type="search"
-                        id="nregaSearch"
-                        placeholder="Search by any displayed detail..."
-                        disabled
-                    >
+                </tbody>
 
-                </div>
-
-            </div>
-
-
-            <!-- RESULT COUNT -->
-
-            <div
-                id="nregaResultInfo"
-                class="result-info"
-            ></div>
-
-
-            <!-- TABLE -->
-
-            <div
-                id="nregaTableContainer"
-                class="table-container"
-            >
-
-                <div class="loading">
-                    Loading MGNREGA records...
-                </div>
-
-            </div>
+            </table>
 
         </div>
 
-    </section>
+    </div>
 
 </main>
 
@@ -542,135 +528,141 @@ body {
 
 <footer class="footer">
 
-    <div class="footer-inner">
+<div class="footer-inner">
 
-        <div>
+    <div>
 
-            <h3>
-                Rural Engineering Wing (REW), Pulwama
-            </h3>
+        <h3>REW Pulwama</h3>
 
-            <p>
-                Office of the Executive Engineer<br>
-                Department of Rural Development &amp; Panchayati Raj<br>
-                Government of Jammu &amp; Kashmir
-            </p>
+        <p>
+            Office of the Executive Engineer,
+            Rural Engineering Wing (REW), Pulwama.
+        </p>
 
-        </div>
-
-
-        <div>
-
-            <h3>Quick Links</h3>
-
-            <a href="index.html">Home</a>
-            <a href="notices.html">Notices</a>
-            <a href="downloads.html">Downloads</a>
-            <a href="archive.html">Archive</a>
-
-        </div>
-
-
-        <div>
-
-            <h3>Contact</h3>
-
-            <p>
-                RDD Complex, Dangerpora, Pulwama, J&amp;K<br>
-                Email: xenrew-pulwama@jk.gov.in<br>
-                Phone: 01933-313247
-            </p>
-
-        </div>
+        <p style="margin-top:10px;">
+            Department of Rural Development & Panchayati Raj,
+            Government of Jammu & Kashmir.
+        </p>
 
     </div>
 
 
-    <div class="footer-bottom">
+    <div>
 
-        © Office of the Executive Engineer,
-        Rural Engineering Wing (REW), Pulwama.
-        All Rights Reserved.
+        <h3>Important Links</h3>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Office</a></li>
+            <li><a href="tenders.html">Tenders</a></li>
+            <li><a href="notices.html">Notices</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+        </ul>
 
     </div>
+
+
+    <div>
+
+        <h3>Website Information</h3>
+
+        <ul>
+            <li>Privacy Policy</li>
+            <li>Disclaimer</li>
+            <li>Accessibility</li>
+            <li>Site Map</li>
+        </ul>
+
+    </div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+    © 2026 Office of the Executive Engineer,
+    Rural Engineering Wing (REW), Pulwama.
+    All Rights Reserved.
+
+</div>
 
 </footer>
 
 
-<!-- GOOGLE SHEET DATA SCRIPT -->
-
 <script>
 
-/*
-=================================================
-GOOGLE SHEET CONNECTION
-=================================================
-*/
+/* =========================================================
+   GOOGLE SHEET CONFIGURATION
+========================================================= */
 
-const NREGA_SHEET_URL =
+const CSV_URL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vSlKb4rzKgzr7n-Rx2khlwfOwJrwp-Hq5Csy_yuvzWYEXNWtdcA0XZ_cbvlXBkq8qCqZTLiqJiY7IMV/pub?gid=1825655287&single=true&output=csv";
 
 
 /*
-=================================================
-REQUIRED COLUMNS
+   GOOGLE SHEET COLUMN POSITIONS
 
-A, B, C, D, AV, AW, AX, AY, AZ, BA, BB, BC
+   A  = 0
+   B  = 1
+   C  = 2
+   D  = 3
 
-JavaScript indexes start from zero.
-=================================================
+   AV = 47
+   AW = 48
+   AX = 49
+   AY = 50
+   AZ = 51
+   BA = 52
+   BB = 53
+   BC = 54
+
+   BD = 55 (Download Link)
+
+   BD is NOT displayed as a normal table column.
+   It is used to create the Download button.
 */
 
-const NREGA_COLUMNS = [
+const DISPLAY_COLUMNS = [
     0, 1, 2, 3,
-    47, 48, 49, 50, 51,
-    52, 53, 54
+    47, 48, 49, 50,
+    51, 52, 53, 54
 ];
+
+const DOWNLOAD_COLUMN = 55;
 
 
 /*
-=================================================
-ROW 5 IS THE PERMANENT HEADER
-=================================================
+   Row 5 is the header row.
+
+   JavaScript array index:
+   Row 1 = 0
+   Row 2 = 1
+   Row 3 = 2
+   Row 4 = 3
+   Row 5 = 4
+
+   Therefore:
+   HEADER_ROW_INDEX = 4
 */
 
 const HEADER_ROW_INDEX = 4;
 
 
-/*
-=================================================
-PAGE ELEMENTS
-=================================================
-*/
+/* STORE ALL RECORDS */
 
-const nregaSearch =
-    document.getElementById("nregaSearch");
-
-const nregaTableContainer =
-    document.getElementById("nregaTableContainer");
-
-const nregaResultInfo =
-    document.getElementById("nregaResultInfo");
+let allRecords = [];
 
 
-let nregaHeaders = [];
-let nregaRows = [];
+/* =========================================================
+   CSV PARSER
+========================================================= */
 
-
-/*
-=================================================
-CSV PARSER
-Handles commas, quotation marks and line breaks
-inside quoted cells.
-=================================================
-*/
-
-function parseNregaCSV(text) {
+function parseCSV(text) {
 
     const rows = [];
 
     let row = [];
-    let cell = "";
+    let value = "";
     let insideQuotes = false;
 
     for (let i = 0; i < text.length; i++) {
@@ -678,9 +670,13 @@ function parseNregaCSV(text) {
         const char = text[i];
         const next = text[i + 1];
 
-        if (char === '"' && insideQuotes && next === '"') {
+        if (
+            char === '"' &&
+            insideQuotes &&
+            next === '"'
+        ) {
 
-            cell += '"';
+            value += '"';
             i++;
 
         }
@@ -691,10 +687,13 @@ function parseNregaCSV(text) {
 
         }
 
-        else if (char === "," && !insideQuotes) {
+        else if (
+            char === "," &&
+            !insideQuotes
+        ) {
 
-            row.push(cell);
-            cell = "";
+            row.push(value);
+            value = "";
 
         }
 
@@ -703,30 +702,39 @@ function parseNregaCSV(text) {
             !insideQuotes
         ) {
 
-            if (char === "\r" && next === "\n") {
+            if (
+                char === "\r" &&
+                next === "\n"
+            ) {
                 i++;
             }
 
-            row.push(cell);
-            rows.push(row);
+            row.push(value);
+
+            if (row.some(cell => cell.trim() !== "")) {
+                rows.push(row);
+            }
 
             row = [];
-            cell = "";
+            value = "";
 
         }
 
         else {
 
-            cell += char;
+            value += char;
 
         }
 
     }
 
-    if (cell !== "" || row.length > 0) {
+    if (value !== "" || row.length > 0) {
 
-        row.push(cell);
-        rows.push(row);
+        row.push(value);
+
+        if (row.some(cell => cell.trim() !== "")) {
+            rows.push(row);
+        }
 
     }
 
@@ -735,275 +743,336 @@ function parseNregaCSV(text) {
 }
 
 
-/*
-=================================================
-HTML SECURITY
-=================================================
-*/
+/* =========================================================
+   SAFE HTML
+========================================================= */
 
-function escapeNregaHTML(value) {
+function escapeHTML(value) {
 
-    return String(value ?? "").replace(/[&<>"']/g, char => ({
-
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#039;"
-
-    })[char]);
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 
 }
 
 
-/*
-=================================================
-LOAD GOOGLE SHEET DATA
-=================================================
-*/
+/* =========================================================
+   VALIDATE DOWNLOAD URL
+========================================================= */
 
-async function loadNregaData() {
+function validDownloadURL(value) {
+
+    if (!value) {
+        return "";
+    }
+
+    const link = String(value).trim();
 
     try {
 
-        nregaTableContainer.innerHTML =
-            '<div class="loading">Loading MGNREGA records...</div>';
+        const url = new URL(link);
 
-        nregaSearch.disabled = true;
-
-
-        const response = await fetch(
-            NREGA_SHEET_URL + "&t=" + Date.now()
-        );
-
-
-        if (!response.ok) {
-
-            throw new Error(
-                "Unable to access Google Sheet."
-            );
-
+        if (
+            url.protocol === "https:" ||
+            url.protocol === "http:"
+        ) {
+            return url.href;
         }
 
+    }
+
+    catch (error) {
+
+        console.warn("Invalid download URL:", link);
+
+    }
+
+    return "";
+
+}
+
+
+/* =========================================================
+   LOAD GOOGLE SHEET
+========================================================= */
+
+async function loadNregaData() {
+
+    const tbody =
+        document.getElementById("tableBody");
+
+    const thead =
+        document.getElementById("tableHead");
+
+    const count =
+        document.getElementById("recordCount");
+
+    try {
+
+        const response = await fetch(
+            CSV_URL + "&cache=" + Date.now()
+        );
+
+        if (!response.ok) {
+            throw new Error("Unable to access Google Sheet.");
+        }
 
         const csvText = await response.text();
 
-
-        const allRows = parseNregaCSV(csvText);
-
-
-        /*
-        ROW 5 = HEADER
-
-        Array index 4 represents spreadsheet Row 5.
-        */
-
-        const headerRow =
-            allRows[HEADER_ROW_INDEX];
+        const rows = parseCSV(csvText);
 
 
-        if (!headerRow) {
+        if (rows.length <= HEADER_ROW_INDEX) {
 
             throw new Error(
-                "Row 5 could not be found in the Google Sheet."
+                "Row 5 header was not found in the published sheet."
             );
 
         }
 
 
-        /*
-        SELECT ONLY THE REQUIRED HEADER COLUMNS
-        */
+        /* HEADER FROM ROW 5 */
 
-        nregaHeaders = NREGA_COLUMNS.map(index =>
-            headerRow[index] ?? ""
-        );
+        const headers = rows[HEADER_ROW_INDEX];
 
 
-        /*
-        ROW 6 ONWARDS = DATA
+        /* DATA STARTS FROM ROW 6 */
 
-        Only the selected columns are retained.
-        */
+        const dataRows = rows.slice(HEADER_ROW_INDEX + 1);
 
-        nregaRows = allRows
 
-            .slice(HEADER_ROW_INDEX + 1)
+        /* CREATE HEADER */
 
-            .filter(row =>
-                row.some(value =>
-                    String(value ?? "").trim() !== ""
-                )
-            )
+        let headerHTML = "<tr>";
 
-            .map(row =>
-                NREGA_COLUMNS.map(index =>
-                    row[index] ?? ""
-                )
+        DISPLAY_COLUMNS.forEach(columnIndex => {
+
+            const heading =
+                headers[columnIndex] || "";
+
+            headerHTML +=
+                "<th>" +
+                escapeHTML(heading) +
+                "</th>";
+
+        });
+
+
+        headerHTML += "<th>Download</th>";
+
+        headerHTML += "</tr>";
+
+        thead.innerHTML = headerHTML;
+
+
+        /* PREPARE RECORDS */
+
+        allRecords = dataRows.filter(row => {
+
+            return row.some(
+                cell => String(cell ?? "").trim() !== ""
             );
 
+        });
 
-        nregaSearch.disabled = false;
 
-        displayNregaTable();
+        renderTable(allRecords);
+
+
+        count.textContent =
+            "Total Records: " +
+            allRecords.length.toLocaleString("en-IN");
 
 
     }
 
     catch (error) {
 
-        nregaTableContainer.innerHTML =
-            '<div class="error-message">' +
-            'Error loading MGNREGA records: ' +
-            escapeNregaHTML(error.message) +
-            '</div>';
+        console.error("MGNREGA loading error:", error);
 
-        nregaResultInfo.textContent = "";
+        thead.innerHTML = "";
 
-        console.error(error);
+        tbody.innerHTML = `
+            <tr>
+                <td class="message error">
+                    Unable to load MGNREGA records.
+                    Please refresh the page or try again later.
+                    <br>
+                    ${escapeHTML(error.message)}
+                </td>
+            </tr>
+        `;
+
+        count.textContent = "Data loading failed.";
 
     }
 
 }
 
 
-/*
-=================================================
-DISPLAY TABLE AND SEARCH RESULTS
-=================================================
-*/
+/* =========================================================
+   RENDER TABLE
+========================================================= */
 
-function displayNregaTable() {
+function renderTable(records) {
 
-    const searchText =
-        nregaSearch.value.trim().toLowerCase();
+    const tbody =
+        document.getElementById("tableBody");
 
-
-    const filteredRows = nregaRows.filter(row =>
-
-        row.some(value =>
-
-            String(value ?? "")
-                .toLowerCase()
-                .includes(searchText)
-
-        )
-
-    );
+    const count =
+        document.getElementById("recordCount");
 
 
-    if (filteredRows.length === 0) {
+    if (!records.length) {
 
-        nregaTableContainer.innerHTML =
-            '<div class="empty-message">' +
-            'No matching records found.' +
-            '</div>';
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="${DISPLAY_COLUMNS.length + 1}"
+                    class="message">
+                    No matching records found.
+                </td>
+            </tr>
+        `;
 
-        nregaResultInfo.textContent =
-            "0 records found.";
+        count.textContent = "Total Records: 0";
 
         return;
 
     }
 
 
-    let tableHTML = `
-
-        <table class="work-table">
-
-            <thead>
-
-                <tr>
-
-    `;
+    let html = "";
 
 
-    nregaHeaders.forEach(header => {
+    records.forEach(row => {
 
-        tableHTML += `
-
-            <th>
-                ${escapeNregaHTML(header)}
-            </th>
-
-        `;
-
-    });
+        html += "<tr>";
 
 
-    tableHTML += `
+        /* DISPLAY SELECTED COLUMNS */
 
-                </tr>
+        DISPLAY_COLUMNS.forEach(columnIndex => {
 
-            </thead>
+            const cellValue =
+                row[columnIndex] ?? "";
 
-            <tbody>
-
-    `;
-
-
-    filteredRows.forEach(row => {
-
-        tableHTML += "<tr>";
-
-
-        row.forEach(value => {
-
-            tableHTML += `
-
-                <td>
-                    ${escapeNregaHTML(value)}
-                </td>
-
-            `;
+            html +=
+                "<td>" +
+                escapeHTML(cellValue) +
+                "</td>";
 
         });
 
 
-        tableHTML += "</tr>";
+        /* DOWNLOAD BUTTON FROM COLUMN BD */
+
+        const downloadValue =
+            row[DOWNLOAD_COLUMN] ?? "";
+
+        const downloadURL =
+            validDownloadURL(downloadValue);
+
+
+        if (downloadURL) {
+
+            html += `
+                <td>
+                    <a
+                        href="${escapeHTML(downloadURL)}"
+                        class="download-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Download
+                    </a>
+                </td>
+            `;
+
+        }
+
+        else {
+
+            html += `
+                <td>
+                    <span style="color:#888;">
+                        Not Available
+                    </span>
+                </td>
+            `;
+
+        }
+
+
+        html += "</tr>";
 
     });
 
 
-    tableHTML += `
-
-            </tbody>
-
-        </table>
-
-    `;
+    tbody.innerHTML = html;
 
 
-    nregaTableContainer.innerHTML = tableHTML;
-
-
-    nregaResultInfo.textContent =
-        "Showing " + filteredRows.length +
-        " of " + nregaRows.length +
-        " records.";
+    count.textContent =
+        "Showing " +
+        records.length.toLocaleString("en-IN") +
+        " Records";
 
 }
 
 
-/*
-=================================================
-SEARCH EVENT
-=================================================
-*/
+/* =========================================================
+   SEARCH / FILTER
+========================================================= */
 
-nregaSearch.addEventListener(
-    "input",
-    displayNregaTable
+function filterTable() {
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    const searchText =
+        searchInput.value.trim().toLowerCase();
+
+
+    if (!searchText) {
+
+        renderTable(allRecords);
+
+        return;
+
+    }
+
+
+    const filteredRecords =
+        allRecords.filter(row => {
+
+            return DISPLAY_COLUMNS.some(columnIndex => {
+
+                const value =
+                    String(row[columnIndex] ?? "")
+                    .toLowerCase();
+
+                return value.includes(searchText);
+
+            });
+
+        });
+
+
+    renderTable(filteredRecords);
+
+}
+
+
+/* =========================================================
+   START
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadNregaData
 );
-
-
-/*
-=================================================
-LOAD DATA WHEN PAGE OPENS
-=================================================
-*/
-
-loadNregaData();
 
 </script>
 
