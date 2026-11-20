@@ -1,266 +1,244 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>MGNREGA Status | REW Pulwama</title>
-
-<meta name="description" content="Check MGNREGA work status and download related documents from the Office of the Executive Engineer, REW Pulwama.">
+<meta name="description" content="MGNREGA works information - REW Pulwama">
+<title>MGNREGA Works | REW Pulwama</title>
 
 <style>
-
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-:root {
-    --blue: #07579a;
-    --dark-blue: #063b69;
-    --gold: #d89b24;
-    --text: #333;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--text);
-    background: #f4f6f8;
-    line-height: 1.6;
+    background: #f4f6f9;
+    color: #263238;
+    line-height: 1.5;
 }
 
 /* HEADER */
-
 .header {
-    background: white;
-    border-bottom: 4px solid var(--gold);
+    background: #ffffff;
+    border-bottom: 3px solid #176b3a;
+    padding: 15px 20px;
 }
 
 .header-inner {
     max-width: 1250px;
     margin: auto;
-    padding: 14px 20px;
-    min-height: 145px;
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.emblem {
-    width: 90px;
-    height: 110px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
 .emblem img {
-    width: 65px;
-    height: 85px;
+    width: 75px;
+    height: 90px;
     object-fit: contain;
 }
 
 .header-text {
-    flex: 1;
     text-align: center;
+    flex: 1;
 }
 
-.header-text .govt {
-    font-size: 18px;
+.govt {
+    font-size: 16px;
     font-weight: bold;
+    color: #333;
+}
+
+.department {
+    font-size: 14px;
     color: #555;
 }
 
-.header-text .department {
-    font-size: 17px;
-    color: var(--blue);
-    font-weight: bold;
-}
-
 .header-text h1 {
-    font-size: 25px;
-    color: var(--dark-blue);
-    margin-top: 5px;
+    font-size: 23px;
+    color: #145b35;
+    margin: 4px 0;
 }
 
 .header-text h2 {
-    font-size: 19px;
+    font-size: 18px;
     color: #333;
-    font-weight: 600;
 }
 
 /* NAVIGATION */
-
 .navbar {
-    background: var(--dark-blue);
-    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+    background: #145b35;
+    position: relative;
 }
 
 .nav-inner {
-    max-width: 1250px;
+    max-width: 1300px;
     margin: auto;
     display: flex;
-    align-items: center;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav-inner a {
     color: white;
     text-decoration: none;
-    padding: 15px 18px;
-    font-size: 14px;
+    padding: 13px 15px;
+    font-size: 12px;
     font-weight: bold;
-    border-right: 1px solid rgba(255,255,255,.12);
-    white-space: nowrap;
+    transition: background 0.2s;
 }
 
 .nav-inner a:hover,
 .nav-inner a.active {
-    background: var(--blue);
+    background: #0b4025;
 }
 
 /* MAIN */
-
 .container {
-    max-width: 1250px;
-    margin: auto;
-    padding: 25px 20px 40px;
+    max-width: 1400px;
+    margin: 25px auto;
+    padding: 0 18px;
 }
 
+/* PAGE TITLE */
 .page-title {
-    text-align: center;
-    color: var(--dark-blue);
-    font-size: 30px;
-    margin-bottom: 8px;
+    background: white;
+    padding: 22px;
+    border-radius: 7px;
+    border-left: 5px solid #176b3a;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 7px rgba(0,0,0,0.06);
 }
 
-.page-description {
-    text-align: center;
-    color: #555;
-    font-size: 16px;
-    margin-bottom: 25px;
+.page-title h2 {
+    color: #145b35;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.page-title p {
+    color: #666;
+    font-size: 14px;
 }
 
 /* SEARCH */
-
-.search-box {
+.controls {
     background: white;
-    padding: 18px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    padding: 16px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 7px rgba(0,0,0,0.05);
 }
 
-.search-box input {
+.search-input {
     width: 100%;
-    padding: 13px 15px;
-    border: 1px solid #bbb;
-    border-radius: 4px;
-    font-size: 16px;
+    padding: 12px 14px;
+    border: 1px solid #ccd3d9;
+    border-radius: 5px;
+    font-size: 15px;
     outline: none;
 }
 
-.search-box input:focus {
-    border-color: var(--blue);
-    box-shadow: 0 0 4px rgba(7,87,154,.3);
+.search-input:focus {
+    border-color: #176b3a;
+    box-shadow: 0 0 0 2px rgba(23,107,58,0.1);
+}
+
+.result-info {
+    margin: 12px 2px;
+    font-size: 13px;
+    color: #555;
 }
 
 /* TABLE */
-
-.table-container {
+.table-box {
     background: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 7px;
+    box-shadow: 0 2px 7px rgba(0,0,0,0.06);
     overflow: hidden;
 }
 
-.table-scroll {
+.table-wrapper {
     width: 100%;
     overflow-x: auto;
 }
 
-table {
+.data-table {
     width: 100%;
-    min-width: 1100px;
     border-collapse: collapse;
-    font-size: 14px;
-}
-
-thead th {
-    background: var(--dark-blue);
-    color: white;
-    padding: 13px 12px;
-    text-align: left;
-    white-space: nowrap;
-    border: 1px solid rgba(255,255,255,.15);
-}
-
-tbody td {
-    padding: 12px;
-    border: 1px solid #e1e1e1;
-    vertical-align: top;
-}
-
-tbody tr:nth-child(even) {
-    background: #f5f8fb;
-}
-
-tbody tr:hover {
-    background: #eaf4fb;
-}
-
-/* DOWNLOAD BUTTON */
-
-.download-btn {
-    display: inline-block;
-    background: var(--blue);
-    color: white !important;
-    padding: 7px 13px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    white-space: nowrap;
+    min-width: 1100px;
     font-size: 13px;
 }
 
-.download-btn:hover {
-    background: var(--dark-blue);
+.data-table thead {
+    background: #145b35;
+    color: white;
 }
 
-/* STATUS */
+.data-table th {
+    padding: 13px 11px;
+    text-align: left;
+    white-space: nowrap;
+    border: 1px solid #28734a;
+}
 
-.message {
-    padding: 25px;
+.data-table td {
+    padding: 11px;
+    border: 1px solid #e1e5e8;
+    vertical-align: middle;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background: #f5f8f6;
+}
+
+.data-table tbody tr:hover {
+    background: #eaf3ed;
+}
+
+/* DOWNLOAD BUTTON */
+.download-btn {
+    display: inline-block;
+    background: #176b3a;
+    color: white;
+    text-decoration: none;
+    padding: 7px 13px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.download-btn:hover {
+    background: #0b4025;
+}
+
+.no-link {
+    color: #888;
+    font-size: 12px;
+}
+
+.loading,
+.error,
+.no-records {
+    padding: 35px 15px;
     text-align: center;
-    color: #555;
-    font-size: 15px;
+    color: #666;
 }
 
 .error {
-    color: #b52b2b;
-}
-
-/* RECORD COUNT */
-
-.record-count {
-    padding: 12px 15px;
-    background: #edf3f8;
-    color: var(--dark-blue);
-    font-weight: bold;
-    font-size: 14px;
-    border-bottom: 1px solid #ddd;
+    color: #b42318;
 }
 
 /* FOOTER */
-
-.footer {
-    background: #062f52;
+footer {
+    background: #173c2b;
     color: white;
-    margin-top: 20px;
+    margin-top: 35px;
 }
 
 .footer-inner {
@@ -269,48 +247,44 @@ tbody tr:hover {
     padding: 30px 20px;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 30px;
+    gap: 35px;
 }
 
-.footer h3 {
+.footer-inner h3 {
+    font-size: 17px;
     margin-bottom: 12px;
 }
 
-.footer p,
-.footer li {
+.footer-inner p,
+.footer-inner li {
     font-size: 13px;
-    color: #d9e5ee;
-}
-
-.footer ul {
-    list-style: none;
-}
-
-.footer li {
+    color: #e1e8e3;
     margin-bottom: 7px;
 }
 
-.footer a {
-    color: #d9e5ee;
+.footer-inner ul {
+    list-style: none;
+}
+
+.footer-inner a {
+    color: #e1e8e3;
     text-decoration: none;
 }
 
-.footer a:hover {
-    color: white;
+.footer-inner a:hover {
     text-decoration: underline;
 }
 
 .footer-bottom {
-    background: #041f37;
-    padding: 12px;
+    background: #102c1e;
     text-align: center;
+    padding: 14px;
     font-size: 12px;
-    color: #cbd9e4;
+    color: #dce5df;
 }
 
-/* RESPONSIVE */
-
-@media(max-width:900px) {
+/* MOBILE */
+@media(max-width:700px) {
 
     .header-inner {
         flex-wrap: wrap;
@@ -318,434 +292,366 @@ tbody tr:hover {
         text-align: center;
     }
 
+    .emblem img {
+        width: 60px;
+        height: 70px;
+    }
+
     .header-text {
         flex-basis: 100%;
-        order: 2;
-    }
-
-    .emblem {
-        order: 1;
-    }
-
-    .footer-inner {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-@media(max-width:600px) {
-
-    .header-inner {
-        padding: 12px 10px;
-        min-height: auto;
-    }
-
-    .emblem {
-        height: 80px;
-    }
-
-    .emblem img {
-        height: 70px;
-        width: 55px;
-    }
-
-    .header-text .govt {
-        font-size: 15px;
-    }
-
-    .header-text .department {
-        font-size: 14px;
     }
 
     .header-text h1 {
-        font-size: 20px;
-        line-height: 1.3;
+        font-size: 19px;
     }
 
     .header-text h2 {
-        font-size: 16px;
+        font-size: 15px;
     }
 
-    .nav-inner a {
-        padding: 13px 14px;
-        font-size: 13px;
-    }
-
-    .container {
-        padding: 20px 10px 30px;
-    }
-
-    .page-title {
-        font-size: 25px;
-    }
-
-    .page-description {
+    .govt {
         font-size: 14px;
     }
 
-    .search-box {
-        padding: 12px;
+    .department {
+        font-size: 12px;
     }
 
-    .search-box input {
-        font-size: 15px;
+    .nav-inner {
+        justify-content: flex-start;
+    }
+
+    .nav-inner a {
+        padding: 11px 10px;
+        font-size: 11px;
+    }
+
+    .container {
+        margin: 15px auto;
+        padding: 0 10px;
+    }
+
+    .page-title {
+        padding: 17px;
+    }
+
+    .page-title h2 {
+        font-size: 20px;
     }
 
     .footer-inner {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
-
 }
-
 </style>
 </head>
 
 <body>
 
 <!-- HEADER -->
-
 <header class="header">
+    <div class="header-inner">
 
-<div class="header-inner">
-
-    <div class="emblem">
-        <img
-            src="images/Emblem_of_India.svg"
-            alt="State Emblem of India"
-        >
-    </div>
-
-    <div class="header-text">
-
-        <div class="govt">
-            Government of Jammu & Kashmir
+        <div class="emblem">
+            <img src="images/Emblem_of_India.svg"
+                 alt="State Emblem of India">
         </div>
 
-        <div class="department">
-            Department of Rural Development & Panchayati Raj
+        <div class="header-text">
+            <div class="govt">
+                Government of Jammu &amp; Kashmir
+            </div>
+
+            <div class="department">
+                Department of Rural Development &amp; Panchayati Raj
+            </div>
+
+            <h1>Office of the Executive Engineer</h1>
+
+            <h2>Rural Engineering Wing (REW), Pulwama</h2>
         </div>
 
-        <h1>
-            Office of the Executive Engineer
-        </h1>
-
-        <h2>
-            Rural Engineering Wing (REW), Pulwama
-        </h2>
-
     </div>
-
-</div>
-
 </header>
 
-
 <!-- NAVIGATION -->
-
 <nav class="navbar">
+    <div class="nav-inner">
 
-<div class="nav-inner">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="officials.html">OFFICIALS</a>
+        <a href="approvals.html">APPROVALS</a>
+        <a href="tenders.html">TENDERS</a>
+        <a href="loi.html">LOIs</a>
+        <a href="notices.html">NOTICES</a>
+        <a href="circulars.html">CIRCULARS</a>
+        <a href="orders.html">ORDERS</a>
+        <a href="corri.html">CORRIGENDUM</a>
+        <a href="downloads.html">DOWNLOADS</a>
+        <a href="contact.html">CONTACT</a>
 
-    <a href="index.html">HOME</a>
-    <a href="about.html">ABOUT</a>
-    <a href="cdr.html">CALCULATE CDR</a>
-    <a href="officials.html">OFFICIALS</a>
-    <a href="approvals.html">APPROVALS</a>
-    <a href="tenders.html">TENDERS</a>
-    <a href="loi.html">LOIs</a>
-    <a href="notices.html">NOTICES</a>
-    <a href="downloads.html">DOWNLOADS</a>
-    <a href="contact.html">CONTACT</a>
-    <a href="archive.html">ARCHIVE</a>
-    <a href="nrega.html" class="active">MGNREGA STATUS</a>
-
-</div>
-
+    </div>
 </nav>
 
-
 <!-- MAIN CONTENT -->
-
 <main class="container">
 
-    <h1 class="page-title">
-        Check Status MGNREGA
-    </h1>
+    <section class="page-title">
+        <h2>MGNREGA Works</h2>
 
-    <p class="page-description">
-        MGNREGA Works and Related Documents – REW Pulwama
-    </p>
-
+        <p>
+            Work details and related documents under MGNREGA,
+            published by the Office of the Executive Engineer,
+            Rural Engineering Wing (REW), Pulwama.
+        </p>
+    </section>
 
     <!-- SEARCH -->
-
-    <div class="search-box">
+    <section class="controls">
 
         <input
-            type="text"
+            type="search"
             id="searchInput"
-            placeholder="Search by work name, Panchayat, Block, work ID or other details..."
-            oninput="filterTable()"
-        >
+            class="search-input"
+            placeholder="Search MGNREGA works..."
+            autocomplete="off">
 
-    </div>
-
-
-    <!-- TABLE -->
-
-    <div class="table-container">
-
-        <div class="record-count" id="recordCount">
-            Loading MGNREGA records...
+        <div id="resultInfo" class="result-info">
+            Loading records...
         </div>
 
-        <div class="table-scroll">
+    </section>
 
-            <table id="nregaTable">
+    <!-- DATA TABLE -->
+    <section class="table-box">
 
-                <thead id="tableHead"></thead>
-
-                <tbody id="tableBody">
-
-                    <tr>
-                        <td class="message">
-                            Loading data from Google Sheets...
-                        </td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
+        <div class="table-wrapper" id="tableContainer">
+            <div class="loading">
+                Please wait. Loading MGNREGA records...
+            </div>
         </div>
 
-    </div>
+    </section>
 
 </main>
 
-
 <!-- FOOTER -->
+<footer>
 
-<footer class="footer">
+    <div class="footer-inner">
 
-<div class="footer-inner">
+        <div>
+            <h3>REW Pulwama</h3>
 
-    <div>
+            <p>
+                Office of the Executive Engineer,
+                Rural Engineering Wing (REW), Pulwama.
+            </p>
 
-        <h3>REW Pulwama</h3>
+            <p>
+                Department of Rural Development &amp; Panchayati Raj,
+                Government of Jammu &amp; Kashmir.
+            </p>
+        </div>
 
-        <p>
-            Office of the Executive Engineer,
-            Rural Engineering Wing (REW), Pulwama.
-        </p>
+        <div>
+            <h3>Important Links</h3>
 
-        <p style="margin-top:10px;">
-            Department of Rural Development & Panchayati Raj,
-            Government of Jammu & Kashmir.
-        </p>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Office</a></li>
+                <li><a href="tenders.html">Tenders</a></li>
+                <li><a href="notices.html">Notices</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+        </div>
 
-    </div>
+        <div>
+            <h3>Website Information</h3>
 
-
-    <div>
-
-        <h3>Important Links</h3>
-
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Office</a></li>
-            <li><a href="tenders.html">Tenders</a></li>
-            <li><a href="notices.html">Notices</a></li>
-            <li><a href="downloads.html">Downloads</a></li>
-        </ul>
-
-    </div>
-
-
-    <div>
-
-        <h3>Website Information</h3>
-
-        <ul>
-            <li>Privacy Policy</li>
-            <li>Disclaimer</li>
-            <li>Accessibility</li>
-            <li>Site Map</li>
-        </ul>
+            <ul>
+                <li>Privacy Policy</li>
+                <li>Disclaimer</li>
+                <li>Accessibility</li>
+                <li>Site Map</li>
+            </ul>
+        </div>
 
     </div>
 
-</div>
-
-
-<div class="footer-bottom">
-
-    © 2026 Office of the Executive Engineer,
-    Rural Engineering Wing (REW), Pulwama.
-    All Rights Reserved.
-
-</div>
+    <div class="footer-bottom">
+        © 2026 Office of the Executive Engineer,
+        Rural Engineering Wing (REW), Pulwama.
+        All Rights Reserved.
+    </div>
 
 </footer>
 
-
 <script>
 
-/* =========================================================
-   GOOGLE SHEET CONFIGURATION
-========================================================= */
+/* =====================================================
+   GOOGLE SHEET PUBLISHED CSV
+   ===================================================== */
 
 const CSV_URL =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSlKb4rzKgzr7n-Rx2khlwfOwJrwp-Hq5Csy_yuvzWYEXNWtdcA0XZ_cbvlXBkq8qCqZTLiqJiY7IMV/pub?gid=1825655287&single=true&output=csv";
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSlKb4rzKgzr7n-Rx2khlwfOwJrwp-Hq5Csy_yuvzWYEXNWtdcA0XZ_cbvlXBkq8qCqZTLiqJiY7IMv/pub?gid=1825655287&single=true&output=csv";
 
+
+/* =====================================================
+   COLUMN SETTINGS
+   ===================================================== */
 
 /*
-   GOOGLE SHEET COLUMN POSITIONS
+   Google Sheet columns:
 
-   A  = 0
-   B  = 1
-   C  = 2
-   D  = 3
+   A  = Index 0
+   B  = Index 1
+   C  = Index 2
+   D  = Index 3
 
-   AV = 47
-   AW = 48
-   AX = 49
-   AY = 50
-   AZ = 51
-   BA = 52
-   BB = 53
-   BC = 54
+   AV = Index 47 (HIDDEN)
+   AW = Index 48 (HIDDEN)
 
-   BD = 55 (Download Link)
+   AX = Index 49
+   AY = Index 50
+   AZ = Index 51
+   BA = Index 52
+   BB = Index 53
+   BC = Index 54
+   BD = Index 55
+   BE = Index 56
 
-   BD is NOT displayed as a normal table column.
-   It is used to create the Download button.
+   BF = Index 57 (DOWNLOAD LINK ONLY)
 */
 
 const DISPLAY_COLUMNS = [
     0, 1, 2, 3,
-    47, 48, 49, 50,
-    51, 52, 53, 54
+    49, 50, 51, 52,
+    53, 54, 55, 56
 ];
 
-const DOWNLOAD_COLUMN = 55;
+const DOWNLOAD_COLUMN = 57;
 
+
+/* =====================================================
+   ROW SETTINGS
+   ===================================================== */
 
 /*
-   Row 5 is the header row.
-
-   JavaScript array index:
-   Row 1 = 0
-   Row 2 = 1
-   Row 3 = 2
-   Row 4 = 3
-   Row 5 = 4
-
-   Therefore:
-   HEADER_ROW_INDEX = 4
+   Rows 1 to 4  = Hidden
+   Row 5        = Header
+   Rows 6 to 195 = Data
 */
 
 const HEADER_ROW_INDEX = 4;
 
+const FIRST_DATA_ROW_INDEX = 5;
 
-/* STORE ALL RECORDS */
+const LAST_DATA_ROW_INDEX = 194;
+
+
+/* =====================================================
+   ELEMENTS
+   ===================================================== */
+
+const tableContainer =
+    document.getElementById("tableContainer");
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const resultInfo =
+    document.getElementById("resultInfo");
+
 
 let allRecords = [];
 
+let visibleHeaders = [];
 
-/* =========================================================
+
+/* =====================================================
    CSV PARSER
-========================================================= */
+   Handles quoted commas, quotes and line breaks.
+   Blank rows are preserved to retain sheet row numbers.
+   ===================================================== */
 
 function parseCSV(text) {
 
     const rows = [];
 
     let row = [];
-    let value = "";
-    let insideQuotes = false;
+
+    let cell = "";
+
+    let quoted = false;
 
     for (let i = 0; i < text.length; i++) {
 
-        const char = text[i];
+        const ch = text[i];
+
         const next = text[i + 1];
 
-        if (
-            char === '"' &&
-            insideQuotes &&
-            next === '"'
-        ) {
+        if (ch === '"' && quoted && next === '"') {
 
-            value += '"';
+            cell += '"';
+
             i++;
 
+            continue;
         }
 
-        else if (char === '"') {
+        if (ch === '"') {
 
-            insideQuotes = !insideQuotes;
+            quoted = !quoted;
 
+            continue;
         }
 
-        else if (
-            char === "," &&
-            !insideQuotes
-        ) {
+        if (ch === "," && !quoted) {
 
-            row.push(value);
-            value = "";
+            row.push(cell);
 
+            cell = "";
+
+            continue;
         }
 
-        else if (
-            (char === "\n" || char === "\r") &&
-            !insideQuotes
-        ) {
+        if ((ch === "\n" || ch === "\r") && !quoted) {
 
-            if (
-                char === "\r" &&
-                next === "\n"
-            ) {
+            if (ch === "\r" && next === "\n") {
                 i++;
             }
 
-            row.push(value);
+            row.push(cell);
 
-            if (row.some(cell => cell.trim() !== "")) {
-                rows.push(row);
-            }
+            rows.push(row);
 
             row = [];
-            value = "";
 
+            cell = "";
+
+            continue;
         }
 
-        else {
-
-            value += char;
-
-        }
-
+        cell += ch;
     }
 
-    if (value !== "" || row.length > 0) {
+    if (cell !== "" || row.length > 0) {
 
-        row.push(value);
+        row.push(cell);
 
-        if (row.some(cell => cell.trim() !== "")) {
-            rows.push(row);
-        }
-
+        rows.push(row);
     }
 
     return rows;
-
 }
 
 
-/* =========================================================
-   SAFE HTML
-========================================================= */
+/* =====================================================
+   SAFE HTML ESCAPING
+   ===================================================== */
 
 function escapeHTML(value) {
 
@@ -755,69 +661,204 @@ function escapeHTML(value) {
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
-
 }
 
 
-/* =========================================================
+/* =====================================================
    VALIDATE DOWNLOAD URL
-========================================================= */
+   ===================================================== */
 
 function validDownloadURL(value) {
 
-    if (!value) {
+    const link = String(value ?? "").trim();
+
+    if (!link) {
         return "";
     }
-
-    const link = String(value).trim();
 
     try {
 
         const url = new URL(link);
 
         if (
-            url.protocol === "https:" ||
-            url.protocol === "http:"
+            url.protocol === "http:" ||
+            url.protocol === "https:"
         ) {
             return url.href;
         }
 
-    }
+    } catch (error) {
 
-    catch (error) {
-
-        console.warn("Invalid download URL:", link);
-
+        return "";
     }
 
     return "";
-
 }
 
 
-/* =========================================================
-   LOAD GOOGLE SHEET
-========================================================= */
+/* =====================================================
+   CREATE TABLE
+   ===================================================== */
 
-async function loadNregaData() {
+function renderTable(records) {
 
-    const tbody =
-        document.getElementById("tableBody");
+    if (!records.length) {
 
-    const thead =
-        document.getElementById("tableHead");
+        tableContainer.innerHTML =
+            '<div class="no-records">No matching records found.</div>';
 
-    const count =
-        document.getElementById("recordCount");
+        resultInfo.textContent = "Showing 0 records.";
+
+        return;
+    }
+
+    let html = `
+        <table class="data-table">
+
+            <thead>
+                <tr>
+    `;
+
+    /* VISIBLE HEADINGS */
+
+    visibleHeaders.forEach(header => {
+
+        html += `
+            <th>${escapeHTML(header || "")}</th>
+        `;
+
+    });
+
+    /* SEPARATE DOWNLOAD HEADING */
+
+    html += `
+        <th style="text-align:center;">Download</th>
+                </tr>
+            </thead>
+
+            <tbody>
+    `;
+
+
+    /* DATA ROWS */
+
+    records.forEach(record => {
+
+        html += "<tr>";
+
+        record.displayValues.forEach(value => {
+
+            html += `
+                <td>${escapeHTML(value)}</td>
+            `;
+
+        });
+
+
+        /* DOWNLOAD BUTTON FROM BF */
+
+        const downloadURL =
+            validDownloadURL(record.downloadLink);
+
+
+        if (downloadURL) {
+
+            html += `
+                <td style="text-align:center;">
+                    <a
+                        class="download-btn"
+                        href="${escapeHTML(downloadURL)}"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Download
+                    </a>
+                </td>
+            `;
+
+        } else {
+
+            html += `
+                <td style="text-align:center;">
+                    <span class="no-link">Not Available</span>
+                </td>
+            `;
+
+        }
+
+        html += "</tr>";
+
+    });
+
+
+    html += `
+            </tbody>
+        </table>
+    `;
+
+    tableContainer.innerHTML = html;
+
+    resultInfo.textContent =
+        "Showing " + records.length + " of " +
+        allRecords.length + " records.";
+}
+
+
+/* =====================================================
+   SEARCH
+   Searches all visible columns.
+   ===================================================== */
+
+function filterRecords() {
+
+    const query =
+        searchInput.value.trim().toLowerCase();
+
+    if (!query) {
+
+        renderTable(allRecords);
+
+        return;
+    }
+
+    const filtered = allRecords.filter(record => {
+
+        const searchableText =
+            record.displayValues.join(" ").toLowerCase();
+
+        return searchableText.includes(query);
+
+    });
+
+    renderTable(filtered);
+}
+
+
+/* =====================================================
+   LOAD GOOGLE SHEET DATA
+   ===================================================== */
+
+async function loadData() {
 
     try {
 
+        tableContainer.innerHTML = `
+            <div class="loading">
+                Loading MGNREGA records...
+            </div>
+        `;
+
         const response = await fetch(
-            CSV_URL + "&cache=" + Date.now()
+            CSV_URL + "&_=" + Date.now(),
+            {
+                cache: "no-store"
+            }
         );
 
         if (!response.ok) {
-            throw new Error("Unable to access Google Sheet.");
+
+            throw new Error(
+                "Unable to retrieve Google Sheet data."
+            );
         }
 
         const csvText = await response.text();
@@ -825,254 +866,115 @@ async function loadNregaData() {
         const rows = parseCSV(csvText);
 
 
-        if (rows.length <= HEADER_ROW_INDEX) {
+        /* CHECK ROW AVAILABILITY */
+
+        if (rows.length <= LAST_DATA_ROW_INDEX) {
 
             throw new Error(
-                "Row 5 header was not found in the published sheet."
+                "The published sheet does not contain data up to Row 195."
             );
-
         }
 
 
-        /* HEADER FROM ROW 5 */
+        /* HEADER ROW = ROW 5 */
 
-        const headers = rows[HEADER_ROW_INDEX];
-
-
-        /* DATA STARTS FROM ROW 6 */
-
-        const dataRows = rows.slice(HEADER_ROW_INDEX + 1);
+        const headerRow =
+            rows[HEADER_ROW_INDEX] || [];
 
 
-        /* CREATE HEADER */
+        /* GET ONLY THE SELECTED HEADERS */
 
-        let headerHTML = "<tr>";
+        visibleHeaders = DISPLAY_COLUMNS.map(index => {
 
-        DISPLAY_COLUMNS.forEach(columnIndex => {
-
-            const heading =
-                headers[columnIndex] || "";
-
-            headerHTML +=
-                "<th>" +
-                escapeHTML(heading) +
-                "</th>";
+            return headerRow[index] || "";
 
         });
 
 
-        headerHTML += "<th>Download</th>";
+        /* ADD DOWNLOAD HEADING */
 
-        headerHTML += "</tr>";
+        visibleHeaders = visibleHeaders.map(header => {
+            return String(header).trim();
+        });
 
-        thead.innerHTML = headerHTML;
+
+        /* DATA ROWS = ROW 6 TO ROW 195 */
+
+        const dataRows = rows.slice(
+            FIRST_DATA_ROW_INDEX,
+            LAST_DATA_ROW_INDEX + 1
+        );
 
 
-        /* PREPARE RECORDS */
+        allRecords = dataRows.map(row => {
 
-        allRecords = dataRows.filter(row => {
+            const displayValues =
+                DISPLAY_COLUMNS.map(index => {
 
-            return row.some(
-                cell => String(cell ?? "").trim() !== ""
-            );
+                    return row[index] ?? "";
+
+                });
+
+            const downloadLink =
+                row[DOWNLOAD_COLUMN] ?? "";
+
+
+            return {
+
+                displayValues: displayValues,
+
+                downloadLink: downloadLink
+
+            };
 
         });
 
+
+        /* INITIAL DISPLAY */
 
         renderTable(allRecords);
 
 
-        count.textContent =
-            "Total Records: " +
-            allRecords.length.toLocaleString("en-IN");
+    } catch (error) {
 
+        console.error(
+            "MGNREGA Sheet Error:",
+            error
+        );
 
-    }
-
-    catch (error) {
-
-        console.error("MGNREGA loading error:", error);
-
-        thead.innerHTML = "";
-
-        tbody.innerHTML = `
-            <tr>
-                <td class="message error">
-                    Unable to load MGNREGA records.
-                    Please refresh the page or try again later.
-                    <br>
-                    ${escapeHTML(error.message)}
-                </td>
-            </tr>
+        tableContainer.innerHTML = `
+            <div class="error">
+                Unable to load MGNREGA records.
+                <br>
+                ${escapeHTML(error.message)}
+                <br><br>
+                Please check the published Google Sheet URL
+                and internet connection.
+            </div>
         `;
 
-        count.textContent = "Data loading failed.";
+        resultInfo.textContent = "Data loading failed.";
 
     }
 
 }
 
 
-/* =========================================================
-   RENDER TABLE
-========================================================= */
+/* =====================================================
+   SEARCH EVENT
+   ===================================================== */
 
-function renderTable(records) {
-
-    const tbody =
-        document.getElementById("tableBody");
-
-    const count =
-        document.getElementById("recordCount");
-
-
-    if (!records.length) {
-
-        tbody.innerHTML = `
-            <tr>
-                <td colspan="${DISPLAY_COLUMNS.length + 1}"
-                    class="message">
-                    No matching records found.
-                </td>
-            </tr>
-        `;
-
-        count.textContent = "Total Records: 0";
-
-        return;
-
-    }
-
-
-    let html = "";
-
-
-    records.forEach(row => {
-
-        html += "<tr>";
-
-
-        /* DISPLAY SELECTED COLUMNS */
-
-        DISPLAY_COLUMNS.forEach(columnIndex => {
-
-            const cellValue =
-                row[columnIndex] ?? "";
-
-            html +=
-                "<td>" +
-                escapeHTML(cellValue) +
-                "</td>";
-
-        });
-
-
-        /* DOWNLOAD BUTTON FROM COLUMN BD */
-
-        const downloadValue =
-            row[DOWNLOAD_COLUMN] ?? "";
-
-        const downloadURL =
-            validDownloadURL(downloadValue);
-
-
-        if (downloadURL) {
-
-            html += `
-                <td>
-                    <a
-                        href="${escapeHTML(downloadURL)}"
-                        class="download-btn"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Download
-                    </a>
-                </td>
-            `;
-
-        }
-
-        else {
-
-            html += `
-                <td>
-                    <span style="color:#888;">
-                        Not Available
-                    </span>
-                </td>
-            `;
-
-        }
-
-
-        html += "</tr>";
-
-    });
-
-
-    tbody.innerHTML = html;
-
-
-    count.textContent =
-        "Showing " +
-        records.length.toLocaleString("en-IN") +
-        " Records";
-
-}
-
-
-/* =========================================================
-   SEARCH / FILTER
-========================================================= */
-
-function filterTable() {
-
-    const searchInput =
-        document.getElementById("searchInput");
-
-    const searchText =
-        searchInput.value.trim().toLowerCase();
-
-
-    if (!searchText) {
-
-        renderTable(allRecords);
-
-        return;
-
-    }
-
-
-    const filteredRecords =
-        allRecords.filter(row => {
-
-            return DISPLAY_COLUMNS.some(columnIndex => {
-
-                const value =
-                    String(row[columnIndex] ?? "")
-                    .toLowerCase();
-
-                return value.includes(searchText);
-
-            });
-
-        });
-
-
-    renderTable(filteredRecords);
-
-}
-
-
-/* =========================================================
-   START
-========================================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    loadNregaData
+searchInput.addEventListener(
+    "input",
+    filterRecords
 );
+
+
+/* =====================================================
+   START
+   ===================================================== */
+
+loadData();
 
 </script>
 
